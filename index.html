@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestPro Suite | Piattaforma Immobiliare Completa</title>
+    <title>InvestPro Suite | Analisi Immobiliare Pro</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
@@ -16,308 +16,356 @@
 
     <style>
         :root {
-            --bg-body: #0f172a; --bg-card: #1e293b; --bg-input: #020617;
+            --bg-body: #020617; --bg-card: #0f172a; 
             --primary: #10b981; --accent: #3b82f6; --danger: #ef4444;
             --text-main: #f8fafc; --text-muted: #94a3b8;
-            --border: rgba(148, 163, 184, 0.1);
+            --border: rgba(148, 163, 184, 0.15);
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); scroll-behavior: smooth; overflow-x: hidden; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         
         /* UI COMPONENTS */
-        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid var(--border); }
-        .btn { transition: all 0.2s; active: scale(0.98); }
-        .btn:hover { filter: brightness(110%); }
+        .glass-panel { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid var(--border); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn:active { transform: scale(0.98); }
         input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         
-        /* ADMIN BADGE */
-        .admin-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: black; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* SEZIONE CONTATTI & RECENSIONI */
-        .review-card { background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.3s; }
+        /* CARDS & SECTIONS */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .review-card { background: var(--bg-card); border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s; }
         .review-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        
-        /* LOADING SPINNER */
-        .loader { border: 3px solid rgba(255,255,255,0.1); border-radius: 50%; border-top: 3px solid var(--primary); width: 20px; height: 20px; animation: spin 1s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* TOAST NOTIFICATION */
-        #toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 16px; position: fixed; z-index: 100; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 14px; opacity: 0; transition: opacity 0.5s, bottom 0.5s; }
-        #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
-        #toast.success { background-color: var(--primary); color: #000; font-weight: bold; }
-        #toast.error { background-color: var(--danger); color: white; }
+        /* LOADING & TOAST */
+        .loader { border: 2px solid rgba(255,255,255,0.1); border-top: 2px solid #fff; border-radius: 50%; width: 16px; height: 16px; animation: spin 0.8s linear infinite; display: inline-block; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #333; color: white; padding: 12px 24px; border-radius: 50px; opacity: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); z-index: 9999; font-weight: 600; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; }
+        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        #toast.success { background: var(--primary); color: #020617; }
+        #toast.error { background: var(--danger); color: white; }
+
+        /* ADMIN */
+        .admin-row:hover { background-color: rgba(255,255,255,0.02); }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-emerald-500/20">IP</div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-white">Invest<span class="text-emerald-400">Pro</span></span>
-                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Financial Suite v4.0</p>
-                    </div>
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/30 h-20">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center text-slate-900 font-black text-xl shadow-lg shadow-emerald-500/20">IP</div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white block leading-none">Invest<span class="text-emerald-400">Pro</span></span>
+                    <span class="text-[9px] text-slate-400 uppercase tracking-[0.2em] font-bold">Suite v4.1 Verified</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="btn-admin-panel" onclick="app.admin.openPanel()" class="hidden px-4 py-2 bg-amber-500/10 text-amber-500 border border-amber-500/30 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-500 hover:text-black transition-all">
+                    <i class="fa-solid fa-lock mr-2"></i>Admin
+                </button>
+
+                <div id="auth-section">
+                    <button onclick="app.auth.login()" class="btn px-5 py-2 bg-white text-slate-900 rounded-lg font-bold text-sm shadow-lg hover:bg-slate-200 transition-colors flex items-center gap-2">
+                        <i class="fa-brands fa-google"></i> Accedi
+                    </button>
                 </div>
                 
-                <div class="flex items-center gap-4">
-                    <button id="btn-admin-panel" onclick="app.admin.openPanel()" class="hidden px-4 py-2 bg-amber-500/10 text-amber-500 border border-amber-500/30 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-500 hover:text-black transition-all">
-                        <i class="fa-solid fa-shield-halved mr-2"></i>Admin Dashboard
-                    </button>
-
-                    <div id="auth-section">
-                        <button onclick="app.auth.login()" class="btn px-5 py-2.5 bg-white text-slate-900 rounded-lg font-bold text-sm shadow-lg hover:bg-slate-200 transition-colors">
-                            <i class="fa-brands fa-google mr-2"></i> Accedi
-                        </button>
+                <div id="user-profile" class="hidden flex items-center gap-3 bg-slate-800/80 pr-4 py-1.5 pl-1.5 rounded-full border border-slate-700">
+                    <img id="user-avatar" src="" class="w-8 h-8 rounded-full border border-slate-600 bg-slate-700">
+                    <div class="flex flex-col">
+                        <span id="user-name" class="text-xs font-bold text-white leading-none mb-0.5">User</span>
+                        <span id="user-role" class="text-[8px] text-emerald-400 uppercase font-black leading-none">FREE PLAN</span>
                     </div>
-                    
-                    <div id="user-profile" class="hidden flex items-center gap-3 bg-slate-800/50 pr-4 py-1 pl-1 rounded-full border border-slate-700">
-                        <img id="user-avatar" src="" class="w-8 h-8 rounded-full border border-slate-600">
-                        <div class="flex flex-col">
-                            <span id="user-name" class="text-xs font-bold text-white leading-none mb-1"></span>
-                            <span id="user-role" class="text-[9px] text-emerald-400 uppercase font-black leading-none">FREE USER</span>
-                        </div>
-                        <button onclick="app.auth.logout()" class="ml-2 text-slate-400 hover:text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
-                    </div>
+                    <button onclick="app.auth.logout()" class="ml-3 text-slate-400 hover:text-red-400 transition-colors"><i class="fa-solid fa-right-from-bracket"></i></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-28 pb-12 px-4 max-w-7xl mx-auto w-full space-y-16">
+    <main class="flex-grow pt-28 pb-20 w-full">
+        
+        <div class="max-w-7xl mx-auto px-6 space-y-12">
 
-        <div class="flex justify-between items-end border-b border-slate-800 pb-6">
-            <div class="w-full max-w-md">
-                <label class="text-[10px] uppercase font-bold text-slate-500 mb-1 block">Nome Progetto</label>
-                <input type="text" id="project-name" value="Nuova Operazione Milano" class="bg-transparent text-3xl font-black text-white w-full border-none focus:ring-0 p-0 placeholder-slate-700">
-            </div>
-            <div class="flex gap-3">
-                <button onclick="app.data.loadDeals()" class="btn px-4 py-3 bg-slate-800 text-slate-300 rounded-xl font-bold text-xs uppercase tracking-wide border border-slate-700 hover:border-emerald-500">
-                    <i class="fa-solid fa-folder-open mr-2"></i> I Miei Deal
-                </button>
-                <button onclick="app.data.saveProject()" class="btn px-6 py-3 bg-emerald-500 text-slate-900 rounded-xl font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-500/20 hover:bg-emerald-400">
-                    <i class="fa-solid fa-floppy-disk mr-2"></i> Salva
-                </button>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <div class="lg:col-span-7 space-y-8">
-                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
-                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2"><i class="fa-solid fa-sliders text-emerald-500"></i> Parametri Operazione</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="group">
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2 group-focus-within:text-emerald-400">Prezzo Acquisto (€)</label>
-                            <input type="number" id="price" value="250000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:outline-none transition-colors">
-                        </div>
-                        <div class="group">
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2 group-focus-within:text-emerald-400">Ristrutturazione (€)</label>
-                            <input type="number" id="reno" value="15000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:outline-none transition-colors">
-                        </div>
-                    </div>
-
-                    <div class="p-6 bg-slate-950/30 rounded-2xl border border-slate-800/50 mb-6">
-                        <h4 class="text-xs font-black text-blue-400 uppercase tracking-widest mb-4">Configurazione Mutuo</h4>
-                        <div class="grid grid-cols-3 gap-4">
-                            <div>
-                                <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">LTV (%)</label>
-                                <input type="number" id="ltv" value="80" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Tasso (%)</label>
-                                <input type="number" id="rate" value="3.5" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Anni</label>
-                                <input type="number" id="years" value="20" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Spese Notaio (€)</label>
-                            <input type="number" id="closing" value="2500" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Affitto Stimato (€)</label>
-                            <input type="number" id="rent" value="1500" class="w-full bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4 text-emerald-400 font-mono text-lg font-bold focus:border-emerald-500 focus:outline-none">
-                        </div>
-                    </div>
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-slate-800 pb-6 gap-4">
+                <div class="w-full max-w-xl">
+                    <label class="text-[10px] uppercase font-bold text-slate-500 mb-1 block tracking-wider">Nome Progetto Attivo</label>
+                    <input type="text" id="project-name" value="Operazione Milano Centro" class="bg-transparent text-3xl font-black text-white w-full border-none focus:ring-0 p-0 placeholder-slate-700 focus:outline-none">
                 </div>
-            </div>
-
-            <div class="lg:col-span-5 space-y-6">
-                
-                <div class="glass-panel p-8 rounded-3xl border-slate-700 relative">
-                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Rata Mutuo Mensile (Capex Incl.)</p>
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span id="out-payment" class="text-5xl font-black text-white tracking-tighter">€ 0</span>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-900/40 to-slate-900 border border-emerald-500/20 mb-6">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <p class="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-1">Cash Flow Netto</p>
-                                <p id="out-cashflow" class="text-3xl font-black text-white font-mono">€ 0</p>
-                            </div>
-                            <div class="h-10 w-10 bg-emerald-500 rounded-full flex items-center justify-center text-slate-900"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Equity (Cash)</span>
-                            <span id="out-equity" class="font-mono font-bold text-white">€ 0</span>
-                        </div>
-                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="block text-[10px] font-bold text-red-400 uppercase mb-1">Interessi Tot.</span>
-                            <span id="out-interest" class="font-mono font-bold text-white">€ 0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="w-full py-5 bg-slate-800 hover:bg-slate-700 text-white rounded-2xl font-bold text-xs uppercase tracking-widest border border-slate-600 shadow-xl transition-all" onclick="alert('Funzione PDF in arrivo!')">
-                    <i class="fa-solid fa-file-pdf mr-2"></i> Scarica Report PDF
-                </button>
-            </div>
-        </div>
-
-        <section id="reviews">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="h-px bg-slate-800 flex-grow"></div>
-                <h2 class="text-sm font-black text-slate-500 uppercase tracking-widest">Dicono di noi</h2>
-                <div class="h-px bg-slate-800 flex-grow"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="review-card">
-                    <div class="flex text-emerald-400 text-xs mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-300 text-sm italic mb-4">"Finalmente un calcolatore che include la ristrutturazione nel mutuo. Essenziale per chi fa flipping."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold">MR</div>
-                        <span class="text-xs font-bold text-white">Marco R. <span class="text-slate-500 font-normal">Investitore</span></span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="flex text-emerald-400 text-xs mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-300 text-sm italic mb-4">"Admin panel super comodo e calcoli precisi al centesimo. Mai più file Excel."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold">GL</div>
-                        <span class="text-xs font-bold text-white">Giulia L. <span class="text-slate-500 font-normal">Property Manager</span></span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="flex text-emerald-400 text-xs mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
-                    <p class="text-slate-300 text-sm italic mb-4">"Interfaccia pulita e professionale. La funzione di salvataggio deal mi ha salvato la vita."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold">DV</div>
-                        <span class="text-xs font-bold text-white">Davide V. <span class="text-slate-500 font-normal">Agente</span></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="max-w-2xl mx-auto w-full">
-            <div class="glass-panel p-10 rounded-[32px] text-center">
-                <h2 class="text-2xl font-black text-white mb-2">Hai bisogno di supporto?</h2>
-                <p class="text-slate-400 text-sm mb-8">Il nostro team tecnico risponde entro 24 ore.</p>
-                
-                <form id="contact-form" onsubmit="app.contact.submit(event)" class="space-y-4 text-left">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Nome</label>
-                            <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white text-sm focus:border-emerald-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Email</label>
-                            <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white text-sm focus:border-emerald-500 focus:outline-none">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Messaggio</label>
-                        <textarea required rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white text-sm focus:border-emerald-500 focus:outline-none"></textarea>
-                    </div>
-                    <button type="submit" id="btn-contact-submit" class="w-full py-4 bg-white text-slate-900 rounded-xl font-bold text-sm uppercase tracking-wide hover:bg-slate-200 transition-colors flex justify-center items-center gap-2">
-                        <span>Invia Messaggio</span>
+                <div class="flex gap-3">
+                    <button onclick="app.data.loadDeals()" class="btn px-5 py-3 bg-slate-800 text-slate-300 rounded-xl font-bold text-xs uppercase tracking-wide border border-slate-700 hover:border-emerald-500 hover:text-white">
+                        <i class="fa-solid fa-folder-open mr-2"></i> Archivio
                     </button>
-                </form>
+                    <button onclick="app.data.saveProject()" class="btn px-6 py-3 bg-emerald-500 text-slate-900 rounded-xl font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 hover:shadow-emerald-500/40">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i> Salva
+                    </button>
+                </div>
             </div>
-        </section>
 
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500 group-hover:w-1.5 transition-all"></div>
+                        
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-sliders"></i></div>
+                            <h3 class="text-lg font-bold text-white">Parametri Economici</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Prezzo Acquisto (€)</label>
+                                <input type="number" id="price" value="250000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Ristrutturazione (€)</label>
+                                <input type="number" id="reno" value="15000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-slate-950/30 rounded-2xl border border-slate-800/50 mb-6">
+                            <h4 class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4 border-b border-blue-500/20 pb-2 inline-block">Configurazione Mutuo</h4>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">LTV (%)</label>
+                                    <input type="number" id="ltv" value="80" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Tasso (%)</label>
+                                    <input type="number" id="rate" value="3.5" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Anni</label>
+                                    <input type="number" id="years" value="20" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Notaio & Spese (€)</label>
+                                <input type="number" id="closing" value="2500" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Affitto Stimato (€)</label>
+                                <input type="number" id="rent" value="1500" class="w-full bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4 text-emerald-400 font-mono text-lg font-bold focus:border-emerald-500 focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-6">
+                    
+                    <div class="glass-panel p-8 rounded-3xl border-slate-700 relative flex flex-col justify-between h-full">
+                        <div>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Rata Mensile (Mutuo Capex)</p>
+                            <div class="flex items-baseline gap-2 mb-8 border-b border-slate-800 pb-8">
+                                <span id="out-payment" class="text-6xl font-black text-white tracking-tighter">€ 0</span>
+                                <span class="text-sm text-slate-500 font-medium">/mese</span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/50 to-slate-900 border border-emerald-500/30 mb-6 shadow-xl shadow-emerald-900/20">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-1">Cash Flow Netto</p>
+                                        <p id="out-cashflow" class="text-3xl font-black text-white font-mono">€ 0</p>
+                                    </div>
+                                    <div class="h-12 w-12 bg-emerald-500 rounded-xl flex items-center justify-center text-slate-900 text-xl shadow-lg shadow-emerald-500/40"><i class="fa-solid fa-wallet"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
+                                    <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Equity (Cash)</span>
+                                    <span id="out-equity" class="font-mono font-bold text-white text-lg">€ 0</span>
+                                </div>
+                                <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
+                                    <span class="block text-[10px] font-bold text-red-400 uppercase mb-1">Interessi Tot.</span>
+                                    <span id="out-interest" class="font-mono font-bold text-white text-lg">€ 0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-6 py-4 bg-white text-slate-900 rounded-xl font-black text-xs uppercase tracking-[0.2em] border border-transparent shadow-xl hover:bg-slate-200 transition-all transform active:scale-95" onclick="app.ui.toast('Export PDF non configurato nella demo', 'error')">
+                            Scarica Analisi
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-12"></div>
+
+            <section id="reviews" class="w-full scroll-mt-24">
+                <div class="flex items-center justify-center gap-4 mb-10">
+                    <div class="h-px bg-slate-800 w-12"></div>
+                    <h2 class="text-sm font-black text-slate-400 uppercase tracking-[0.3em]">Cosa dicono i Pro</h2>
+                    <div class="h-px bg-slate-800 w-12"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="review-card p-8 rounded-2xl">
+                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"L'unico calcolatore che gestisce correttamente il CAPEX nel mutuo. Essenziale per le mie operazioni di flipping."</p>
+                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">MR</div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Marco Rossi</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-bold">Investitore Immobiliare</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card p-8 rounded-2xl">
+                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"L'interfaccia è pulita e il pannello admin mi permette di gestire tutti i miei studenti. Ottimo lavoro."</p>
+                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">GL</div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Giulia Leoni</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-bold">Property Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card p-8 rounded-2xl">
+                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"Precisione matematica e velocità. Il calcolo del Cash Flow netto è finalmente realistico."</p>
+                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">DV</div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Davide V.</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-bold">Agente Immobiliare</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="max-w-3xl mx-auto w-full pt-16">
+                <div class="glass-panel p-1 md:p-12 rounded-[32px] text-center border-slate-700/50 shadow-2xl">
+                    <span class="inline-block p-3 rounded-xl bg-blue-500/10 text-blue-400 mb-4"><i class="fa-regular fa-envelope text-2xl"></i></span>
+                    <h2 class="text-3xl font-black text-white mb-3">Supporto Premium</h2>
+                    <p class="text-slate-400 text-sm mb-10 max-w-lg mx-auto">Hai dubbi sui calcoli o vuoi richiedere una feature personalizzata? Il nostro team di ingegneri risponde entro 24h.</p>
+                    
+                    <form id="contact-form" onsubmit="app.contact.submit(event)" class="space-y-5 text-left max-w-lg mx-auto">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Nome</label>
+                                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800" placeholder="Mario Rossi">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Email</label>
+                                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800" placeholder="mario@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Messaggio</label>
+                            <textarea required rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800 resize-none" placeholder="Scrivi qui la tua richiesta..."></textarea>
+                        </div>
+                        <button type="submit" id="btn-contact-submit" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wide hover:bg-blue-500 transition-all flex justify-center items-center gap-2 shadow-lg shadow-blue-600/20">
+                            <span>Invia Messaggio</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <div id="modal-admin" class="fixed inset-0 bg-black/90 hidden z-[100] items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-slate-900 border border-slate-700 w-full max-w-4xl h-[80vh] rounded-3xl flex flex-col overflow-hidden shadow-2xl">
+    <footer class="border-t border-slate-800 bg-slate-950 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 opacity-50">
+                <div class="w-6 h-6 bg-slate-700 rounded flex items-center justify-center text-xs font-bold text-black">IP</div>
+                <span class="text-xs font-bold text-slate-500">InvestPro &copy; 2025</span>
+            </div>
+            <div class="flex gap-6 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Termini</a>
+                <a href="#" class="hover:text-white transition-colors">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-admin" class="fixed inset-0 bg-black/90 hidden z-[100] items-center justify-center p-4 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-5xl h-[85vh] rounded-3xl flex flex-col overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modal-admin-content">
             <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
                 <div>
-                    <h2 class="text-xl font-black text-white flex items-center gap-2">
-                        <i class="fa-solid fa-user-shield text-amber-500"></i> Pannello Admin
+                    <h2 class="text-xl font-black text-white flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-amber-500 text-black flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></span>
+                        Pannello Amministrazione
                     </h2>
-                    <p class="text-xs text-slate-500">Gestione Utenti & Statistiche Globali</p>
                 </div>
-                <button onclick="app.admin.closePanel()" class="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-red-500/20 hover:text-red-500 transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
+                <button onclick="app.admin.closePanel()" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-500 transition-all">
+                    <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
             
-            <div class="p-8 overflow-y-auto">
-                <div class="grid grid-cols-3 gap-6 mb-8">
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
-                        <p class="text-slate-500 text-xs font-bold uppercase mb-2">Utenti Totali</p>
-                        <p class="text-3xl font-black text-white" id="adm-total-users">0</p>
+            <div class="p-8 overflow-y-auto flex-grow bg-slate-900">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Utenti Totali</p>
+                            <p class="text-3xl font-black text-white" id="adm-total-users">1,240</p>
+                        </div>
+                        <i class="fa-solid fa-users text-slate-800 text-4xl"></i>
                     </div>
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
-                        <p class="text-slate-500 text-xs font-bold uppercase mb-2">Deal Salvati</p>
-                        <p class="text-3xl font-black text-emerald-400" id="adm-total-deals">0</p>
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Deal Salvati</p>
+                            <p class="text-3xl font-black text-emerald-400" id="adm-total-deals">892</p>
+                        </div>
+                        <i class="fa-solid fa-database text-slate-800 text-4xl"></i>
                     </div>
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
-                        <p class="text-slate-500 text-xs font-bold uppercase mb-2">Revenue (Stimato)</p>
-                        <p class="text-3xl font-black text-amber-400">€ 0</p>
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Stato Sistema</p>
+                            <p class="text-lg font-black text-emerald-500 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ONLINE</p>
+                        </div>
+                        <i class="fa-solid fa-server text-slate-800 text-4xl"></i>
                     </div>
                 </div>
 
-                <h3 class="text-sm font-bold text-white mb-4 uppercase tracking-widest border-b border-slate-800 pb-2">Lista Utenti Recenti</h3>
-                <div class="w-full bg-slate-950 rounded-xl border border-slate-800 overflow-hidden">
-                    <table class="w-full text-left text-sm text-slate-400">
-                        <thead class="bg-slate-900 text-xs uppercase font-bold text-slate-500">
-                            <tr>
-                                <th class="p-4">Utente</th>
-                                <th class="p-4">Email</th>
-                                <th class="p-4">Ruolo</th>
-                                <th class="p-4 text-right">Azioni</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adm-users-list">
-                            </tbody>
-                    </table>
+                <div>
+                    <h3 class="text-xs font-bold text-white mb-4 uppercase tracking-widest flex items-center gap-2"><i class="fa-solid fa-list"></i> Utenti Recenti</h3>
+                    <div class="w-full bg-slate-950 rounded-xl border border-slate-800 overflow-hidden">
+                        <table class="w-full text-left text-sm text-slate-400">
+                            <thead class="bg-slate-900/50 text-[10px] uppercase font-bold text-slate-500 border-b border-slate-800">
+                                <tr>
+                                    <th class="p-4">Utente</th>
+                                    <th class="p-4">Email</th>
+                                    <th class="p-4">Data Iscrizione</th>
+                                    <th class="p-4">Ruolo</th>
+                                    <th class="p-4 text-right">Azioni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-users-list">
+                                </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="toast">Notifica</div>
+    <div id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-msg">Messaggio inviato</span>
+    </div>
 
     <script>
         /**
-         * CONFIGURAZIONE SISTEMA
-         * Inserisci qui la tua email per abilitare il pannello ADMIN.
+         * INVESTPRO CORE ENGINE v4.1
          */
+
         const CONFIG = {
-            adminEmail: "tuaemail@gmail.com", // <--- SOSTITUISCI CON LA TUA EMAIL
+            // Sostituisci con la tua email per testare il pannello admin
+            adminEmail: "admin@investpro.com",
+            
+            // Configurazione Firebase (Placeholder - Inserisci le tue chiavi reali per il deploy)
             firebase: {
-                // USA I TUOI DATI VERI, QUESTI SONO PLACEHOLDER STANDARD
-                apiKey: "AIzaSyD-PLACEHOLDER-KEY",
-                authDomain: "investpro-demo.firebaseapp.com",
-                projectId: "investpro-demo",
-                storageBucket: "investpro-demo.appspot.com",
-                messagingSenderId: "123456789",
-                appId: "1:123456789:web:abcdef"
+                apiKey: "API_KEY_PLACEHOLDER",
+                authDomain: "investpro.firebaseapp.com",
+                projectId: "investpro",
             }
         };
 
@@ -325,69 +373,88 @@
             state: {
                 user: null,
                 isAdmin: false,
-                projectInputs: ['price', 'reno', 'closing', 'ltv', 'rate', 'years', 'rent']
+                isFirebaseReady: false,
+                inputs: ['price', 'reno', 'closing', 'ltv', 'rate', 'years', 'rent']
             },
 
             init: () => {
-                // Inizializza Firebase solo se non è già attivo
-                if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
-                
-                // Listener Auth
-                firebase.auth().onAuthStateChanged(user => {
-                    app.state.user = user;
-                    app.auth.updateUI();
-                    if(user) app.admin.checkPrivileges();
-                });
+                // Tenta inizializzazione Firebase
+                try {
+                    if (firebase && CONFIG.firebase.apiKey !== "API_KEY_PLACEHOLDER") {
+                        firebase.initializeApp(CONFIG.firebase);
+                        app.state.isFirebaseReady = true;
+                        
+                        // Auth Listener Reale
+                        firebase.auth().onAuthStateChanged(user => {
+                            app.state.user = user;
+                            app.auth.updateUI();
+                            if(user) app.admin.check();
+                        });
+                    } else {
+                        console.warn("Firebase Config mancante. Modalità UI Demo attiva.");
+                    }
+                } catch (e) {
+                    console.error("Errore init Firebase:", e);
+                }
 
-                // Listener Input per calcolo real-time
-                app.state.projectInputs.forEach(id => {
+                // Bind inputs per calcolo live
+                app.state.inputs.forEach(id => {
                     document.getElementById(id).addEventListener('input', app.calc.update);
                 });
 
-                // Primo Calcolo
+                // Primo calcolo
                 app.calc.update();
             },
 
-            // --- MODULO AUTENTICAZIONE ---
+            // --- AUTHENTICATION (Gestisce Demo e Reale) ---
             auth: {
                 login: async () => {
-                    const provider = new firebase.auth.GoogleAuthProvider();
-                    try {
-                        await firebase.auth().signInWithPopup(provider);
-                        app.ui.toast("Accesso effettuato con successo", "success");
-                    } catch (error) {
-                        console.error(error);
-                        app.ui.toast("Errore durante l'accesso", "error");
+                    if (app.state.isFirebaseReady) {
+                        const provider = new firebase.auth.GoogleAuthProvider();
+                        try {
+                            await firebase.auth().signInWithPopup(provider);
+                            app.ui.toast("Accesso effettuato", "success");
+                        } catch (e) { app.ui.toast("Errore Login: " + e.message, "error"); }
+                    } else {
+                        // FALLBACK DEMO LOGIN (Se non hai configurato Firebase)
+                        app.state.user = {
+                            displayName: "Demo User",
+                            email: CONFIG.adminEmail, // Login automatico come Admin per demo
+                            photoURL: "https://ui-avatars.com/api/?name=Demo+User&background=10b981&color=fff"
+                        };
+                        app.auth.updateUI();
+                        app.admin.check();
+                        app.ui.toast("Modalità Demo: Accesso Admin Simulato", "success");
                     }
                 },
                 logout: async () => {
-                    await firebase.auth().signOut();
+                    if (app.state.isFirebaseReady) await firebase.auth().signOut();
+                    app.state.user = null;
+                    app.state.isAdmin = false;
                     window.location.reload();
                 },
                 updateUI: () => {
                     const u = app.state.user;
-                    const authSection = document.getElementById('auth-section');
-                    const userProfile = document.getElementById('user-profile');
+                    const authSec = document.getElementById('auth-section');
+                    const profileSec = document.getElementById('user-profile');
                     
                     if (u) {
-                        authSection.classList.add('hidden');
-                        userProfile.classList.remove('hidden');
-                        userProfile.classList.add('flex');
-                        document.getElementById('user-avatar').src = u.photoURL;
-                        document.getElementById('user-name').textContent = u.displayName.split(' ')[0];
+                        authSec.classList.add('hidden');
+                        profileSec.classList.remove('hidden');
+                        profileSec.classList.add('flex');
+                        document.getElementById('user-name').textContent = u.displayName || "Utente";
+                        document.getElementById('user-avatar').src = u.photoURL || "https://ui-avatars.com/api/?name=U";
                     } else {
-                        authSection.classList.remove('hidden');
-                        userProfile.classList.add('hidden');
-                        userProfile.classList.remove('flex');
-                        document.getElementById('btn-admin-panel').classList.add('hidden');
+                        authSec.classList.remove('hidden');
+                        profileSec.classList.add('hidden');
+                        profileSec.classList.remove('flex');
                     }
                 }
             },
 
-            // --- MODULO ADMIN (Nuova Richiesta) ---
+            // --- ADMIN MODULE ---
             admin: {
-                checkPrivileges: () => {
-                    // Controllo semplice basato su email (per prototipo HTML)
+                check: () => {
                     if (app.state.user && app.state.user.email === CONFIG.adminEmail) {
                         app.state.isAdmin = true;
                         document.getElementById('btn-admin-panel').classList.remove('hidden');
@@ -395,50 +462,70 @@
                         document.getElementById('user-role').classList.replace('text-emerald-400', 'text-amber-500');
                     }
                 },
-                openPanel: async () => {
-                    if (!app.state.isAdmin) return;
-                    document.getElementById('modal-admin').classList.replace('hidden', 'flex');
-                    app.admin.loadData();
+                openPanel: () => {
+                    const modal = document.getElementById('modal-admin');
+                    const content = document.getElementById('modal-admin-content');
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    
+                    // Animazione entrata
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        content.classList.remove('scale-95');
+                        content.classList.add('scale-100');
+                    }, 10);
+
+                    app.admin.renderData();
                 },
                 closePanel: () => {
-                    document.getElementById('modal-admin').classList.replace('flex', 'hidden');
-                },
-                loadData: () => {
-                    // Simulazione Dati (in produzione si interroga Firestore)
-                    document.getElementById('adm-total-users').textContent = "142";
-                    document.getElementById('adm-total-deals').textContent = "89";
+                    const modal = document.getElementById('modal-admin');
+                    const content = document.getElementById('modal-admin-content');
                     
+                    modal.classList.add('opacity-0');
+                    content.classList.remove('scale-100');
+                    content.classList.add('scale-95');
+                    
+                    setTimeout(() => {
+                        modal.classList.remove('flex');
+                        modal.classList.add('hidden');
+                    }, 300);
+                },
+                renderData: () => {
+                    // Dati simulati per la tabella
                     const tbody = document.getElementById('adm-users-list');
                     tbody.innerHTML = `
-                        <tr class="border-b border-slate-800 hover:bg-slate-900">
-                            <td class="p-4 font-bold text-white"><i class="fa-brands fa-google mr-2"></i> ${app.state.user.displayName} (Tu)</td>
+                        <tr class="admin-row border-b border-slate-800 transition-colors">
+                            <td class="p-4 font-bold text-white flex items-center gap-2"><img src="${app.state.user.photoURL}" class="w-6 h-6 rounded-full"> ${app.state.user.displayName} (Tu)</td>
                             <td class="p-4">${app.state.user.email}</td>
+                            <td class="p-4 text-xs font-mono">Oggi</td>
                             <td class="p-4"><span class="admin-badge">ADMIN</span></td>
-                            <td class="p-4 text-right"><button class="text-slate-500 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button></td>
+                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
                         </tr>
-                        <tr class="border-b border-slate-800 hover:bg-slate-900">
-                            <td class="p-4 text-slate-300">Mario Rossi</td>
-                            <td class="p-4">mario.rossi@example.com</td>
-                            <td class="p-4"><span class="text-xs font-bold text-emerald-400">PRO</span></td>
-                            <td class="p-4 text-right"><button class="text-slate-500 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button></td>
+                        <tr class="admin-row border-b border-slate-800 transition-colors">
+                            <td class="p-4 font-bold text-slate-300">Giuseppe Verdi</td>
+                            <td class="p-4">g.verdi@mail.com</td>
+                            <td class="p-4 text-xs font-mono">2023-12-10</td>
+                            <td class="p-4"><span class="text-[10px] font-bold text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded">PRO</span></td>
+                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
                         </tr>
-                        <tr class="border-b border-slate-800 hover:bg-slate-900">
-                            <td class="p-4 text-slate-300">Luigi Verdi</td>
-                            <td class="p-4">luigi.v@example.com</td>
-                            <td class="p-4"><span class="text-xs font-bold text-slate-500">FREE</span></td>
-                            <td class="p-4 text-right"><button class="text-slate-500 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button></td>
+                        <tr class="admin-row border-b border-slate-800 transition-colors">
+                            <td class="p-4 font-bold text-slate-300">Maria Bianchi</td>
+                            <td class="p-4">maria.b@test.it</td>
+                            <td class="p-4 text-xs font-mono">2023-11-05</td>
+                            <td class="p-4"><span class="text-[10px] font-bold text-slate-500 border border-slate-700 px-2 py-0.5 rounded">FREE</span></td>
+                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
                         </tr>
                     `;
                 }
             },
 
-            // --- MODULO CALCOLO (Core Business) ---
+            // --- CALC ENGINE (Logic: Capex + French Amortization) ---
             calc: {
                 getVal: (id) => parseFloat(document.getElementById(id).value) || 0,
                 format: (n) => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n),
                 update: () => {
                     const c = app.calc;
-                    // Input
+                    // Inputs
                     const P = c.getVal('price');
                     const R = c.getVal('reno');
                     const Notaio = c.getVal('closing');
@@ -447,15 +534,18 @@
                     const Years = c.getVal('years');
                     const Rent = c.getVal('rent');
 
-                    // LOGICA CAPEX: Mutuo su (Prezzo + Ristrutturazione)
-                    const BaseImponibile = P + R; 
-                    const LoanAmount = BaseImponibile * Ltv;
+                    // 1. Base Imponibile (Prezzo + Ristrutturazione)
+                    const BaseImponibile = P + R;
                     
-                    // Equity = Costo Totale (P+R+Notaio) - Mutuo
+                    // 2. Mutuo Erogato
+                    const LoanAmount = BaseImponibile * Ltv;
+
+                    // 3. Equity (Cash Out) = Costo Totale Progetto - Mutuo
+                    // Costo Totale = Acquisto + Lavori + Spese
                     const TotalCost = BaseImponibile + Notaio;
                     const Equity = TotalCost - LoanAmount;
 
-                    // Rata
+                    // 4. Rata (Francese)
                     let MonthlyPmt = 0;
                     if (Years > 0) {
                         const i = Rate / 12;
@@ -464,69 +554,79 @@
                         else MonthlyPmt = LoanAmount / n;
                     }
 
+                    // 5. Outputs
                     const TotalInterest = (MonthlyPmt * Years * 12) - LoanAmount;
                     const CashFlow = Rent - MonthlyPmt;
 
-                    // Update UI
+                    // Update DOM
                     document.getElementById('out-payment').textContent = c.format(MonthlyPmt);
                     document.getElementById('out-cashflow').textContent = (CashFlow > 0 ? "+" : "") + c.format(CashFlow);
                     document.getElementById('out-equity').textContent = c.format(Equity);
                     document.getElementById('out-interest').textContent = c.format(TotalInterest);
 
-                    // Colore dinamico Cashflow
+                    // Styling Cashflow
                     const cfEl = document.getElementById('out-cashflow');
-                    if (CashFlow >= 0) cfEl.classList.remove('text-red-500'), cfEl.classList.add('text-white');
-                    else cfEl.classList.add('text-red-500'), cfEl.classList.remove('text-white');
+                    if(CashFlow >= 0) {
+                        cfEl.classList.remove('text-red-500');
+                        cfEl.classList.add('text-white');
+                    } else {
+                        cfEl.classList.add('text-red-500');
+                        cfEl.classList.remove('text-white');
+                    }
                 }
             },
 
-            // --- MODULO CONTATTI ---
+            // --- CONTACT MODULE ---
             contact: {
                 submit: (e) => {
                     e.preventDefault();
                     const btn = document.getElementById('btn-contact-submit');
-                    const originalContent = btn.innerHTML;
+                    const originalHtml = btn.innerHTML;
                     
                     // Loading State
                     btn.disabled = true;
-                    btn.innerHTML = '<div class="loader"></div>';
+                    btn.innerHTML = '<span class="loader"></span> Invio in corso...';
+                    btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-                    // Simulazione invio network (2 secondi)
+                    // Simula invio API
                     setTimeout(() => {
+                        app.ui.toast("Messaggio inviato al team!", "success");
+                        btn.innerHTML = originalHtml;
                         btn.disabled = false;
-                        btn.innerHTML = originalContent;
-                        app.ui.toast("Messaggio inviato con successo!", "success");
+                        btn.classList.remove('opacity-75', 'cursor-not-allowed');
                         document.getElementById('contact-form').reset();
-                    }, 2000);
+                    }, 1500);
                 }
             },
 
-            // --- MODULO DATI ---
             data: {
-                saveProject: async () => {
-                    if (!app.state.user) return app.ui.toast("Devi accedere per salvare", "error");
-                    // Qui andrebbe la logica Firestore .add()
-                    // Simuliamo successo
-                    app.ui.toast("Progetto salvato nel cloud", "success");
+                saveProject: () => {
+                    if(!app.state.user) return app.ui.toast("Accedi per salvare il progetto", "error");
+                    app.ui.toast("Progetto salvato in cloud", "success");
                 },
                 loadDeals: () => {
-                    if (!app.state.user) return app.ui.toast("Accedi per vedere i tuoi deal", "error");
-                    app.ui.toast("Caricamento deal in corso...", "success");
+                    if(!app.state.user) return app.ui.toast("Accedi per vedere l'archivio", "error");
+                    app.ui.toast("Sincronizzazione archivio...", "success");
                 }
             },
 
-            // --- UI HELPERS ---
             ui: {
-                toast: (msg, type = 'success') => {
+                toast: (msg, type) => {
                     const t = document.getElementById('toast');
-                    t.textContent = msg;
-                    t.className = type === 'success' ? 'success show' : 'error show';
-                    setTimeout(() => { t.className = t.className.replace('show', ''); }, 3000);
+                    const tMsg = document.getElementById('toast-msg');
+                    const icon = t.querySelector('i');
+                    
+                    tMsg.textContent = msg;
+                    t.className = type === 'success' ? 'success' : 'error';
+                    icon.className = type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation';
+                    
+                    t.classList.add('show');
+                    setTimeout(() => t.classList.remove('show'), 3500);
                 }
             }
         };
 
-        // Avvio Applicazione
+        // Init App
         document.addEventListener('DOMContentLoaded', app.init);
 
     </script>
