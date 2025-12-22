@@ -3,632 +3,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestPro Suite | Analisi Immobiliare Pro</title>
+    <meta name="description" content="InvestPro Suite | Modello analitico professionale con Tax Shield e analisi flussi di cassa 2025">
+    <title>InvestPro | Suite Analisi Immobiliare Avanzata</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
     <style>
         :root {
-            --bg-body: #020617; --bg-card: #0f172a; 
-            --primary: #10b981; --accent: #3b82f6; --danger: #ef4444;
+            --bg-body: #0f172a; --bg-card: #1e293b; --bg-input: #020617;
+            --primary: #10b981; --primary-hover: #059669; 
+            --danger: #ef4444; --warning: #f59e0b; --info: #3b82f6;
+            --purple: #8b5cf6;
             --text-main: #f8fafc; --text-muted: #94a3b8;
-            --border: rgba(148, 163, 184, 0.15);
+            --border: #334155; --radius: 12px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --font-main: 'Inter', sans-serif;
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); scroll-behavior: smooth; overflow-x: hidden; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        
-        /* UI COMPONENTS */
-        .glass-panel { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid var(--border); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
-        .btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn:active { transform: scale(0.98); }
-        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-        
-        /* CARDS & SECTIONS */
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .review-card { background: var(--bg-card); border: 1px solid var(--border); transition: transform 0.3s, border-color 0.3s; }
-        .review-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        body { background-color: var(--bg-body); color: var(--text-main); font-family: var(--font-main); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.6; }
 
-        /* LOADING & TOAST */
-        .loader { border: 2px solid rgba(255,255,255,0.1); border-top: 2px solid #fff; border-radius: 50%; width: 16px; height: 16px; animation: spin 0.8s linear infinite; display: inline-block; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #333; color: white; padding: 12px 24px; border-radius: 50px; opacity: 0; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); z-index: 9999; font-weight: 600; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; }
-        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        #toast.success { background: var(--primary); color: #020617; }
-        #toast.error { background: var(--danger); color: white; }
+        header { background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid var(--border); padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 0.6rem; letter-spacing: -0.04em; }
+        .logo span { color: white; }
 
-        /* ADMIN */
-        .admin-row:hover { background-color: rgba(255,255,255,0.02); }
+        .toolbar { max-width: 1400px; margin: 2rem auto 0; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .project-input { background: transparent; border: none; border-bottom: 2px solid var(--border); color: white; font-size: 1.6rem; font-weight: 700; width: 100%; max-width: 450px; padding: 0.5rem 0; }
+
+        .btn { padding: 0.7rem 1.4rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.25s; }
+        .btn:hover { background: var(--border); transform: translateY(-2px); }
+        .btn-primary { background: var(--primary); border-color: var(--primary); color: #000; }
+        .btn-info { background: rgba(59, 130, 246, 0.15); border-color: var(--info); color: var(--info); }
+        .btn-purple { background: rgba(139, 92, 246, 0.15); border-color: var(--purple); color: var(--purple); }
+
+        main { padding: 2rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 2.5rem; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; position: relative; box-shadow: var(--shadow); }
+        .card-header { margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 15px; }
+        .step-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: black; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+        input { background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 0.9rem; border-radius: 8px; font-size: 1rem; transition: all 0.3s; }
+        input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); }
+
+        .kpi-container { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .kpi-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
+        .kpi-value { font-size: 1.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+        .kpi-shield { border-color: var(--purple); background: rgba(139, 92, 246, 0.08); }
+        .kpi-shield .kpi-value { color: var(--purple); }
+
+        #geo-results { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 0 0 10px 10px; z-index: 150; max-height: 280px; overflow-y: auto; }
+        .dropdown-item { padding: 1rem; cursor: pointer; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        .dropdown-item:hover { background: var(--primary); color: black; font-weight: 600; }
+
+        .locked-blur { filter: blur(6px); pointer-events: none; opacity: 0.3; transition: all 0.4s; }
+        .overlay-lock { position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem; text-align: center; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); border-radius: 14px; }
+        .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
+        .is-unlocked .overlay-lock { display: none; }
+
+        .reviews-section, .contact-section { margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+        .review-card { background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); }
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+        .full-col { grid-column: span 2; }
+
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); z-index: 1000; display: none; align-items: center; justify-content: center; }
+        .modal-backdrop.active { display: flex; }
+        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 650px; border-radius: 20px; padding: 2.5rem; }
+
+        #loading-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.95); z-index: 9999; display: none; flex-direction: column; justify-content: center; align-items: center; }
+        #loading-overlay.active { display: flex; }
+        .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes flash { 0% { background-color: var(--primary); color: black; } 100% { background-color: var(--bg-input); color: white; } }
+        .input-updated { animation: flash 1.2s ease-out; }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body>
 
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-700/30 h-20">
-        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center text-slate-900 font-black text-xl shadow-lg shadow-emerald-500/20">IP</div>
-                <div>
-                    <span class="text-xl font-bold tracking-tight text-white block leading-none">Invest<span class="text-emerald-400">Pro</span></span>
-                    <span class="text-[9px] text-slate-400 uppercase tracking-[0.2em] font-bold">Suite v4.1 Verified</span>
+    <div id="loading-overlay"><div class="spinner"></div><p style="margin-top:15px;">Validazione Modello Analitico...</p></div>
+    <div id="toast-container"></div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-chart-pie"></i> <span>InvestPro</span> Platinum</div>
+            <div class="user-menu">
+                <div id="auth-guest"><button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accedi</button></div>
+                <div id="auth-user" class="hidden">
+                    <span id="badge-plan" style="padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 800; background: var(--border);">GUEST</span>
+                    <span id="user-email-display" style="font-size: 0.9rem; margin: 0 15px;"></span>
+                    <button class="btn" onclick="app.auth.logout()"><i class="fa-solid fa-power-off"></i></button>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <section class="toolbar">
+        <input type="text" id="project-name" class="project-input" value="Analisi Avanzata 2025" placeholder="Nome Progetto">
+        <div style="display: flex; gap: 1rem;">
+            <button class="btn btn-info" onclick="app.report.generate()"><i class="fa-solid fa-file-pdf"></i> Report</button>
+            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Deal</button>
+            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva</button>
+        </div>
+    </section>
+
+    <main>
+        <div class="dashboard-grid">
             
-            <div class="flex items-center gap-4">
-                <button id="btn-admin-panel" onclick="app.admin.openPanel()" class="hidden px-4 py-2 bg-amber-500/10 text-amber-500 border border-amber-500/30 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-500 hover:text-black transition-all">
-                    <i class="fa-solid fa-lock mr-2"></i>Admin
-                </button>
-
-                <div id="auth-section">
-                    <button onclick="app.auth.login()" class="btn px-5 py-2 bg-white text-slate-900 rounded-lg font-bold text-sm shadow-lg hover:bg-slate-200 transition-colors flex items-center gap-2">
-                        <i class="fa-brands fa-google"></i> Accedi
-                    </button>
-                </div>
+            <div class="card">
+                <div class="card-header"><div class="step-circle">A</div><h3>Conto Economico & Fisco</h3></div>
                 
-                <div id="user-profile" class="hidden flex items-center gap-3 bg-slate-800/80 pr-4 py-1.5 pl-1.5 rounded-full border border-slate-700">
-                    <img id="user-avatar" src="" class="w-8 h-8 rounded-full border border-slate-600 bg-slate-700">
-                    <div class="flex flex-col">
-                        <span id="user-name" class="text-xs font-bold text-white leading-none mb-0.5">User</span>
-                        <span id="user-role" class="text-[8px] text-emerald-400 uppercase font-black leading-none">FREE PLAN</span>
-                    </div>
-                    <button onclick="app.auth.logout()" class="ml-3 text-slate-400 hover:text-red-400 transition-colors"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
+                    <label>Indirizzo Immobile</label>
+                    <input type="text" id="geo-search" placeholder="Cerca città per classificazione fiscale..." autocomplete="off">
+                    <div id="geo-results" class="hidden"></div>
                 </div>
-            </div>
-        </div>
-    </nav>
 
-    <main class="flex-grow pt-28 pb-20 w-full">
-        
-        <div class="max-w-7xl mx-auto px-6 space-y-12">
-
-            <div class="flex flex-col md:flex-row justify-between items-end border-b border-slate-800 pb-6 gap-4">
-                <div class="w-full max-w-xl">
-                    <label class="text-[10px] uppercase font-bold text-slate-500 mb-1 block tracking-wider">Nome Progetto Attivo</label>
-                    <input type="text" id="project-name" value="Operazione Milano Centro" class="bg-transparent text-3xl font-black text-white w-full border-none focus:ring-0 p-0 placeholder-slate-700 focus:outline-none">
+                <div class="input-grid">
+                    <div class="form-group"><label>ADR (€/Notte)</label><input type="number" id="adr" value="140"></div>
+                    <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="75"></div>
                 </div>
-                <div class="flex gap-3">
-                    <button onclick="app.data.loadDeals()" class="btn px-5 py-3 bg-slate-800 text-slate-300 rounded-xl font-bold text-xs uppercase tracking-wide border border-slate-700 hover:border-emerald-500 hover:text-white">
-                        <i class="fa-solid fa-folder-open mr-2"></i> Archivio
-                    </button>
-                    <button onclick="app.data.saveProject()" class="btn px-6 py-3 bg-emerald-500 text-slate-900 rounded-xl font-black text-xs uppercase tracking-wide shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 hover:shadow-emerald-500/40">
-                        <i class="fa-solid fa-floppy-disk mr-2"></i> Salva
-                    </button>
+                <div class="input-grid">
+                    <div class="form-group"><label>Comm. OTA (%)</label><input type="number" id="portal-comm" value="18"></div>
+                    <div class="form-group"><label>Aliquota Tasse (%)</label><input type="number" id="tax-rate" value="21"></div>
                 </div>
+                <div class="input-grid">
+                    <div class="form-group"><label>Costi Notte (€)</label><input type="number" id="var-costs" value="20"></div>
+                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4"></div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;"><label>Costi Fissi Mese (€)</label><input type="number" id="fixed-costs" value="650"></div>
+                
+                <div class="kpi-container"><span class="kpi-title">MOL Mensile</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
+                
+                <div style="margin-top: 1.5rem; height: 260px; width: 100%;"><canvas id="profitChart"></canvas></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500 group-hover:w-1.5 transition-all"></div>
-                        
-                        <div class="flex items-center gap-3 mb-8">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400"><i class="fa-solid fa-sliders"></i></div>
-                            <h3 class="text-lg font-bold text-white">Parametri Economici</h3>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Prezzo Acquisto (€)</label>
-                                <input type="number" id="price" value="250000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Ristrutturazione (€)</label>
-                                <input type="number" id="reno" value="15000" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all">
-                            </div>
-                        </div>
-
-                        <div class="p-6 bg-slate-950/30 rounded-2xl border border-slate-800/50 mb-6">
-                            <h4 class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-4 border-b border-blue-500/20 pb-2 inline-block">Configurazione Mutuo</h4>
-                            <div class="grid grid-cols-3 gap-4">
-                                <div>
-                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">LTV (%)</label>
-                                    <input type="number" id="ltv" value="80" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Tasso (%)</label>
-                                    <input type="number" id="rate" value="3.5" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-[9px] font-bold text-slate-500 uppercase mb-1">Anni</label>
-                                    <input type="number" id="years" value="20" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white font-mono text-sm focus:border-blue-500 focus:outline-none">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Notaio & Spese (€)</label>
-                                <input type="number" id="closing" value="2500" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-4 text-white font-mono text-lg focus:border-emerald-500 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Affitto Stimato (€)</label>
-                                <input type="number" id="rent" value="1500" class="w-full bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4 text-emerald-400 font-mono text-lg font-bold focus:border-emerald-500 focus:outline-none">
-                            </div>
-                        </div>
-                    </div>
+            <div class="card" id="card-pro">
+                <div class="overlay-lock">
+                    <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--purple); margin-bottom: 1.5rem;"></i>
+                    <h3>Modulo Analitico PRO</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Sblocca il calcolo del Tax Shield, Leva Finanziaria e Analisi di Ammortamento.</p>
+                    <button class="btn btn-primary" onclick="app.payment.start()">Attiva Platinum (9,90€)</button>
                 </div>
-
-                <div class="lg:col-span-5 space-y-6">
+                
+                <div class="card-header"><div class="step-circle" style="background: white; color: black;">B</div><h3>Finanza & Tax Shield</h3></div>
+                
+                <div class="locked-blur">
+                    <div class="form-group" style="margin-bottom: 1.25rem;"><label>Prezzo Acquisto (€)</label><input type="number" id="price" value="300000"></div>
+                    <div class="input-grid">
+                        <div class="form-group"><label>Aliquota Marginali (%)</label><input type="number" id="marginal-rate" value="35"></div>
+                        <div class="form-group"><label>Ammortamento (%)</label><input type="number" id="depreciation-rate" value="3" step="0.1"></div>
+                    </div>
+                    <div class="input-grid">
+                        <div class="form-group"><label>LTV Mutuo (%)</label><input type="number" id="ltv" value="80"></div>
+                        <div class="form-group"><label>Tasso (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;"><label>Durata (Anni)</label><input type="number" id="years" value="20"></div>
                     
-                    <div class="glass-panel p-8 rounded-3xl border-slate-700 relative flex flex-col justify-between h-full">
-                        <div>
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Rata Mensile (Mutuo Capex)</p>
-                            <div class="flex items-baseline gap-2 mb-8 border-b border-slate-800 pb-8">
-                                <span id="out-payment" class="text-6xl font-black text-white tracking-tighter">€ 0</span>
-                                <span class="text-sm text-slate-500 font-medium">/mese</span>
-                            </div>
+                    <div class="kpi-container kpi-shield">
+                        <span class="kpi-title">Scudo Fiscale (Risparmio Anno)</span>
+                        <span class="kpi-value" id="res-tax-shield">-- €</span>
+                    </div>
+                    <div class="kpi-container" style="background: var(--primary); border: none;">
+                        <span class="kpi-title" style="color: black;">Cash Flow Netto Finale</span>
+                        <span class="kpi-value" id="res-cashflow" style="color: black;">-- €</span>
+                    </div>
 
-                            <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/50 to-slate-900 border border-emerald-500/30 mb-6 shadow-xl shadow-emerald-900/20">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-1">Cash Flow Netto</p>
-                                        <p id="out-cashflow" class="text-3xl font-black text-white font-mono">€ 0</p>
-                                    </div>
-                                    <div class="h-12 w-12 bg-emerald-500 rounded-xl flex items-center justify-center text-slate-900 text-xl shadow-lg shadow-emerald-500/40"><i class="fa-solid fa-wallet"></i></div>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
-                                    <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Equity (Cash)</span>
-                                    <span id="out-equity" class="font-mono font-bold text-white text-lg">€ 0</span>
-                                </div>
-                                <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
-                                    <span class="block text-[10px] font-bold text-red-400 uppercase mb-1">Interessi Tot.</span>
-                                    <span id="out-interest" class="font-mono font-bold text-white text-lg">€ 0</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full mt-6 py-4 bg-white text-slate-900 rounded-xl font-black text-xs uppercase tracking-[0.2em] border border-transparent shadow-xl hover:bg-slate-200 transition-all transform active:scale-95" onclick="app.ui.toast('Export PDF non configurato nella demo', 'error')">
-                            Scarica Analisi
+                    <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                        <button class="btn btn-purple" style="width: 100%; justify-content: center;" onclick="app.calc.showAmortization()">
+                            <i class="fa-solid fa-file-invoice-dollar"></i> Analisi Dettagliata Flussi
                         </button>
                     </div>
                 </div>
             </div>
-
-            <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-12"></div>
-
-            <section id="reviews" class="w-full scroll-mt-24">
-                <div class="flex items-center justify-center gap-4 mb-10">
-                    <div class="h-px bg-slate-800 w-12"></div>
-                    <h2 class="text-sm font-black text-slate-400 uppercase tracking-[0.3em]">Cosa dicono i Pro</h2>
-                    <div class="h-px bg-slate-800 w-12"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="review-card p-8 rounded-2xl">
-                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"L'unico calcolatore che gestisce correttamente il CAPEX nel mutuo. Essenziale per le mie operazioni di flipping."</p>
-                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">MR</div>
-                            <div>
-                                <p class="text-xs font-bold text-white">Marco Rossi</p>
-                                <p class="text-[10px] text-slate-500 uppercase font-bold">Investitore Immobiliare</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-card p-8 rounded-2xl">
-                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"L'interfaccia è pulita e il pannello admin mi permette di gestire tutti i miei studenti. Ottimo lavoro."</p>
-                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">GL</div>
-                            <div>
-                                <p class="text-xs font-bold text-white">Giulia Leoni</p>
-                                <p class="text-[10px] text-slate-500 uppercase font-bold">Property Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-card p-8 rounded-2xl">
-                        <div class="flex text-amber-400 text-xs mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">"Precisione matematica e velocità. Il calcolo del Cash Flow netto è finalmente realistico."</p>
-                        <div class="flex items-center gap-3 border-t border-slate-800 pt-4">
-                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-xs font-bold text-white">DV</div>
-                            <div>
-                                <p class="text-xs font-bold text-white">Davide V.</p>
-                                <p class="text-[10px] text-slate-500 uppercase font-bold">Agente Immobiliare</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="max-w-3xl mx-auto w-full pt-16">
-                <div class="glass-panel p-1 md:p-12 rounded-[32px] text-center border-slate-700/50 shadow-2xl">
-                    <span class="inline-block p-3 rounded-xl bg-blue-500/10 text-blue-400 mb-4"><i class="fa-regular fa-envelope text-2xl"></i></span>
-                    <h2 class="text-3xl font-black text-white mb-3">Supporto Premium</h2>
-                    <p class="text-slate-400 text-sm mb-10 max-w-lg mx-auto">Hai dubbi sui calcoli o vuoi richiedere una feature personalizzata? Il nostro team di ingegneri risponde entro 24h.</p>
-                    
-                    <form id="contact-form" onsubmit="app.contact.submit(event)" class="space-y-5 text-left max-w-lg mx-auto">
-                        <div class="grid grid-cols-2 gap-5">
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Nome</label>
-                                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800" placeholder="Mario Rossi">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Email</label>
-                                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800" placeholder="mario@email.com">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Messaggio</label>
-                            <textarea required rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors placeholder-slate-800 resize-none" placeholder="Scrivi qui la tua richiesta..."></textarea>
-                        </div>
-                        <button type="submit" id="btn-contact-submit" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold text-sm uppercase tracking-wide hover:bg-blue-500 transition-all flex justify-center items-center gap-2 shadow-lg shadow-blue-600/20">
-                            <span>Invia Messaggio</span>
-                        </button>
-                    </form>
-                </div>
-            </section>
-
         </div>
+
+        <section class="reviews-section">
+            <h2 style="font-weight: 800; letter-spacing: -0.02em;">Analisi validate da Esperti</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>"Il Tax Shield è la differenza tra un amatore e un professionista. InvestPro lo rende finalmente accessibile."</p>
+                    <div style="margin-top:1rem; font-weight:700;">Dott. Andrea G., Commercialista</div>
+                </div>
+                <div class="review-card">
+                    <p>"L'integrità del modello fiscale 2025 mi permette di presentare deal in banca con una solidità senza precedenti."</p>
+                    <div style="margin-top:1rem; font-weight:700;">Giuseppe V., Sviluppatore Immobiliare</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 style="font-weight: 800;">Richiedi Consulenza Tecnica</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
+                <div class="form-group"><label>Nome</label><input type="text" id="contact-name" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="contact-email" required></div>
+                <div class="full-col"><textarea id="contact-msg" style="width:100%; background:var(--bg-input); border:1px solid var(--border); color:white; padding:1rem; border-radius:8px; min-height:100px;" placeholder="Quale aspetto dell'analisi vorresti approfondire?"></textarea></div>
+                <div class="full-col"><button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.2rem;">Invia Richiesta</button></div>
+            </form>
+        </section>
     </main>
 
-    <footer class="border-t border-slate-800 bg-slate-950 py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2 opacity-50">
-                <div class="w-6 h-6 bg-slate-700 rounded flex items-center justify-center text-xs font-bold text-black">IP</div>
-                <span class="text-xs font-bold text-slate-500">InvestPro &copy; 2025</span>
-            </div>
-            <div class="flex gap-6 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
-                <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                <a href="#" class="hover:text-white transition-colors">Termini</a>
-                <a href="#" class="hover:text-white transition-colors">Cookies</a>
-            </div>
-        </div>
-    </footer>
-
-    <div id="modal-admin" class="fixed inset-0 bg-black/90 hidden z-[100] items-center justify-center p-4 backdrop-blur-md opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-900 border border-slate-700 w-full max-w-5xl h-[85vh] rounded-3xl flex flex-col overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modal-admin-content">
-            <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
-                <div>
-                    <h2 class="text-xl font-black text-white flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-amber-500 text-black flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></span>
-                        Pannello Amministrazione
-                    </h2>
-                </div>
-                <button onclick="app.admin.closePanel()" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-500 transition-all">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            
-            <div class="p-8 overflow-y-auto flex-grow bg-slate-900">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Utenti Totali</p>
-                            <p class="text-3xl font-black text-white" id="adm-total-users">1,240</p>
-                        </div>
-                        <i class="fa-solid fa-users text-slate-800 text-4xl"></i>
-                    </div>
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Deal Salvati</p>
-                            <p class="text-3xl font-black text-emerald-400" id="adm-total-deals">892</p>
-                        </div>
-                        <i class="fa-solid fa-database text-slate-800 text-4xl"></i>
-                    </div>
-                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Stato Sistema</p>
-                            <p class="text-lg font-black text-emerald-500 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ONLINE</p>
-                        </div>
-                        <i class="fa-solid fa-server text-slate-800 text-4xl"></i>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xs font-bold text-white mb-4 uppercase tracking-widest flex items-center gap-2"><i class="fa-solid fa-list"></i> Utenti Recenti</h3>
-                    <div class="w-full bg-slate-950 rounded-xl border border-slate-800 overflow-hidden">
-                        <table class="w-full text-left text-sm text-slate-400">
-                            <thead class="bg-slate-900/50 text-[10px] uppercase font-bold text-slate-500 border-b border-slate-800">
-                                <tr>
-                                    <th class="p-4">Utente</th>
-                                    <th class="p-4">Email</th>
-                                    <th class="p-4">Data Iscrizione</th>
-                                    <th class="p-4">Ruolo</th>
-                                    <th class="p-4 text-right">Azioni</th>
-                                </tr>
-                            </thead>
-                            <tbody id="adm-users-list">
-                                </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div id="modal-login" class="modal-backdrop">
+        <div class="modal-panel" style="text-align: center;">
+            <h2 style="margin-bottom: 1.5rem;">Accesso InvestPro</h2>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;" onclick="app.auth.loginGoogle()">Google Login</button>
+            <button class="btn btn-danger" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Chiudi</button>
         </div>
     </div>
 
-    <div id="toast">
-        <i class="fa-solid fa-circle-check"></i>
-        <span id="toast-msg">Messaggio inviato</span>
+    <div id="modal-deals" class="modal-backdrop">
+        <div class="modal-panel">
+            <h2>Analisi Archiviate</h2>
+            <div id="deals-container" style="margin-top: 1.5rem; max-height: 400px; overflow-y: auto;"></div>
+            <button class="btn" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="app.ui.closeModal('modal-deals')">Chiudi</button>
+        </div>
+    </div>
+
+    <div id="modal-amortization" class="modal-backdrop">
+        <div class="modal-panel" style="max-width: 850px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+                <h2>Proiezione Flussi & Tax Shield Annuale</h2>
+                <button class="btn" onclick="app.ui.closeModal('modal-amortization')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div style="overflow-y: auto; max-height: 60vh;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead><tr style="text-align: right; border-bottom: 2px solid var(--border); color: var(--text-muted);"><th style="text-align: left; padding: 10px;">Anno</th><th>Scudo Fiscale</th><th>Quota Int.</th><th>Residuo</th></tr></thead>
+                    <tbody id="amortization-body"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
-        /**
-         * INVESTPRO CORE ENGINE v4.1
-         */
-
         const CONFIG = {
-            // Sostituisci con la tua email per testare il pannello admin
-            adminEmail: "admin@investpro.com",
-            
-            // Configurazione Firebase (Placeholder - Inserisci le tue chiavi reali per il deploy)
             firebase: {
-                apiKey: "API_KEY_PLACEHOLDER",
-                authDomain: "investpro.firebaseapp.com",
-                projectId: "investpro",
-            }
+                apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0",
+                authDomain: "analisimmobiliare-3b4a7.firebaseapp.com",
+                projectId: "analisimmobiliare-3b4a7",
+                storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app",
+                messagingSenderId: "29979040948",
+                appId: "1:29979040948:web:597ea331e06567d8d50be1"
+            },
+            stripeLink: "https://buy.stripe.com/test_4gM8wP85i5I0flc0PygjC01"
         };
 
+        const state = { user: null, isPro: false, currentDocId: null, chartInstance: null };
+
         const app = {
-            state: {
-                user: null,
-                isAdmin: false,
-                isFirebaseReady: false,
-                inputs: ['price', 'reno', 'closing', 'ltv', 'rate', 'years', 'rent']
-            },
-
             init: () => {
-                // Tenta inizializzazione Firebase
-                try {
-                    if (firebase && CONFIG.firebase.apiKey !== "API_KEY_PLACEHOLDER") {
-                        firebase.initializeApp(CONFIG.firebase);
-                        app.state.isFirebaseReady = true;
-                        
-                        // Auth Listener Reale
-                        firebase.auth().onAuthStateChanged(user => {
-                            app.state.user = user;
-                            app.auth.updateUI();
-                            if(user) app.admin.check();
-                        });
-                    } else {
-                        console.warn("Firebase Config mancante. Modalità UI Demo attiva.");
-                    }
-                } catch (e) {
-                    console.error("Errore init Firebase:", e);
-                }
-
-                // Bind inputs per calcolo live
-                app.state.inputs.forEach(id => {
-                    document.getElementById(id).addEventListener('input', app.calc.update);
-                });
-
-                // Primo calcolo
+                if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
+                app.services.auth = firebase.auth();
+                app.services.db = firebase.firestore();
+                app.auth.init();
+                app.chart.init(); 
                 app.calc.update();
+                document.getElementById('geo-search').addEventListener('input', (e) => app.geo.debouncedSearch(e.target.value));
+                document.querySelectorAll('input[type="number"]').forEach(i => i.addEventListener('input', app.calc.debouncedUpdate));
             },
 
-            // --- AUTHENTICATION (Gestisce Demo e Reale) ---
-            auth: {
-                login: async () => {
-                    if (app.state.isFirebaseReady) {
-                        const provider = new firebase.auth.GoogleAuthProvider();
-                        try {
-                            await firebase.auth().signInWithPopup(provider);
-                            app.ui.toast("Accesso effettuato", "success");
-                        } catch (e) { app.ui.toast("Errore Login: " + e.message, "error"); }
-                    } else {
-                        // FALLBACK DEMO LOGIN (Se non hai configurato Firebase)
-                        app.state.user = {
-                            displayName: "Demo User",
-                            email: CONFIG.adminEmail, // Login automatico come Admin per demo
-                            photoURL: "https://ui-avatars.com/api/?name=Demo+User&background=10b981&color=fff"
-                        };
-                        app.auth.updateUI();
-                        app.admin.check();
-                        app.ui.toast("Modalità Demo: Accesso Admin Simulato", "success");
-                    }
+            services: { auth: null, db: null },
+
+            ui: {
+                toggleElement: (id, show) => { const el = document.getElementById(id); if(el) el.classList.toggle('hidden', !show); },
+                openModal: (id) => document.getElementById(id).classList.add('active'),
+                closeModal: (id) => document.getElementById(id).classList.remove('active'),
+                setLoading: (show) => document.getElementById('loading-overlay').classList.toggle('active', show),
+                showToast: (msg, type = 'info') => {
+                    const t = document.createElement('div');
+                    t.className = `toast show ${type}`;
+                    t.style.cssText = `position:fixed; bottom:25px; right:25px; background:var(--bg-card); color:white; padding:1.2rem; border-left:5px solid ${type==='error'?'var(--danger)':'var(--primary)'}; border-radius:8px; box-shadow:0 10px 20px rgba(0,0,0,0.5); z-index:10000; font-weight:600;`;
+                    t.textContent = msg;
+                    document.getElementById('toast-container').appendChild(t);
+                    setTimeout(() => t.remove(), 3500);
                 },
-                logout: async () => {
-                    if (app.state.isFirebaseReady) await firebase.auth().signOut();
-                    app.state.user = null;
-                    app.state.isAdmin = false;
-                    window.location.reload();
+                updateAuthUI: () => {
+                    const u = state.user;
+                    document.getElementById('auth-guest').classList.toggle('hidden', !!u);
+                    document.getElementById('auth-user').classList.toggle('hidden', !u);
+                    if(u) document.getElementById('user-email-display').textContent = u.email;
                 },
-                updateUI: () => {
-                    const u = app.state.user;
-                    const authSec = document.getElementById('auth-section');
-                    const profileSec = document.getElementById('user-profile');
-                    
-                    if (u) {
-                        authSec.classList.add('hidden');
-                        profileSec.classList.remove('hidden');
-                        profileSec.classList.add('flex');
-                        document.getElementById('user-name').textContent = u.displayName || "Utente";
-                        document.getElementById('user-avatar').src = u.photoURL || "https://ui-avatars.com/api/?name=U";
-                    } else {
-                        authSec.classList.remove('hidden');
-                        profileSec.classList.add('hidden');
-                        profileSec.classList.remove('flex');
-                    }
+                setProStatus: (active) => {
+                    state.isPro = active;
+                    const b = document.getElementById('badge-plan');
+                    b.textContent = active ? "PLATINUM" : "GUEST";
+                    b.style.background = active ? "var(--purple)" : "var(--border)";
+                    b.style.color = active ? "white" : "var(--text-muted)";
+                    document.getElementById('card-pro').classList.toggle('is-unlocked', active);
                 }
             },
 
-            // --- ADMIN MODULE ---
-            admin: {
-                check: () => {
-                    if (app.state.user && app.state.user.email === CONFIG.adminEmail) {
-                        app.state.isAdmin = true;
-                        document.getElementById('btn-admin-panel').classList.remove('hidden');
-                        document.getElementById('user-role').textContent = "ADMIN";
-                        document.getElementById('user-role').classList.replace('text-emerald-400', 'text-amber-500');
-                    }
+            geo: {
+                getFiscale: (city, full) => {
+                    const c = city.toLowerCase();
+                    const top = ['roma', 'milano', 'firenze', 'venezia', 'napoli', 'bologna'];
+                    if (top.includes(c)) return { avg: 6.0, label: "Top City d'Arte" };
+                    if (full.toLowerCase().includes('marina') || full.toLowerCase().includes('lido')) return { avg: 3.5, label: "Zona Turistica" };
+                    return { avg: 2.0, label: "Standard" };
                 },
-                openPanel: () => {
-                    const modal = document.getElementById('modal-admin');
-                    const content = document.getElementById('modal-admin-content');
-                    modal.classList.remove('hidden');
-                    modal.classList.add('flex');
-                    
-                    // Animazione entrata
-                    setTimeout(() => {
-                        modal.classList.remove('opacity-0');
-                        content.classList.remove('scale-95');
-                        content.classList.add('scale-100');
-                    }, 10);
-
-                    app.admin.renderData();
+                search: async (query) => {
+                    if (query.length < 3) return;
+                    const box = document.getElementById('geo-results');
+                    box.innerHTML = '<div style="padding:1rem; font-size:0.8rem;">Analisi territoriale...</div>';
+                    app.ui.toggleElement('geo-results', true);
+                    try {
+                        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&addressdetails=1&limit=5&countrycodes=it`);
+                        const data = await res.json();
+                        box.innerHTML = '';
+                        data.forEach(item => {
+                            const city = item.address.city || item.address.town || '';
+                            const div = document.createElement('div');
+                            div.className = 'dropdown-item';
+                            div.textContent = `${city} - ${item.address.road || ''}`;
+                            div.onclick = () => {
+                                document.getElementById('geo-search').value = div.textContent;
+                                app.ui.toggleElement('geo-results', false);
+                                const f = app.geo.getFiscale(city, item.display_name);
+                                document.getElementById('city-tax').value = f.avg;
+                                app.ui.showToast(`Parametri impostati per ${f.label}`, 'info');
+                                app.calc.update();
+                            };
+                            box.appendChild(div);
+                        });
+                    } catch(e) {}
                 },
-                closePanel: () => {
-                    const modal = document.getElementById('modal-admin');
-                    const content = document.getElementById('modal-admin-content');
-                    
-                    modal.classList.add('opacity-0');
-                    content.classList.remove('scale-100');
-                    content.classList.add('scale-95');
-                    
-                    setTimeout(() => {
-                        modal.classList.remove('flex');
-                        modal.classList.add('hidden');
-                    }, 300);
-                },
-                renderData: () => {
-                    // Dati simulati per la tabella
-                    const tbody = document.getElementById('adm-users-list');
-                    tbody.innerHTML = `
-                        <tr class="admin-row border-b border-slate-800 transition-colors">
-                            <td class="p-4 font-bold text-white flex items-center gap-2"><img src="${app.state.user.photoURL}" class="w-6 h-6 rounded-full"> ${app.state.user.displayName} (Tu)</td>
-                            <td class="p-4">${app.state.user.email}</td>
-                            <td class="p-4 text-xs font-mono">Oggi</td>
-                            <td class="p-4"><span class="admin-badge">ADMIN</span></td>
-                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
-                        </tr>
-                        <tr class="admin-row border-b border-slate-800 transition-colors">
-                            <td class="p-4 font-bold text-slate-300">Giuseppe Verdi</td>
-                            <td class="p-4">g.verdi@mail.com</td>
-                            <td class="p-4 text-xs font-mono">2023-12-10</td>
-                            <td class="p-4"><span class="text-[10px] font-bold text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded">PRO</span></td>
-                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
-                        </tr>
-                        <tr class="admin-row border-b border-slate-800 transition-colors">
-                            <td class="p-4 font-bold text-slate-300">Maria Bianchi</td>
-                            <td class="p-4">maria.b@test.it</td>
-                            <td class="p-4 text-xs font-mono">2023-11-05</td>
-                            <td class="p-4"><span class="text-[10px] font-bold text-slate-500 border border-slate-700 px-2 py-0.5 rounded">FREE</span></td>
-                            <td class="p-4 text-right"><i class="fa-solid fa-ellipsis text-slate-500 cursor-pointer"></i></td>
-                        </tr>
-                    `;
-                }
+                debouncedSearch: (q) => { clearTimeout(this.t); this.t = setTimeout(() => app.geo.search(q), 600); }
             },
 
-            // --- CALC ENGINE (Logic: Capex + French Amortization) ---
             calc: {
                 getVal: (id) => parseFloat(document.getElementById(id).value) || 0,
-                format: (n) => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n),
+                format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
                 update: () => {
                     const c = app.calc;
-                    // Inputs
-                    const P = c.getVal('price');
-                    const R = c.getVal('reno');
-                    const Notaio = c.getVal('closing');
-                    const Ltv = c.getVal('ltv') / 100;
-                    const Rate = c.getVal('rate') / 100;
-                    const Years = c.getVal('years');
-                    const Rent = c.getVal('rent');
+                    const rev = c.getVal('adr') * 365 * (c.getVal('occ')/100);
+                    const ota = rev * (c.getVal('portal-comm')/100);
+                    const tax = rev * (c.getVal('tax-rate')/100);
+                    const cost = (c.getVal('var-costs') * 365 * (c.getVal('occ')/100)) + (c.getVal('fixed-costs') * 12);
+                    const mol = rev - ota - tax - cost;
 
-                    // 1. Base Imponibile (Prezzo + Ristrutturazione)
-                    const BaseImponibile = P + R;
+                    document.getElementById('res-mol-month').textContent = c.format(mol/12);
+                    if (state.chartInstance) {
+                        state.chartInstance.data.datasets[0].data = [mol > 0 ? mol : 0, ota, tax, cost];
+                        state.chartInstance.update();
+                    }
+
+                    // MODULO ANALITICO TAX SHIELD
+                    const price = c.getVal('price');
+                    const loan = price * (c.getVal('ltv')/100);
+                    const i = (c.getVal('rate')/100)/12, n = c.getVal('years')*12;
+                    let mortgage = (i > 0 && n > 0) ? loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1) : (n > 0 ? loan/n : 0);
                     
-                    // 2. Mutuo Erogato
-                    const LoanAmount = BaseImponibile * Ltv;
+                    // Calcolo Scudo Fiscale (Interessi Anno 1 + Ammortamento Immobile)
+                    const annualInterestYear1 = (loan * (c.getVal('rate')/100)); // Approssimazione anno 1
+                    const annualDepreciation = price * (c.getVal('depreciation-rate')/100);
+                    const shieldBase = annualInterestYear1 + annualDepreciation;
+                    const taxShieldSavings = shieldBase * (c.getVal('marginal-rate')/100);
 
-                    // 3. Equity (Cash Out) = Costo Totale Progetto - Mutuo
-                    // Costo Totale = Acquisto + Lavori + Spese
-                    const TotalCost = BaseImponibile + Notaio;
-                    const Equity = TotalCost - LoanAmount;
+                    document.getElementById('res-tax-shield').textContent = c.format(taxShieldSavings);
+                    document.getElementById('res-mortgage').textContent = c.format(mortgage);
+                    document.getElementById('res-cashflow').textContent = c.format((mol/12) - mortgage + (taxShieldSavings/12));
+                    
+                    document.getElementById('res-downpayment').textContent = c.format((price - loan) + c.getVal('reno') + c.getVal('closing'));
+                    document.getElementById('res-total-interest').textContent = c.format((mortgage * n) - loan);
+                },
+                showAmortization: () => {
+                    const c = app.calc;
+                    const loan = c.getVal('price') * (c.getVal('ltv')/100);
+                    const i = (c.getVal('rate')/100)/12, n = c.getVal('years')*12;
+                    const price = c.getVal('price');
+                    const depRate = c.getVal('depreciation-rate')/100;
+                    const margRate = c.getVal('marginal-rate')/100;
+                    
+                    if(loan <= 0 || n <= 0) return;
+                    const mPay = loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1);
+                    let bal = loan, html = '', yInt = 0;
 
-                    // 4. Rata (Francese)
-                    let MonthlyPmt = 0;
-                    if (Years > 0) {
-                        const i = Rate / 12;
-                        const n = Years * 12;
-                        if (i > 0) MonthlyPmt = LoanAmount * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1);
-                        else MonthlyPmt = LoanAmount / n;
+                    for(let m = 1; m <= n; m++) {
+                        let iPart = bal * i;
+                        bal -= (mPay - iPart); yInt += iPart;
+                        if(m % 12 === 0) {
+                            const annualShield = (yInt + (price * depRate)) * margRate;
+                            html += `<tr style="border-bottom:1px solid #334155; text-align:right;">
+                                <td style="text-align:left; padding:12px; color:var(--purple); font-weight:700;">Anno ${m/12}</td>
+                                <td>${c.format(annualShield)}</td><td>${c.format(yInt)}</td><td>${c.format(bal > 0 ? bal : 0)}</td>
+                            </tr>`;
+                            yInt = 0;
+                        }
                     }
+                    document.getElementById('amortization-body').innerHTML = html;
+                    app.ui.openModal('modal-amortization');
+                },
+                debouncedUpdate: (e) => { clearTimeout(this.tu); this.tu = setTimeout(() => app.calc.update(), 350); }
+            },
 
-                    // 5. Outputs
-                    const TotalInterest = (MonthlyPmt * Years * 12) - LoanAmount;
-                    const CashFlow = Rent - MonthlyPmt;
-
-                    // Update DOM
-                    document.getElementById('out-payment').textContent = c.format(MonthlyPmt);
-                    document.getElementById('out-cashflow').textContent = (CashFlow > 0 ? "+" : "") + c.format(CashFlow);
-                    document.getElementById('out-equity').textContent = c.format(Equity);
-                    document.getElementById('out-interest').textContent = c.format(TotalInterest);
-
-                    // Styling Cashflow
-                    const cfEl = document.getElementById('out-cashflow');
-                    if(CashFlow >= 0) {
-                        cfEl.classList.remove('text-red-500');
-                        cfEl.classList.add('text-white');
-                    } else {
-                        cfEl.classList.add('text-red-500');
-                        cfEl.classList.remove('text-white');
-                    }
+            report: {
+                generate: () => {
+                    if(!state.isPro) return app.ui.showToast("Report avanzati riservati a Platinum", "error");
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    doc.setFillColor(15, 23, 42);
+                    doc.rect(0, 0, 210, 40, 'F');
+                    doc.setTextColor(16, 185, 129);
+                    doc.setFontSize(22);
+                    doc.text("INVESTPRO PLATINUM REPORT", 15, 25);
+                    doc.autoTable({
+                        startY: 50,
+                        head: [['Analisi', 'Valore']],
+                        body: [
+                            ['MOL Mensile', document.getElementById('res-mol-month').textContent],
+                            ['Scudo Fiscale (Anno)', document.getElementById('res-tax-shield').textContent],
+                            ['Flusso Cassa Netto Finale', document.getElementById('res-cashflow').textContent]
+                        ],
+                        headStyles: { fillColor: [139, 92, 246] }
+                    });
+                    doc.save("Analisi_InvestPro_Platinum.pdf");
                 }
             },
 
-            // --- CONTACT MODULE ---
-            contact: {
-                submit: (e) => {
-                    e.preventDefault();
-                    const btn = document.getElementById('btn-contact-submit');
-                    const originalHtml = btn.innerHTML;
-                    
-                    // Loading State
-                    btn.disabled = true;
-                    btn.innerHTML = '<span class="loader"></span> Invio in corso...';
-                    btn.classList.add('opacity-75', 'cursor-not-allowed');
-
-                    // Simula invio API
-                    setTimeout(() => {
-                        app.ui.toast("Messaggio inviato al team!", "success");
-                        btn.innerHTML = originalHtml;
-                        btn.disabled = false;
-                        btn.classList.remove('opacity-75', 'cursor-not-allowed');
-                        document.getElementById('contact-form').reset();
-                    }, 1500);
-                }
+            auth: {
+                init: () => {
+                    app.services.auth.onAuthStateChanged(async (u) => {
+                        state.user = u; app.ui.updateAuthUI();
+                        if(u) {
+                            const d = await app.services.db.collection('users').doc(u.uid).get();
+                            app.ui.setProStatus(d.exists && d.data().plan === 'pro');
+                        }
+                    });
+                },
+                loginGoogle: async () => { try { await app.services.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); } catch(e) {} },
+                logout: () => app.services.auth.signOut().then(() => location.reload())
             },
 
             data: {
-                saveProject: () => {
-                    if(!app.state.user) return app.ui.toast("Accedi per salvare il progetto", "error");
-                    app.ui.toast("Progetto salvato in cloud", "success");
+                saveProject: async () => {
+                    if(!state.user) return app.ui.openModal('modal-login');
+                    app.ui.setLoading(true);
+                    const data = { uid: state.user.uid, updatedAt: new Date(), inputs: {} };
+                    document.querySelectorAll('input').forEach(i => data.inputs[i.id] = i.value);
+                    await app.services.db.collection('projects').add(data);
+                    app.ui.setLoading(false); app.ui.showToast("Modello analitico salvato", "success");
                 },
-                loadDeals: () => {
-                    if(!app.state.user) return app.ui.toast("Accedi per vedere l'archivio", "error");
-                    app.ui.toast("Sincronizzazione archivio...", "success");
+                openDealsList: async () => {
+                    if(!state.user) return app.ui.openModal('modal-login');
+                    app.ui.openModal('modal-deals');
+                    const s = await app.services.db.collection('projects').where('uid','==',state.user.uid).get();
+                    const c = document.getElementById('deals-container'); c.innerHTML = '';
+                    s.forEach(d => {
+                        const r = document.createElement('div');
+                        r.style.cssText = "padding:1rem; border-bottom:1px solid var(--border); cursor:pointer;";
+                        r.textContent = `Analisi del ${d.data().updatedAt.toDate().toLocaleDateString()}`;
+                        r.onclick = () => { 
+                            Object.keys(d.data().inputs).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = d.data().inputs[k]; });
+                            app.calc.update(); app.ui.closeModal('modal-deals');
+                        };
+                        c.appendChild(r);
+                    });
                 }
             },
 
-            ui: {
-                toast: (msg, type) => {
-                    const t = document.getElementById('toast');
-                    const tMsg = document.getElementById('toast-msg');
-                    const icon = t.querySelector('i');
-                    
-                    tMsg.textContent = msg;
-                    t.className = type === 'success' ? 'success' : 'error';
-                    icon.className = type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation';
-                    
-                    t.classList.add('show');
-                    setTimeout(() => t.classList.remove('show'), 3500);
+            chart: {
+                init: () => {
+                    const ctx = document.getElementById('profitChart').getContext('2d');
+                    state.chartInstance = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Profitto', 'OTA', 'Tasse', 'Costi'],
+                            datasets: [{ data: [0,0,0,0], backgroundColor: ['#10b981','#f59e0b','#ef4444','#3b82f6'], borderWidth: 0 }]
+                        },
+                        options: { maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8' } } } }
+                    });
                 }
-            }
+            },
+
+            contact: { submit: () => app.ui.showToast("Richiesta consulenza inviata", "success") },
+            payment: { start: () => window.open(CONFIG.stripeLink, '_blank') }
         };
 
-        // Init App
         document.addEventListener('DOMContentLoaded', app.init);
-
     </script>
 </body>
 </html>
