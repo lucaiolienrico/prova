@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="InvestPro Platinum | Analisi Immobiliare Professionale con Tax Shield e Gestione Avanzata">
-    <title>InvestPro | Suite Platinum 2025</title>
+    <meta name="description" content="InvestPro Suite Platinum | Piattaforma analitica avanzata per investimenti immobiliari 2025">
+    <title>InvestPro | Platinum Suite 2025</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,79 +29,78 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-        body { background-color: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
+        body { background-color: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; line-height: 1.6; }
 
-        /* HEADER */
-        header { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        header { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -0.04em; }
+        .logo span { color: white; }
 
-        /* TOOLBAR */
         .toolbar { max-width: 1400px; margin: 2rem auto 0; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .project-input { background: transparent; border: none; border-bottom: 2px solid var(--border); color: white; font-size: 1.6rem; font-weight: 800; width: 100%; max-width: 400px; padding: 0.5rem 0; }
+        .project-input { background: transparent; border: none; border-bottom: 2px solid var(--border); color: white; font-size: 1.6rem; font-weight: 800; width: 100%; max-width: 450px; padding: 0.5rem 0; }
 
-        /* BUTTONS */
-        .btn { padding: 0.7rem 1.4rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.85rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.6rem; transition: 0.2s; }
+        .btn { padding: 0.7rem 1.4rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.6rem; transition: 0.25s; }
         .btn:hover { background: var(--border); transform: translateY(-2px); }
         .btn-primary { background: var(--primary); border-color: var(--primary); color: #000; }
-        .btn-admin { background: var(--warning); color: #000; border: none; font-weight: 800; }
+        .btn-admin { background: var(--warning); color: #000; font-weight: 800; border: none; }
 
-        /* DASHBOARD */
         main { padding: 2rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
         .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 2.5rem; }
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; position: relative; display: flex; flex-direction: column; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }
-        .card-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
-        .step-circle { width: 34px; height: 34px; border-radius: 50%; background: var(--primary); color: black; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; position: relative; display: flex; flex-direction: column; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+        .card-header { margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 15px; }
+        .step-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: black; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
         .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-        input { background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 0.85rem; border-radius: 8px; font-size: 0.95rem; }
+        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+        input { background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 0.9rem; border-radius: 8px; font-size: 1rem; }
 
-        .kpi-container { background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
+        .kpi-container { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
         .kpi-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
-        .kpi-value { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .kpi-value { font-size: 1.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
 
-        /* DROPDOWNS */
-        #geo-results { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); z-index: 100; border-radius: 0 0 12px 12px; max-height: 200px; overflow-y: auto; }
+        #geo-results { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); z-index: 150; max-height: 250px; overflow-y: auto; border-radius: 0 0 12px 12px; }
         .dropdown-item { padding: 1rem; cursor: pointer; border-bottom: 1px solid var(--border); transition: 0.2s; }
         .dropdown-item:hover { background: var(--primary); color: black; }
 
-        /* LOCK & BLUR */
-        .locked-blur { filter: blur(6px); pointer-events: none; opacity: 0.3; transition: 0.3s; }
-        .overlay-lock { position: absolute; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(2px); border-radius: 16px; text-align: center; }
+        .locked-blur { filter: blur(6px); pointer-events: none; opacity: 0.3; transition: 0.4s; }
+        .overlay-lock { position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem; text-align: center; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); border-radius: 14px; }
         .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
         .is-unlocked .overlay-lock { display: none !important; }
 
-        /* MODALS */
-        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
-        .modal-backdrop.active { display: flex; }
-        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 600px; border-radius: 20px; padding: 2.5rem; }
+        .reviews-section, .contact-section { margin-top: 5rem; padding: 3rem 1.5rem; border-top: 1px solid var(--border); max-width: 1400px; margin: auto; width: 100%; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .review-card { background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border); }
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .full-col { grid-column: span 2; }
 
-        /* UTILS */
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-backdrop.active { display: flex; }
+        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 650px; border-radius: 20px; padding: 2.5rem; }
+
         .hidden { display: none !important; }
         #loading-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.95); z-index: 9999; display: none; flex-direction: column; justify-content: center; align-items: center; }
         #loading-overlay.active { display: flex; }
-        .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes flash { 0% { background-color: var(--primary); color: #000; } 100% { background-color: var(--bg-input); color: #fff; } }
-        .input-updated { animation: flash 1s ease-out; }
+        .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        .input-updated { animation: flash 1.2s ease-out; }
+        @keyframes flash { 0% { background: var(--primary); color: #000; } 100% { background: var(--bg-input); color: #fff; } }
     </style>
 </head>
 <body>
 
-    <div id="loading-overlay"><div class="spinner"></div><p style="margin-top:1rem; font-weight:600;">Sincronizzazione Platinum...</p></div>
-    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 10px;"></div>
+    <div id="loading-overlay"><div class="spinner"></div><p style="margin-top:1rem; font-weight:600;">Validazione Integrità Sistema...</p></div>
+    <div id="toast-container" style="position: fixed; bottom: 25px; right: 25px; z-index: 10000; display: flex; flex-direction: column; gap: 10px;"></div>
 
     <header>
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-gem"></i> INVEST<span>PRO</span></div>
+            <div class="logo"><i class="fa-solid fa-gem"></i> <span>INVESTPRO</span> PLATINUM</div>
             <div class="user-menu" style="display: flex; gap: 1rem; align-items: center;">
                 <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN</button>
                 <div id="auth-guest"><button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accedi</button></div>
                 <div id="auth-user" class="hidden">
-                    <span id="badge-plan" style="padding:0.3rem 0.8rem; border-radius:20px; font-size:0.7rem; font-weight:800; background:var(--border);">FREE</span>
-                    <span id="user-email-display" style="font-size:0.85rem; margin:0 10px; font-weight:500;"></span>
+                    <span id="badge-plan" style="padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 800; background: var(--border);">FREE</span>
+                    <span id="user-email-display" style="font-size: 0.9rem; margin: 0 10px;"></span>
                     <button class="btn" onclick="app.auth.logout()"><i class="fa-solid fa-power-off"></i></button>
                 </div>
             </div>
@@ -109,10 +108,10 @@
     </header>
 
     <section class="toolbar">
-        <input type="text" id="project-name" class="project-input" value="Nuova Analisi 2025">
-        <div style="display: flex; gap: 0.8rem;">
+        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Strategica 2025">
+        <div style="display: flex; gap: 1rem;">
             <button class="btn btn-info" onclick="app.report.generate()"><i class="fa-solid fa-file-pdf"></i> Report</button>
-            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-folder-open"></i> I Miei Deal</button>
+            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> I Miei Deal</button>
             <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-cloud-arrow-up"></i> Salva</button>
         </div>
     </section>
@@ -121,11 +120,11 @@
         <div class="dashboard-grid">
             
             <div class="card">
-                <div class="card-header"><div class="step-circle">A</div><h3>Operatività & Fisco 2025</h3></div>
+                <div class="card-header"><div class="step-circle">A</div><h3>Conto Economico & Fisco</h3></div>
                 
                 <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
-                    <label>Località Immobile</label>
-                    <input type="text" id="geo-search" placeholder="Cerca città per parametri fiscali..." autocomplete="off">
+                    <label>Indirizzo Immobile</label>
+                    <input type="text" id="geo-search" placeholder="Città o zona turistica..." autocomplete="off">
                     <div id="geo-results" class="hidden"></div>
                 </div>
 
@@ -138,76 +137,88 @@
                     <div class="form-group"><label>Cedolare Secca (%)</label><input type="number" id="tax-rate" value="21"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Costi Notte (€)</label><input type="number" id="var-costs" value="25"></div>
+                    <div class="form-group"><label>Costi Notte (€)</label><input type="number" id="var-costs" value="20"></div>
                     <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4"></div>
                 </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;"><label>Spese Fisse Mensili (€)</label><input type="number" id="fixed-costs" value="600"></div>
+                <div class="form-group" style="margin-bottom: 1.5rem;"><label>Costi Fissi Mensili (€)</label><input type="number" id="fixed-costs" value="600"></div>
                 
                 <div class="kpi-container"><span class="kpi-title">MOL Mensile</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
                 
-                <div style="margin-top: 1.5rem; height: 260px;"><canvas id="profitChart"></canvas></div>
+                <div style="margin-top: 2rem; height: 260px; width: 100%;"><canvas id="profitChart"></canvas></div>
             </div>
 
             <div class="card" id="card-pro">
                 <div class="overlay-lock">
                     <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--purple); margin-bottom: 1.5rem;"></i>
                     <h3>Funzionalità Platinum</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Sblocca il calcolo dello Scudo Fiscale, ROI e Ammortamento Avanzato.</p>
-                    <button class="btn btn-primary" onclick="app.payment.start()">Sblocca Platinum (9,90€)</button>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Sblocca il calcolo dello Scudo Fiscale e l'analisi di ammortamento.</p>
+                    <button class="btn btn-primary" onclick="app.payment.start()">Attiva Platinum (9,90€)</button>
                 </div>
                 
                 <div class="card-header"><div class="step-circle" style="background: white; color: black;">B</div><h3>Finanza & Tax Shield</h3></div>
                 
                 <div class="locked-blur">
-                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Prezzo Acquisto (€)</label><input type="number" id="price" value="300000"></div>
+                    <div class="form-group" style="margin-bottom: 1.25rem;"><label>Prezzo Acquisto (€)</label><input type="number" id="price" value="300000"></div>
                     <div class="input-grid">
-                        <div class="form-group"><label>Ristrutturazione (€)</label><input type="number" id="reno" value="20000"></div>
-                        <div class="form-group"><label>Aliq. Marginale IRPEF (%)</label><input type="number" id="marginal-rate" value="35"></div>
+                        <div class="form-group"><label>Aliquota Marginale (%)</label><input type="number" id="marginal-rate" value="35"></div>
+                        <div class="form-group"><label>Ammortamento (%)</label><input type="number" id="depreciation-rate" value="3"></div>
                     </div>
                     <div class="input-grid">
                         <div class="form-group"><label>LTV Mutuo (%)</label><input type="number" id="ltv" value="80"></div>
                         <div class="form-group"><label>Tasso Mutuo (%)</label><input type="number" id="rate" value="3.8" step="0.1"></div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Durata (Anni)</label><input type="number" id="years" value="25"></div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Durata (Anni)</label><input type="number" id="years" value="20"></div>
                     
-                    <div class="kpi-container" style="border-color: var(--purple); background: rgba(139, 92, 246, 0.1);"><span class="kpi-title" style="color: var(--purple);">Tax Shield (Scudo Fiscale/Anno)</span><span class="kpi-value" id="res-tax-shield" style="color: var(--purple);">-- €</span></div>
-                    <div class="kpi-container" style="background: var(--primary); border: none;"><span class="kpi-title" style="color: black;">Cash Flow Netto Finale</span><span class="kpi-value" id="res-cashflow" style="color: black;">-- €</span></div>
+                    <div class="kpi-container" style="border-color: var(--purple); background: rgba(139, 92, 246, 0.1);"><span class="kpi-title" style="color: var(--purple);">Scudo Fiscale Annuale</span><span class="kpi-value" id="res-tax-shield" style="color: var(--purple);">-- €</span></div>
+                    <div class="kpi-container" style="background: var(--primary); border: none;"><span class="kpi-title" style="color: black;">Cash Flow Netto Mensile</span><span class="kpi-value" id="res-cashflow" style="color: black;">-- €</span></div>
 
-                    <button class="btn" style="width: 100%; justify-content: center; margin-top: 1.5rem;" onclick="app.calc.showAmortization()">
-                        <i class="fa-solid fa-table-list"></i> Piano Ammortamento & Flussi
+                    <button class="btn" style="width: 100%; justify-content: center; margin-top: 2rem;" onclick="app.calc.showAmortization()">
+                        <i class="fa-solid fa-table-list"></i> Piano Proiezione Flussi
                     </button>
                 </div>
             </div>
         </div>
 
-        <section class="reviews-section" style="margin-top: 5rem; border-top: 1px solid var(--border); padding-top: 3rem; text-align: center;">
-            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 3rem;">Analisi validate da Professionisti</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left;">
-                <div class="card"><p>"Il calcolo del Tax Shield è millimetrico. Essenziale per pianificazioni fiscali IRPEF."</p><br><small>- Dott. Luca M., Commercialista</small></div>
-                <div class="card"><p>"La suite più completa per le locazioni brevi. La logica delle tasse sul lordo è finalmente corretta."</p><br><small>- Elena R., Property Manager</small></div>
-                <div class="card"><p>"Uso InvestPro per ogni acquisizione. Risparmio ore di calcoli su Excel."</p><br><small>- Marco B., Investitore</small></div>
+        <section class="reviews-section">
+            <h2 style="font-weight: 800; letter-spacing: -0.02em;">Cosa dicono gli Investitori</h2>
+            <div class="reviews-grid">
+                <div class="review-card"><p>"Finalmente un calcolatore che gestisce lo scudo fiscale correttamente. Indispensabile."</p><br><small>- Roberto F., Investitore</small></div>
+                <div class="review-card"><p>"La logica della cedolare sul lordo mi ha permesso di evitare errori di budget."</p><br><small>- Martina S., Property Manager</small></div>
+                <div class="review-card"><p>"L'esportazione PDF è perfetta per presentare il deal ai partner bancari."</p><br><small>- Stefano G., Consulente</small></div>
             </div>
         </section>
 
-        <section style="margin-top: 5rem; border-top: 1px solid var(--border); padding: 3rem 1.5rem; max-width: 800px; margin-inline: auto;">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Contatta il Supporto Tecnico</h2>
-            <form onsubmit="event.preventDefault(); app.ui.showToast('Messaggio inviato!', 'success'); this.reset();" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <div class="input-grid"><div class="form-group"><label>Nome</label><input type="text" required></div><div class="form-group"><label>Email</label><input type="email" required></div></div>
-                <div class="form-group"><label>Messaggio</label><input type="text" placeholder="Come possiamo aiutarti?" style="padding: 2rem;"></div>
-                <button type="submit" class="btn btn-primary" style="justify-content: center;">Invia Richiesta</button>
+        <section class="contact-section">
+            <h2 style="font-weight: 800;">Contatta il Supporto Tecnico</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
+                <div class="form-group"><label>Nome</label><input type="text" id="contact-name" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="contact-email" required></div>
+                <div class="full-col"><label>Messaggio</label><input type="text" placeholder="Quale funzionalità desideri approfondire?" style="padding: 2rem;"></div>
+                <div class="full-col"><button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Invia Richiesta</button></div>
             </form>
         </section>
     </main>
 
-    <div id="modal-login" class="modal-backdrop"><div class="modal-panel" style="text-align: center;"><h2>Accedi a InvestPro</h2><p style="color: var(--text-muted); margin-bottom: 2rem;">Gestisci i tuoi deal ovunque ti trovi.</p><button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;" onclick="app.auth.loginGoogle()">Accedi con Google</button><button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Chiudi</button></div></div>
+    <div id="modal-login" class="modal-backdrop"><div class="modal-panel" style="text-align: center;"><h2>Accedi alla Suite</h2><button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 2rem; padding: 1.2rem;" onclick="app.auth.loginGoogle()">Google Login</button><button class="btn btn-danger" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Chiudi</button></div></div>
 
-    <div id="modal-deals" class="modal-backdrop"><div class="modal-panel"><h2>I Tuoi Deal</h2><div id="deals-container" style="margin-top: 1.5rem; max-height: 350px; overflow-y: auto;"></div><button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-deals')">Chiudi</button></div></div>
+    <div id="modal-deals" class="modal-backdrop"><div class="modal-panel"><h2>Deal Salvati</h2><div id="deals-container" style="margin-top: 1.5rem; max-height: 400px; overflow-y: auto;"></div><button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-deals')">Chiudi</button></div></div>
 
-    <div id="modal-admin" class="modal-backdrop"><div class="modal-panel"><h2>Gestione Amministrativa</h2><div id="admin-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;"><div style="background:var(--bg-input); padding:1rem; border-radius:8px; text-align:center;"><span id="adm-tot-users">0</span><br><small>UTENTI</small></div><div style="background:var(--bg-input); padding:1rem; border-radius:8px; text-align:center;"><span id="adm-pro-users">0</span><br><small>PLATINUM</small></div></div><div id="admin-user-list" style="margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 8px; max-height: 250px; overflow-y: auto;"></div><button class="btn btn-danger" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-admin')">Chiudi</button></div></div>
+    <div id="modal-admin" class="modal-backdrop">
+        <div class="modal-panel">
+            <h2>Pannello Amministratore</h2>
+            <div id="admin-stats" style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background:var(--bg-input); padding:1rem; border-radius:8px; text-align:center;"><span id="adm-tot" style="font-size:1.5rem; font-weight:800; color:var(--info);">0</span><br><small>UTENTI</small></div>
+                <div style="background:var(--bg-input); padding:1rem; border-radius:8px; text-align:center;"><span id="adm-pro" style="font-size:1.5rem; font-weight:800; color:var(--purple);">0</span><br><small>PLATINUM</small></div>
+            </div>
+            <div id="admin-user-list" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px;"></div>
+            <button class="btn btn-danger" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-admin')">Chiudi</button>
+        </div>
+    </div>
 
-    <div id="modal-amortization" class="modal-backdrop"><div class="modal-panel" style="max-width: 800px;"><h2>Proiezione Flussi & Ammortamento</h2><div style="margin-top: 1.5rem; max-height: 400px; overflow-y: auto;"><table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;"><thead style="border-bottom: 2px solid var(--border); text-align: right;"><th style="text-align: left; padding: 10px;">Anno</th><th>Tax Shield</th><th>Quota Int.</th><th>Residuo</th></thead><tbody id="amortization-body"></tbody></table></div><button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-amortization')">Chiudi</button></div></div>
+    <div id="modal-amortization" class="modal-backdrop"><div class="modal-panel" style="max-width: 800px;"><h2>Analisi Ammortamento & Flussi</h2><div style="margin-top: 1.5rem; max-height: 45vh; overflow-y: auto;"><table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;"><thead style="text-align: right; border-bottom: 2px solid var(--border); color: var(--text-muted);"><th style="text-align: left; padding: 10px;">Anno</th><th>Tax Shield</th><th>Quota Int.</th><th>Residuo</th></thead><tbody id="amortization-body"></tbody></table></div><button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-amortization')">Chiudi</button></div></div>
 
     <script>
+        // --- CONFIGURAZIONE ---
         const CONFIG = {
             firebase: {
                 apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0",
@@ -221,18 +232,20 @@
             stripeLink: "https://buy.stripe.com/test_4gM8wP85i5I0flc0PygjC01"
         };
 
-        const state = { user: null, isPro: false, chartInstance: null };
+        const state = { user: null, isPro: false, chart: null };
 
         const app = {
             init: () => {
-                firebase.initializeApp(CONFIG.firebase);
+                if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
                 app.services.auth = firebase.auth();
                 app.services.db = firebase.firestore();
-                app.auth.bind();
+                
+                app.auth.init();
                 app.chart.init();
-                app.calc.bind();
+                app.calc.update();
                 
                 document.getElementById('geo-search').addEventListener('input', (e) => app.geo.debounce(e.target.value));
+                document.querySelectorAll('input[type="number"]').forEach(i => i.addEventListener('input', app.calc.update));
             },
 
             services: { auth: null, db: null },
@@ -245,15 +258,22 @@
                 closeModal: (id) => document.getElementById(id).classList.remove('active'),
                 showToast: (msg, type = 'info') => {
                     const t = document.createElement('div');
-                    t.style.cssText = `background:var(--bg-card); color:white; padding:1.2rem; border-left:5px solid ${type==='error'?'var(--danger)':'var(--primary)'}; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.5);`;
+                    t.style.cssText = `background:var(--bg-card); color:white; padding:1.2rem; border-left:5px solid ${type==='error'?'var(--danger)':'var(--primary)'}; border-radius:8px; box-shadow:0 10px 20px rgba(0,0,0,0.5);`;
                     t.textContent = msg;
                     document.getElementById('toast-container').appendChild(t);
                     setTimeout(() => t.remove(), 3500);
+                },
+                setPro: (isPro) => {
+                    state.isPro = isPro;
+                    const b = document.getElementById('badge-plan');
+                    b.textContent = isPro ? "PLATINUM" : "FREE";
+                    b.style.background = isPro ? "var(--purple)" : "var(--border)";
+                    document.getElementById('card-pro').classList.toggle('is-unlocked', isPro);
                 }
             },
 
             auth: {
-                bind: () => {
+                init: () => {
                     app.services.auth.onAuthStateChanged(async (u) => {
                         state.user = u;
                         document.getElementById('auth-guest').classList.toggle('hidden', !!u);
@@ -261,11 +281,8 @@
                         if (u) {
                             document.getElementById('user-email-display').textContent = u.email;
                             const d = await app.services.db.collection('users').doc(u.uid).get();
-                            app.ui.setProStatus(d.exists && d.data().plan === 'pro');
+                            app.ui.setPro(d.exists && d.data().plan === 'pro');
                             if (u.email === CONFIG.adminEmail) document.getElementById('admin-trigger').classList.remove('hidden');
-                        } else {
-                            app.ui.setProStatus(false);
-                            document.getElementById('admin-trigger').classList.add('hidden');
                         }
                     });
                 },
@@ -278,7 +295,7 @@
                 search: async (q) => {
                     if (q.length < 3) return;
                     const res = document.getElementById('geo-results');
-                    res.innerHTML = '<div style="padding:1rem;">Ricerca...</div>';
+                    res.innerHTML = '<div style="padding:10px;">Analisi territoriale...</div>';
                     res.classList.remove('hidden');
                     const d = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&addressdetails=1&limit=5&countrycodes=it`).then(r => r.json());
                     res.innerHTML = '';
@@ -289,22 +306,20 @@
                         div.onclick = () => {
                             document.getElementById('geo-search').value = div.textContent;
                             res.classList.add('hidden');
-                            app.geo.apply(i.address.city || '');
+                            app.geo.apply(i.address.city || '', i.display_name);
                         };
                         res.appendChild(div);
                     });
                 },
-                apply: (city) => {
+                apply: (city, full) => {
                     const top = ['roma', 'milano', 'firenze', 'venezia', 'napoli', 'bologna'];
-                    const v = top.includes(city.toLowerCase()) ? 6.0 : 3.0;
-                    document.getElementById('city-tax').value = v;
-                    app.ui.showToast(`Parametri impostati per ${city}: ${v}€`, 'info');
+                    const val = top.includes(city.toLowerCase()) ? 6.0 : (full.toLowerCase().includes('marina') ? 3.5 : 2.0);
+                    document.getElementById('city-tax').value = val;
                     app.calc.update();
                 }
             },
 
             calc: {
-                bind: () => document.querySelectorAll('input[type="number"]').forEach(i => i.addEventListener('input', app.calc.update)),
                 get: (id) => parseFloat(document.getElementById(id).value) || 0,
                 format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
                 update: () => {
@@ -316,18 +331,18 @@
                     const mol = rev - ota - tax - op;
 
                     document.getElementById('res-mol-month').textContent = c.format(mol/12);
-                    if(state.chartInstance) {
-                        state.chartInstance.data.datasets[0].data = [mol > 0 ? mol : 0, ota, tax, op];
-                        state.chartInstance.update();
+                    if(state.chart) {
+                        state.chart.data.datasets[0].data = [mol > 0 ? mol : 0, ota, tax, op];
+                        state.chart.update();
                     }
 
-                    // TAX SHIELD
+                    // TAX SHIELD LOGIC
                     const price = c.get('price');
                     const loan = price * (c.get('ltv')/100);
                     const i = (c.get('rate')/100)/12, n = c.get('years')*12;
                     let m = (i > 0 && n > 0) ? loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1) : (n > 0 ? loan/n : 0);
-                    
                     const shield = ((loan * (c.get('rate')/100)) + (price * (c.get('depreciation-rate')/100))) * (c.get('marginal-rate')/100);
+                    
                     document.getElementById('res-tax-shield').textContent = c.format(shield);
                     document.getElementById('res-cashflow').textContent = c.format((mol/12) - m + (shield/12));
                 },
@@ -355,7 +370,7 @@
                     if(!state.user) return app.ui.openModal('modal-login');
                     const inputs = {}; document.querySelectorAll('input').forEach(i => inputs[i.id] = i.value);
                     await app.services.db.collection('projects').add({ uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs });
-                    app.ui.showToast("Deal salvato!", "success");
+                    app.ui.showToast("Analisi salvata!", "success");
                 },
                 openDealsList: async () => {
                     if(!state.user) return app.ui.openModal('modal-login');
@@ -363,14 +378,24 @@
                     const s = await app.services.db.collection('projects').where('uid','==',state.user.uid).get();
                     const c = document.getElementById('deals-container'); c.innerHTML = '';
                     s.forEach(d => {
-                        const r = document.createElement('div');
-                        r.style.cssText = "padding:1rem; border-bottom:1px solid var(--border); cursor:pointer; color:#fff;";
-                        r.textContent = d.data().name;
-                        r.onclick = () => {
+                        const div = document.createElement('div');
+                        div.style.cssText = "padding:1rem; border-bottom:1px solid var(--border); cursor:pointer;";
+                        div.textContent = d.data().name;
+                        div.onclick = () => {
                             Object.keys(d.data().inputs).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = d.data().inputs[k]; });
                             app.calc.update(); app.ui.closeModal('modal-deals');
                         };
-                        c.appendChild(r);
+                        c.appendChild(div);
+                    });
+                }
+            },
+
+            chart: {
+                init: () => {
+                    state.chart = new Chart(document.getElementById('profitChart').getContext('2d'), {
+                        type: 'doughnut',
+                        data: { labels: ['Utile', 'OTA', 'Tasse', 'Costi'], datasets: [{ data: [0,0,0,0], backgroundColor: ['#10b981','#f59e0b','#ef4444','#3b82f6'], borderWidth: 0 }] },
+                        options: { maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8' } } } }
                     });
                 }
             },
@@ -378,7 +403,7 @@
             admin: {
                 refresh: async () => {
                     const u = await app.services.db.collection('users').get();
-                    document.getElementById('adm-tot-users').textContent = u.size;
+                    document.getElementById('adm-tot').textContent = u.size;
                     let pro = 0;
                     const list = document.getElementById('admin-user-list'); list.innerHTML = '';
                     u.forEach(doc => {
@@ -388,7 +413,7 @@
                         r.innerHTML = `<span>${d.email} [${d.plan || 'free'}]</span> <button class="btn btn-primary" style="padding:4px 8px; font-size:0.6rem;" onclick="app.admin.togglePro('${doc.id}','${d.plan}')">TOGGLE</button>`;
                         list.appendChild(r);
                     });
-                    document.getElementById('adm-pro-users').textContent = pro;
+                    document.getElementById('adm-pro').textContent = pro;
                 },
                 togglePro: async (uid, cur) => {
                     await app.services.db.collection('users').doc(uid).update({ plan: cur === 'pro' ? 'free' : 'pro' });
@@ -396,44 +421,16 @@
                 }
             },
 
-            ui: {
-                ...this.ui,
-                setProStatus: (isPro) => {
-                    state.isPro = isPro;
-                    const b = document.getElementById('badge-plan');
-                    b.textContent = isPro ? "PLATINUM" : "FREE";
-                    b.style.background = isPro ? "var(--purple)" : "var(--border)";
-                    document.getElementById('card-pro').classList.toggle('is-unlocked', isPro);
-                },
-                setLoading: (active) => document.getElementById('loading-overlay').classList.toggle('active', active),
-                showToast: (msg, type) => {
-                    const t = document.createElement('div');
-                    t.style.cssText = `background:var(--bg-card); color:white; padding:1.2rem; border-left:5px solid ${type==='error'?'var(--danger)':'var(--primary)'}; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.5);`;
-                    t.textContent = msg;
-                    document.getElementById('toast-container').appendChild(t);
-                    setTimeout(() => t.remove(), 3500);
-                }
-            },
-
-            chart: {
-                init: () => {
-                    state.chartInstance = new Chart(document.getElementById('profitChart').getContext('2d'), {
-                        type: 'doughnut',
-                        data: { labels: ['Utile', 'OTA', 'Tasse', 'Costi'], datasets: [{ data: [0,0,0,0], backgroundColor: ['#10b981','#f59e0b','#ef4444','#3b82f6'], borderWidth: 0 }] },
-                        options: { maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8' } } } }
-                    });
-                }
-            },
-
             report: {
                 generate: () => {
-                    if(!state.isPro) return app.ui.showToast("Report riservato a Platinum", "error");
+                    if(!state.isPro) return app.ui.showToast("Report Platinum richiesto", "error");
                     const { jsPDF } = window.jspdf;
-                    const d = new jsPDF(); d.text("InvestPro Platinum Report 2025", 15, 15);
-                    d.save("Report_InvestPro.pdf");
+                    const doc = new jsPDF(); doc.text("InvestPro Report - Versione Platinum", 15, 15);
+                    doc.save("Analisi_InvestPro.pdf");
                 }
             },
 
+            contact: { submit: () => app.ui.showToast("Richiesta inviata!", "success") },
             payment: { start: () => window.open(CONFIG.stripeLink, '_blank') }
         };
 
