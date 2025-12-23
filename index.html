@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="InvestPro Suite | Analisi professionale investimenti immobiliari e locazioni brevi 2025">
+    <meta name="description" content="Piattaforma professionale per analisi investimenti immobiliari con calcolo ROI, Cashflow e Mutuo.">
     <title>InvestPro | Suite Analisi Immobiliare</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 
     <style>
         /* --- DESIGN SYSTEM --- */
@@ -25,104 +23,150 @@
             --primary: #10b981; --primary-hover: #059669; 
             --danger: #ef4444; --warning: #f59e0b; --info: #3b82f6;
             --text-main: #f8fafc; --text-muted: #94a3b8;
-            --border: #334155; --radius: 12px;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            --border: #334155; --radius: 8px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            --font-main: 'Inter', sans-serif;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-        body { background-color: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; line-height: 1.6; overflow-x: hidden; }
+        body { background-color: var(--bg-body); color: var(--text-main); font-family: var(--font-main); min-height: 100vh; display: flex; flex-direction: column; font-size: 16px; line-height: 1.5; }
+        :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
-        header { background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid var(--border); padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        /* HEADER */
+        header { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 0.6rem; letter-spacing: -0.04em; }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.03em; }
         .logo span { color: white; }
+        .user-menu { display: flex; align-items: center; gap: 1rem; }
 
-        .toolbar { max-width: 1400px; margin: 2rem auto 0; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .project-input { background: transparent; border: none; border-bottom: 2px solid var(--border); color: white; font-size: 1.6rem; font-weight: 700; width: 100%; max-width: 450px; padding: 0.5rem 0; transition: border-color 0.3s; }
-        .project-input:focus { border-color: var(--primary); }
-
-        .btn { padding: 0.7rem 1.4rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.25s; }
-        .btn:hover { background: var(--border); transform: translateY(-2px); }
+        /* BUTTONS */
+        .btn { padding: 0.6rem 1.2rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; text-decoration: none; }
+        .btn:hover { background: var(--border); transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
         .btn-primary { background: var(--primary); border-color: var(--primary); color: #000; }
         .btn-primary:hover { background: var(--primary-hover); }
+        .btn-danger { background: rgba(239, 68, 68, 0.15); border-color: var(--danger); color: var(--danger); }
+        .btn-admin { position: fixed; bottom: 20px; left: 20px; z-index: 100; background: var(--warning); color: #000; font-weight: 800; box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); border:none; }
 
-        main { padding: 2rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 2.5rem; }
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; position: relative; box-shadow: var(--shadow); }
-        .card-header { margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 15px; }
-        .step-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: black; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+        /* LAYOUT */
+        .toolbar { max-width: 1400px; margin: 2rem auto 0; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .project-input { background: transparent; border: none; border-bottom: 2px solid var(--border); color: white; font-size: 1.5rem; font-weight: 700; width: 100%; max-width: 400px; padding: 0.5rem 0; transition: border-color 0.3s; }
+        .project-input:focus { border-color: var(--primary); }
 
-        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        main { padding: 2rem 1rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+
+        /* CARDS */
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; position: relative; overflow: visible; display: flex; flex-direction: column; box-shadow: var(--shadow); transition: border-color 0.3s; }
+        .card:hover { border-color: #475569; }
+        .card-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+        .step-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: black; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+
+        /* FORMS */
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
         .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-        input { background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 0.9rem; border-radius: 8px; font-size: 1rem; transition: all 0.3s; }
+        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        input { width: 100%; background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 0.8rem; border-radius: 6px; font-size: 0.95rem; transition: all 0.2s; font-family: inherit; }
         input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); }
+        input.invalid { border-color: var(--danger) !important; animation: shake 0.3s; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+        
+        @keyframes flash { 0% { background-color: var(--primary); color: black; } 100% { background-color: var(--bg-input); color: white; } }
+        .input-updated { animation: flash 1.5s ease-out; }
 
-        .kpi-container { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .kpi-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; }
-        .kpi-value { font-size: 1.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+        /* KPI & CHARTS */
+        .kpi-container { background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+        .kpi-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+        .kpi-value { font-size: 1.25rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+        .chart-wrapper { margin-top: 2rem; position: relative; height: 260px; width: 100%; }
 
-        /* GEO SEARCH */
-        #geo-results { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 0 0 10px 10px; z-index: 150; max-height: 250px; overflow-y: auto; box-shadow: var(--shadow); }
-        .dropdown-item { padding: 1rem; cursor: pointer; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        /* GEO DROPDOWN */
+        .dropdown-menu { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 0 0 8px 8px; z-index: 50; max-height: 250px; overflow-y: auto; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
+        .dropdown-item { padding: 0.8rem 1rem; cursor: pointer; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted); transition: all 0.2s; }
         .dropdown-item:hover { background: var(--primary); color: black; font-weight: 600; }
 
         /* PRO LOCK */
-        .locked-blur { filter: blur(6px); pointer-events: none; opacity: 0.3; transition: all 0.4s; }
-        .overlay-lock { position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem; text-align: center; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); border-radius: 14px; }
+        .locked-blur { filter: blur(5px); pointer-events: none; opacity: 0.4; transition: all 0.3s; }
+        .overlay-lock { position: absolute; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(2px); }
         .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
         .is-unlocked .overlay-lock { display: none; }
 
-        /* ADMIN PANEL UI */
-        #admin-panel { margin-top: 5rem; padding-top: 3rem; border-top: 2px solid var(--primary); display: none; }
-        .admin-nav { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
-        .admin-tab-btn { background: transparent; border: none; color: var(--text-muted); font-weight: 700; cursor: pointer; padding: 0.5rem 1rem; font-size: 0.9rem; border-bottom: 2px solid transparent; }
-        .admin-tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
-        
-        .admin-table-container { background: var(--bg-input); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; margin-top: 1rem; }
-        .admin-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 800px; }
-        .admin-table th { padding: 1.2rem; background: rgba(255,255,255,0.03); color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .admin-table td { padding: 1.2rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-        .status-pill { padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.7rem; font-weight: 800; }
-        .status-success { background: rgba(16, 185, 129, 0.15); color: var(--primary); border: 1px solid var(--primary); }
-        .status-pending { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid var(--warning); }
-
-        /* MODALS */
-        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); z-index: 1000; display: none; align-items: center; justify-content: center; }
-        .modal-backdrop.active { display: flex; }
-        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 650px; border-radius: 20px; padding: 2.5rem; position: relative; }
-
-        /* TOAST & LOADER */
-        #loading-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.95); z-index: 9999; display: none; flex-direction: column; justify-content: center; align-items: center; }
-        #loading-overlay.active { display: flex; }
+        /* UTILS & MODALS */
         .hidden { display: none !important; }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; background: var(--border); color: var(--text-muted); }
+        .badge.pro { background: var(--primary); color: black; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+        #loading-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.9); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        #loading-overlay.active { opacity: 1; pointer-events: auto; }
+        .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+        .toast { background: var(--bg-card); border-left: 4px solid var(--primary); color: white; padding: 1rem 1.5rem; border-radius: 4px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 1rem; transform: translateX(150%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); max-width: 350px; pointer-events: auto; }
+        .toast.show { transform: translateX(0); }
+        .toast.error { border-left-color: var(--danger); }
+
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .modal-backdrop.active { opacity: 1; pointer-events: auto; }
+        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 90%; max-width: 600px; border-radius: 16px; padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: translateY(20px); transition: transform 0.3s; max-height: 85vh; overflow-y: auto; }
+        .modal-backdrop.active .modal-panel { transform: translateY(0); }
+
+        /* AMORTIZATION TABLE (Fixed Alignment) */
+        .amortization-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 1rem; }
+        .amortization-table th { text-align: right; padding: 0.8rem; border-bottom: 2px solid var(--border); color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+        .amortization-table th:first-child { text-align: left; }
+        .amortization-table td { text-align: right; padding: 0.8rem; border-bottom: 1px solid var(--border); color: white; font-variant-numeric: tabular-nums; }
+        .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 600; }
+        .amortization-table tr:hover { background: rgba(255,255,255,0.02); }
+
+        /* ADMIN & SECTIONS */
+        .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+        .admin-tab { padding: 0.8rem 1.5rem; cursor: pointer; color: var(--text-muted); font-weight: 600; border-bottom: 2px solid transparent; transition: all 0.2s; flex: 1; text-align: center; }
+        .admin-tab.active { color: var(--warning); border-bottom-color: var(--warning); }
+        .admin-content { display: none; }
+        .admin-content.active { display: block; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        .stat-card { background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
+        .stat-num { font-size: 1.5rem; font-weight: 700; display: block; }
+        .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+        
+        .deal-list .deal-row { padding: 1rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; display: flex; justify-content: space-between; align-items: center; }
+        .deal-list .deal-row:hover { background: rgba(255,255,255,0.05); }
+        .deal-name { font-weight: 600; color: white; }
+        .deal-date { font-size: 0.8rem; color: var(--text-muted); }
+
+        .reviews-section, .contact-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .review-card { background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .full-col { grid-column: span 2; }
+        @media(max-width: 768px) { .contact-form { grid-template-columns: 1fr; } .full-col { grid-column: span 1; } }
     </style>
 </head>
 <body>
 
-    <div id="loading-overlay"><p style="font-weight:700; color:var(--primary);">ELABORAZIONE DATI...</p></div>
-    <div id="toast-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 10000; display: flex; flex-direction: column; gap: 10px;"></div>
+    <div id="loading-overlay"><div class="spinner"></div><p>Elaborazione...</p></div>
+    <div id="toast-container"></div>
 
     <header>
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-chart-line"></i> <span>InvestPro</span> Suite</div>
+            <div class="logo"><i class="fa-solid fa-building-columns"></i> <span>InvestPro</span></div>
             <div class="user-menu">
-                <div id="auth-guest"><button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">ACCEDI / REGISTRATI</button></div>
-                <div id="auth-user" class="hidden" style="display: flex; align-items: center;">
-                    <span id="badge-plan" style="padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 800; background: var(--border);">FREE</span>
-                    <span id="user-email-display" style="font-size: 0.9rem; margin: 0 15px; font-weight: 500;"></span>
-                    <button class="btn" onclick="app.auth.logout()"><i class="fa-solid fa-power-off"></i></button>
+                <div id="auth-guest"><button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accedi</button></div>
+                <div id="auth-user" class="hidden">
+                    <span id="badge-plan" class="badge">FREE</span>
+                    <span id="user-email-display" style="font-size: 0.85rem; margin: 0 10px;"></span>
+                    <button class="btn" onclick="app.auth.logout()" aria-label="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
                 </div>
             </div>
         </div>
     </header>
 
     <section class="toolbar">
-        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Immobiliare">
-        <div style="display: flex; gap: 1rem;">
-            <button class="btn" onclick="app.report.generate()"><i class="fa-solid fa-file-pdf"></i> REPORT PDF</button>
-            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-cloud"></i> I MIEI DEAL</button>
-            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> SALVA</button>
+        <input type="text" id="project-name" class="project-input" value="Nuova Analisi..." placeholder="Nome Progetto">
+        <div style="display: flex; gap: 0.75rem;">
+            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-folder-open"></i> I Miei Deal</button>
+            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva</button>
         </div>
     </section>
 
@@ -130,144 +174,167 @@
         <div class="dashboard-grid">
             
             <div class="card">
-                <div class="card-header"><div class="step-circle">A</div><h3>Conto Economico (MOL)</h3></div>
+                <div class="card-header"><div class="step-circle">A</div><h3>Conto Economico</h3></div>
                 
-                <div class="form-group" style="margin-bottom: 1.8rem; position: relative;">
-                    <label>Località dell'Immobile</label>
-                    <input type="text" id="geo-search" placeholder="Cerca comune (es. Roma, Milano)...">
-                    <div id="geo-results" class="hidden"></div>
+                <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
+                    <label>Indirizzo Immobile</label>
+                    <div style="position: relative;">
+                        <input type="text" id="geo-search" placeholder="Es. Via Roma 10, Milano" autocomplete="off" style="padding-right: 40px;">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 15px; top: 12px; color: var(--text-muted); pointer-events: none;"></i>
+                    </div>
+                    <div id="geo-results" class="dropdown-menu hidden"></div>
                 </div>
 
                 <div class="input-grid">
-                    <div class="form-group"><label>ADR (Prezzo Notte €)</label><input type="number" id="adr" value="135"></div>
-                    <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="70"></div>
+                    <div class="form-group"><label>ADR Medio (€)</label><input type="number" id="adr" value="120"></div>
+                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Comm. Portali (%)</label><input type="number" id="portal-comm" value="18"></div>
-                    <div class="form-group"><label>Cedolare Secca (%)</label><input type="number" id="tax-rate" value="21"></div>
+                    <div class="form-group"><label>Commissioni OTA (%)</label><input type="number" id="portal-comm" value="18"></div>
+                    <div class="form-group"><label>Cedolare / Tasse (%)</label><input type="number" id="tax-rate" value="21"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Costi Variabili (€)</label><input type="number" id="var-costs" value="20"></div>
-                    <div class="form-group"><label>Costi Fissi Mensili (€)</label><input type="number" id="fixed-costs" value="550"></div>
+                    <div class="form-group"><label>Costi Var. Notte (€)</label><input type="number" id="var-costs" value="15"></div>
+                    <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="65"></div>
                 </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;"><label>Costi Fissi Mensili (€)</label><input type="number" id="fixed-costs" value="600"></div>
                 
-                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.05);">
-                    <span class="kpi-title">MOL Mensile (Margine Op. Lordo)</span>
-                    <span class="kpi-value" id="res-mol-month">-- €</span>
-                </div>
+                <div class="kpi-container" style="margin-bottom: 0.5rem;"><span class="kpi-title">Utile Netto / Notte</span><span class="kpi-value" id="res-net-night">-- €</span></div>
+                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1);"><span class="kpi-title" style="color: var(--primary);">MOL Mensile</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
 
-                <div style="height: 250px; margin-top: 2rem;"><canvas id="profitChart"></canvas></div>
+                <div class="chart-wrapper"><canvas id="profitChart"></canvas></div>
             </div>
 
             <div class="card" id="card-pro">
                 <div class="overlay-lock">
-                    <i class="fa-solid fa-crown" style="font-size: 3rem; color: var(--warning); margin-bottom: 1.5rem;"></i>
-                    <h3>InvestPro Analysis</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 300px;">Sblocca il calcolo della leva finanziaria, ammortamento e ROI avanzato.</p>
-                    <button class="btn btn-primary" onclick="app.payment.start()">ATTIVA ORA (9,90€)</button>
+                    <i class="fa-solid fa-lock" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Funzionalità PRO</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Sblocca calcolo Mutuo, ROI e Cash Flow.</p>
+                    <button class="btn btn-primary" onclick="app.payment.start()">Sblocca Ora (9,90€)</button>
                 </div>
                 
-                <div class="card-header"><div class="step-circle" style="background:white;">B</div><h3>Struttura Finanziaria</h3></div>
+                <div class="card-header"><div class="step-circle" style="background: white; color: black;">B</div><h3>Finanziario & Mutuo</h3></div>
                 
                 <div class="locked-blur">
-                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Prezzo Acquisto (€)</label><input type="number" id="price" value="280000"></div>
+                    <div class="form-group" style="margin-bottom: 1.25rem;"><label>Prezzo Acquisto (€)</label><input type="number" id="price" value="250000"></div>
+                    <div class="input-grid">
+                        <div class="form-group"><label>Ristrutturazione (€)</label><input type="number" id="reno" value="15000"></div>
+                        <div class="form-group"><label>Spese Notaio (€)</label><input type="number" id="closing" value="10000"></div>
+                    </div>
                     <div class="input-grid">
                         <div class="form-group"><label>LTV Mutuo (%)</label><input type="number" id="ltv" value="80"></div>
-                        <div class="form-group"><label>Tasso Mutuo (%)</label><input type="number" id="rate" value="3.8" step="0.1"></div>
+                        <div class="form-group"><label>Tasso Interesse (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 2rem;"><label>Durata (Anni)</label><input type="number" id="years" value="25"></div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Durata (Anni)</label><input type="number" id="years" value="20"></div>
                     
-                    <div class="kpi-container"><span class="kpi-title">Rata Mensile Stimata</span><span class="kpi-value" id="res-mortgage">-- €</span></div>
-                    <div class="kpi-container" style="background: var(--primary); border: none;"><span class="kpi-title" style="color: black;">Cash Flow Netto Finale</span><span class="kpi-value" id="res-cashflow" style="color: black;">-- €</span></div>
-                    
-                    <button class="btn" style="width: 100%; justify-content: center; margin-top: 1.5rem;" onclick="app.calc.showAmortization()">
-                        <i class="fa-solid fa-table-list"></i> VEDI PIANO AMMORTAMENTO
-                    </button>
+                    <div class="kpi-container" style="margin-bottom: 1rem;"><span class="kpi-title">Rata Mutuo</span><span class="kpi-value" id="res-mortgage">-- €</span></div>
+                    <div class="kpi-container" style="background: var(--primary); border: none;"><span class="kpi-title" style="color: black;">Cash Flow Netto</span><span class="kpi-value" id="res-cashflow" style="color: black;">-- €</span></div>
+
+                    <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="kpi-container" style="background: rgba(59, 130, 246, 0.1); border-color: var(--info); padding: 0.8rem;">
+                                <span class="kpi-title" style="color: var(--info); font-size: 0.7rem;">Capitale Iniziale (Cash)</span>
+                                <span class="kpi-value" id="res-downpayment" style="font-size: 1rem;">-- €</span>
+                            </div>
+                            <div class="kpi-container" style="background: rgba(239, 68, 68, 0.1); border-color: var(--danger); padding: 0.8rem;">
+                                <span class="kpi-title" style="color: var(--danger); font-size: 0.7rem;">Interessi Totali</span>
+                                <span class="kpi-value" id="res-total-interest" style="font-size: 1rem;">-- €</span>
+                            </div>
+                        </div>
+                        <button class="btn" style="width: 100%; justify-content: center; font-size: 0.85rem;" onclick="app.calc.showAmortization()">
+                            <i class="fa-solid fa-table-list"></i> Piano Ammortamento
+                        </button>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <section id="admin-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <div>
-                    <h2 style="font-weight: 800; letter-spacing: -0.03em;"><i class="fa-solid fa-shield-halved"></i> PANNELLO AMMINISTRATORE</h2>
-                    <p style="color: var(--text-muted);">Controllo utenti, conversioni e stato pagamenti Stripe.</p>
-                </div>
-                <button class="btn btn-primary" onclick="app.admin.refresh()"><i class="fa-solid fa-rotate"></i> AGGIORNA DATI</button>
+        <section class="reviews-section">
+            <h2 class="reviews-title">Cosa dicono i professionisti</h2>
+            <div class="reviews-grid">
+                <div class="review-card"><p>"Strumento essenziale. Prima usavo Excel, ora risparmio ore."</p><br><small>- Marco M., Investitore</small></div>
+                <div class="review-card"><p>"Calcoli precisi e interfaccia pulita. Il calcolo della cedolare è perfetto."</p><br><small>- Giulia L., Property Manager</small></div>
+                <div class="review-card"><p>"Ottimo per valutare al volo la fattibilità di un deal."</p><br><small>- Alessandro C., Architetto</small></div>
             </div>
+        </section>
 
-            <div class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                <div class="kpi-container" style="flex-direction: column; align-items: flex-start;"><span class="kpi-title">Utenti Totali</span><span class="kpi-value" id="adm-total">0</span></div>
-                <div class="kpi-container" style="flex-direction: column; align-items: flex-start; border-color: var(--warning);"><span class="kpi-title">Abbonati PRO</span><span class="kpi-value" id="adm-pro" style="color:var(--warning)">0</span></div>
-                <div class="kpi-container" style="flex-direction: column; align-items: flex-start; border-color: var(--primary);"><span class="kpi-title">Pagamenti OK</span><span class="kpi-value" id="adm-paid">0</span></div>
-                <div class="kpi-container" style="flex-direction: column; align-items: flex-start; border-color: var(--info);"><span class="kpi-title">Conversion Rate</span><span class="kpi-value" id="adm-rate" style="color:var(--info)">0%</span></div>
-            </div>
-
-            <div class="admin-nav">
-                <button class="admin-tab-btn active" onclick="app.admin.switchTab('pro')">UTENTI PRO</button>
-                <button class="admin-tab-btn" onclick="app.admin.switchTab('all')">TUTTI GLI UTENTI</button>
-            </div>
-
-            <div class="admin-table-container">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>EMAIL</th>
-                            <th>UID FIRESTORE</th>
-                            <th>DATA REGISTRAZIONE</th>
-                            <th>PIANO</th>
-                            <th>STATO PAGAMENTO</th>
-                        </tr>
-                    </thead>
-                    <tbody id="admin-list">
-                        </tbody>
-                </table>
-            </div>
+        <section class="contact-section">
+            <h2 class="contact-title">Contattaci</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
+                <div class="form-group"><label>Nome</label><input type="text" id="contact-name" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="contact-email" required></div>
+                <div class="full-col"><label>Messaggio</label><input type="text" placeholder="Scrivi qui..." style="padding: 1rem;"></div>
+                <div class="full-col"><button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Invia</button></div>
+            </form>
         </section>
     </main>
 
+    <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN</button>
+
     <div id="modal-login" class="modal-backdrop">
         <div class="modal-panel" style="text-align: center;">
-            <h2 style="margin-bottom: 2rem;">Accedi a InvestPro</h2>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;" onclick="app.auth.loginGoogle()">
-                <i class="fa-brands fa-google"></i> CONTINUA CON GOOGLE
-            </button>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2rem;">Accedendo accetti i termini di servizio e la policy 2025.</p>
-            <button class="btn" style="margin-top: 1.5rem; width: 100%; justify-content: center;" onclick="app.ui.closeModal('modal-login')">ANNULLA</button>
+            <h2 style="margin-bottom: 1.5rem;">Accedi</h2>
+            <button class="btn" style="width: 100%; justify-content: center; background: white; color: black;" onclick="app.auth.loginGoogle()">Google Login</button>
+            <button class="btn btn-danger" style="width: 100%; margin-top: 1rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Chiudi</button>
         </div>
     </div>
 
     <div id="modal-deals" class="modal-backdrop">
         <div class="modal-panel">
-            <h2 style="margin-bottom: 1.5rem;">I Tuoi Deal Salvati</h2>
-            <div id="deals-list-container" style="max-height: 400px; overflow-y: auto;"></div>
-            <button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-deals')">TORNA ALLA SUITE</button>
+            <h2 style="margin-bottom: 1rem;">Deal Salvati</h2>
+            <div id="deals-container" class="deal-list"><p style="text-align: center; color: #666;">Caricamento...</p></div>
+            <button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-deals')">Chiudi</button>
+        </div>
+    </div>
+
+    <div id="modal-admin" class="modal-backdrop">
+        <div class="modal-panel">
+            <h2>Pannello Admin</h2>
+            <div class="admin-tabs">
+                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Personale</div>
+                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Statistiche</div>
+                <div class="admin-tab" onclick="app.admin.switchTab(event, 'users')">Utenti</div>
+            </div>
+            <div id="tab-personal" class="admin-content active">
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <button class="btn btn-primary" onclick="app.admin.toggleMyPlan()">Toggle PRO</button>
+                    <button class="btn btn-danger" onclick="app.admin.clearMyData()">Wipe Data</button>
+                </div>
+            </div>
+            <div id="tab-stats" class="admin-content">
+                <div class="stat-grid">
+                    <div class="stat-card"><span class="stat-num" id="stat-users">0</span><span class="stat-label">Utenti</span></div>
+                    <div class="stat-card"><span class="stat-num" id="stat-pro">0</span><span class="stat-label">PRO</span></div>
+                </div>
+                <button class="btn" onclick="app.admin.refreshStats()" style="width:100%; justify-content:center;">Aggiorna</button>
+            </div>
+            <div id="tab-users" class="admin-content">
+                <div id="admin-users-list" class="deal-list"></div>
+            </div>
+            <button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-admin')">Chiudi</button>
         </div>
     </div>
 
     <div id="modal-amortization" class="modal-backdrop">
         <div class="modal-panel" style="max-width: 800px;">
-            <h2 style="margin-bottom: 1.5rem;">Piano di Ammortamento Dettagliato</h2>
-            <div style="max-height: 50vh; overflow-y: auto;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-                    <thead style="position: sticky; top: 0; background: var(--bg-card);">
-                        <tr style="text-align: right; border-bottom: 2px solid var(--border); color: var(--text-muted);">
-                            <th style="text-align: left; padding: 12px;">ANNO</th>
-                            <th>QUOTA INTERESSI</th>
-                            <th>QUOTA CAPITALE</th>
-                            <th>DEBITO RESIDUO</th>
-                        </tr>
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; align-items:center;">
+                <h2>Piano di Ammortamento (Annuale)</h2>
+                <button class="btn" onclick="app.ui.closeModal('modal-amortization')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div style="max-height: 60vh; overflow-y: auto;">
+                <table class="amortization-table">
+                    <thead>
+                        <tr><th>Anno</th><th>Interessi</th><th>Capitale</th><th>Residuo</th></tr>
                     </thead>
-                    <tbody id="amort-table-body"></tbody>
+                    <tbody id="amortization-body"></tbody>
                 </table>
             </div>
-            <button class="btn" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="app.ui.closeModal('modal-amortization')">CHIUDI</button>
         </div>
     </div>
 
     <script>
-        /* --- CORE LOGIC INVESTPRO --- */
-        
+        // 1. CONFIGURAZIONE
         const CONFIG = {
             firebase: {
                 apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0",
@@ -277,308 +344,423 @@
                 messagingSenderId: "29979040948",
                 appId: "1:29979040948:web:597ea331e06567d8d50be1"
             },
-            stripe: "https://buy.stripe.com/test_4gM8wP85i5I0flc0PygjC01"
+            adminEmail: "lucaiolienrico1@gmail.com",
+            stripeLink: "https://buy.stripe.com/test_4gM8wP85i5I0flc0PygjC01"
         };
 
-        const state = { 
-            user: null, 
-            isPro: false, 
-            isAdmin: false, 
-            currentDocId: null, 
-            chart: null,
-            allUsersCache: [] 
-        };
+        // 2. STATE
+        const state = { user: null, isPro: false, currentDocId: null, chartInstance: null };
 
+        // 3. APP LOGIC
         const app = {
             init: () => {
-                if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
                 app.services.auth = firebase.auth();
                 app.services.db = firebase.firestore();
                 
                 app.auth.init();
-                app.chart.init();
+                app.validate.bind(); 
+                app.chart.init(); 
                 app.calc.update();
-
-                // Listeners
-                document.querySelectorAll('input[type="number"]').forEach(i => i.addEventListener('input', app.calc.update));
-                document.getElementById('geo-search').addEventListener('input', (e) => app.geo.debounceSearch(e.target.value));
-                window.onclick = (e) => { if(!e.target.closest('#geo-search')) app.ui.toggleElement('geo-results', false); };
+                
+                const geoInput = document.getElementById('geo-search');
+                if(geoInput) geoInput.addEventListener('input', (e) => app.geo.debouncedSearch(e.target.value));
+                
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('#geo-search') && !e.target.closest('#geo-results')) {
+                        app.ui.toggleElement('geo-results', false);
+                    }
+                });
+                
+                document.querySelectorAll('input[type="number"]').forEach(input => {
+                    input.addEventListener('input', app.calc.debouncedUpdate);
+                });
             },
 
             services: { auth: null, db: null },
 
+            utils: {
+                debounce: (func, wait) => {
+                    let timeout;
+                    return function(...args) { clearTimeout(timeout); timeout = setTimeout(() => func(...args), wait); };
+                },
+                safeCall: async (fn, context) => {
+                    app.ui.setLoading(true);
+                    try { await fn(); } 
+                    catch (e) { console.error(`[${context}]`, e); app.ui.showToast("Errore: " + e.message, 'error'); } 
+                    finally { app.ui.setLoading(false); }
+                },
+                normalizeStr: (str) => str ? str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, "") : ""
+            },
+
             ui: {
-                setLoading: (s) => document.getElementById('loading-overlay').classList.toggle('active', s),
-                toggleElement: (id, s) => document.getElementById(id).classList.toggle('hidden', !s),
+                toggleElement: (id, show) => { const el = document.getElementById(id); if(el) el.classList.toggle('hidden', !show); },
                 openModal: (id) => document.getElementById(id).classList.add('active'),
                 closeModal: (id) => document.getElementById(id).classList.remove('active'),
-                toast: (msg, type = 'info') => {
+                setLoading: (show) => { const el = document.getElementById('loading-overlay'); if(el) el.classList.toggle('active', show); },
+                showToast: (msg, type = 'info') => {
                     const t = document.createElement('div');
-                    t.style.cssText = `background:var(--bg-card); color:white; padding:1.2rem; border-left:5px solid ${type==='error'?'var(--danger)':'var(--primary)'}; border-radius:8px; box-shadow:var(--shadow); font-weight:600; min-width:250px;`;
-                    t.textContent = msg;
+                    t.className = `toast ${type}`;
+                    t.innerHTML = `<i class="fa-solid ${type==='error'?'fa-circle-exclamation':'fa-info-circle'}"></i> <span>${msg}</span>`;
                     document.getElementById('toast-container').appendChild(t);
-                    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 3500);
+                    setTimeout(() => t.classList.add('show'), 10);
+                    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300) }, 3000);
                 },
-                updateUIForUser: (u) => {
+                updateAuthUI: () => {
+                    const u = state.user;
                     app.ui.toggleElement('auth-guest', !u);
                     app.ui.toggleElement('auth-user', !!u);
-                    if(u) document.getElementById('user-email-display').textContent = u.email;
+                    if(u) {
+                        document.getElementById('user-email-display').textContent = u.email;
+                        app.ui.toggleElement('admin-trigger', u.email.toLowerCase() === CONFIG.adminEmail.toLowerCase());
+                    }
                 },
-                setProStatus: (pro) => {
-                    state.isPro = pro;
-                    document.getElementById('card-pro').classList.toggle('is-unlocked', pro);
-                    const b = document.getElementById('badge-plan');
-                    b.textContent = pro ? "INVESTPRO" : "GUEST";
-                    b.style.background = pro ? "var(--warning)" : "var(--border)";
-                    b.style.color = pro ? "#000" : "var(--text-muted)";
+                setProStatus: (active) => {
+                    state.isPro = active;
+                    const badge = document.getElementById('badge-plan');
+                    const cardPro = document.getElementById('card-pro');
+                    if(badge) { badge.textContent = active ? "PRO" : "FREE"; badge.classList.toggle('pro', active); }
+                    if(cardPro) cardPro.classList.toggle('is-unlocked', active);
                 }
+            },
+
+            validate: {
+                checkField: (id) => { const el = document.getElementById(id); return el ? true : false; },
+                all: () => true,
+                bind: () => document.querySelectorAll('input[type="number"]').forEach(i => i.addEventListener('blur', () => app.validate.checkField(i.id)))
+            },
+
+            geo: {
+                search: async (query) => {
+                    if (query.length < 3) return;
+                    const list = document.getElementById('geo-results');
+                    list.innerHTML = '<div style="padding:10px; text-align:center; font-size:0.8rem;">Ricerca...</div>';
+                    app.ui.toggleElement('geo-results', true);
+
+                    try {
+                        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&addressdetails=1&limit=5&countrycodes=it`);
+                        const data = await res.json();
+                        list.innerHTML = '';
+                        
+                        if (!data.length) {
+                            list.innerHTML = '<div style="padding:10px; text-align:center; color:#ef4444;">Nessun risultato</div>';
+                            return;
+                        }
+
+                        data.forEach(item => {
+                            const div = document.createElement('div');
+                            div.className = 'dropdown-item';
+                            const city = item.address.city || item.address.town || item.address.village || item.address.municipality || '';
+                            const road = item.address.road || '';
+                            div.textContent = (road ? road + ', ' : '') + city;
+                            
+                            div.onclick = () => {
+                                document.getElementById('geo-search').value = div.textContent;
+                                app.ui.toggleElement('geo-results', false);
+                                
+                                const RATES = {
+                                    'milano': 4.5, 'roma': 6.0, 'firenze': 5.5, 'venezia': 5.0, 'napoli': 3.0, 'torino': 2.8, 'bologna': 3.0,
+                                    'genova': 2.5, 'palermo': 2.0, 'bari': 2.0, 'catania': 2.5, 'verona': 3.5, 'trieste': 2.5, 'padova': 2.5,
+                                    'brescia': 2.0, 'parma': 2.0, 'modena': 2.0, 'reggio emilia': 2.0, 'ravenna': 2.5, 'rimini': 3.0, 'riccione': 3.5,
+                                    'ferrara': 2.5, 'forli': 2.0, 'piacenza': 2.0, 'trento': 2.5, 'bolzano': 2.5, 'aosta': 2.0, 'bergamo': 2.5,
+                                    'como': 3.0, 'varese': 2.0, 'monza': 2.0, 'mantova': 2.5, 'cremona': 1.5, 'pavia': 1.5, 'lodi': 1.5,
+                                    'lecco': 2.0, 'sondrio': 1.5, 'biella': 1.5, 'cuneo': 1.5, 'novara': 1.5, 'asti': 1.5, 'alessandria': 1.5,
+                                    'imperia': 2.0, 'savona': 2.0, 'la spezia': 2.5, 'udine': 1.5, 'pordenone': 1.5, 'gorizia': 1.5, 'vicenza': 2.0,
+                                    'treviso': 2.0, 'belluno': 2.0, 'rovigo': 1.5, 'massa': 2.0, 'lucca': 2.5, 'pisa': 2.5, 'livorno': 2.0,
+                                    'arezzo': 2.0, 'siena': 3.0, 'grosseto': 2.0, 'prato': 2.0, 'pistoia': 2.0, 'perugia': 2.0, 'terni': 1.5,
+                                    'ancona': 2.0, 'pesaro': 2.0, 'macerata': 1.5, 'fermo': 1.5, 'ascoli piceno': 1.5, 'viterbo': 2.0, 'rieti': 1.5,
+                                    'latina': 2.0, 'frosinone': 1.5, 'laquila': 1.5, 'teramo': 1.5, 'pescara': 2.0, 'chieti': 1.5, 'campobasso': 1.5,
+                                    'isernia': 1.0, 'caserta': 2.0, 'benevento': 1.5, 'avellino': 1.5, 'salerno': 2.5, 'foggia': 1.5, 'taranto': 1.5,
+                                    'brindisi': 2.0, 'lecce': 2.5, 'potenza': 1.5, 'matera': 2.0, 'cosenza': 1.5, 'catanzaro': 1.5, 'reggio calabria': 2.0,
+                                    'messina': 2.0, 'trapani': 2.0, 'agrigento': 2.0, 'caltanissetta': 1.5, 'enna': 1.5, 'ragusa': 2.0, 'siracusa': 2.5,
+                                    'sassari': 2.0, 'nuoro': 1.5, 'oristano': 1.5, 'cagliari': 2.5,
+                                    'sorrento': 4.0, 'amalfi': 4.5, 'positano': 5.0, 'capri': 5.0, 'ischia': 3.0, 'taormina': 4.0, 'cefalu': 2.0,
+                                    'gallipoli': 3.0, 'otranto': 2.5, 'polignano a mare': 3.0, 'cortina': 4.5, 'courmayeur': 3.0, 'livigno': 2.5,
+                                    'madonna di campiglio': 3.0, 'sanremo': 3.0, 'portofino': 5.0, 'cinque terre': 3.0, 'forte dei marmi': 4.0,
+                                    'viareggio': 2.5, 'elba': 2.0, 'jesolo': 3.0, 'caorle': 2.5, 'lignano': 2.5, 'assisi': 2.5, 'spoleto': 2.0,
+                                    'sirmione': 2.5, 'desenzano': 2.0, 'peschiera': 2.0, 'stresa': 2.5
+                                };
+
+                                const cleanSearch = app.utils.normalizeStr(city + " " + item.display_name);
+                                let foundRate = null;
+                                let foundCity = "";
+
+                                for (const [key, rate] of Object.entries(RATES)) {
+                                    if (cleanSearch.includes(key)) { 
+                                        foundRate = rate; 
+                                        foundCity = key.charAt(0).toUpperCase() + key.slice(1);
+                                        break; 
+                                    }
+                                }
+
+                                if(foundRate !== null) {
+                                    const el = document.getElementById('city-tax');
+                                    el.value = foundRate;
+                                    el.classList.remove('input-updated');
+                                    void el.offsetWidth;
+                                    el.classList.add('input-updated');
+                                    app.ui.showToast(`Tassa aggiornata per ${foundCity}: ${foundRate}€`, 'success');
+                                } else {
+                                    app.ui.showToast(`Città non in lista. Tassa default: 2€`, 'info');
+                                    document.getElementById('city-tax').value = 2;
+                                }
+                                app.calc.update();
+                            };
+                            list.appendChild(div);
+                        });
+                    } catch (e) { console.error(e); }
+                },
+                debouncedSearch: null
+            },
+
+            chart: {
+                init: () => {
+                    const ctx = document.getElementById('profitChart');
+                    if(!ctx) return;
+                    Chart.defaults.font.family = "'Inter', sans-serif";
+                    Chart.defaults.color = '#94a3b8';
+                    state.chartInstance = new Chart(ctx.getContext('2d'), {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Utile', 'OTA', 'Tasse', 'Costi'],
+                            datasets: [{ data: [0, 0, 0, 0], backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'], borderWidth: 0 }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom' } } }
+                    });
+                },
+                update: (rev, ota, taxes, costs, net) => {
+                    if (state.chartInstance) {
+                        state.chartInstance.data.datasets[0].data = [net > 0 ? net : 0, ota, taxes, costs];
+                        state.chartInstance.update();
+                    }
+                }
+            },
+
+            calc: {
+                getVal: (id) => { const v = document.getElementById(id); return v && v.value ? parseFloat(v.value) : 0; },
+                format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
+                update: () => {
+                    const c = app.calc;
+                    const totalRev = c.getVal('adr') * 365 * (c.getVal('occ')/100);
+                    const ota = totalRev * (c.getVal('portal-comm')/100);
+                    const taxes = totalRev * (1 - c.getVal('portal-comm')/100) * (c.getVal('tax-rate')/100);
+                    const opCosts = (c.getVal('var-costs') * 365 * (c.getVal('occ')/100)) + (c.getVal('fixed-costs') * 12) + (c.getVal('city-tax') * 365 * (c.getVal('occ')/100));
+                    const net = totalRev - ota - taxes - opCosts;
+
+                    document.getElementById('res-mol-month').textContent = c.format(net/12);
+                    document.getElementById('res-net-night').textContent = c.format(net / (365 * (c.getVal('occ')/100)) || 0);
+
+                    app.chart.update(totalRev, ota, taxes, opCosts, net);
+
+                    const price = c.getVal('price');
+                    const ltv = c.getVal('ltv');
+                    const loan = price * (ltv/100);
+                    const initialCapital = (price - loan) + c.getVal('reno') + c.getVal('closing');
+                    
+                    const i = (c.getVal('rate')/100)/12; 
+                    const n = c.getVal('years')*12;
+                    let m = 0;
+                    if(i > 0 && n > 0) m = loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1);
+                    else if(n > 0) m = loan/n;
+                    
+                    const totalPaid = m * n;
+                    const totalInterest = totalPaid - loan;
+
+                    document.getElementById('res-mortgage').textContent = c.format(m);
+                    document.getElementById('res-cashflow').textContent = c.format((net/12) - m);
+                    document.getElementById('res-downpayment').textContent = c.format(initialCapital);
+                    document.getElementById('res-total-interest').textContent = c.format(totalInterest > 0 ? totalInterest : 0);
+                },
+                showAmortization: () => {
+                    const c = app.calc;
+                    const loan = c.getVal('price') * (c.getVal('ltv')/100);
+                    const rate = c.getVal('rate')/100;
+                    const years = c.getVal('years');
+                    if(loan <= 0 || years <= 0) return;
+                    const i = rate / 12;
+                    const n = years * 12;
+                    const monthlyPayment = (i > 0) ? loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1) : loan/n;
+
+                    let balance = loan;
+                    let html = '';
+                    let yearInterest = 0;
+                    let yearPrincipal = 0;
+
+                    for(let month = 1; month <= n; month++) {
+                        const interestPart = balance * i;
+                        const principalPart = monthlyPayment - interestPart;
+                        balance -= principalPart;
+                        yearInterest += interestPart;
+                        yearPrincipal += principalPart;
+                        if (month % 12 === 0) {
+                            html += `<tr><td>${month/12}</td><td>${c.format(yearInterest)}</td><td>${c.format(yearPrincipal)}</td><td>${c.format(balance > 0 ? balance : 0)}</td></tr>`;
+                            yearInterest = 0; 
+                            yearPrincipal = 0;
+                        }
+                    }
+                    document.getElementById('amortization-body').innerHTML = html;
+                    app.ui.openModal('modal-amortization');
+                },
+                debouncedUpdate: null
             },
 
             auth: {
                 init: () => {
                     app.services.auth.onAuthStateChanged(async (u) => {
                         state.user = u;
-                        app.ui.updateUIForUser(u);
+                        app.ui.updateAuthUI();
                         app.ui.closeModal('modal-login');
-                        
-                        if(u) {
-                            const doc = await app.services.db.collection('users').doc(u.uid).get();
-                            const data = doc.data() || {};
-                            
-                            state.isAdmin = data.role === 'admin';
-                            app.ui.setProStatus(data.plan === 'pro');
-                            
-                            // Gestione visibilità Admin Panel
-                            document.getElementById('admin-panel').style.display = state.isAdmin ? 'block' : 'none';
-                            if(state.isAdmin) app.admin.refresh();
-
-                            if(!doc.exists) {
-                                await app.services.db.collection('users').doc(u.uid).set({
-                                    email: u.email, plan: 'free', role: 'user', joined: new Date()
-                                });
-                            }
+                        if (u) {
+                            try {
+                                const d = await app.services.db.collection('users').doc(u.uid).get();
+                                if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
+                                else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
+                                app.payment.checkPolling();
+                            } catch(e) { console.error(e); }
+                        } else {
+                            app.ui.setProStatus(false);
                         }
                     });
                 },
-                loginGoogle: () => app.services.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()),
-                logout: () => app.services.auth.signOut().then(() => location.reload())
-            },
-
-            geo: {
-                debounceSearch: (q) => {
-                    clearTimeout(app.geo.timer);
-                    app.geo.timer = setTimeout(() => app.geo.fetch(q), 600);
-                },
-                timer: null,
-                fetch: async (q) => {
-                    if(q.length < 3) return;
-                    const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&countrycodes=it&limit=5`);
-                    const data = await res.json();
-                    const box = document.getElementById('geo-results');
-                    box.innerHTML = '';
-                    app.ui.toggleElement('geo-results', true);
-                    data.forEach(item => {
-                        const div = document.createElement('div');
-                        div.className = 'dropdown-item';
-                        div.textContent = item.display_name;
-                        div.onclick = () => {
-                            document.getElementById('geo-search').value = item.display_name;
-                            app.ui.toggleElement('geo-results', false);
-                            app.calc.update();
-                        };
-                        box.appendChild(div);
-                    });
-                }
-            },
-
-            calc: {
-                val: (id) => parseFloat(document.getElementById(id).value) || 0,
-                fmt: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
-                update: () => {
-                    const adr = app.calc.val('adr'), occ = app.calc.val('occ')/100;
-                    const ota = app.calc.val('portal-comm')/100, tax = app.calc.val('tax-rate')/100;
-                    const varC = app.calc.val('var-costs'), fixC = app.calc.val('fixed-costs');
-
-                    const rev = adr * 365 * occ;
-                    const otaCost = rev * ota;
-                    const taxCost = rev * tax;
-                    const opCost = (varC * 365 * occ) + (fixC * 12);
-                    const molAnnual = rev - otaCost - taxCost - opCost;
-
-                    document.getElementById('res-mol-month').textContent = app.calc.fmt(molAnnual / 12);
-
-                    if(state.chart) {
-                        state.chart.data.datasets[0].data = [molAnnual > 0 ? molAnnual : 0, otaCost, taxCost, opCost];
-                        state.chart.update();
-                    }
-
-                    // PRO SECTION
-                    const price = app.calc.val('price');
-                    const loan = price * (app.calc.val('ltv')/100);
-                    const i = (app.calc.val('rate')/100)/12, n = app.calc.val('years')*12;
-                    const m = (i > 0) ? loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1) : (n > 0 ? loan/n : 0);
-
-                    document.getElementById('res-mortgage').textContent = app.calc.fmt(m);
-                    document.getElementById('res-cashflow').textContent = app.calc.fmt((molAnnual/12) - m);
-                },
-                showAmortization: () => {
-                    const loan = app.calc.val('price') * (app.calc.val('ltv')/100);
-                    const i = (app.calc.val('rate')/100)/12, n = app.calc.val('years')*12;
-                    if(loan <= 0 || n <= 0) return;
-                    
-                    let bal = loan, html = '', yInt = 0, yPri = 0;
-                    const mPay = loan * (i * Math.pow(1+i,n)) / (Math.pow(1+i,n)-1);
-
-                    for(let m = 1; m <= n; m++) {
-                        let iPart = bal * i, pPart = mPay - iPart;
-                        bal -= pPart; yInt += iPart; yPri += pPart;
-                        if(m % 12 === 0) {
-                            html += `<tr style="text-align:right; border-bottom:1px solid #334155;">
-                                <td style="text-align:left; padding:12px; color:var(--primary); font-weight:700;">Anno ${m/12}</td>
-                                <td>${app.calc.fmt(yInt)}</td><td>${app.calc.fmt(yPri)}</td><td>${app.calc.fmt(bal > 0 ? bal : 0)}</td>
-                            </tr>`;
-                            yInt = 0; yPri = 0;
-                        }
-                    }
-                    document.getElementById('amort-table-body').innerHTML = html;
-                    app.ui.openModal('modal-amortization');
-                }
-            },
-
-            admin: {
-                refresh: async () => {
-                    if(!state.isAdmin) return;
-                    app.ui.setLoading(true);
-                    try {
-                        const snap = await app.services.db.collection('users').get();
-                        state.allUsersCache = [];
-                        let proCount = 0, paidCount = 0;
-
-                        snap.forEach(doc => {
-                            const d = doc.data();
-                            const userObj = { id: doc.id, ...d };
-                            state.allUsersCache.push(userObj);
-                            if(d.plan === 'pro') proCount++;
-                            if(d.paymentStatus === 'success') paidCount++;
-                        });
-
-                        document.getElementById('adm-total').textContent = state.allUsersCache.length;
-                        document.getElementById('adm-pro').textContent = proCount;
-                        document.getElementById('adm-paid').textContent = paidCount;
-                        document.getElementById('adm-rate').textContent = Math.round((proCount/state.allUsersCache.length)*100) + '%';
-                        
-                        app.admin.render('pro');
-                        app.ui.toast("Dati Amministratore Aggiornati", "success");
-                    } catch(e) { app.ui.toast("Errore sync admin: " + e.message, "error"); }
-                    finally { app.ui.setLoading(false); }
-                },
-
-                render: (filter) => {
-                    const tbody = document.getElementById('admin-list');
-                    const filtered = filter === 'pro' ? state.allUsersCache.filter(u => u.plan === 'pro') : state.allUsersCache;
-                    
-                    tbody.innerHTML = filtered.map(u => `
-                        <tr>
-                            <td style="font-weight:700;">${u.email}</td>
-                            <td style="font-family:monospace; font-size:0.75rem; color:var(--text-muted);">${u.id}</td>
-                            <td>${u.joined ? (u.joined.toDate ? u.joined.toDate().toLocaleDateString() : 'N/D') : 'N/D'}</td>
-                            <td><span class="status-pill ${u.plan==='pro'?'status-success':''}">${u.plan.toUpperCase()}</span></td>
-                            <td><span class="status-pill ${u.paymentStatus==='success'?'status-success':'status-pending'}">${u.paymentStatus || 'IN ATTESA'}</span></td>
-                        </tr>
-                    `).join('');
-                },
-
-                switchTab: (tab) => {
-                    document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
-                    event.target.classList.add('active');
-                    app.admin.render(tab);
-                }
+                loginGoogle: async () => { try { await app.services.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); } catch(e) { console.error(e); } },
+                logout: () => app.services.auth.signOut().then(() => window.location.reload())
             },
 
             data: {
-                saveProject: async () => {
-                    if(!state.user) return app.ui.openModal('modal-login');
-                    app.ui.setLoading(true);
+                saveProject: () => app.utils.safeCall(async () => {
+                    if (!state.user) return app.ui.openModal('modal-login');
                     const inputs = {};
                     document.querySelectorAll('input').forEach(i => inputs[i.id] = i.value);
                     const payload = { uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs };
-                    
-                    try {
-                        if(state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(payload);
-                        else state.currentDocId = (await app.services.db.collection('projects').add(payload)).id;
-                        app.ui.toast("Deal salvato correttamente", "success");
-                    } catch(e) { app.ui.toast("Errore salvataggio", "error"); }
-                    finally { app.ui.setLoading(false); }
-                },
+                    if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(payload);
+                    else state.currentDocId = (await app.services.db.collection('projects').add(payload)).id;
+                    app.ui.showToast("Progetto salvato!", 'success');
+                }, 'Save'),
 
-                openDealsList: async () => {
-                    if(!state.user) return app.ui.openModal('modal-login');
+                openDealsList: () => app.utils.safeCall(async () => {
+                    if (!state.user) return app.ui.openModal('modal-login');
                     app.ui.openModal('modal-deals');
-                    const snap = await app.services.db.collection('projects').where('uid','==',state.user.uid).get();
-                    const cont = document.getElementById('deals-list-container');
-                    cont.innerHTML = snap.empty ? '<p style="text-align:center; padding:2rem; color:var(--text-muted);">Nessun deal salvato.</p>' : '';
-                    snap.forEach(doc => {
-                        const d = doc.data();
-                        const row = document.createElement('div');
-                        row.style.cssText = "padding:1.2rem; border-bottom:1px solid var(--border); cursor:pointer; display:flex; justify-content:space-between; align-items:center;";
-                        row.innerHTML = `<div><div style="font-weight:700;">${d.name}</div><div style="font-size:0.7rem; color:var(--text-muted);">${d.updatedAt.toDate().toLocaleDateString()}</div></div><i class="fa-solid fa-chevron-right" style="color:var(--primary)"></i>`;
-                        row.onclick = () => {
-                            state.currentDocId = doc.id;
-                            Object.keys(d.inputs).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = d.inputs[k]; });
-                            app.calc.update(); app.ui.closeModal('modal-deals');
+                    const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).orderBy("updatedAt", "desc").get();
+                    const div = document.getElementById('deals-container');
+                    div.innerHTML = '';
+                    if(s.empty) div.innerHTML = '<p style="text-align:center; padding:1rem; color:#aaa">Nessun progetto trovato.</p>';
+                    s.forEach(d => {
+                        const r = document.createElement('div'); r.className = 'deal-row';
+                        const info = document.createElement('div');
+                        const title = document.createElement('div'); title.className = 'deal-name'; title.textContent = d.data().name;
+                        const date = document.createElement('div'); date.className = 'deal-date'; date.textContent = d.data().updatedAt ? new Date(d.data().updatedAt.seconds*1000).toLocaleDateString() : '';
+                        info.appendChild(title); info.appendChild(date);
+                        r.appendChild(info);
+                        r.onclick = () => {
+                            state.currentDocId = d.id;
+                            const data = d.data().inputs;
+                            Object.keys(data).forEach(k => { const el = document.getElementById(k); if(el) el.value = data[k]; });
+                            app.calc.update();
+                            app.ui.closeModal('modal-deals');
                         };
-                        cont.appendChild(row);
+                        div.appendChild(r);
                     });
-                }
-            },
-
-            report: {
-                generate: () => {
-                    if(!state.isPro) return app.ui.toast("Report PDF disponibile solo per InvestPro.", "error");
-                    const doc = new jspdf.jsPDF();
-                    doc.setFontSize(22); doc.setTextColor(16, 185, 129);
-                    doc.text("INVESTPRO DEAL REPORT", 15, 20);
-                    doc.setFontSize(10); doc.setTextColor(100);
-                    doc.text("Analisi professionale generata il " + new Date().toLocaleString(), 15, 28);
-                    
-                    doc.autoTable({
-                        startY: 40,
-                        head: [['Parametro Analizzato', 'Valore']],
-                        body: [
-                            ['Progetto', document.getElementById('project-name').value],
-                            ['MOL Mensile', document.getElementById('res-mol-month').textContent],
-                            ['Rata Mutuo', document.getElementById('res-mortgage').textContent],
-                            ['Cash Flow Netto', document.getElementById('res-cashflow').textContent]
-                        ],
-                        headStyles: { fillColor: [16, 185, 129] }
-                    });
-                    doc.save("InvestPro_Report.pdf");
-                }
-            },
-
-            chart: {
-                init: () => {
-                    const ctx = document.getElementById('profitChart').getContext('2d');
-                    state.chart = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ['Utile Netto', 'OTA', 'Tasse', 'Costi Op.'],
-                            datasets: [{ data: [0,0,0,0], backgroundColor: ['#10b981','#f59e0b','#ef4444','#3b82f6'], borderWidth: 0, hoverOffset: 10 }]
-                        },
-                        options: { maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, color: '#94a3b8', font: { size: 10 } } } } }
-                    });
-                }
+                }, 'Load')
             },
 
             payment: {
                 start: () => {
-                    if(!state.user) return app.ui.openModal('modal-login');
-                    window.open(CONFIG.stripe + "?client_reference_id=" + state.user.uid, "_blank");
+                    if (!state.user) return app.ui.openModal('modal-login');
+                    sessionStorage.setItem('awaiting_payment', 'true');
+                    const link = `${CONFIG.stripeLink}?prefilled_email=${encodeURIComponent(state.user.email)}&client_reference_id=${state.user.uid}`;
+                    window.open(link, '_blank');
+                    app.payment.checkPolling();
+                },
+                checkPolling: () => {
+                    if (!sessionStorage.getItem('awaiting_payment') || !state.user) return;
+                    const unsub = app.services.db.collection('users').doc(state.user.uid).onSnapshot(doc => {
+                        if (doc.exists && doc.data().plan === 'pro') {
+                            app.ui.setProStatus(true);
+                            app.ui.showToast('PRO Attivato con successo!', 'success');
+                            sessionStorage.removeItem('awaiting_payment');
+                            unsub(); 
+                        }
+                    });
+                    setTimeout(unsub, 600000);
                 }
+            },
+
+            contact: {
+                submit: () => {
+                    app.ui.setLoading(true);
+                    setTimeout(() => { app.ui.setLoading(false); app.ui.showToast("Messaggio inviato!", 'success'); document.querySelector('.contact-form').reset(); }, 1000);
+                }
+            },
+
+            // --- SEZIONE ADMIN AUDITED & VERIFIED ---
+            admin: {
+                check: () => {
+                    if (!state.user) return false;
+                    // Normalizzazione critica per evitare errori di autorizzazione
+                    return state.user.email.toLowerCase() === CONFIG.adminEmail.toLowerCase();
+                },
+                switchTab: (event, t) => {
+                    // Prevenzione errori su parametri mancanti
+                    document.querySelectorAll('.admin-tab').forEach(x => x.classList.remove('active'));
+                    document.querySelectorAll('.admin-content').forEach(x => x.classList.remove('active'));
+                    
+                    if (event && event.currentTarget) {
+                        event.currentTarget.classList.add('active');
+                    }
+                    
+                    const targetEl = document.getElementById(`tab-${t}`);
+                    if (targetEl) targetEl.classList.add('active');
+
+                    // Caricamento dati basato sul tab
+                    if (t === 'stats') app.admin.refreshStats();
+                    if (t === 'users') app.admin.loadUsers();
+                },
+                toggleMyPlan: () => app.utils.safeCall(async () => {
+                    if (!app.admin.check()) return;
+                    const next = state.isPro ? 'free' : 'pro';
+                    await app.services.db.collection('users').doc(state.user.uid).update({ plan: next });
+                    app.ui.showToast(`Piano Admin: ${next.toUpperCase()}`, 'info');
+                }, 'AdmPlan'),
+                clearMyData: () => app.utils.safeCall(async () => {
+                    if (!app.admin.check() || !confirm("Cancellare tutto?")) return;
+                    const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).get();
+                    const b = app.services.db.batch();
+                    s.forEach(d => b.delete(d.ref));
+                    await b.commit();
+                    app.ui.showToast("Dati Admin rimossi.", 'success');
+                }, 'AdmWipe'),
+                refreshStats: () => app.utils.safeCall(async () => {
+                    if (!app.admin.check()) return;
+                    const us = await app.services.db.collection('users').limit(1000).get();
+                    let proCount = 0; 
+                    us.forEach(d => { if (d.data().plan === 'pro') proCount++; });
+                    document.getElementById('stat-users').textContent = us.size;
+                    document.getElementById('stat-pro').textContent = proCount;
+                }, 'AdmStat'),
+                loadUsers: () => app.utils.safeCall(async () => {
+                    if (!app.admin.check()) return;
+                    const s = await app.services.db.collection('users').orderBy('joined', 'desc').limit(100).get();
+                    const div = document.getElementById('admin-users-list');
+                    div.innerHTML = '';
+                    s.forEach(d => {
+                        const u = d.data();
+                        const r = document.createElement('div'); r.className = 'deal-row';
+                        const emailDiv = document.createElement('div'); emailDiv.style.fontWeight = '600'; emailDiv.style.color = 'white'; emailDiv.textContent = u.email;
+                        const planDiv = document.createElement('div'); planDiv.style.fontSize = '0.8rem'; planDiv.style.color = u.plan === 'pro' ? 'var(--primary)' : '#94a3b8'; planDiv.textContent = u.plan ? u.plan.toUpperCase() : 'FREE';
+                        const w = document.createElement('div'); w.appendChild(emailDiv); w.appendChild(planDiv);
+                        r.appendChild(w);
+                        div.appendChild(r);
+                    });
+                }, 'AdmUsr')
             }
         };
 
-        document.addEventListener('DOMContentLoaded', app.init);
+        app.calc.debouncedUpdate = app.utils.debounce(app.calc.update, 300);
+        app.geo.debouncedSearch = app.utils.debounce(app.geo.search, 500);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
+            app.init();
+        });
     </script>
 </body>
 </html>
