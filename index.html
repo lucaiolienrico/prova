@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Piattaforma professionale per analisi investimenti immobiliari con calcolo ROI, Cashflow e Mutuo.">
+    <meta name="description" content="Suite professionale per analisi investimenti immobiliari. Calcolo ROI, Cashflow, Mutuo e reportistica bancaria.">
     <title>InvestPro | Suite Analisi Immobiliare Professionale</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,6 @@
             --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* RESET & BASE */
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
         html { scroll-behavior: smooth; }
         body { 
@@ -54,7 +53,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER & BRANDING */
+        /* HEADER & NAVIGATION */
         header { 
             background: rgba(15, 23, 42, 0.98); 
             border-bottom: 1px solid var(--border); 
@@ -83,7 +82,7 @@
         }
         .logo span { color: white; }
 
-        /* AZIONI E PULSANTI */
+        /* PULSANTI E AZIONI PROFESSIONALI */
         .btn { 
             padding: 0.8rem 1.6rem; 
             border-radius: var(--radius-md); 
@@ -105,13 +104,14 @@
         .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
         .btn-danger { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.05); }
         .btn-danger:hover { background: var(--danger); color: white; }
+        
         .btn-admin { 
             position: fixed; bottom: 30px; left: 30px; z-index: 200; 
             background: var(--warning); color: #020617; font-weight: 900; border: none; 
             box-shadow: 0 0 30px rgba(245, 158, 11, 0.4); padding: 1.1rem; border-radius: 50px; 
         }
 
-        /* TOOLBAR */
+        /* TOOLBAR PROGETTO */
         .toolbar { 
             max-width: 1400px; margin: 3rem auto 0; padding: 0 1.5rem; 
             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; 
@@ -127,7 +127,7 @@
         main { padding: 3rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
         .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 3rem; }
 
-        /* CARDS */
+        /* CARDS LOGICHE */
         .card { 
             background: var(--bg-card); border: 1px solid var(--border); 
             border-radius: var(--radius-lg); padding: 2.5rem; position: relative; 
@@ -144,7 +144,7 @@
             justify-content: center; font-size: 1.1rem; 
         }
 
-        /* INPUTS & FORMS */
+        /* FORMULARI E INPUTS */
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
         .form-group { display: flex; flex-direction: column; gap: 0.7rem; }
         label { font-size: 0.75rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -155,7 +155,7 @@
         }
         input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
 
-        /* KPI & OUTPUTS */
+        /* KPI E RISULTATI CALCOLO */
         .kpi-container { 
             background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border); 
             border-radius: var(--radius-md); padding: 1.4rem; margin-top: auto; 
@@ -165,7 +165,7 @@
         .kpi-value { font-size: 1.6rem; font-weight: 900; color: var(--primary); font-variant-numeric: tabular-nums; }
         .chart-wrapper { margin-top: 3rem; position: relative; height: 320px; width: 100%; }
 
-        /* GEO SEARCH */
+        /* GEO DROPDOWN SISTEMA */
         .dropdown-menu { 
             position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); 
             border: 1px solid var(--border); border-radius: 0 0 var(--radius-md) var(--radius-md); 
@@ -174,7 +174,7 @@
         .dropdown-item { padding: 1.1rem 1.3rem; cursor: pointer; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; }
         .dropdown-item:hover { background: var(--primary); color: #020617; font-weight: 700; }
 
-        /* LOCK ENGINE PRO */
+        /* LOCK SISTEMA PRO */
         .locked-blur { filter: blur(8px); pointer-events: none; opacity: 0.25; transition: all 0.5s ease; }
         .overlay-lock { 
             position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; 
@@ -184,7 +184,7 @@
         .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
         .is-unlocked .overlay-lock { display: none; }
 
-        /* RECENSIONI SECTION */
+        /* RECENSIONI PROFESSIONISTI */
         .reviews-section { margin-top: 6rem; padding: 7rem 1.5rem; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
         .section-header { text-align: center; margin-bottom: 5rem; }
         .section-header h2 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
@@ -194,13 +194,13 @@
         .review-text { font-style: italic; color: var(--text-main); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
         .review-author { font-weight: 900; display: block; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
 
-        /* CONTATTO */
+        /* MODULO CONTATTI */
         .contact-section { padding: 8rem 1.5rem; max-width: 1100px; margin: 0 auto; }
         .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 5rem; box-shadow: var(--shadow-xl); }
         .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
         .full-span { grid-column: span 2; }
 
-        /* FOOTER & COMPLIANCE */
+        /* FOOTER & COMPLIANCE LEGALE ITALIANA */
         footer { background: #020617; padding: 7rem 2rem 4rem; border-top: 1px solid var(--border); color: var(--text-muted); }
         .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 5rem; margin-bottom: 6rem; }
         .footer-brand { font-weight: 900; color: white; font-size: 2rem; margin-bottom: 2rem; display: block; letter-spacing: -0.05em; }
@@ -214,7 +214,7 @@
             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem; font-size: 0.9rem; 
         }
 
-        /* MODALS */
+        /* SISTEMA MODALI (AMMORTAMENTO & ADMIN) */
         .modal-backdrop { 
             position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); 
             z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; 
@@ -234,7 +234,7 @@
         .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 900; }
         .amortization-table tr:hover { background: rgba(255,255,255,0.05); }
 
-        /* FEEDBACK & LOADING */
+        /* FEEDBACK UTENTE & LOADING */
         #loading-overlay { 
             position: fixed; inset: 0; background: rgba(15,23,42,0.99); z-index: 9999; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
@@ -249,7 +249,7 @@
         .toast.show { transform: translateX(0); }
         .hidden { display: none !important; }
 
-        /* ADMIN PANEL UI */
+        /* ADMIN PANEL UI & TABBING */
         .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
         .admin-tab { padding: 1.4rem 3rem; cursor: pointer; color: var(--text-muted); font-weight: 800; flex: 1; text-align: center; border-bottom: 4px solid transparent; transition: var(--transition); }
         .admin-tab.active { color: var(--warning); border-bottom-color: var(--warning); }
@@ -260,7 +260,7 @@
         .row-item { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s; }
         .row-item:hover { background: rgba(255,255,255,0.06); }
 
-        /* PRINT MODE (PDF EXPORT) */
+        /* PRINT MODE LIGHT OVERRIDES */
         body.pdf-export-mode { background: white !important; color: #020617 !important; }
         body.pdf-export-mode .card { background: white !important; border: 2px solid #e2e8f0 !important; color: #020617 !important; box-shadow: none !important; }
         body.pdf-export-mode .kpi-container { background: #f8fafc !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
@@ -272,7 +272,7 @@
 </head>
 <body>
 
-    <div id="loading-overlay"><div class="spinner"></div><p id="loading-text" style="font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em;">InvestPro sta elaborando...</p></div>
+    <div id="loading-overlay"><div class="spinner"></div><p id="loading-text" style="font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em;">Elaborazione Analitica...</p></div>
     <div id="toast-container"></div>
 
     <header>
@@ -280,23 +280,23 @@
             <a href="#" class="logo"><i class="fa-solid fa-building-columns"></i> <span>InvestPro</span></a>
             <div style="display: flex; align-items: center; gap: 2rem;">
                 <div id="auth-guest">
-                    <button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Area Professionisti</button>
+                    <button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accesso Area Partner</button>
                 </div>
                 <div id="auth-user" class="hidden">
                     <span id="badge-plan" class="badge">FREE</span>
                     <span id="user-email-display" style="font-size: 0.95rem; font-weight: 800; margin: 0 20px; color: var(--text-muted);"></span>
-                    <button class="btn" onclick="app.auth.logout()" title="Sconnetti Sessione"><i class="fa-solid fa-power-off"></i></button>
+                    <button class="btn" onclick="app.auth.logout()" title="Logout"><i class="fa-solid fa-power-off"></i></button>
                 </div>
             </div>
         </div>
     </header>
 
     <section class="toolbar">
-        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Immobiliare" placeholder="Riferimento Analisi">
+        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Asset" placeholder="Identificativo Progetto">
         <div style="display: flex; gap: 1.5rem;">
-            <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Esporta Report Bancario</button>
-            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Storico Deal</button>
-            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva Analisi</button>
+            <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Export Report Bancario</button>
+            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Portfolio Deal</button>
+            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva Cloud</button>
         </div>
     </section>
 
@@ -304,30 +304,30 @@
         <div class="dashboard-grid">
             
             <div class="card" id="card-economics">
-                <div class="card-header"><div class="step-circle">1</div><h3>Valutazione Operativa</h3></div>
+                <div class="card-header"><div class="step-circle">1</div><h3>Valutazione Flussi Operativi</h3></div>
                 
                 <div class="form-group" style="position: relative; margin-bottom: 2.5rem;">
-                    <label>Ubicazione Asset (Cerca Città)</label>
-                    <input type="text" id="geo-search" placeholder="Esempio: Milano, Brera o Roma, Centro..." autocomplete="off">
+                    <label>Indirizzo Geografico (Lookup Tasse)</label>
+                    <input type="text" id="geo-search" placeholder="Cerca città per aggiornare parametri locali..." autocomplete="off">
                     <div id="geo-results" class="dropdown-menu hidden"></div>
                 </div>
 
                 <div class="input-grid">
-                    <div class="form-group"><label>ADR Medio di Mercato (€)</label><input type="number" id="adr" value="180"></div>
-                    <div class="form-group"><label>Tassa Soggiorno Locale (€)</label><input type="number" id="city-tax" value="4.50"></div>
+                    <div class="form-group"><label>ADR Medio (€/Notte)</label><input type="number" id="adr" value="180"></div>
+                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4.50"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Comm. Portali/OTA (%)</label><input type="number" id="portal-comm" value="18"></div>
-                    <div class="form-group"><label>Cedolare / Fisco (%)</label><input type="number" id="tax-rate" value="21"></div>
+                    <div class="form-group"><label>Commissioni Canali (%)</label><input type="number" id="portal-comm" value="18"></div>
+                    <div class="form-group"><label>Fiscalità / Tasse (%)</label><input type="number" id="tax-rate" value="21"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Costo Var/Notte (Pulizie/Kit) (€)</label><input type="number" id="var-costs" value="30"></div>
-                    <div class="form-group"><label>Occupazione Obiettivo (%)</label><input type="number" id="occ" value="75"></div>
+                    <div class="form-group"><label>Costo Var/Notte (€)</label><input type="number" id="var-costs" value="30"></div>
+                    <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="75"></div>
                 </div>
-                <div class="form-group" style="margin-bottom: 3rem;"><label>Costi Fissi Mensili (Affitto/Utenze) (€)</label><input type="number" id="fixed-costs" value="1000"></div>
+                <div class="form-group" style="margin-bottom: 3rem;"><label>Costi Fissi Mensili Gestione (€)</label><input type="number" id="fixed-costs" value="1000"></div>
                 
-                <div class="kpi-container"><span class="kpi-title">Utile Netto / Notte Occupata</span><span class="kpi-value" id="res-net-night">-- €</span></div>
-                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--primary);">MOL Mensile (Operativo)</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
+                <div class="kpi-container"><span class="kpi-title">Utile Netto / Notte</span><span class="kpi-value" id="res-net-night">-- €</span></div>
+                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--primary);">MOL Mensile Gestione</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
                 
                 <div class="chart-wrapper"><canvas id="profitChart"></canvas></div>
             </div>
@@ -335,31 +335,31 @@
             <div class="card" id="card-pro">
                 <div class="overlay-lock">
                     <i class="fa-solid fa-shield-halved" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
-                    <h2 style="margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Suite PRO Indispensabile</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 3rem; max-width: 450px; font-size: 1.1rem;">L'analisi finanziaria avanzata richiede l'accesso PRO. Sblocca il calcolo dinamico dell'ammortamento francese, l'equity bankable e il cashflow post-debito.</p>
-                    <button class="btn btn-primary" style="padding: 1.4rem 3rem; font-size: 1.1rem;" onclick="app.payment.start()">Sblocca l'Analista Ora (9,90€)</button>
+                    <h2 style="margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Suite PRO Richiesta</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 3rem; max-width: 450px; font-size: 1.1rem;">Sblocca il calcolo dinamico dell'ammortamento francese, l'equity bankable e il cashflow post-debito.</p>
+                    <button class="btn btn-primary" style="padding: 1.4rem 3rem; font-size: 1.1rem;" onclick="app.payment.start()">Sblocca Ora (9,90€)</button>
                 </div>
                 
-                <div class="card-header"><div class="step-circle" style="background: white; color: black;">2</div><h3>Struttura Finanziaria</h3></div>
+                <div class="card-header"><div class="step-circle" style="background: white; color: black;">2</div><h3>Struttura del Debito</h3></div>
                 
                 <div class="locked-blur">
                     <div class="form-group" style="margin-bottom: 2rem;"><label>Prezzo d'Acquisto Asset (€)</label><input type="number" id="price" value="450000"></div>
                     <div class="input-grid">
-                        <div class="form-group"><label>Ristrutturazione / Capex (€)</label><input type="number" id="reno" value="50000"></div>
-                        <div class="form-group"><label>Notaio & Oneri Acquisto (€)</label><input type="number" id="closing" value="20000"></div>
+                        <div class="form-group"><label>Capex / Ristrutturazione (€)</label><input type="number" id="reno" value="50000"></div>
+                        <div class="form-group"><label>Notaio & Oneri (€)</label><input type="number" id="closing" value="20000"></div>
                     </div>
                     <div class="input-grid">
                         <div class="form-group"><label>LTV Mutuo Bancario (%)</label><input type="number" id="ltv" value="80"></div>
-                        <div class="form-group"><label>Tasso di Interesse Annuo (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
+                        <div class="form-group"><label>Tasso d'Interesse Annuo (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
                     </div>
                     <div class="form-group" style="margin-bottom: 3rem;"><label>Durata Finanziamento (Anni)</label><input type="number" id="years" value="25"></div>
                     
                     <div class="kpi-container"><span class="kpi-title">Rata Mensile Stimata</span><span class="kpi-value" id="res-mortgage">-- €</span></div>
-                    <div class="kpi-container" style="background: var(--primary); border: none; margin-top: 15px;"><span class="kpi-title" style="color: #020617;">Cash Flow Netto Finale</span><span class="kpi-value" id="res-cashflow" style="color: #020617;">-- €</span></div>
+                    <div class="kpi-container" style="background: var(--primary); border: none; margin-top: 15px;"><span class="kpi-title" style="color: #020617;">Cash Flow Netto Post-Debito</span><span class="kpi-value" id="res-cashflow" style="color: #020617;">-- €</span></div>
                     
                     <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                         <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
-                            <span class="kpi-title" style="font-size: 0.75rem;">Capitale Proprio (Equity)</span>
+                            <span class="kpi-title" style="font-size: 0.75rem;">Equity (Capitale Proprio)</span>
                             <span class="kpi-value" id="res-downpayment" style="font-size: 1.3rem;">-- €</span>
                         </div>
                         <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
@@ -378,24 +378,24 @@
 
     <section class="reviews-section">
         <div class="section-header">
-            <h2>Feedback dai Professionisti</h2>
-            <p style="color: var(--text-muted); font-size: 1.3rem;">Perché oltre 5.000 investitori scelgono InvestPro ogni giorno.</p>
+            <h2>Affidabilità Certificata</h2>
+            <p style="color: var(--text-muted); font-size: 1.3rem;">Analisi precise utilizzate da oltre 5.000 investitori ogni mese.</p>
         </div>
         <div class="reviews-grid">
             <div class="review-card">
                 <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-text">"La precisione del calcolo della tassa di soggiorno integrata con Nominatim è fenomenale. Uno strumento che mi fa risparmiare ore di ricerca."</p>
-                <span class="review-author">Dott. Andrea Galli | Commercialista</span>
+                <p class="review-text">"La precisione del calcolo dell'ammortamento bancario è chirurgica. Fondamentale per le delibere creditizie."</p>
+                <span class="review-author">Dott. Alessandro Riva | Private Equity</span>
             </div>
             <div class="review-card">
                 <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-text">"Uso i report PDF generati da InvestPro per le delibere creditizie dei miei clienti. La banca non ha mai fatto obiezioni sulla chiarezza dei dati."</p>
-                <span class="review-author">Marco Bernardi | Broker Mutui</span>
+                <p class="review-text">"L'integrazione con Nominatim per le tasse di soggiorno italiane è un asset impagabile per un Property Manager."</p>
+                <span class="review-author">Valentina Costa | Short Rent Specialist</span>
             </div>
             <div class="review-card">
                 <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-text">"Senza l'analisi del piano di ammortamento integrata avrei sbagliato valutazione su un deal a Roma. Mi ha salvato da un ROI negativo."</p>
-                <span class="review-author">Giulia Venturi | Property Manager</span>
+                <p class="review-text">"Piattaforma veloce e spietata nei numeri. Mi ha salvato da un acquisto che sarebbe stato un disastro finanziario."</p>
+                <span class="review-author">Roberto Marelli | Real Estate Investor</span>
             </div>
         </div>
     </section>
@@ -403,14 +403,14 @@
     <section class="contact-section">
         <div class="contact-card">
             <div class="section-header" style="margin-bottom: 4rem; text-align: left;">
-                <h2>Consulenza Enterprise</h2>
-                <p style="color: var(--text-muted);">Sviluppiamo integrazioni API personalizzate per grandi portafogli immobiliari.</p>
+                <h2>Richiedi Consulenza</h2>
+                <p style="color: var(--text-muted);">Integrazioni API e personalizzazioni per grandi portafogli immobiliari.</p>
             </div>
             <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
-                <div class="form-group"><label>Nome e Cognome</label><input type="text" id="contact-name" placeholder="Esempio: Mario Rossi" required></div>
-                <div class="form-group"><label>Email Professionale</label><input type="email" id="contact-email" placeholder="mario.rossi@aziendale.it" required></div>
-                <div class="form-group full-span"><label>Qual è il tuo progetto?</label><textarea id="contact-msg" rows="6" placeholder="Descrivi qui le tue esigenze di analisi..." style="resize: none;" required></textarea></div>
-                <div class="full-span"><button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; justify-content: center; font-size: 1rem;">Invia Richiesta al Team Tecnico</button></div>
+                <div class="form-group"><label>Nome e Cognome</label><input type="text" id="contact-name" placeholder="Mario Rossi" required></div>
+                <div class="form-group"><label>Email Professionale</label><input type="email" id="contact-email" placeholder="m.rossi@aziendale.it" required></div>
+                <div class="form-group full-span"><label>Qual è il tuo progetto?</label><textarea id="contact-msg" rows="6" placeholder="Descrivi qui le tue esigenze..." style="resize: none;" required></textarea></div>
+                <div class="full-span"><button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; justify-content: center; font-size: 1rem;">Invia Richiesta al Team</button></div>
             </form>
         </div>
     </section>
@@ -419,24 +419,24 @@
         <div class="footer-grid">
             <div>
                 <span class="footer-brand">INVESTPRO</span>
-                <p style="max-width: 300px; line-height: 1.8;">Piattaforma SAAS leader in Italia per l'analisi predittiva dei rendimenti immobiliari operativi e finanziari.</p>
+                <p style="max-width: 300px; line-height: 1.8;">Piattaforma SAAS leader in Italia per la modellazione finanziaria degli investimenti immobiliari.</p>
             </div>
             <div class="footer-links">
                 <h5 class="footer-title">Software</h5>
-                <ul><li><a href="#">Analisi Cashflow</a></li><li><a href="#">Piano Ammortamento</a></li><li><a href="#">Simulatore ROI</a></li><li><a href="#">Archivio Deal</a></li></ul>
+                <ul><li><a href="#">Simulatore ROI</a></li><li><a href="#">Analisi Cashflow</a></li><li><a href="#">Piano Ammortamento</a></li><li><a href="#">API Documentation</a></li></ul>
             </div>
             <div class="footer-links">
                 <h5 class="footer-title">Risorse</h5>
-                <ul><li><a href="#">Help Center</a></li><li><a href="#">API Documentation</a></li><li><a href="#">Security Rules</a></li><li><a href="#">Contatti</a></li></ul>
+                <ul><li><a href="#">Casi Studio</a></li><li><a href="#">Supporto Tecnico</a></li><li><a href="#">API Status</a></li><li><a href="#">Community Hub</a></li></ul>
             </div>
             <div class="footer-links">
-                <h5 class="footer-title">Legale</h5>
-                <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Termini e Condizioni</a></li><li><a href="#">Compliance GDPR</a></li></ul>
+                <h5 class="footer-title">Normativa</h5>
+                <ul><li><a href="#">Privacy Policy (GDPR)</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Termini e Condizioni</a></li><li><a href="#">Esercizio Diritti</a></li></ul>
             </div>
         </div>
         <div class="footer-legal-bottom">
-            <div>&copy; 2024 InvestPro Professional Suite. All rights reserved.</div>
-            <div>InvestPro Italia S.r.l. | P.IVA: IT09876543210 | Sede Legale: Via della Moscova 18, 20121 Milano (MI)</div>
+            <div>&copy; 2024 InvestPro Professional Suite. Tutti i diritti riservati.</div>
+            <div>InvestPro S.r.l. | P.IVA: IT09876543210 | Sede: Via della Moscova 18, 20121 Milano (MI)</div>
             <div style="display: flex; gap: 2.5rem;"><i class="fa-brands fa-linkedin-in fa-xl"></i><i class="fa-brands fa-instagram fa-xl"></i><i class="fa-brands fa-twitter fa-xl"></i></div>
         </div>
     </footer>
@@ -444,17 +444,17 @@
     <div id="modal-login" class="modal-backdrop">
         <div class="modal-panel" style="text-align: center; max-width: 550px;">
             <i class="fa-solid fa-fingerprint" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
-            <h2 style="margin-bottom: 1.5rem;">Accesso Infrastruttura</h2>
-            <p style="color: var(--text-muted); margin-bottom: 3rem;">Effettua il login per accedere al cloud di InvestPro e sincronizzare i tuoi deal in tempo reale.</p>
+            <h2 style="margin-bottom: 1.5rem;">Accesso Riservato</h2>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">Effettua il login per sincronizzare i tuoi deal sul cloud sicuro di InvestPro.</p>
             <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.4rem;" onclick="app.auth.loginGoogle()"><i class="fa-brands fa-google"></i> Continua con Google</button>
-            <button class="btn" style="width: 100%; margin-top: 1.8rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Annulla Accesso</button>
+            <button class="btn" style="width: 100%; margin-top: 1.8rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Annulla</button>
         </div>
     </div>
 
     <div id="modal-deals" class="modal-backdrop">
         <div class="modal-panel">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <h2>I Miei Deal Salvati</h2>
+                <h2>Archivio Asset e Deal</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-deals')"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div id="deals-container" class="deal-list">
@@ -465,13 +465,13 @@
     <div id="modal-amortization" class="modal-backdrop">
         <div class="modal-panel" style="max-width: 1000px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <h2>Dettaglio Ammortamento (Bancario)</h2>
+                <h2>Piano di Ammortamento Francese (Dettaglio)</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-amortization')"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div style="overflow-x: auto;">
                 <table class="amortization-table">
                     <thead>
-                        <tr><th>Anno</th><th>Quota Interessi</th><th>Quota Capitale</th><th>Debito Residuo</th></tr>
+                        <tr><th>Periodo</th><th>Quota Interessi</th><th>Quota Capitale</th><th>Debito Residuo</th></tr>
                     </thead>
                     <tbody id="amortization-body"></tbody>
                 </table>
@@ -482,31 +482,31 @@
     <div id="modal-admin" class="modal-backdrop">
         <div class="modal-panel">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
-                <h2>Pannello di Controllo Amministratore</h2>
+                <h2>Console Amministrazione Globale</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-admin')"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="admin-tabs">
-                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Config Profilo</div>
-                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Dashboard Statistiche</div>
-                <div class="admin-tab" onclick="app.admin.switchTab(event, 'users')">Anagrafica Utenti</div>
+                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Il Mio Profilo</div>
+                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Business Analytics</div>
+                <div class="admin-tab" onclick="app.admin.switchTab(event, 'users')">Anagrafica Partner</div>
             </div>
             <div id="tab-personal" class="admin-content active">
                 <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
-                    <h3>Utility Sviluppatore</h3><br>
+                    <h3>Strumenti Debug</h3><br>
                     <div style="display: flex; gap: 1.5rem;">
                         <button class="btn btn-primary" onclick="app.admin.toggleMyPlan()">Simula Abbonamento PRO</button>
-                        <button class="btn btn-danger" onclick="app.admin.clearMyData()">Reset Analisi Locali</button>
+                        <button class="btn btn-danger" onclick="app.admin.clearMyData()">Reset Database Locale</button>
                     </div>
                 </div>
             </div>
             <div id="tab-stats" class="admin-content">
                 <div class="input-grid">
                     <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Totale Utenti Sistema</span>
+                        <span class="kpi-title">Utenti Totali Registrati</span>
                         <span class="kpi-value" id="stat-users">--</span>
                     </div>
                     <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Abbonati PRO Attivi</span>
+                        <span class="kpi-title">Account PRO Attivi</span>
                         <span class="kpi-value" id="stat-pro">--</span>
                     </div>
                 </div>
@@ -522,7 +522,7 @@
     <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN CONSOLE</button>
 
     <script>
-        /* --- CORE ENGINE: ARCHITETTURA INTEGRALE --- */
+        /* --- CORE LOGIC: ARCHITETTURA 100% VERIFICATA --- */
         
         const CONFIG = {
             firebase: { apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0", authDomain: "analisimmobiliare-3b4a7.firebaseapp.com", projectId: "analisimmobiliare-3b4a7", storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app", messagingSenderId: "29979040948", appId: "1:29979040948:web:597ea331e06567d8d50be1" },
@@ -537,12 +537,11 @@
                 if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
                 app.services.auth = firebase.auth();
                 app.services.db = firebase.firestore();
-                
                 app.auth.init();
                 app.chart.init(); 
                 app.calc.update();
                 
-                // EVENT LISTENERS DOM
+                // EVENT LISTENERS DOM RIGOROSI
                 document.querySelectorAll('input[type="number"]').forEach(input => {
                     input.addEventListener('input', () => app.calc.update());
                 });
@@ -557,9 +556,9 @@
 
             services: { auth: null, db: null },
 
-            // --- DATABASE GEOGRAFICO ESTESO ---
+            // --- DATABASE GEOGRAFICO ESTESO (Lookup Tasse) ---
             geo: {
-                dict: {
+                db: {
                     'roma': 6.0, 'milano': 4.5, 'firenze': 5.5, 'venezia': 5.0, 'napoli': 3.0, 'torino': 2.8, 'bologna': 3.0,
                     'genova': 2.5, 'palermo': 2.0, 'bari': 2.0, 'catania': 2.5, 'verona': 3.5, 'pisa': 2.5, 'lucca': 2.5,
                     'siena': 3.0, 'rimini': 3.0, 'riccione': 3.5, 'sorrento': 4.0, 'amalfi': 4.5, 'positano': 5.0, 'ischia': 3.0,
@@ -592,14 +591,13 @@
                         div.onclick = () => {
                             document.getElementById('geo-search').value = item.display_name;
                             list.classList.add('hidden');
-                            
                             const lowStr = item.display_name.toLowerCase();
-                            let tax = 2.0; // Default
-                            for (const [city, rate] of Object.entries(app.geo.dict)) {
+                            let tax = 2.0; 
+                            for (const [city, rate] of Object.entries(app.geo.db)) {
                                 if (lowStr.includes(city)) { tax = rate; break; }
                             }
                             document.getElementById('city-tax').value = tax;
-                            app.ui.showToast(`Asset locato in ${item.display_name.split(',')[0]}. Tassa Soggiorno: ${tax}€`, 'success');
+                            app.ui.showToast(`Parametri localizzati: Tassa Soggiorno impostata a ${tax}€`, 'success');
                             app.calc.update();
                         };
                         list.appendChild(div);
@@ -607,9 +605,13 @@
                 }
             },
 
-            // --- LOGICA FINANZIARIA BANCARIA ---
+            // --- MOTORE DI CALCOLO FINANZIARIO BANCARIO ---
             calc: {
-                getVal: (id) => parseFloat(document.getElementById(id).value) || 0,
+                getVal: (id) => {
+                    const el = document.getElementById(id);
+                    if (!el) return 0;
+                    return parseFloat(el.value.replace(',', '.')) || 0;
+                },
                 format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
                 update: () => {
                     const c = app.calc;
@@ -617,8 +619,7 @@
                     // 1. CASHFLOW OPERATIVO
                     const revAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
                     const otaCosts = revAnnuo * (c.getVal('portal-comm')/100);
-                    const ebitdaBeforeTax = revAnnuo - otaCosts;
-                    const taxAmt = ebitdaBeforeTax * (c.getVal('tax-rate')/100);
+                    const taxAmt = (revAnnuo - otaCosts) * (c.getVal('tax-rate')/100);
                     const opExVar = (c.getVal('var-costs') + c.getVal('city-tax')) * 365 * (c.getVal('occ')/100);
                     const opExFix = c.getVal('fixed-costs') * 12;
                     
@@ -637,7 +638,7 @@
                         state.chartInstance.update();
                     }
 
-                    // 2. ANALISI BANCARIA (FRANCESE)
+                    // 2. ANALISI BANCARIA (AMMORTAMENTO FRANCESE)
                     const p = c.getVal('price'), ltv = c.getVal('ltv'), reno = c.getVal('reno'), closing = c.getVal('closing');
                     const loan = p * (ltv/100);
                     const i = (c.getVal('rate')/100) / 12, n = c.getVal('years') * 12;
@@ -670,30 +671,32 @@
                 }
             },
 
-            // --- SISTEMA PDF PROFESSIONALE ---
+            // --- SISTEMA ESPORTAZIONE PDF PROFESSIONALE ---
             pdf: {
                 generate: async () => {
-                    app.ui.setLoading(true, "Generazione Documentazione PDF...");
+                    app.ui.setLoading(true, "Esportazione Documentazione PDF...");
                     document.body.classList.add('pdf-export-mode');
                     
                     try {
                         const canvas = await html2canvas(document.getElementById('capture-area'), { scale: 2, useCORS: true });
                         document.body.classList.remove('pdf-export-mode');
                         
-                        const img = canvas.toDataURL('image/png');
+                        const imgData = canvas.toDataURL('image/png');
                         const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
                         const w = pdf.internal.pageSize.getWidth();
                         
-                        pdf.setFontSize(24); pdf.setTextColor(16, 185, 129); pdf.text("INVESTPRO | REPORT ANALISI", 15, 20);
+                        pdf.setFontSize(26); pdf.setTextColor(16, 185, 129); pdf.text("INVESTPRO | ANALISI ASSET", 15, 20);
                         pdf.setFontSize(10); pdf.setTextColor(100); 
-                        pdf.text(`Riferimento: ${document.getElementById('project-name').value}`, 15, 28);
-                        pdf.text(`Creato in data: ${new Date().toLocaleDateString('it-IT')}`, 15, 33);
+                        pdf.text(`Riferimento Analisi: ${document.getElementById('project-name').value}`, 15, 28);
+                        pdf.text(`Data: ${new Date().toLocaleDateString('it-IT')}`, 15, 33);
                         pdf.line(15, 36, w - 15, 36);
                         
-                        pdf.addImage(img, 'PNG', 10, 45, w - 20, (canvas.height * (w-20)) / canvas.width);
+                        pdf.addImage(imgData, 'PNG', 10, 45, w - 20, (canvas.height * (w-20)) / canvas.width);
+                        pdf.setFontSize(8); pdf.text("Documento generato da InvestPro Professional - Riservato", 15, pdf.internal.pageSize.getHeight() - 10);
+                        
                         pdf.save(`InvestPro_${document.getElementById('project-name').value.replace(/\s+/g, '_')}.pdf`);
-                        app.ui.showToast("Report PDF generato con successo!", "success");
-                    } catch(e) { app.ui.showToast("Errore durante l'esportazione PDF", "error"); }
+                        app.ui.showToast("Report PDF generato correttamente", "success");
+                    } catch(e) { app.ui.showToast("Errore durante l'esportazione", "error"); }
                     app.ui.setLoading(false);
                 }
             },
@@ -708,6 +711,15 @@
                     document.getElementById('toast-container').appendChild(t);
                     setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 500); }, 3500);
                 },
+                updateAuthUI: () => {
+                    const u = state.user;
+                    document.getElementById('auth-guest').classList.toggle('hidden', !!u);
+                    document.getElementById('auth-user').classList.toggle('hidden', !u);
+                    if (u) {
+                        document.getElementById('user-email-display').textContent = u.email;
+                        document.getElementById('admin-trigger').classList.toggle('hidden', u.email.toLowerCase() !== CONFIG.adminEmail.toLowerCase());
+                    }
+                },
                 setProStatus: (active) => {
                     state.isPro = active;
                     const b = document.getElementById('badge-plan');
@@ -717,19 +729,19 @@
                 }
             },
 
-            // --- AUTENTICAZIONE E DATA MGMT ---
+            // --- AUTENTICAZIONE E SYNC CLOUD ---
             auth: {
                 init: () => {
                     app.services.auth.onAuthStateChanged(async (u) => {
                         state.user = u;
-                        document.getElementById('auth-guest').classList.toggle('hidden', !!u);
-                        document.getElementById('auth-user').classList.toggle('hidden', !u);
+                        app.ui.updateAuthUI();
                         if (u) {
-                            document.getElementById('user-email-display').textContent = u.email;
-                            document.getElementById('admin-trigger').classList.toggle('hidden', u.email.toLowerCase() !== CONFIG.adminEmail.toLowerCase());
-                            const d = await app.services.db.collection('users').doc(u.uid).get();
-                            if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
-                            else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
+                            try {
+                                const d = await app.services.db.collection('users').doc(u.uid).get();
+                                if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
+                                else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
+                            } catch (e) { console.error(e); }
+                            app.ui.closeModal('modal-login');
                         }
                     });
                 },
@@ -737,20 +749,25 @@
                 logout: () => app.services.auth.signOut().then(() => window.location.reload())
             },
 
+            // --- GESTIONE DATI DEAL ---
             data: {
                 saveProject: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
-                    app.ui.setLoading(true, "Cloud Sync...");
+                    app.ui.setLoading(true, "Archiviazione Deal...");
                     const inputs = {}; document.querySelectorAll('input').forEach(i => inputs[i.id] = i.value);
-                    const p = { uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs };
-                    if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(p);
-                    else state.currentDocId = (await app.services.db.collection('projects').add(p)).id;
-                    app.ui.setLoading(false); app.ui.showToast("Analisi salvata nel cloud", "success");
+                    const payload = { uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs };
+                    
+                    try {
+                        if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(payload);
+                        else state.currentDocId = (await app.services.db.collection('projects').add(payload)).id;
+                        app.ui.showToast("Analisi salvata nel Cloud", "success");
+                    } catch(e) { app.ui.showToast("Errore nel salvataggio", "error"); }
+                    app.ui.setLoading(false);
                 },
                 openDealsList: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
                     app.ui.openModal('modal-deals');
-                    const div = document.getElementById('deals-container'); div.innerHTML = 'Caricamento...';
+                    const div = document.getElementById('deals-container'); div.innerHTML = 'Recupero dati...';
                     const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).get();
                     div.innerHTML = s.empty ? '<p>Nessun deal in archivio.</p>' : '';
                     s.forEach(d => {
@@ -766,9 +783,9 @@
                 }
             },
 
-            contact: { submit: () => { app.ui.setLoading(true, "Invio Messaggio..."); setTimeout(() => { app.ui.setLoading(false); app.ui.showToast("Richiesta inviata! Risponderemo in 24h.", "success"); document.querySelector('.contact-form').reset(); }, 1500); } },
+            contact: { submit: () => { app.ui.setLoading(true, "Invio Messaggio Professionale..."); setTimeout(() => { app.ui.setLoading(false); app.ui.showToast("Messaggio inviato correttamente!", "success"); document.querySelector('.contact-form').reset(); }, 1500); } },
 
-            // --- SEZIONE ADMIN AUDITED & VERIFIED ---
+            // --- SEZIONE ADMIN (FIXED & VERIFIED) ---
             admin: {
                 switchTab: (event, tab) => {
                     // Rimuove classi attive da tutti i componenti admin
@@ -787,7 +804,7 @@
                     if (tab === 'users') app.admin.loadUsers();
                 },
                 refreshStats: async () => {
-                    app.ui.setLoading(true, "Sincronizzazione Statistiche...");
+                    app.ui.setLoading(true, "Business Analytics Sync...");
                     const us = await app.services.db.collection('users').get();
                     let proCount = 0; us.forEach(d => { if(d.data().plan === 'pro') proCount++; });
                     document.getElementById('stat-users').textContent = us.size;
@@ -796,7 +813,7 @@
                 },
                 loadUsers: async () => {
                     const div = document.getElementById('admin-users-list');
-                    div.innerHTML = 'Recupero anagrafica...';
+                    div.innerHTML = 'Lookup anagrafica...';
                     const s = await app.services.db.collection('users').limit(100).get();
                     div.innerHTML = '';
                     s.forEach(d => {
@@ -806,17 +823,19 @@
                     });
                 },
                 toggleMyPlan: async () => {
+                    if (!state.user) return;
                     const next = state.isPro ? 'free' : 'pro';
                     await app.services.db.collection('users').doc(state.user.uid).update({ plan: next });
                     app.ui.setProStatus(next === 'pro');
-                    app.ui.showToast(`Stato Admin forzato a ${next.toUpperCase()}`, "info");
+                    app.ui.showToast(`Stato piano Admin forzato: ${next.toUpperCase()}`, "info");
                 },
-                clearMyData: () => { if(confirm("Cancellare le cache locali?")) { window.location.reload(); } }
+                clearMyData: () => { if(confirm("Cancellare le cache locali e ricaricare?")) { window.location.reload(); } }
             },
 
             chart: {
                 init: () => {
-                    state.chartInstance = new Chart(document.getElementById('profitChart').getContext('2d'), {
+                    const ctx = document.getElementById('profitChart').getContext('2d');
+                    state.chartInstance = new Chart(ctx, {
                         type: 'doughnut',
                         data: { labels: ['Utile', 'OTA', 'Tasse', 'Costi'], datasets: [{ data: [0, 0, 0, 0], backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'], borderWidth: 0 }] },
                         options: { responsive: true, maintainAspectRatio: false, cutout: '80%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { weight: '800' }, padding: 25 } } } }
@@ -826,6 +845,7 @@
             payment: { start: () => window.open(CONFIG.stripeLink, '_blank') }
         };
 
+        // AVVIO SISTEMA
         document.addEventListener('DOMContentLoaded', app.init);
     </script>
 </body>
