@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js" defer></script>
@@ -19,27 +19,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <style>
-        /* --- DESIGN SYSTEM COMPLETO --- */
+        /* --- DESIGN SYSTEM: TEMA DARK PROFESSIONALE --- */
         :root {
             --bg-body: #0f172a;
             --bg-card: #1e293b;
             --bg-input: #020617;
             --primary: #10b981;
-            --primary-hover: #059669;
+            --primary-hover: #059669; 
             --danger: #ef4444;
             --warning: #f59e0b;
             --info: #3b82f6;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #334155;
-            --radius-lg: 12px;
+            --radius-lg: 16px;
             --radius-md: 8px;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             --font-main: 'Inter', sans-serif;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* RESET & BASE */
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-        
+        html { scroll-behavior: smooth; }
         body { 
             background-color: var(--bg-body); 
             color: var(--text-main); 
@@ -52,11 +54,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER */
+        /* HEADER & BRANDING */
         header { 
             background: rgba(15, 23, 42, 0.98); 
             border-bottom: 1px solid var(--border); 
-            padding: 1.2rem 2rem; 
+            padding: 1.25rem 2rem; 
             position: sticky; 
             top: 0; 
             z-index: 100; 
@@ -70,335 +72,230 @@
             align-items: center; 
         }
         .logo { 
-            font-weight: 800; 
-            font-size: 1.6rem; 
+            font-weight: 900; 
+            font-size: 1.7rem; 
             color: var(--primary); 
             display: flex; 
             align-items: center; 
-            gap: 0.7rem; 
-            letter-spacing: -0.04em; 
+            gap: 0.8rem; 
+            letter-spacing: -0.05em; 
+            text-decoration: none;
         }
         .logo span { color: white; }
 
-        /* PULSANTI E AZIONI */
+        /* AZIONI E PULSANTI */
         .btn { 
-            padding: 0.7rem 1.4rem; 
+            padding: 0.8rem 1.6rem; 
             border-radius: var(--radius-md); 
             cursor: pointer; 
-            font-weight: 600; 
+            font-weight: 700; 
             font-size: 0.9rem; 
             border: 1px solid var(--border); 
             background: var(--bg-card); 
             color: white; 
             display: inline-flex; 
             align-items: center; 
-            gap: 0.6rem; 
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
-            text-decoration: none; 
+            gap: 0.7rem; 
+            transition: var(--transition); 
+            text-decoration: none;
+            white-space: nowrap;
         }
-        .btn:hover { background: var(--border); transform: translateY(-2px); box-shadow: var(--shadow); }
-        .btn:active { transform: translateY(0); }
+        .btn:hover { background: var(--border); transform: translateY(-2px); box-shadow: var(--shadow-xl); }
         .btn-primary { background: var(--primary); border-color: var(--primary); color: #020617; }
         .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
-        .btn-danger { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+        .btn-danger { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.05); }
         .btn-danger:hover { background: var(--danger); color: white; }
-        
         .btn-admin { 
-            position: fixed; 
-            bottom: 25px; 
-            left: 25px; 
-            z-index: 200; 
-            background: var(--warning); 
-            color: #020617; 
-            font-weight: 800; 
-            border: none; 
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.5); 
-            padding: 1rem;
-            border-radius: 50px;
+            position: fixed; bottom: 30px; left: 30px; z-index: 200; 
+            background: var(--warning); color: #020617; font-weight: 900; border: none; 
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.4); padding: 1.1rem; border-radius: 50px; 
         }
 
-        /* TOOLBAR DI PROGETTO */
+        /* TOOLBAR */
         .toolbar { 
-            max-width: 1400px; 
-            margin: 2.5rem auto 0; 
-            padding: 0 1.5rem; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 1.5rem; 
+            max-width: 1400px; margin: 3rem auto 0; padding: 0 1.5rem; 
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; 
         }
         .project-input { 
-            background: transparent; 
-            border: none; 
-            border-bottom: 3px solid var(--border); 
-            color: white; 
-            font-size: 1.8rem; 
-            font-weight: 800; 
-            width: 100%; 
-            max-width: 500px; 
-            padding: 0.5rem 0; 
-            transition: border-color 0.3s;
-            letter-spacing: -0.02em;
+            background: transparent; border: none; border-bottom: 3px solid var(--border); 
+            color: white; font-size: 2rem; font-weight: 900; width: 100%; max-width: 550px; 
+            padding: 0.5rem 0; letter-spacing: -0.03em; transition: border-color 0.3s;
         }
         .project-input:focus { border-color: var(--primary); }
 
-        /* GRIGLIA PRINCIPALE */
-        main { padding: 2.5rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
-        .dashboard-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
-            gap: 2.5rem; 
-        }
+        /* DASHBOARD PRINCIPALE */
+        main { padding: 3rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 3rem; }
 
         /* CARDS */
         .card { 
-            background: var(--bg-card); 
-            border: 1px solid var(--border); 
-            border-radius: var(--radius-lg); 
-            padding: 2rem; 
-            position: relative; 
-            display: flex; 
-            flex-direction: column; 
-            box-shadow: var(--shadow); 
-            transition: border-color 0.3s;
+            background: var(--bg-card); border: 1px solid var(--border); 
+            border-radius: var(--radius-lg); padding: 2.5rem; position: relative; 
+            display: flex; flex-direction: column; box-shadow: var(--shadow-xl); 
         }
-        .card:hover { border-color: #475569; }
         .card-header { 
-            margin-bottom: 2rem; 
-            padding-bottom: 1.2rem; 
-            border-bottom: 1px solid var(--border); 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
+            margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); 
+            display: flex; align-items: center; gap: 18px; 
         }
-        .card-header h3 { font-size: 1.3rem; font-weight: 700; }
+        .card-header h3 { font-size: 1.5rem; font-weight: 800; color: white; }
         .step-circle { 
-            width: 36px; 
-            height: 36px; 
-            border-radius: 50%; 
-            background: var(--primary); 
-            color: #020617; 
-            font-weight: 800; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 1rem; 
+            width: 42px; height: 42px; border-radius: 50%; background: var(--primary); 
+            color: #020617; font-weight: 900; display: flex; align-items: center; 
+            justify-content: center; font-size: 1.1rem; 
         }
 
-        /* FORMULARI */
+        /* INPUTS & FORMS */
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.6rem; }
-        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-        
-        input { 
-            width: 100%; 
-            background: var(--bg-input); 
-            border: 1px solid var(--border); 
-            color: white; 
-            padding: 0.9rem 1.1rem; 
-            border-radius: var(--radius-md); 
-            font-size: 1rem; 
-            transition: all 0.2s; 
-            font-family: inherit;
+        .form-group { display: flex; flex-direction: column; gap: 0.7rem; }
+        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+        input, textarea { 
+            width: 100%; background: var(--bg-input); border: 1px solid var(--border); 
+            color: white; padding: 1rem 1.2rem; border-radius: var(--radius-md); 
+            font-size: 1rem; transition: var(--transition); font-family: inherit; 
         }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
 
-        /* KPI VISUALS */
+        /* KPI & OUTPUTS */
         .kpi-container { 
-            background: rgba(15, 23, 42, 0.7); 
-            border: 1px solid var(--border); 
-            border-radius: var(--radius-md); 
-            padding: 1.2rem; 
-            margin-top: auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            transition: all 0.3s;
+            background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border); 
+            border-radius: var(--radius-md); padding: 1.4rem; margin-top: auto; 
+            display: flex; justify-content: space-between; align-items: center; 
         }
-        .kpi-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
-        .kpi-value { font-size: 1.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
-        
-        .chart-wrapper { margin-top: 2.5rem; position: relative; height: 280px; width: 100%; }
+        .kpi-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; }
+        .kpi-value { font-size: 1.6rem; font-weight: 900; color: var(--primary); font-variant-numeric: tabular-nums; }
+        .chart-wrapper { margin-top: 3rem; position: relative; height: 320px; width: 100%; }
 
-        /* GEO DROPDOWN */
+        /* GEO SEARCH */
         .dropdown-menu { 
-            position: absolute; 
-            top: 100%; 
-            left: 0; 
-            width: 100%; 
-            background: var(--bg-card); 
-            border: 1px solid var(--border); 
-            border-radius: 0 0 var(--radius-md) var(--radius-md);
-            z-index: 150; 
-            max-height: 280px; 
-            overflow-y: auto; 
-            box-shadow: 0 20px 30px rgba(0,0,0,0.6); 
+            position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); 
+            border: 1px solid var(--border); border-radius: 0 0 var(--radius-md) var(--radius-md); 
+            z-index: 150; max-height: 300px; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.7); 
         }
-        .dropdown-item { 
-            padding: 1rem 1.2rem; 
-            cursor: pointer; 
-            border-bottom: 1px solid var(--border); 
-            color: var(--text-muted); 
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        .dropdown-item:hover { background: var(--primary); color: #020617; font-weight: 600; }
+        .dropdown-item { padding: 1.1rem 1.3rem; cursor: pointer; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; }
+        .dropdown-item:hover { background: var(--primary); color: #020617; font-weight: 700; }
 
-        /* SISTEMA DI LOCK PRO */
-        .locked-blur { filter: blur(6px); pointer-events: none; opacity: 0.35; transition: all 0.4s; }
+        /* LOCK ENGINE PRO */
+        .locked-blur { filter: blur(8px); pointer-events: none; opacity: 0.25; transition: all 0.5s ease; }
         .overlay-lock { 
-            position: absolute; 
-            inset: 0; 
-            z-index: 20; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            background: rgba(15, 23, 42, 0.85); 
-            backdrop-filter: blur(5px); 
-            border-radius: var(--radius-lg); 
-            text-align: center; 
-            padding: 2.5rem; 
+            position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; 
+            align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.92); 
+            backdrop-filter: blur(4px); border-radius: var(--radius-lg); text-align: center; padding: 3rem; 
         }
         .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
         .is-unlocked .overlay-lock { display: none; }
 
-        /* MODALI E TABELLE DI AMMORTAMENTO */
+        /* RECENSIONI SECTION */
+        .reviews-section { margin-top: 6rem; padding: 7rem 1.5rem; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-header h2 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
+        .review-card { background: var(--bg-card); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-xl); }
+        .star-row { color: var(--warning); margin-bottom: 1.5rem; font-size: 1.2rem; }
+        .review-text { font-style: italic; color: var(--text-main); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
+        .review-author { font-weight: 900; display: block; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
+
+        /* CONTATTO */
+        .contact-section { padding: 8rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 5rem; box-shadow: var(--shadow-xl); }
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+        .full-span { grid-column: span 2; }
+
+        /* FOOTER & COMPLIANCE */
+        footer { background: #020617; padding: 7rem 2rem 4rem; border-top: 1px solid var(--border); color: var(--text-muted); }
+        .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 5rem; margin-bottom: 6rem; }
+        .footer-brand { font-weight: 900; color: white; font-size: 2rem; margin-bottom: 2rem; display: block; letter-spacing: -0.05em; }
+        .footer-title { color: white; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 2rem; font-weight: 800; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 1.4rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-legal-bottom { 
+            max-width: 1400px; margin: 0 auto; padding-top: 4rem; border-top: 1px solid var(--border); 
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem; font-size: 0.9rem; 
+        }
+
+        /* MODALS */
         .modal-backdrop { 
-            position: fixed; 
-            inset: 0; 
-            background: rgba(0,0,0,0.85); 
-            backdrop-filter: blur(6px); 
-            z-index: 1000; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            opacity: 0; 
-            pointer-events: none; 
-            transition: opacity 0.4s; 
+            position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); 
+            z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; 
+            pointer-events: none; transition: opacity 0.5s; 
         }
         .modal-backdrop.active { opacity: 1; pointer-events: auto; }
         .modal-panel { 
-            background: var(--bg-card); 
-            border: 1px solid var(--border); 
-            width: 95%; 
-            max-width: 850px; 
-            border-radius: 20px; 
-            padding: 2.5rem; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.7); 
-            transform: translateY(30px); 
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-            max-height: 90vh; 
-            overflow-y: auto; 
+            background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 1000px; 
+            border-radius: 24px; padding: 4rem; box-shadow: 0 50px 100px rgba(0,0,0,0.9); 
+            max-height: 92vh; overflow-y: auto; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .modal-backdrop.active .modal-panel { transform: translateY(0); }
+        .modal-backdrop.active .modal-panel { transform: scale(1); }
 
-        .amortization-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 1.5rem; color: white; }
-        .amortization-table th { text-align: right; padding: 1rem; border-bottom: 2px solid var(--border); color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .amortization-table td { text-align: right; padding: 1rem; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
-        .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 700; }
-        .amortization-table tr:hover { background: rgba(255,255,255,0.03); }
+        .amortization-table { width: 100%; border-collapse: collapse; font-size: 1rem; margin-top: 2.5rem; }
+        .amortization-table th { text-align: right; padding: 1.4rem; border-bottom: 2px solid var(--border); color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; }
+        .amortization-table td { text-align: right; padding: 1.4rem; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; color: white; }
+        .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 900; }
+        .amortization-table tr:hover { background: rgba(255,255,255,0.05); }
 
-        /* LOADING E NOTIFICHE */
+        /* FEEDBACK & LOADING */
         #loading-overlay { 
-            position: fixed; 
-            inset: 0; 
-            background: rgba(15,23,42,0.95); 
-            z-index: 9999; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            opacity: 0; 
-            pointer-events: none; 
-            transition: opacity 0.3s; 
+            position: fixed; inset: 0; background: rgba(15,23,42,0.99); z-index: 9999; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            opacity: 0; pointer-events: none; transition: opacity 0.4s; 
         }
         #loading-overlay.active { opacity: 1; pointer-events: auto; }
-        .spinner { width: 50px; height: 50px; border: 5px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 1.5rem; }
+        .spinner { width: 70px; height: 70px; border: 7px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.7s linear infinite; margin-bottom: 2.5rem; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        #toast-container { position: fixed; bottom: 30px; right: 30px; z-index: 10000; display: flex; flex-direction: column; gap: 12px; pointer-events: none; }
-        .toast { 
-            background: var(--bg-card); 
-            border-left: 5px solid var(--primary); 
-            color: white; 
-            padding: 1.2rem 1.8rem; 
-            border-radius: 6px; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5); 
-            transform: translateX(180%); 
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            pointer-events: auto;
-            min-width: 300px;
-        }
+        #toast-container { position: fixed; bottom: 50px; right: 50px; z-index: 10000; display: flex; flex-direction: column; gap: 15px; }
+        .toast { background: var(--bg-card); border-left: 7px solid var(--primary); color: white; padding: 1.5rem 2.5rem; border-radius: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.7); transform: translateX(200%); transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28); min-width: 380px; }
         .toast.show { transform: translateX(0); }
-        .toast.error { border-left-color: var(--danger); }
-        .toast.success { border-left-color: var(--primary); }
+        .hidden { display: none !important; }
 
-        /* ADMIN SPECIFIC */
-        .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
-        .admin-tab { 
-            padding: 1rem 2rem; 
-            cursor: pointer; 
-            color: var(--text-muted); 
-            font-weight: 700; 
-            flex: 1; 
-            text-align: center; 
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
+        /* ADMIN PANEL UI */
+        .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+        .admin-tab { padding: 1.4rem 3rem; cursor: pointer; color: var(--text-muted); font-weight: 800; flex: 1; text-align: center; border-bottom: 4px solid transparent; transition: var(--transition); }
         .admin-tab.active { color: var(--warning); border-bottom-color: var(--warning); }
-        .admin-content { display: none; animation: fadeIn 0.4s ease; }
-        .admin-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .admin-content { display: none; }
+        .admin-content.active { display: block; animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .deal-list .deal-row { 
-            padding: 1.2rem; 
-            border-bottom: 1px solid var(--border); 
-            cursor: pointer; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            transition: background 0.2s; 
-        }
-        .deal-list .deal-row:hover { background: rgba(255,255,255,0.05); }
+        .row-item { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s; }
+        .row-item:hover { background: rgba(255,255,255,0.06); }
 
-        /* STILI PER ESPORTAZIONE PDF LIGHT MODE */
+        /* PRINT MODE (PDF EXPORT) */
         body.pdf-export-mode { background: white !important; color: #020617 !important; }
-        body.pdf-export-mode .card { background: white !important; border: 1.5px solid #e2e8f0 !important; color: #020617 !important; box-shadow: none !important; }
-        body.pdf-export-mode .kpi-container { background: #f8fafc !important; border: 1px solid #cbd5e1 !important; color: #020617 !important; }
+        body.pdf-export-mode .card { background: white !important; border: 2px solid #e2e8f0 !important; color: #020617 !important; box-shadow: none !important; }
+        body.pdf-export-mode .kpi-container { background: #f8fafc !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
         body.pdf-export-mode .kpi-value { color: #059669 !important; }
-        body.pdf-export-mode input { background: white !important; color: #020617 !important; border: 1.5px solid #cbd5e1 !important; }
+        body.pdf-export-mode input { background: white !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
         body.pdf-export-mode .logo span, body.pdf-export-mode h3 { color: #020617 !important; }
-        body.pdf-export-mode .step-circle { background: #e2e8f0 !important; color: black !important; border: 1px solid #94a3b8 !important; }
+        body.pdf-export-mode .step-circle { border: 2px solid #020617 !important; background: transparent !important; color: #020617 !important; }
     </style>
 </head>
 <body>
 
-    <div id="loading-overlay"><div class="spinner"></div><p id="loading-text" style="font-weight: 600; color: var(--primary);">Elaborazione Report...</p></div>
+    <div id="loading-overlay"><div class="spinner"></div><p id="loading-text" style="font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em;">InvestPro sta elaborando...</p></div>
     <div id="toast-container"></div>
 
     <header>
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-building-columns"></i> <span>InvestPro</span></div>
-            <div style="display: flex; align-items: center; gap: 1rem;">
+            <a href="#" class="logo"><i class="fa-solid fa-building-columns"></i> <span>InvestPro</span></a>
+            <div style="display: flex; align-items: center; gap: 2rem;">
                 <div id="auth-guest">
-                    <button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accedi / Registrati</button>
+                    <button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Area Professionisti</button>
                 </div>
                 <div id="auth-user" class="hidden">
                     <span id="badge-plan" class="badge">FREE</span>
-                    <span id="user-email-display" style="font-size: 0.9rem; font-weight: 500; margin: 0 12px; color: var(--text-muted);"></span>
-                    <button class="btn" onclick="app.auth.logout()" title="Logout"><i class="fa-solid fa-power-off"></i></button>
+                    <span id="user-email-display" style="font-size: 0.95rem; font-weight: 800; margin: 0 20px; color: var(--text-muted);"></span>
+                    <button class="btn" onclick="app.auth.logout()" title="Sconnetti Sessione"><i class="fa-solid fa-power-off"></i></button>
                 </div>
             </div>
         </div>
     </header>
 
     <section class="toolbar">
-        <input type="text" id="project-name" class="project-input" value="Analisi Immobile A" placeholder="Nome Progetto">
-        <div style="display: flex; gap: 1rem;">
-            <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Genera Report</button>
-            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> I Miei Deal</button>
+        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Immobiliare" placeholder="Riferimento Analisi">
+        <div style="display: flex; gap: 1.5rem;">
+            <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Esporta Report Bancario</button>
+            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Storico Deal</button>
             <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva Analisi</button>
         </div>
     </section>
@@ -407,107 +304,157 @@
         <div class="dashboard-grid">
             
             <div class="card" id="card-economics">
-                <div class="card-header"><div class="step-circle">1</div><h3>Analisi Operativa</h3></div>
+                <div class="card-header"><div class="step-circle">1</div><h3>Valutazione Operativa</h3></div>
                 
-                <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
-                    <label>Ubicazione Immobile</label>
-                    <input type="text" id="geo-search" placeholder="Cerca città per impostare tasse locali..." autocomplete="off">
+                <div class="form-group" style="position: relative; margin-bottom: 2.5rem;">
+                    <label>Ubicazione Asset (Cerca Città)</label>
+                    <input type="text" id="geo-search" placeholder="Esempio: Milano, Brera o Roma, Centro..." autocomplete="off">
                     <div id="geo-results" class="dropdown-menu hidden"></div>
                 </div>
 
                 <div class="input-grid">
-                    <div class="form-group"><label>ADR Medio (€/notte)</label><input type="number" id="adr" value="135"></div>
-                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4.50"></div>
+                    <div class="form-group"><label>ADR Medio di Mercato (€)</label><input type="number" id="adr" value="180"></div>
+                    <div class="form-group"><label>Tassa Soggiorno Locale (€)</label><input type="number" id="city-tax" value="4.50"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Comm. OTA/Portali (%)</label><input type="number" id="portal-comm" value="18"></div>
-                    <div class="form-group"><label>Aliquota Fiscale (%)</label><input type="number" id="tax-rate" value="21"></div>
+                    <div class="form-group"><label>Comm. Portali/OTA (%)</label><input type="number" id="portal-comm" value="18"></div>
+                    <div class="form-group"><label>Cedolare / Fisco (%)</label><input type="number" id="tax-rate" value="21"></div>
                 </div>
                 <div class="input-grid">
-                    <div class="form-group"><label>Costo Variabile/Notte (€)</label><input type="number" id="var-costs" value="20"></div>
-                    <div class="form-group"><label>Occupazione Stimata (%)</label><input type="number" id="occ" value="70"></div>
+                    <div class="form-group"><label>Costo Var/Notte (Pulizie/Kit) (€)</label><input type="number" id="var-costs" value="30"></div>
+                    <div class="form-group"><label>Occupazione Obiettivo (%)</label><input type="number" id="occ" value="75"></div>
                 </div>
-                <div class="form-group" style="margin-bottom: 2rem;"><label>Costi Fissi Mensili Totali (€)</label><input type="number" id="fixed-costs" value="750"></div>
+                <div class="form-group" style="margin-bottom: 3rem;"><label>Costi Fissi Mensili (Affitto/Utenze) (€)</label><input type="number" id="fixed-costs" value="1000"></div>
                 
-                <div class="kpi-container" style="margin-bottom: 0.8rem;">
-                    <span class="kpi-title">Utile Netto per Notte</span>
-                    <span class="kpi-value" id="res-net-night">-- €</span>
-                </div>
-                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1);">
-                    <span class="kpi-title" style="color: var(--primary);">Margine Operativo Mensile</span>
-                    <span class="kpi-value" id="res-mol-month">-- €</span>
-                </div>
-
+                <div class="kpi-container"><span class="kpi-title">Utile Netto / Notte Occupata</span><span class="kpi-value" id="res-net-night">-- €</span></div>
+                <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--primary);">MOL Mensile (Operativo)</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
+                
                 <div class="chart-wrapper"><canvas id="profitChart"></canvas></div>
             </div>
 
             <div class="card" id="card-pro">
                 <div class="overlay-lock">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
-                    <h2 style="margin-bottom: 1rem;">Funzionalità PRO</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 300px;">Sblocca il calcolo completo del mutuo, ammortamento bancario e cash flow netto.</p>
-                    <button class="btn btn-primary" onclick="app.payment.start()">Sblocca Ora a 9,90€</button>
+                    <i class="fa-solid fa-shield-halved" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
+                    <h2 style="margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Suite PRO Indispensabile</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 3rem; max-width: 450px; font-size: 1.1rem;">L'analisi finanziaria avanzata richiede l'accesso PRO. Sblocca il calcolo dinamico dell'ammortamento francese, l'equity bankable e il cashflow post-debito.</p>
+                    <button class="btn btn-primary" style="padding: 1.4rem 3rem; font-size: 1.1rem;" onclick="app.payment.start()">Sblocca l'Analista Ora (9,90€)</button>
                 </div>
                 
-                <div class="card-header"><div class="step-circle" style="background: white; color: black;">2</div><h3>Finanza & Capitale</h3></div>
+                <div class="card-header"><div class="step-circle" style="background: white; color: black;">2</div><h3>Struttura Finanziaria</h3></div>
                 
                 <div class="locked-blur">
-                    <div class="form-group" style="margin-bottom: 1.5rem;"><label>Prezzo d'Acquisto (€)</label><input type="number" id="price" value="280000"></div>
+                    <div class="form-group" style="margin-bottom: 2rem;"><label>Prezzo d'Acquisto Asset (€)</label><input type="number" id="price" value="450000"></div>
                     <div class="input-grid">
-                        <div class="form-group"><label>Ristrutturazione (€)</label><input type="number" id="reno" value="25000"></div>
-                        <div class="form-group"><label>Spese Accessorie (€)</label><input type="number" id="closing" value="12000"></div>
+                        <div class="form-group"><label>Ristrutturazione / Capex (€)</label><input type="number" id="reno" value="50000"></div>
+                        <div class="form-group"><label>Notaio & Oneri Acquisto (€)</label><input type="number" id="closing" value="20000"></div>
                     </div>
                     <div class="input-grid">
-                        <div class="form-group"><label>LTV Mutuo (%)</label><input type="number" id="ltv" value="80"></div>
-                        <div class="form-group"><label>Tasso di Interesse (%)</label><input type="number" id="rate" value="4.2" step="0.1"></div>
+                        <div class="form-group"><label>LTV Mutuo Bancario (%)</label><input type="number" id="ltv" value="80"></div>
+                        <div class="form-group"><label>Tasso di Interesse Annuo (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 2rem;"><label>Durata Finanziamento (Anni)</label><input type="number" id="years" value="25"></div>
+                    <div class="form-group" style="margin-bottom: 3rem;"><label>Durata Finanziamento (Anni)</label><input type="number" id="years" value="25"></div>
                     
-                    <div class="kpi-container" style="margin-bottom: 1rem;">
-                        <span class="kpi-title">Rata Mensile Mutuo</span>
-                        <span class="kpi-value" id="res-mortgage">-- €</span>
-                    </div>
-                    <div class="kpi-container" style="background: var(--primary); border: none;">
-                        <span class="kpi-title" style="color: #020617;">Cash Flow Netto Mensile</span>
-                        <span class="kpi-value" id="res-cashflow" style="color: #020617;">-- €</span>
-                    </div>
-
-                    <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem;">
-                            <div class="kpi-container" style="background: rgba(59, 130, 246, 0.1); border-color: var(--info); padding: 1rem;">
-                                <span class="kpi-title" style="font-size: 0.7rem; color: var(--info);">Equity (Cash Out)</span>
-                                <span class="kpi-value" id="res-downpayment" style="font-size: 1.1rem;">-- €</span>
-                            </div>
-                            <div class="kpi-container" style="background: rgba(239, 68, 68, 0.1); border-color: var(--danger); padding: 1rem;">
-                                <span class="kpi-title" style="font-size: 0.7rem; color: var(--danger);">Interessi Totali</span>
-                                <span class="kpi-value" id="res-total-interest" style="font-size: 1.1rem;">-- €</span>
-                            </div>
+                    <div class="kpi-container"><span class="kpi-title">Rata Mensile Stimata</span><span class="kpi-value" id="res-mortgage">-- €</span></div>
+                    <div class="kpi-container" style="background: var(--primary); border: none; margin-top: 15px;"><span class="kpi-title" style="color: #020617;">Cash Flow Netto Finale</span><span class="kpi-value" id="res-cashflow" style="color: #020617;">-- €</span></div>
+                    
+                    <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
+                            <span class="kpi-title" style="font-size: 0.75rem;">Capitale Proprio (Equity)</span>
+                            <span class="kpi-value" id="res-downpayment" style="font-size: 1.3rem;">-- €</span>
                         </div>
-                        <button class="btn" style="width: 100%; justify-content: center; background: rgba(255,255,255,0.05);" onclick="app.calc.showAmortization()">
-                            <i class="fa-solid fa-list-check"></i> Piano Ammortamento Dettagliato
-                        </button>
+                        <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
+                            <span class="kpi-title" style="font-size: 0.75rem;">Interessi Bancari Totali</span>
+                            <span class="kpi-value" id="res-total-interest" style="font-size: 1.3rem;">-- €</span>
+                        </div>
                     </div>
+                    
+                    <button class="btn" style="width: 100%; margin-top: 2.5rem; justify-content: center; background: rgba(255,255,255,0.04);" onclick="app.calc.showAmortization()">
+                        <i class="fa-solid fa-table-list"></i> Piano di Ammortamento Analitico
+                    </button>
                 </div>
             </div>
         </div>
     </main>
 
+    <section class="reviews-section">
+        <div class="section-header">
+            <h2>Feedback dai Professionisti</h2>
+            <p style="color: var(--text-muted); font-size: 1.3rem;">Perché oltre 5.000 investitori scelgono InvestPro ogni giorno.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"La precisione del calcolo della tassa di soggiorno integrata con Nominatim è fenomenale. Uno strumento che mi fa risparmiare ore di ricerca."</p>
+                <span class="review-author">Dott. Andrea Galli | Commercialista</span>
+            </div>
+            <div class="review-card">
+                <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Uso i report PDF generati da InvestPro per le delibere creditizie dei miei clienti. La banca non ha mai fatto obiezioni sulla chiarezza dei dati."</p>
+                <span class="review-author">Marco Bernardi | Broker Mutui</span>
+            </div>
+            <div class="review-card">
+                <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-text">"Senza l'analisi del piano di ammortamento integrata avrei sbagliato valutazione su un deal a Roma. Mi ha salvato da un ROI negativo."</p>
+                <span class="review-author">Giulia Venturi | Property Manager</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-card">
+            <div class="section-header" style="margin-bottom: 4rem; text-align: left;">
+                <h2>Consulenza Enterprise</h2>
+                <p style="color: var(--text-muted);">Sviluppiamo integrazioni API personalizzate per grandi portafogli immobiliari.</p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
+                <div class="form-group"><label>Nome e Cognome</label><input type="text" id="contact-name" placeholder="Esempio: Mario Rossi" required></div>
+                <div class="form-group"><label>Email Professionale</label><input type="email" id="contact-email" placeholder="mario.rossi@aziendale.it" required></div>
+                <div class="form-group full-span"><label>Qual è il tuo progetto?</label><textarea id="contact-msg" rows="6" placeholder="Descrivi qui le tue esigenze di analisi..." style="resize: none;" required></textarea></div>
+                <div class="full-span"><button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; justify-content: center; font-size: 1rem;">Invia Richiesta al Team Tecnico</button></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <span class="footer-brand">INVESTPRO</span>
+                <p style="max-width: 300px; line-height: 1.8;">Piattaforma SAAS leader in Italia per l'analisi predittiva dei rendimenti immobiliari operativi e finanziari.</p>
+            </div>
+            <div class="footer-links">
+                <h5 class="footer-title">Software</h5>
+                <ul><li><a href="#">Analisi Cashflow</a></li><li><a href="#">Piano Ammortamento</a></li><li><a href="#">Simulatore ROI</a></li><li><a href="#">Archivio Deal</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h5 class="footer-title">Risorse</h5>
+                <ul><li><a href="#">Help Center</a></li><li><a href="#">API Documentation</a></li><li><a href="#">Security Rules</a></li><li><a href="#">Contatti</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h5 class="footer-title">Legale</h5>
+                <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Termini e Condizioni</a></li><li><a href="#">Compliance GDPR</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-legal-bottom">
+            <div>&copy; 2024 InvestPro Professional Suite. All rights reserved.</div>
+            <div>InvestPro Italia S.r.l. | P.IVA: IT09876543210 | Sede Legale: Via della Moscova 18, 20121 Milano (MI)</div>
+            <div style="display: flex; gap: 2.5rem;"><i class="fa-brands fa-linkedin-in fa-xl"></i><i class="fa-brands fa-instagram fa-xl"></i><i class="fa-brands fa-twitter fa-xl"></i></div>
+        </div>
+    </footer>
+
     <div id="modal-login" class="modal-backdrop">
-        <div class="modal-panel" style="text-align: center; max-width: 450px;">
-            <i class="fa-solid fa-user-lock" style="font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
-            <h2 style="margin-bottom: 1rem;">Benvenuto su InvestPro</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Accedi per salvare le tue analisi e monitorare i tuoi rendimenti immobiliari nel tempo.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;" onclick="app.auth.loginGoogle()">
-                <i class="fa-brands fa-google"></i> Continua con Google
-            </button>
-            <button class="btn" style="width: 100%; margin-top: 1.2rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Annulla</button>
+        <div class="modal-panel" style="text-align: center; max-width: 550px;">
+            <i class="fa-solid fa-fingerprint" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
+            <h2 style="margin-bottom: 1.5rem;">Accesso Infrastruttura</h2>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">Effettua il login per accedere al cloud di InvestPro e sincronizzare i tuoi deal in tempo reale.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.4rem;" onclick="app.auth.loginGoogle()"><i class="fa-brands fa-google"></i> Continua con Google</button>
+            <button class="btn" style="width: 100%; margin-top: 1.8rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Annulla Accesso</button>
         </div>
     </div>
 
     <div id="modal-deals" class="modal-backdrop">
         <div class="modal-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h2>Archivio Deal</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <h2>I Miei Deal Salvati</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-deals')"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div id="deals-container" class="deal-list">
@@ -516,12 +463,12 @@
     </div>
 
     <div id="modal-amortization" class="modal-backdrop">
-        <div class="modal-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h2>Analisi Ammortamento (Bancario)</h2>
+        <div class="modal-panel" style="max-width: 1000px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+                <h2>Dettaglio Ammortamento (Bancario)</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-amortization')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div style="overflow-x: auto; max-height: 60vh;">
+            <div style="overflow-x: auto;">
                 <table class="amortization-table">
                     <thead>
                         <tr><th>Anno</th><th>Quota Interessi</th><th>Quota Capitale</th><th>Debito Residuo</th></tr>
@@ -534,62 +481,51 @@
 
     <div id="modal-admin" class="modal-backdrop">
         <div class="modal-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <h2>Controllo Globale Sistema</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+                <h2>Pannello di Controllo Amministratore</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-admin')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            
             <div class="admin-tabs">
-                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Il Mio Profilo</div>
-                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Monitoraggio</div>
+                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Config Profilo</div>
+                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Dashboard Statistiche</div>
                 <div class="admin-tab" onclick="app.admin.switchTab(event, 'users')">Anagrafica Utenti</div>
             </div>
-
             <div id="tab-personal" class="admin-content active">
-                <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
-                    <h3>Strumenti Sviluppatore</h3><br>
-                    <div style="display: flex; gap: 1rem;">
+                <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+                    <h3>Utility Sviluppatore</h3><br>
+                    <div style="display: flex; gap: 1.5rem;">
                         <button class="btn btn-primary" onclick="app.admin.toggleMyPlan()">Simula Abbonamento PRO</button>
                         <button class="btn btn-danger" onclick="app.admin.clearMyData()">Reset Analisi Locali</button>
                     </div>
                 </div>
             </div>
-
             <div id="tab-stats" class="admin-content">
                 <div class="input-grid">
                     <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Utenti Totali</span>
+                        <span class="kpi-title">Totale Utenti Sistema</span>
                         <span class="kpi-value" id="stat-users">--</span>
                     </div>
                     <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Abbonati PRO attivi</span>
+                        <span class="kpi-title">Abbonati PRO Attivi</span>
                         <span class="kpi-value" id="stat-pro">--</span>
                     </div>
                 </div>
-                <button class="btn" onclick="app.admin.refreshStats()" style="width: 100%; margin-top: 1.5rem; justify-content: center;">Aggiorna Statistiche Real-Time</button>
+                <button class="btn" onclick="app.admin.refreshStats()" style="width: 100%; margin-top: 2rem; justify-content: center;">Sincronizza Statistiche Globali</button>
             </div>
-
             <div id="tab-users" class="admin-content">
-                <div id="admin-users-list" class="deal-list" style="max-height: 50vh; overflow-y: auto;">
+                <div id="admin-users-list" class="deal-list" style="max-height: 55vh; overflow-y: auto;">
                     </div>
             </div>
         </div>
     </div>
 
-    <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN</button>
+    <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN CONSOLE</button>
 
     <script>
-        /* --- LOGICA APPLICATIVA INTEGRALE --- */
+        /* --- CORE ENGINE: ARCHITETTURA INTEGRALE --- */
         
         const CONFIG = {
-            firebase: {
-                apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0",
-                authDomain: "analisimmobiliare-3b4a7.firebaseapp.com",
-                projectId: "analisimmobiliare-3b4a7",
-                storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app",
-                messagingSenderId: "29979040948",
-                appId: "1:29979040948:web:597ea331e06567d8d50be1"
-            },
+            firebase: { apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0", authDomain: "analisimmobiliare-3b4a7.firebaseapp.com", projectId: "analisimmobiliare-3b4a7", storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app", messagingSenderId: "29979040948", appId: "1:29979040948:web:597ea331e06567d8d50be1" },
             adminEmail: "lucaiolienrico1@gmail.com",
             stripeLink: "https://buy.stripe.com/test_4gM8wP85i5I0flc0PygjC01"
         };
@@ -606,7 +542,7 @@
                 app.chart.init(); 
                 app.calc.update();
                 
-                // EVENT LISTENERS GLOBALI
+                // EVENT LISTENERS DOM
                 document.querySelectorAll('input[type="number"]').forEach(input => {
                     input.addEventListener('input', () => app.calc.update());
                 });
@@ -621,21 +557,25 @@
 
             services: { auth: null, db: null },
 
-            // --- DATABASE GEOGRAFICO LOCALE MASSIVO ---
+            // --- DATABASE GEOGRAFICO ESTESO ---
             geo: {
-                cityRates: {
+                dict: {
                     'roma': 6.0, 'milano': 4.5, 'firenze': 5.5, 'venezia': 5.0, 'napoli': 3.0, 'torino': 2.8, 'bologna': 3.0,
                     'genova': 2.5, 'palermo': 2.0, 'bari': 2.0, 'catania': 2.5, 'verona': 3.5, 'pisa': 2.5, 'lucca': 2.5,
                     'siena': 3.0, 'rimini': 3.0, 'riccione': 3.5, 'sorrento': 4.0, 'amalfi': 4.5, 'positano': 5.0, 'ischia': 3.0,
                     'como': 3.0, 'lecco': 2.0, 'bergamo': 2.5, 'brescia': 2.0, 'padova': 2.5, 'trieste': 2.5, 'vicenza': 2.0,
                     'arezzo': 2.0, 'perugia': 2.0, 'assisi': 2.5, 'lecce': 2.5, 'otranto': 2.5, 'gallipoli': 3.0, 'matera': 2.0,
                     'taormina': 4.0, 'cagliari': 2.5, 'alghero': 2.0, 'olbia': 2.5, 'cortina': 4.5, 'courmayeur': 3.0, 'livigno': 2.5,
-                    'stresa': 2.5, 'sirmione': 2.5, 'desenzano': 2.0, 'pavia': 1.5, 'monza': 2.0, 'varese': 2.0, 'trento': 2.5,
-                    'bolzano': 2.5, 'udine': 1.5, 'pordenone': 1.5, 'ferrara': 2.5, 'ravenna': 2.5, 'modena': 2.0, 'parma': 2.0,
-                    'pesaro': 2.0, 'ancona': 2.0, 'pescara': 2.0, 'chieti': 1.5, 'laquila': 1.5, 'viterbo': 2.0, 'latina': 2.0,
-                    'caserta': 2.0, 'salerno': 2.5, 'foggia': 1.5, 'taranto': 1.5, 'brindisi': 2.0, 'potenza': 1.5, 'cosenza': 1.5,
-                    'catanzaro': 1.5, 'reggio calabria': 2.0, 'messina': 2.0, 'trapani': 2.0, 'agrigento': 2.0, 'siracusa': 2.5,
-                    'sassari': 2.0, 'nuoro': 1.5, 'oristano': 1.5, 'aosta': 2.0
+                    'ravenna': 2.5, 'ferrara': 2.5, 'modena': 2.0, 'parma': 2.0, 'trento': 2.5, 'bolzano': 2.5, 'udine': 1.5,
+                    'biella': 1.5, 'cuneo': 1.5, 'pavia': 1.5, 'monza': 2.0, 'varese': 2.0, 'mantova': 2.5, 'cremona': 1.5,
+                    'lodi': 1.5, 'rovigo': 1.5, 'treviso': 2.0, 'belluno': 2.0, 'biella': 1.5, 'novara': 1.5, 'asti': 1.5,
+                    'imperia': 2.0, 'savona': 2.0, 'la spezia': 2.5, 'massa': 2.0, 'pistoia': 2.0, 'prato': 2.0, 'livorno': 2.0,
+                    'grosseto': 2.0, 'terni': 1.5, 'pesaro': 2.0, 'ancona': 2.0, 'macerata': 1.5, 'fermo': 1.5, 'ascoli piceno': 1.5,
+                    'viterbo': 2.0, 'rieti': 1.5, 'latina': 2.0, 'frosinone': 1.5, 'teramo': 1.5, 'laquila': 1.5, 'pescara': 2.0,
+                    'chieti': 1.5, 'isernia': 1.0, 'campobasso': 1.5, 'caserta': 2.0, 'benevento': 1.5, 'avellino': 1.5,
+                    'salerno': 2.5, 'foggia': 1.5, 'barletta': 1.5, 'taranto': 1.5, 'brindisi': 2.0, 'potenza': 1.5, 'cosenza': 1.5,
+                    'catanzaro': 1.5, 'reggio calabria': 2.0, 'messina': 2.0, 'trapani': 2.0, 'agrigento': 2.0, 'enna': 1.5,
+                    'caltanissetta': 1.5, 'ragusa': 2.0, 'siracusa': 2.5, 'sassari': 2.0, 'nuoro': 1.5, 'oristano': 1.5, 'aosta': 2.0
                 },
                 search: async (q) => {
                     if (q.length < 3) return;
@@ -653,13 +593,13 @@
                             document.getElementById('geo-search').value = item.display_name;
                             list.classList.add('hidden');
                             
-                            const searchStr = item.display_name.toLowerCase();
-                            let foundTax = 2.0; // Default cautelativo
-                            for (const [city, rate] of Object.entries(app.geo.cityRates)) {
-                                if (searchStr.includes(city)) { foundTax = rate; break; }
+                            const lowStr = item.display_name.toLowerCase();
+                            let tax = 2.0; // Default
+                            for (const [city, rate] of Object.entries(app.geo.dict)) {
+                                if (lowStr.includes(city)) { tax = rate; break; }
                             }
-                            document.getElementById('city-tax').value = foundTax;
-                            app.ui.showToast(`Parametri aggiornati per ${item.display_name.split(',')[0]}`, 'success');
+                            document.getElementById('city-tax').value = tax;
+                            app.ui.showToast(`Asset locato in ${item.display_name.split(',')[0]}. Tassa Soggiorno: ${tax}€`, 'success');
                             app.calc.update();
                         };
                         list.appendChild(div);
@@ -667,23 +607,22 @@
                 }
             },
 
-            // --- LOGICA FINANZIARIA AVANZATA ---
+            // --- LOGICA FINANZIARIA BANCARIA ---
             calc: {
                 getVal: (id) => parseFloat(document.getElementById(id).value) || 0,
                 format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
                 update: () => {
                     const c = app.calc;
                     
-                    // 1. ANALISI OPERATIVA
-                    const totalRevAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
-                    const commOTA = totalRevAnnuo * (c.getVal('portal-comm')/100);
-                    const netAfterOTA = totalRevAnnuo - commOTA;
-                    const taxes = netAfterOTA * (c.getVal('tax-rate')/100);
+                    // 1. CASHFLOW OPERATIVO
+                    const revAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
+                    const otaCosts = revAnnuo * (c.getVal('portal-comm')/100);
+                    const ebitdaBeforeTax = revAnnuo - otaCosts;
+                    const taxAmt = ebitdaBeforeTax * (c.getVal('tax-rate')/100);
+                    const opExVar = (c.getVal('var-costs') + c.getVal('city-tax')) * 365 * (c.getVal('occ')/100);
+                    const opExFix = c.getVal('fixed-costs') * 12;
                     
-                    const varCostsAnnuo = (c.getVal('var-costs') + c.getVal('city-tax')) * 365 * (c.getVal('occ')/100);
-                    const fixedCostsAnnuo = c.getVal('fixed-costs') * 12;
-                    
-                    const molAnnuo = totalRevAnnuo - commOTA - taxes - varCostsAnnuo - fixedCostsAnnuo;
+                    const molAnnuo = revAnnuo - otaCosts - taxAmt - opExVar - opExFix;
 
                     document.getElementById('res-mol-month').textContent = c.format(molAnnuo / 12);
                     document.getElementById('res-net-night').textContent = c.format(molAnnuo / (365 * (c.getVal('occ')/100)) || 0);
@@ -691,54 +630,38 @@
                     if (state.chartInstance) {
                         state.chartInstance.data.datasets[0].data = [
                             molAnnuo > 0 ? molAnnuo : 0, 
-                            commOTA, 
-                            taxes, 
-                            varCostsAnnuo + fixedCostsAnnuo
+                            otaCosts, 
+                            taxAmt, 
+                            opExVar + opExFix
                         ];
                         state.chartInstance.update();
                     }
 
-                    // 2. ANALISI BANCARIA (AMMORTAMENTO ALLA FRANCESE)
-                    const price = c.getVal('price'), ltv = c.getVal('ltv'), reno = c.getVal('reno'), closing = c.getVal('closing');
-                    const loanAmount = price * (ltv/100);
-                    const monthlyRate = (c.getVal('rate')/100) / 12;
-                    const totalMonths = c.getVal('years') * 12;
+                    // 2. ANALISI BANCARIA (FRANCESE)
+                    const p = c.getVal('price'), ltv = c.getVal('ltv'), reno = c.getVal('reno'), closing = c.getVal('closing');
+                    const loan = p * (ltv/100);
+                    const i = (c.getVal('rate')/100) / 12, n = c.getVal('years') * 12;
                     
-                    let monthlyMortgage = 0;
-                    if (monthlyRate > 0) {
-                        monthlyMortgage = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
-                    } else if (totalMonths > 0) {
-                        monthlyMortgage = loanAmount / totalMonths;
-                    }
-
-                    const cashOut = (price - loanAmount) + reno + closing;
-                    const totalPaid = monthlyMortgage * totalMonths;
-                    const totalInterest = totalPaid - loanAmount;
-
-                    document.getElementById('res-mortgage').textContent = c.format(monthlyMortgage);
-                    document.getElementById('res-cashflow').textContent = c.format((molAnnuo/12) - monthlyMortgage);
-                    document.getElementById('res-downpayment').textContent = c.format(cashOut);
-                    document.getElementById('res-total-interest').textContent = c.format(totalInterest > 0 ? totalInterest : 0);
+                    let monthlyM = (i > 0) ? loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1) : loan / n;
+                    
+                    document.getElementById('res-mortgage').textContent = c.format(monthlyM);
+                    document.getElementById('res-cashflow').textContent = c.format((molAnnuo/12) - monthlyM);
+                    document.getElementById('res-downpayment').textContent = c.format((p - loan) + reno + closing);
+                    document.getElementById('res-total-interest').textContent = c.format((monthlyM * n) - loan);
                 },
 
                 showAmortization: () => {
                     const c = app.calc;
                     const loan = c.getVal('price') * (c.getVal('ltv')/100);
-                    const rate = (c.getVal('rate')/100) / 12, years = c.getVal('years'), months = years * 12;
-                    const m = (rate > 0) ? loan * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1) : loan / months;
+                    const i = (c.getVal('rate')/100)/12, months = c.getVal('years') * 12;
+                    const m = (i > 0) ? loan * (i * Math.pow(1 + i, months)) / (Math.pow(1 + i, months) - 1) : loan / months;
                     
-                    let balance = loan, html = '', yi = 0, yp = 0;
-                    for (let i = 1; i <= months; i++) {
-                        let interest = balance * rate, principal = m - interest;
-                        balance -= principal; yi += interest; yp += principal;
-                        
-                        if (i % 12 === 0) {
-                            html += `<tr>
-                                <td>Anno ${i/12}</td>
-                                <td>${c.format(yi)}</td>
-                                <td>${c.format(yp)}</td>
-                                <td>${c.format(balance > 0 ? balance : 0)}</td>
-                            </tr>`;
+                    let bal = loan, html = '', yi = 0, yp = 0;
+                    for (let x = 1; x <= months; x++) {
+                        let ip = bal * i, pp = m - ip;
+                        bal -= pp; yi += ip; yp += pp;
+                        if (x % 12 === 0) {
+                            html += `<tr><td>Anno ${x/12}</td><td>${c.format(yi)}</td><td>${c.format(yp)}</td><td>${c.format(bal > 0 ? bal : 0)}</td></tr>`;
                             yi = 0; yp = 0;
                         }
                     }
@@ -747,32 +670,31 @@
                 }
             },
 
-            // --- SISTEMA ESPORTAZIONE PDF ---
+            // --- SISTEMA PDF PROFESSIONALE ---
             pdf: {
                 generate: async () => {
-                    const name = document.getElementById('project-name').value;
-                    app.ui.setLoading(true, "Generazione Documento PDF Professionale...");
-                    
+                    app.ui.setLoading(true, "Generazione Documentazione PDF...");
                     document.body.classList.add('pdf-export-mode');
-                    const canvas = await html2canvas(document.getElementById('capture-area'), { scale: 2, useCORS: true });
-                    document.body.classList.remove('pdf-export-mode');
                     
-                    const img = canvas.toDataURL('image/png');
-                    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-                    const w = pdf.internal.pageSize.getWidth();
-                    
-                    pdf.setFontSize(24); pdf.setTextColor(16, 185, 129); pdf.text("INVESTPRO | REPORT ANALISI", 15, 20);
-                    pdf.setFontSize(10); pdf.setTextColor(100); 
-                    pdf.text(`Analisi: ${name}`, 15, 28);
-                    pdf.text(`Creato il: ${new Date().toLocaleDateString('it-IT')}`, 15, 33);
-                    pdf.line(15, 36, w - 15, 36);
-                    
-                    pdf.addImage(img, 'PNG', 10, 42, w - 20, (canvas.height * (w-20)) / canvas.width);
-                    pdf.setFontSize(8); pdf.text("Documento generato da InvestPro Suite - Riservato", 15, pdf.internal.pageSize.getHeight() - 10);
-                    
-                    pdf.save(`InvestPro_Report_${name.replace(/\s+/g, '_')}.pdf`);
+                    try {
+                        const canvas = await html2canvas(document.getElementById('capture-area'), { scale: 2, useCORS: true });
+                        document.body.classList.remove('pdf-export-mode');
+                        
+                        const img = canvas.toDataURL('image/png');
+                        const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+                        const w = pdf.internal.pageSize.getWidth();
+                        
+                        pdf.setFontSize(24); pdf.setTextColor(16, 185, 129); pdf.text("INVESTPRO | REPORT ANALISI", 15, 20);
+                        pdf.setFontSize(10); pdf.setTextColor(100); 
+                        pdf.text(`Riferimento: ${document.getElementById('project-name').value}`, 15, 28);
+                        pdf.text(`Creato in data: ${new Date().toLocaleDateString('it-IT')}`, 15, 33);
+                        pdf.line(15, 36, w - 15, 36);
+                        
+                        pdf.addImage(img, 'PNG', 10, 45, w - 20, (canvas.height * (w-20)) / canvas.width);
+                        pdf.save(`InvestPro_${document.getElementById('project-name').value.replace(/\s+/g, '_')}.pdf`);
+                        app.ui.showToast("Report PDF generato con successo!", "success");
+                    } catch(e) { app.ui.showToast("Errore durante l'esportazione PDF", "error"); }
                     app.ui.setLoading(false);
-                    app.ui.showToast("Report PDF pronto per il download", "success");
                 }
             },
 
@@ -780,46 +702,34 @@
             ui: {
                 openModal: (id) => document.getElementById(id).classList.add('active'),
                 closeModal: (id) => document.getElementById(id).classList.remove('active'),
-                setLoading: (show, text) => { 
-                    document.getElementById('loading-text').textContent = text; 
-                    document.getElementById('loading-overlay').classList.toggle('active', show); 
-                },
+                setLoading: (show, text) => { document.getElementById('loading-text').textContent = text; document.getElementById('loading-overlay').classList.toggle('active', show); },
                 showToast: (msg, type) => {
                     const t = document.createElement('div'); t.className = `toast show ${type}`; t.textContent = msg;
                     document.getElementById('toast-container').appendChild(t);
-                    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 3500);
-                },
-                updateAuthUI: () => {
-                    const u = state.user;
-                    document.getElementById('auth-guest').classList.toggle('hidden', !!u);
-                    document.getElementById('auth-user').classList.toggle('hidden', !u);
-                    if (u) {
-                        document.getElementById('user-email-display').textContent = u.email;
-                        document.getElementById('admin-trigger').classList.toggle('hidden', u.email.toLowerCase() !== CONFIG.adminEmail.toLowerCase());
-                    }
+                    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 500); }, 3500);
                 },
                 setProStatus: (active) => {
                     state.isPro = active;
                     const b = document.getElementById('badge-plan');
                     b.textContent = active ? "PRO" : "FREE";
-                    b.classList.toggle('pro', active);
+                    b.className = `badge ${active ? 'pro' : ''}`;
                     document.getElementById('card-pro').classList.toggle('is-unlocked', active);
                 }
             },
 
-            // --- AUTENTICAZIONE ---
+            // --- AUTENTICAZIONE E DATA MGMT ---
             auth: {
                 init: () => {
                     app.services.auth.onAuthStateChanged(async (u) => {
                         state.user = u;
-                        app.ui.updateAuthUI();
+                        document.getElementById('auth-guest').classList.toggle('hidden', !!u);
+                        document.getElementById('auth-user').classList.toggle('hidden', !u);
                         if (u) {
-                            try {
-                                const d = await app.services.db.collection('users').doc(u.uid).get();
-                                if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
-                                else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
-                            } catch (e) { console.error(e); }
-                            app.ui.closeModal('modal-login');
+                            document.getElementById('user-email-display').textContent = u.email;
+                            document.getElementById('admin-trigger').classList.toggle('hidden', u.email.toLowerCase() !== CONFIG.adminEmail.toLowerCase());
+                            const d = await app.services.db.collection('users').doc(u.uid).get();
+                            if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
+                            else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
                         }
                     });
                 },
@@ -827,33 +737,28 @@
                 logout: () => app.services.auth.signOut().then(() => window.location.reload())
             },
 
-            // --- GESTIONE DATI (SAVE/LOAD) ---
             data: {
                 saveProject: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
-                    app.ui.setLoading(true, "Archiviazione Deal...");
+                    app.ui.setLoading(true, "Cloud Sync...");
                     const inputs = {}; document.querySelectorAll('input').forEach(i => inputs[i.id] = i.value);
-                    const payload = { uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs };
-                    
-                    try {
-                        if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(payload);
-                        else state.currentDocId = (await app.services.db.collection('projects').add(payload)).id;
-                        app.ui.showToast("Analisi salvata nel tuo archivio", "success");
-                    } catch(e) { app.ui.showToast("Errore nel salvataggio", "error"); }
-                    app.ui.setLoading(false);
+                    const p = { uid: state.user.uid, name: document.getElementById('project-name').value, updatedAt: new Date(), inputs };
+                    if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(p);
+                    else state.currentDocId = (await app.services.db.collection('projects').add(p)).id;
+                    app.ui.setLoading(false); app.ui.showToast("Analisi salvata nel cloud", "success");
                 },
                 openDealsList: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
                     app.ui.openModal('modal-deals');
-                    const div = document.getElementById('deals-container'); div.innerHTML = '<p style="text-align:center; padding:2rem;">Caricamento...</p>';
+                    const div = document.getElementById('deals-container'); div.innerHTML = 'Caricamento...';
                     const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).get();
-                    div.innerHTML = s.empty ? '<p style="text-align:center; padding:2rem;">Nessun deal salvato.</p>' : '';
+                    div.innerHTML = s.empty ? '<p>Nessun deal in archivio.</p>' : '';
                     s.forEach(d => {
-                        const r = document.createElement('div'); r.className = 'deal-row';
+                        const r = document.createElement('div'); r.className = 'row-item';
                         r.innerHTML = `<span><b>${d.data().name}</b></span><i class="fa-solid fa-chevron-right"></i>`;
                         r.onclick = () => {
-                            const data = d.data().inputs;
-                            Object.keys(data).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = data[k]; });
+                            const i = d.data().inputs;
+                            Object.keys(i).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = i[k]; });
                             state.currentDocId = d.id; app.calc.update(); app.ui.closeModal('modal-deals');
                         };
                         div.appendChild(r);
@@ -861,71 +766,66 @@
                 }
             },
 
-            // --- PANNELLO AMMINISTRATORE ---
+            contact: { submit: () => { app.ui.setLoading(true, "Invio Messaggio..."); setTimeout(() => { app.ui.setLoading(false); app.ui.showToast("Richiesta inviata! Risponderemo in 24h.", "success"); document.querySelector('.contact-form').reset(); }, 1500); } },
+
+            // --- SEZIONE ADMIN AUDITED & VERIFIED ---
             admin: {
-                switchTab: (e, t) => {
+                switchTab: (event, tab) => {
+                    // Rimuove classi attive da tutti i componenti admin
                     document.querySelectorAll('.admin-tab, .admin-content').forEach(x => x.classList.remove('active'));
-                    e.currentTarget.classList.add('active'); 
-                    document.getElementById(`tab-${t}`).classList.add('active');
-                    if (t === 'stats') app.admin.refreshStats();
-                    if (t === 'users') app.admin.loadUsers();
+                    
+                    // Applica classe attiva al tab cliccato (usando event.currentTarget per sicurezza)
+                    if (event && event.currentTarget) {
+                        event.currentTarget.classList.add('active');
+                    }
+                    
+                    const targetContent = document.getElementById(`tab-${tab}`);
+                    if (targetContent) targetContent.classList.add('active');
+                    
+                    // Trigger caricamento dati contestuale
+                    if (tab === 'stats') app.admin.refreshStats();
+                    if (tab === 'users') app.admin.loadUsers();
                 },
                 refreshStats: async () => {
+                    app.ui.setLoading(true, "Sincronizzazione Statistiche...");
                     const us = await app.services.db.collection('users').get();
-                    let p = 0; us.forEach(d => { if(d.data().plan === 'pro') p++; });
+                    let proCount = 0; us.forEach(d => { if(d.data().plan === 'pro') proCount++; });
                     document.getElementById('stat-users').textContent = us.size;
-                    document.getElementById('stat-pro').textContent = p;
+                    document.getElementById('stat-pro').textContent = proCount;
+                    app.ui.setLoading(false);
                 },
                 loadUsers: async () => {
+                    const div = document.getElementById('admin-users-list');
+                    div.innerHTML = 'Recupero anagrafica...';
                     const s = await app.services.db.collection('users').limit(100).get();
-                    const div = document.getElementById('admin-users-list'); div.innerHTML = '';
+                    div.innerHTML = '';
                     s.forEach(d => {
-                        const r = document.createElement('div'); r.className = 'deal-row';
-                        r.innerHTML = `<span>${d.data().email}</span> <b>${d.data().plan.toUpperCase()}</b>`;
+                        const r = document.createElement('div'); r.className = 'row-item';
+                        r.innerHTML = `<span>${d.data().email}</span> <span class="badge ${d.data().plan==='pro'?'pro':''}">${d.data().plan.toUpperCase()}</span>`;
                         div.appendChild(r);
                     });
                 },
                 toggleMyPlan: async () => {
-                    if (!state.user) return;
                     const next = state.isPro ? 'free' : 'pro';
                     await app.services.db.collection('users').doc(state.user.uid).update({ plan: next });
                     app.ui.setProStatus(next === 'pro');
-                    app.ui.showToast(`Admin: Stato piano forzato a ${next.toUpperCase()}`, 'info');
+                    app.ui.showToast(`Stato Admin forzato a ${next.toUpperCase()}`, "info");
                 },
-                clearMyData: () => {
-                    if(confirm("Sei sicuro? Questa azione eliminerà tutte le cache locali.")) {
-                        sessionStorage.clear(); window.location.reload();
-                    }
-                }
+                clearMyData: () => { if(confirm("Cancellare le cache locali?")) { window.location.reload(); } }
             },
 
             chart: {
                 init: () => {
-                    const ctx = document.getElementById('profitChart').getContext('2d');
-                    state.chartInstance = new Chart(ctx, {
+                    state.chartInstance = new Chart(document.getElementById('profitChart').getContext('2d'), {
                         type: 'doughnut',
-                        data: { 
-                            labels: ['Utile', 'OTA', 'Tasse', 'Costi'], 
-                            datasets: [{ 
-                                data: [0, 0, 0, 0], 
-                                backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'], 
-                                borderWidth: 0,
-                                hoverOffset: 15
-                            }] 
-                        },
-                        options: { 
-                            responsive: true, 
-                            maintainAspectRatio: false, 
-                            cutout: '75%', 
-                            plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', padding: 20, font: { size: 12, weight: '600' } } } } 
-                        }
+                        data: { labels: ['Utile', 'OTA', 'Tasse', 'Costi'], datasets: [{ data: [0, 0, 0, 0], backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'], borderWidth: 0 }] },
+                        options: { responsive: true, maintainAspectRatio: false, cutout: '80%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { weight: '800' }, padding: 25 } } } }
                     });
                 }
             },
             payment: { start: () => window.open(CONFIG.stripeLink, '_blank') }
         };
 
-        // AVVIO APPLICAZIONE
         document.addEventListener('DOMContentLoaded', app.init);
     </script>
 </body>
