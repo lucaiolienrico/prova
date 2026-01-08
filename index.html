@@ -42,6 +42,7 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
         html { scroll-behavior: smooth; }
+        
         body { 
             background-color: var(--bg-body); 
             color: var(--text-main); 
@@ -155,6 +156,25 @@
             font-size: 1rem; transition: var(--transition); font-family: inherit; 
         }
         input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
+
+        /* SWITCHER TASSE ITALIA (CSS Ottimizzato) */
+        .tax-switcher { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; 
+            background: var(--bg-input); padding: 6px; border-radius: var(--radius-md); 
+            border: 1px solid var(--border); margin-bottom: 1.5rem; 
+        }
+        .btn-tax { 
+            background: transparent; border: 1px solid transparent; color: var(--text-muted); 
+            padding: 10px 5px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; 
+            font-weight: 700; transition: all 0.2s; text-align: center; white-space: nowrap;
+        }
+        .btn-tax.active { 
+            background: var(--primary); color: #020617; border-color: var(--primary); 
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); 
+        }
+        .btn-tax:hover:not(.active) { 
+            background: rgba(255,255,255,0.05); color: white; border-color: var(--border); 
+        }
 
         /* KPI E RISULTATI CALCOLO */
         .kpi-container { 
@@ -312,6 +332,9 @@
         <input type="text" id="project-name" class="project-input" value="Nuova Analisi Asset" placeholder="Identificativo Progetto">
         <div style="display: flex; gap: 1.5rem;">
             <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Export Report Bancario</button>
+            
+            <button class="btn" onclick="app.data.exportCSV()"><i class="fa-solid fa-file-csv"></i> Export Excel (CSV)</button>
+            
             <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Portfolio Deal</button>
             <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva Cloud</button>
         </div>
@@ -330,23 +353,47 @@
                 </div>
 
                 <div class="input-grid">
-                    <div class="form-group"><label>ADR Medio (€/Notte)</label><input type="number" id="adr" value="180"></div>
+                    <div class="form-group">
+                        <label>Prezzo Medio per Notte (€) <i class="fa-regular fa-circle-question" title="Prezzo medio giornaliero di vendita (ADR)" style="cursor:help; margin-left:5px; color:var(--primary)"></i></label>
+                        <input type="number" id="adr" value="180">
+                    </div>
                     <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="2.00" step="0.5"></div>
                 </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="margin-bottom: 8px; display:block;">Regime Fiscale (Italia)</label>
+                    <div class="tax-switcher">
+                        <button class="btn-tax active" data-tax="21" onclick="app.calc.setTax(21, this)">Cedolare 21%</button>
+                        <button class="btn-tax" data-tax="26" onclick="app.calc.setTax(26, this)">Cedolare 26%</button>
+                        <button class="btn-tax" data-tax="28" onclick="app.calc.setTax(28, this)">Società 28%</button>
+                    </div>
+                </div>
+
                 <div class="input-grid">
                     <div class="form-group"><label>Commissioni Canali (%)</label><input type="number" id="portal-comm" value="18"></div>
-                    <div class="form-group"><label>Fiscalità / Tasse (%)</label><input type="number" id="tax-rate" value="21"></div>
+                    <div class="form-group"><label>Aliquota Fiscale (%)</label><input type="number" id="tax-rate" value="21" oninput="app.calc.highlightCustomTax()"></div>
                 </div>
+                
                 <div class="input-grid">
                     <div class="form-group"><label>Costo Var/Notte (€)</label><input type="number" id="var-costs" value="30"></div>
                     <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="75"></div>
                 </div>
-                <div class="form-group" style="margin-bottom: 3rem;"><label>Costi Fissi Mensili Gestione (€)</label><input type="number" id="fixed-costs" value="1000"></div>
+                <div class="form-group" style="margin-bottom: 2rem;"><label>Costi Fissi Mensili Gestione (€)</label><input type="number" id="fixed-costs" value="1000"></div>
                 
                 <div class="kpi-container"><span class="kpi-title">Utile Netto / Notte</span><span class="kpi-value" id="res-net-night">-- €</span></div>
                 <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--primary);">MOL Mensile Gestione</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
                 
                 <div class="chart-wrapper"><canvas id="profitChart"></canvas></div>
+
+                <div style="margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                    <h4 style="color:var(--text-muted); font-size:0.8rem; margin-bottom:15px; font-weight:800; text-transform:uppercase;">ANALISI SENSIBILITÀ (Scenario ROI)</h4>
+                    <table style="width:100%; font-size:0.9rem; text-align:left; border-collapse: collapse;">
+                        <tr style="color:var(--text-muted); border-bottom:1px solid var(--border)"><th style="padding:8px 0">Scenario</th><th style="padding:8px 0">Occ.%</th><th style="padding:8px 0; text-align:right">Utile Netto Annuo</th></tr>
+                        <tr style="color:var(--danger); border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:8px 0">Pessimistico</td><td style="padding:8px 0">50%</td><td id="sens-50" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
+                        <tr style="color:var(--warning); border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:8px 0">Moderato</td><td style="padding:8px 0">65%</td><td id="sens-65" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
+                        <tr style="color:var(--primary)"><td style="padding:8px 0">Ottimistico</td><td style="padding:8px 0">85%</td><td id="sens-85" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
+                    </table>
+                </div>
             </div>
 
             <div class="card" id="card-pro">
@@ -537,8 +584,18 @@
     <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN CONSOLE</button>
 
     <script>
-        // --- DATABASE LOCALE COMUNI (Top List Italiana Ottimizzata & Espansa) ---
-        // l: Label Visualizzata, v: Tassa, k: Chiave ricerca (lowercase)
+        // --- 1. CONFIGURAZIONE & DATABASE ---
+        
+        // DEBOUNCE UTILITY (PERFORMANCE)
+        const debounce = (func, wait) => {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => { clearTimeout(timeout); func(...args); };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        };
+
         const CITY_DB = [
             // --- GRANDI CITTÀ D'ARTE & BUSINESS ---
             { l: "Roma (RM)", v: 6.0, k: "roma" }, 
@@ -638,29 +695,33 @@
 
         const app = {
             init: () => {
-                // 1. Inizializzazione Firebase
                 if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
-                
-                // 2. Inizializzazione EmailJS (CRITICO: Sostituisci con la tua Public Key)
                 emailjs.init("7HZ3JHWrZLuz6qLUp"); 
 
-                // 3. Avvio Servizi Interni
                 app.services.auth = firebase.auth();
                 app.services.db = firebase.firestore();
                 app.auth.init();
                 app.chart.init(); 
+                app.data.restoreDraft(); // RIPRISTINO AUTOMATICO
+                
+                // UX FIX: SINCRONIZZA IL BOTTONE ATTIVO DOPO IL RESTORE
+                app.calc.syncTaxUI(); 
+
                 app.calc.update();
                 
-                // Event Listeners Input Numerici
+                // DEBOUNCED LISTENERS (PERFORMANCE)
+                const debouncedUpdate = debounce(() => {
+                    app.calc.update();
+                    app.data.autoSave();
+                }, 300);
+
                 document.querySelectorAll('input[type="number"]').forEach(input => {
-                    input.addEventListener('input', () => app.calc.update());
+                    input.addEventListener('input', debouncedUpdate);
                 });
 
-                // Gestione Ricerca Geografica Locale
                 const geoIn = document.getElementById('geo-search');
                 geoIn.addEventListener('input', (e) => app.geo.search(e.target.value));
                 
-                // Chiudi dropdown se clicco fuori
                 document.addEventListener('click', (e) => {
                     if (!e.target.closest('#geo-search')) document.getElementById('geo-results').classList.add('hidden');
                 });
@@ -668,14 +729,12 @@
 
             services: { auth: null, db: null },
 
-            // --- MOTORE GEOGRAFICO LOCALE (100% Reliability) ---
             geo: {
                 search: (query) => {
                     const list = document.getElementById('geo-results');
                     if (!query || query.length < 2) { list.classList.add('hidden'); return; }
 
                     const q = query.toLowerCase().trim();
-                    // Filtra anche se contiene la query (es. "garganico" -> Rodi Garganico)
                     const results = CITY_DB.filter(c => c.k.includes(q)).slice(0, 8); 
 
                     list.innerHTML = '';
@@ -693,18 +752,18 @@
                             
                             const taxInput = document.getElementById('city-tax');
                             taxInput.value = item.v.toFixed(2);
-                            taxInput.style.borderColor = 'var(--primary)'; // Feedback visivo
+                            taxInput.style.borderColor = 'var(--primary)';
                             setTimeout(() => taxInput.style.borderColor = '', 1000);
 
                             app.ui.showToast(`Tassa aggiornata per ${item.l}: ${item.v.toFixed(2)}€`, 'success');
                             app.calc.update();
+                            app.data.autoSave();
                         };
                         list.appendChild(div);
                     });
                 }
             },
 
-            // --- MOTORE DI CALCOLO FINANZIARIO ---
             calc: {
                 getVal: (id) => {
                     const el = document.getElementById(id);
@@ -712,10 +771,34 @@
                     return parseFloat(el.value.replace(',', '.')) || 0;
                 },
                 format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
+                
+                // NUOVA FUNZIONE PER GESTIRE IL REGIME FISCALE
+                setTax: (rate, btnElement) => {
+                    document.getElementById('tax-rate').value = rate;
+                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
+                    if(btnElement) btnElement.classList.add('active');
+                    app.calc.update();
+                    app.data.autoSave();
+                    app.ui.showToast(`Regime Fiscale impostato: ${rate}%`, "info");
+                },
+                
+                // FIX UX: SINCRONIZZA L'INTERFACCIA AL CARICAMENTO
+                syncTaxUI: () => {
+                    const val = app.calc.getVal('tax-rate');
+                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
+                    // Selettori specifici per i pulsanti in base al valore
+                    if(val === 21) document.querySelector('.btn-tax[data-tax="21"]').classList.add('active');
+                    else if(val === 26) document.querySelector('.btn-tax[data-tax="26"]').classList.add('active');
+                    else if(val === 28) document.querySelector('.btn-tax[data-tax="28"]').classList.add('active');
+                },
+
+                highlightCustomTax: () => {
+                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
+                },
+
                 update: () => {
                     const c = app.calc;
                     
-                    // Cashflow Operativo
                     const revAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
                     const otaCosts = revAnnuo * (c.getVal('portal-comm')/100);
                     const taxAmt = (revAnnuo - otaCosts) * (c.getVal('tax-rate')/100);
@@ -734,12 +817,10 @@
                         state.chartInstance.update();
                     }
 
-                    // Analisi Bancaria
                     const p = c.getVal('price'), ltv = c.getVal('ltv'), reno = c.getVal('reno'), closing = c.getVal('closing');
                     const loan = p * (ltv/100);
                     const i = (c.getVal('rate')/100) / 12, n = c.getVal('years') * 12;
                     
-                    // Gestione divisione per zero (anni=0) e tasso zero
                     let monthlyM = 0;
                     if (n > 0) {
                         monthlyM = (i > 0) ? loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1) : loan / n;
@@ -749,13 +830,29 @@
                     document.getElementById('res-cashflow').textContent = c.format((molAnnuo/12) - monthlyM);
                     document.getElementById('res-downpayment').textContent = c.format((p - loan) + reno + closing);
                     document.getElementById('res-total-interest').textContent = c.format((monthlyM * n) - loan);
+
+                    // CALCOLO SENSIBILITÀ (Nuova Feature)
+                    const baseRev = c.getVal('adr') * 365;
+                    const varCostPerNight = c.getVal('var-costs') + c.getVal('city-tax');
+                    const fixAnnual = c.getVal('fixed-costs') * 12;
+                    const tRate = c.getVal('tax-rate')/100;
+                    const cRate = c.getVal('portal-comm')/100;
+
+                    [50, 65, 85].forEach(occ => {
+                        const nights = 365 * (occ/100);
+                        const rev = baseRev * (occ/100);
+                        const comm = rev * cRate;
+                        const tax = (rev - comm) * tRate;
+                        const varC = varCostPerNight * nights;
+                        const profit = rev - comm - tax - varC - fixAnnual;
+                        document.getElementById(`sens-${occ}`).textContent = c.format(profit);
+                    });
                 },
 
                 showAmortization: () => {
                     const c = app.calc;
                     const loan = c.getVal('price') * (c.getVal('ltv')/100);
                     const i = (c.getVal('rate')/100)/12, months = c.getVal('years') * 12;
-                    // Protezione calcolo anche qui
                     if (months <= 0) return app.ui.showToast("Inserire una durata valida per il mutuo", "error");
 
                     const m = (i > 0) ? loan * (i * Math.pow(1 + i, months)) / (Math.pow(1 + i, months) - 1) : loan / months;
@@ -771,33 +868,6 @@
                     }
                     document.getElementById('amortization-body').innerHTML = html;
                     app.ui.openModal('modal-amortization');
-                }
-            },
-
-            pdf: {
-                generate: async () => {
-                    app.ui.setLoading(true, "Esportazione Documentazione PDF...");
-                    document.body.classList.add('pdf-export-mode');
-                    try {
-                        const canvas = await html2canvas(document.getElementById('capture-area'), { scale: 2, useCORS: true });
-                        document.body.classList.remove('pdf-export-mode');
-                        const imgData = canvas.toDataURL('image/png');
-                        const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-                        const w = pdf.internal.pageSize.getWidth();
-                        
-                        pdf.setFontSize(26); pdf.setTextColor(16, 185, 129); pdf.text("INVESTPRO | ANALISI ASSET", 15, 20);
-                        pdf.setFontSize(10); pdf.setTextColor(100); 
-                        pdf.text(`Riferimento Analisi: ${document.getElementById('project-name').value}`, 15, 28);
-                        pdf.text(`Data: ${new Date().toLocaleDateString('it-IT')}`, 15, 33);
-                        pdf.line(15, 36, w - 15, 36);
-                        
-                        pdf.addImage(imgData, 'PNG', 10, 45, w - 20, (canvas.height * (w-20)) / canvas.width);
-                        pdf.setFontSize(8); pdf.text("Documento generato da InvestPro Professional - Riservato", 15, pdf.internal.pageSize.getHeight() - 10);
-                        
-                        pdf.save(`InvestPro_${document.getElementById('project-name').value.replace(/\s+/g, '_')}.pdf`);
-                        app.ui.showToast("Report PDF generato correttamente", "success");
-                    } catch(e) { app.ui.showToast("Errore durante l'esportazione", "error"); document.body.classList.remove('pdf-export-mode'); }
-                    app.ui.setLoading(false);
                 }
             },
 
@@ -848,6 +918,73 @@
             },
 
             data: {
+                // AUTO-SALVATAGGIO LOCALE
+                autoSave: () => {
+                    const data = {};
+                    document.querySelectorAll('input').forEach(i => data[i.id] = i.value);
+                    localStorage.setItem('investpro_draft', JSON.stringify(data));
+                },
+                restoreDraft: () => {
+                    const draft = localStorage.getItem('investpro_draft');
+                    if (draft) {
+                        const data = JSON.parse(draft);
+                        Object.keys(data).forEach(k => {
+                            const el = document.getElementById(k);
+                            if (el) el.value = data[k];
+                        });
+                        app.ui.showToast("Bozza ripristinata", "info");
+                    }
+                },
+                exportCSV: () => {
+                    const rows = [
+                        ["PARAMETRO", "VALORE"],
+                        ["Progetto", document.getElementById('project-name').value],
+                        ["Data", new Date().toLocaleDateString()],
+                        ["", ""],
+                        ["--- ECONOMIA OPERATIVA ---", ""],
+                        ["Città", document.getElementById('geo-search').value],
+                        ["Prezzo Medio/Notte (ADR)", document.getElementById('adr').value + " €"],
+                        ["Tassa Soggiorno", document.getElementById('city-tax').value + " €"],
+                        ["Commissioni Portali", document.getElementById('portal-comm').value + " %"],
+                        ["Tasse/Cedolare", document.getElementById('tax-rate').value + " %"],
+                        ["Costi Variabili/Notte", document.getElementById('var-costs').value + " €"],
+                        ["Occupazione", document.getElementById('occ').value + " %"],
+                        ["Costi Fissi Mensili", document.getElementById('fixed-costs').value + " €"],
+                        ["", ""],
+                        ["--- RISULTATI OPERATIVI ---", ""],
+                        ["Utile Netto / Notte", document.getElementById('res-net-night').textContent],
+                        ["MOL Mensile", document.getElementById('res-mol-month').textContent],
+                        ["", ""],
+                        ["--- LEVA FINANZIARIA ---", ""],
+                        ["Prezzo Acquisto", document.getElementById('price').value + " €"],
+                        ["Ristrutturazione", document.getElementById('reno').value + " €"],
+                        ["Notaio & Oneri", document.getElementById('closing').value + " €"],
+                        ["LTV Mutuo", document.getElementById('ltv').value + " %"],
+                        ["Tasso Interesse", document.getElementById('rate').value + " %"],
+                        ["Durata Anni", document.getElementById('years').value],
+                        ["", ""],
+                        ["--- RISULTATI FINANZIARI ---", ""],
+                        ["Rata Mutuo", document.getElementById('res-mortgage').textContent],
+                        ["Cashflow Netto", document.getElementById('res-cashflow').textContent],
+                        ["Equity Iniziale", document.getElementById('res-downpayment').textContent],
+                        ["Interessi Totali", document.getElementById('res-total-interest').textContent]
+                    ];
+
+                    // UPGRADE: Uso BLOB + BOM per encoding UTF-8 Perfetto in Excel
+                    const csvString = rows.map(e => e.join(";")).join("\n");
+                    const blob = new Blob(["\uFEFF" + csvString], { type: 'text/csv;charset=utf-8;' });
+                    const link = document.createElement("a");
+                    
+                    const url = URL.createObjectURL(blob);
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", `InvestPro_${document.getElementById('project-name').value.replace(/\s+/g, '_')}.csv`);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    app.ui.showToast("File CSV esportato correttamente", "success");
+                },
                 saveProject: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
                     app.ui.setLoading(true, "Archiviazione Deal...");
@@ -873,64 +1010,42 @@
                         r.onclick = () => {
                             const i = d.data().inputs;
                             Object.keys(i).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = i[k]; });
-                            state.currentDocId = d.id; app.calc.update(); app.ui.closeModal('modal-deals');
+                            state.currentDocId = d.id; app.calc.update(); app.calc.syncTaxUI(); app.ui.closeModal('modal-deals');
                         };
                         div.appendChild(r);
                     });
                 }
             },
 
-           contact: { 
+            contact: { 
                 submit: async () => { 
-                    // 1. Recupero Dati
                     const name = document.getElementById('contact-name').value;
                     const email = document.getElementById('contact-email').value;
                     const msg = document.getElementById('contact-msg').value;
 
-                    if (!name || !email || !msg) {
-                        return app.ui.showToast("Compila tutti i campi.", "error");
-                    }
+                    if (!name || !email || !msg) return app.ui.showToast("Compila tutti i campi.", "error");
 
                     app.ui.setLoading(true, "Invio in corso...");
 
                     try {
-                        // 2. PRIMA INVIA L'EMAIL (Operazione Principale)
-                        // Uso i parametri corretti che abbiamo verificato nel tuo screenshot
-                        await emailjs.send(
-                            "servizio_amministratore", 
-                            "template_4u8shhp", 
-                            {
-                                from_name: name,
-                                reply_to: email,
-                                message: msg,
-                                to_name: "Admin InvestPro"
-                            }
-                        );
+                        await emailjs.send("servizio_amministratore", "template_4u8shhp", {
+                            from_name: name, reply_to: email, message: msg, to_name: "Admin InvestPro"
+                        });
 
-                        // Se siamo qui, l'email è partita! Mostriamo subito il successo.
                         app.ui.showToast("Messaggio inviato con successo!", "success");
                         document.querySelector('.contact-form').reset();
 
-                        // 3. POI PROVA A SALVARE NEL DB (Operazione Secondaria)
-                        // Se fallisce per permessi, non importa: l'email è già andata.
                         try {
                             await app.services.db.collection('leads').add({
-                                name: name,
-                                email: email,
-                                message: msg,
-                                sentAt: new Date(),
-                                source: 'web_form'
+                                name: name, email: email, message: msg, sentAt: new Date(), source: 'web_form'
                             });
-                        } catch (dbError) {
-                            console.warn("Nota: Messaggio non salvato nel DB (mancano permessi), ma Email inviata.");
-                        }
+                        } catch (dbError) { console.warn("Nota: Messaggio inviato, DB saltato (permessi)."); }
 
                     } catch (emailError) {
                         console.error("ERRORE INVIO EMAIL:", emailError);
                         alert("Errore tecnico: " + JSON.stringify(emailError));
                         app.ui.showToast("Impossibile inviare il messaggio.", "error");
                     }
-                    
                     app.ui.setLoading(false);
                 } 
             },
