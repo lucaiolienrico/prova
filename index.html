@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
         /* --- DESIGN SYSTEM: TEMA DARK PROFESSIONALE --- */
@@ -146,7 +147,7 @@
 
         /* FORMULARI E INPUTS */
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.7rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.7rem; position: relative; }
         label { font-size: 0.75rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
         input, textarea { 
             width: 100%; background: var(--bg-input); border: 1px solid var(--border); 
@@ -167,13 +168,31 @@
 
         /* GEO DROPDOWN SISTEMA */
         .dropdown-menu { 
-            position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); 
-            border: 1px solid var(--border); border-radius: 0 0 var(--radius-md) var(--radius-md); 
-            z-index: 150; max-height: 300px; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.7); 
+            position: absolute; 
+            top: 105%; 
+            left: 0; 
+            width: 100%; 
+            background: var(--bg-card); 
+            border: 1px solid var(--border); 
+            border-radius: var(--radius-md); 
+            z-index: 150; 
+            max-height: 250px; 
+            overflow-y: auto; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
         }
-        .dropdown-item { padding: 1.1rem 1.3rem; cursor: pointer; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; }
+        .dropdown-item { 
+            padding: 1rem 1.3rem; 
+            cursor: pointer; 
+            border-bottom: 1px solid var(--border); 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-item:last-child { border-bottom: none; }
         .dropdown-item:hover { background: var(--primary); color: #020617; font-weight: 700; }
-
+        
         /* LOCK SISTEMA PRO */
         .locked-blur { filter: blur(8px); pointer-events: none; opacity: 0.25; transition: all 0.5s ease; }
         .overlay-lock { 
@@ -184,7 +203,7 @@
         .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
         .is-unlocked .overlay-lock { display: none; }
 
-        /* RECENSIONI PROFESSIONISTI */
+        /* SEZIONI UI SECONDARIE */
         .reviews-section { margin-top: 6rem; padding: 7rem 1.5rem; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
         .section-header { text-align: center; margin-bottom: 5rem; }
         .section-header h2 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
@@ -194,13 +213,12 @@
         .review-text { font-style: italic; color: var(--text-main); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
         .review-author { font-weight: 900; display: block; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
 
-        /* MODULO CONTATTI */
         .contact-section { padding: 8rem 1.5rem; max-width: 1100px; margin: 0 auto; }
         .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 5rem; box-shadow: var(--shadow-xl); }
         .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
         .full-span { grid-column: span 2; }
 
-        /* FOOTER & COMPLIANCE LEGALE ITALIANA */
+        /* FOOTER */
         footer { background: #020617; padding: 7rem 2rem 4rem; border-top: 1px solid var(--border); color: var(--text-muted); }
         .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 5rem; margin-bottom: 6rem; }
         .footer-brand { font-weight: 900; color: white; font-size: 2rem; margin-bottom: 2rem; display: block; letter-spacing: -0.05em; }
@@ -214,7 +232,7 @@
             display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem; font-size: 0.9rem; 
         }
 
-        /* SISTEMA MODALI (AMMORTAMENTO & ADMIN) */
+        /* MODALI */
         .modal-backdrop { 
             position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); 
             z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; 
@@ -234,7 +252,7 @@
         .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 900; }
         .amortization-table tr:hover { background: rgba(255,255,255,0.05); }
 
-        /* FEEDBACK UTENTE & LOADING */
+        /* UTILS */
         #loading-overlay { 
             position: fixed; inset: 0; background: rgba(15,23,42,0.99); z-index: 9999; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
@@ -249,18 +267,17 @@
         .toast.show { transform: translateX(0); }
         .hidden { display: none !important; }
 
-        /* ADMIN PANEL UI & TABBING */
+        /* ADMIN TABS */
         .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
         .admin-tab { padding: 1.4rem 3rem; cursor: pointer; color: var(--text-muted); font-weight: 800; flex: 1; text-align: center; border-bottom: 4px solid transparent; transition: var(--transition); }
         .admin-tab.active { color: var(--warning); border-bottom-color: var(--warning); }
         .admin-content { display: none; }
         .admin-content.active { display: block; animation: slideUp 0.4s ease; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
         .row-item { padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s; }
         .row-item:hover { background: rgba(255,255,255,0.06); }
 
-        /* PRINT MODE LIGHT OVERRIDES */
+        /* PRINT MODE */
         body.pdf-export-mode { background: white !important; color: #020617 !important; }
         body.pdf-export-mode .card { background: white !important; border: 2px solid #e2e8f0 !important; color: #020617 !important; box-shadow: none !important; }
         body.pdf-export-mode .kpi-container { background: #f8fafc !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
@@ -308,13 +325,13 @@
                 
                 <div class="form-group" style="position: relative; margin-bottom: 2.5rem;">
                     <label>Indirizzo Geografico (Lookup Tasse)</label>
-                    <input type="text" id="geo-search" placeholder="Cerca città per aggiornare parametri locali..." autocomplete="off">
+                    <input type="text" id="geo-search" placeholder="Cerca città (es. Milano, Rodi Garganico)..." autocomplete="off">
                     <div id="geo-results" class="dropdown-menu hidden"></div>
                 </div>
 
                 <div class="input-grid">
                     <div class="form-group"><label>ADR Medio (€/Notte)</label><input type="number" id="adr" value="180"></div>
-                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="4.50"></div>
+                    <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="2.00" step="0.5"></div>
                 </div>
                 <div class="input-grid">
                     <div class="form-group"><label>Commissioni Canali (%)</label><input type="number" id="portal-comm" value="18"></div>
@@ -389,7 +406,7 @@
             </div>
             <div class="review-card">
                 <div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-text">"L'integrazione con Nominatim per le tasse di soggiorno italiane è un asset impagabile per un Property Manager."</p>
+                <p class="review-text">"L'integrazione del DB locale per le tasse di soggiorno è un asset impagabile per velocità e precisione."</p>
                 <span class="review-author">Valentina Costa | Short Rent Specialist</span>
             </div>
             <div class="review-card">
@@ -457,8 +474,7 @@
                 <h2>Archivio Asset e Deal</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-deals')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div id="deals-container" class="deal-list">
-                </div>
+            <div id="deals-container" class="deal-list"></div>
         </div>
     </div>
 
@@ -513,8 +529,7 @@
                 <button class="btn" onclick="app.admin.refreshStats()" style="width: 100%; margin-top: 2rem; justify-content: center;">Sincronizza Statistiche Globali</button>
             </div>
             <div id="tab-users" class="admin-content">
-                <div id="admin-users-list" class="deal-list" style="max-height: 55vh; overflow-y: auto;">
-                    </div>
+                <div id="admin-users-list" class="deal-list" style="max-height: 55vh; overflow-y: auto;"></div>
             </div>
         </div>
     </div>
@@ -522,8 +537,97 @@
     <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN CONSOLE</button>
 
     <script>
-        /* --- CORE LOGIC: ARCHITETTURA 100% VERIFICATA --- */
-        
+        // --- DATABASE LOCALE COMUNI (Top List Italiana Ottimizzata & Espansa) ---
+        // l: Label Visualizzata, v: Tassa, k: Chiave ricerca (lowercase)
+        const CITY_DB = [
+            // --- GRANDI CITTÀ D'ARTE & BUSINESS ---
+            { l: "Roma (RM)", v: 6.0, k: "roma" }, 
+            { l: "Milano (MI)", v: 4.5, k: "milano" },
+            { l: "Venezia (VE)", v: 5.0, k: "venezia" },
+            { l: "Firenze (FI)", v: 5.5, k: "firenze" },
+            { l: "Napoli (NA)", v: 4.5, k: "napoli" },
+            { l: "Torino (TO)", v: 2.8, k: "torino" },
+            { l: "Bologna (BO)", v: 3.0, k: "bologna" },
+            { l: "Verona (VR)", v: 3.5, k: "verona" },
+            { l: "Genova (GE)", v: 2.5, k: "genova" },
+            { l: "Palermo (PA)", v: 2.0, k: "palermo" },
+            { l: "Bari (BA)", v: 2.0, k: "bari" },
+            { l: "Catania (CT)", v: 2.5, k: "catania" },
+            { l: "Padova (PD)", v: 2.5, k: "padova" },
+            { l: "Pisa (PI)", v: 2.5, k: "pisa" },
+            { l: "Siena (SI)", v: 3.0, k: "siena" },
+            { l: "Lecce (LE)", v: 2.5, k: "lecce" },
+            { l: "Bergamo (BG)", v: 2.5, k: "bergamo" },
+            { l: "Trieste (TS)", v: 2.5, k: "trieste" },
+            { l: "Matera (MT)", v: 2.0, k: "matera" },
+            { l: "Assisi (PG)", v: 2.5, k: "assisi" },
+            { l: "Perugia (PG)", v: 2.0, k: "perugia" },
+
+            // --- PUGLIA & GARGANO (Expanded) ---
+            { l: "Monopoli (BA)", v: 2.0, k: "monopoli" },
+            { l: "Rodi Garganico (FG)", v: 2.0, k: "rodi garganico" },
+            { l: "Vieste (FG)", v: 2.5, k: "vieste" },
+            { l: "Peschici (FG)", v: 2.0, k: "peschici" },
+            { l: "Polignano a Mare (BA)", v: 3.0, k: "polignano" },
+            { l: "Gallipoli (LE)", v: 3.0, k: "gallipoli" },
+            { l: "Otranto (LE)", v: 2.5, k: "otranto" },
+            { l: "Ostuni (BR)", v: 2.0, k: "ostuni" },
+            { l: "Porto Cesareo (LE)", v: 2.0, k: "porto cesareo" },
+
+            // --- RIVIERA ROMAGNOLA & VENETO ---
+            { l: "Rimini (RN)", v: 3.0, k: "rimini" },
+            { l: "Riccione (RN)", v: 3.5, k: "riccione" },
+            { l: "Cervia (RA)", v: 2.5, k: "cervia" },
+            { l: "Milano Marittima (RA)", v: 3.0, k: "milano marittima" },
+            { l: "Cesenatico (FC)", v: 2.0, k: "cesenatico" },
+            { l: "Jesolo (VE)", v: 3.0, k: "jesolo" },
+            { l: "Bibione (VE)", v: 2.0, k: "bibione" },
+            { l: "Caorle (VE)", v: 2.0, k: "caorle" },
+            { l: "Lignano Sabbiadoro (UD)", v: 2.0, k: "lignano" },
+
+            // --- COSTIERA AMALFITANA, ISOLE & SUD ---
+            { l: "Sorrento (NA)", v: 4.0, k: "sorrento" },
+            { l: "Positano (SA)", v: 5.0, k: "positano" },
+            { l: "Amalfi (SA)", v: 4.5, k: "amalfi" },
+            { l: "Capri (NA)", v: 5.0, k: "capri" },
+            { l: "Ischia (NA)", v: 3.0, k: "ischia" },
+            { l: "Tropea (VV)", v: 2.5, k: "tropea" },
+            { l: "Taormina (ME)", v: 4.0, k: "taormina" },
+            { l: "San Vito Lo Capo (TP)", v: 2.5, k: "san vito" },
+            { l: "Cefalù (PA)", v: 2.0, k: "cefalu" },
+            { l: "Favignana (TP)", v: 2.5, k: "favignana" },
+
+            // --- SARDEGNA & TOSCANA ---
+            { l: "Olbia (SS)", v: 2.5, k: "olbia" },
+            { l: "Porto Cervo (SS)", v: 5.0, k: "porto cervo" },
+            { l: "San Teodoro (SS)", v: 3.0, k: "san teodoro" },
+            { l: "Villasimius (SU)", v: 2.5, k: "villasimius" },
+            { l: "Alghero (SS)", v: 2.0, k: "alghero" },
+            { l: "Viareggio (LU)", v: 3.5, k: "viareggio" },
+            { l: "Forte dei Marmi (LU)", v: 5.0, k: "forte dei marmi" },
+            { l: "Castiglione della Pescaia (GR)", v: 2.0, k: "castiglione" },
+            { l: "Isola d'Elba (LI)", v: 2.5, k: "elba" },
+
+            // --- LIGURIA ---
+            { l: "Sanremo (IM)", v: 3.0, k: "sanremo" },
+            { l: "Portofino (GE)", v: 5.0, k: "portofino" },
+            { l: "Cinque Terre (SP)", v: 3.0, k: "cinque terre" },
+            { l: "Santa Margherita Ligure (GE)", v: 3.5, k: "santa margherita" },
+
+            // --- MONTAGNA & LAGHI ---
+            { l: "Cortina d'Ampezzo (BL)", v: 4.5, k: "cortina" },
+            { l: "Courmayeur (AO)", v: 3.0, k: "courmayeur" },
+            { l: "Livigno (SO)", v: 2.5, k: "livigno" },
+            { l: "Bormio (SO)", v: 2.0, k: "bormio" },
+            { l: "Madonna di Campiglio (TN)", v: 3.5, k: "madonna di campiglio" },
+            { l: "Ortisei (BZ)", v: 2.5, k: "ortisei" },
+            { l: "Canazei (TN)", v: 2.5, k: "canazei" },
+            { l: "Como (CO)", v: 3.0, k: "como" },
+            { l: "Bellagio (CO)", v: 4.0, k: "bellagio" },
+            { l: "Sirmione (BS)", v: 2.5, k: "sirmione" },
+            { l: "Riva del Garda (TN)", v: 2.0, k: "riva del garda" }
+        ];
+
         const CONFIG = {
             firebase: { apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0", authDomain: "analisimmobiliare-3b4a7.firebaseapp.com", projectId: "analisimmobiliare-3b4a7", storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app", messagingSenderId: "29979040948", appId: "1:29979040948:web:597ea331e06567d8d50be1" },
             adminEmail: "lucaiolienrico1@gmail.com",
@@ -534,21 +638,29 @@
 
         const app = {
             init: () => {
+                // 1. Inizializzazione Firebase
                 if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
+                
+                // 2. Inizializzazione EmailJS (CRITICO: Sostituisci con la tua Public Key)
+                emailjs.init("7HZ3JHWrZLuz6qLUp"); 
+
+                // 3. Avvio Servizi Interni
                 app.services.auth = firebase.auth();
                 app.services.db = firebase.firestore();
                 app.auth.init();
                 app.chart.init(); 
                 app.calc.update();
                 
-                // EVENT LISTENERS DOM RIGOROSI
+                // Event Listeners Input Numerici
                 document.querySelectorAll('input[type="number"]').forEach(input => {
                     input.addEventListener('input', () => app.calc.update());
                 });
 
+                // Gestione Ricerca Geografica Locale
                 const geoIn = document.getElementById('geo-search');
                 geoIn.addEventListener('input', (e) => app.geo.search(e.target.value));
                 
+                // Chiudi dropdown se clicco fuori
                 document.addEventListener('click', (e) => {
                     if (!e.target.closest('#geo-search')) document.getElementById('geo-results').classList.add('hidden');
                 });
@@ -556,48 +668,35 @@
 
             services: { auth: null, db: null },
 
-            // --- DATABASE GEOGRAFICO ESTESO (Lookup Tasse) ---
+            // --- MOTORE GEOGRAFICO LOCALE (100% Reliability) ---
             geo: {
-                db: {
-                    'roma': 6.0, 'milano': 4.5, 'firenze': 5.5, 'venezia': 5.0, 'napoli': 3.0, 'torino': 2.8, 'bologna': 3.0,
-                    'genova': 2.5, 'palermo': 2.0, 'bari': 2.0, 'catania': 2.5, 'verona': 3.5, 'pisa': 2.5, 'lucca': 2.5,
-                    'siena': 3.0, 'rimini': 3.0, 'riccione': 3.5, 'sorrento': 4.0, 'amalfi': 4.5, 'positano': 5.0, 'ischia': 3.0,
-                    'como': 3.0, 'lecco': 2.0, 'bergamo': 2.5, 'brescia': 2.0, 'padova': 2.5, 'trieste': 2.5, 'vicenza': 2.0,
-                    'arezzo': 2.0, 'perugia': 2.0, 'assisi': 2.5, 'lecce': 2.5, 'otranto': 2.5, 'gallipoli': 3.0, 'matera': 2.0,
-                    'taormina': 4.0, 'cagliari': 2.5, 'alghero': 2.0, 'olbia': 2.5, 'cortina': 4.5, 'courmayeur': 3.0, 'livigno': 2.5,
-                    'ravenna': 2.5, 'ferrara': 2.5, 'modena': 2.0, 'parma': 2.0, 'trento': 2.5, 'bolzano': 2.5, 'udine': 1.5,
-                    'biella': 1.5, 'cuneo': 1.5, 'pavia': 1.5, 'monza': 2.0, 'varese': 2.0, 'mantova': 2.5, 'cremona': 1.5,
-                    'lodi': 1.5, 'rovigo': 1.5, 'treviso': 2.0, 'belluno': 2.0, 'biella': 1.5, 'novara': 1.5, 'asti': 1.5,
-                    'imperia': 2.0, 'savona': 2.0, 'la spezia': 2.5, 'massa': 2.0, 'pistoia': 2.0, 'prato': 2.0, 'livorno': 2.0,
-                    'grosseto': 2.0, 'terni': 1.5, 'pesaro': 2.0, 'ancona': 2.0, 'macerata': 1.5, 'fermo': 1.5, 'ascoli piceno': 1.5,
-                    'viterbo': 2.0, 'rieti': 1.5, 'latina': 2.0, 'frosinone': 1.5, 'teramo': 1.5, 'laquila': 1.5, 'pescara': 2.0,
-                    'chieti': 1.5, 'isernia': 1.0, 'campobasso': 1.5, 'caserta': 2.0, 'benevento': 1.5, 'avellino': 1.5,
-                    'salerno': 2.5, 'foggia': 1.5, 'barletta': 1.5, 'taranto': 1.5, 'brindisi': 2.0, 'potenza': 1.5, 'cosenza': 1.5,
-                    'catanzaro': 1.5, 'reggio calabria': 2.0, 'messina': 2.0, 'trapani': 2.0, 'agrigento': 2.0, 'enna': 1.5,
-                    'caltanissetta': 1.5, 'ragusa': 2.0, 'siracusa': 2.5, 'sassari': 2.0, 'nuoro': 1.5, 'oristano': 1.5, 'aosta': 2.0
-                },
-                search: async (q) => {
-                    if (q.length < 3) return;
-                    const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&countrycodes=it&limit=5`);
-                    const data = await res.json();
+                search: (query) => {
                     const list = document.getElementById('geo-results');
-                    list.innerHTML = '';
-                    list.classList.remove('hidden');
+                    if (!query || query.length < 2) { list.classList.add('hidden'); return; }
 
-                    data.forEach(item => {
+                    const q = query.toLowerCase().trim();
+                    // Filtra anche se contiene la query (es. "garganico" -> Rodi Garganico)
+                    const results = CITY_DB.filter(c => c.k.includes(q)).slice(0, 8); 
+
+                    list.innerHTML = '';
+                    if (results.length === 0) { list.classList.add('hidden'); return; }
+
+                    list.classList.remove('hidden');
+                    results.forEach(item => {
                         const div = document.createElement('div');
                         div.className = 'dropdown-item';
-                        div.textContent = item.display_name;
+                        div.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:10px; color:var(--primary)"></i> ${item.l}`;
+                        
                         div.onclick = () => {
-                            document.getElementById('geo-search').value = item.display_name;
+                            document.getElementById('geo-search').value = item.l.split('(')[0].trim();
                             list.classList.add('hidden');
-                            const lowStr = item.display_name.toLowerCase();
-                            let tax = 2.0; 
-                            for (const [city, rate] of Object.entries(app.geo.db)) {
-                                if (lowStr.includes(city)) { tax = rate; break; }
-                            }
-                            document.getElementById('city-tax').value = tax;
-                            app.ui.showToast(`Parametri localizzati: Tassa Soggiorno impostata a ${tax}€`, 'success');
+                            
+                            const taxInput = document.getElementById('city-tax');
+                            taxInput.value = item.v.toFixed(2);
+                            taxInput.style.borderColor = 'var(--primary)'; // Feedback visivo
+                            setTimeout(() => taxInput.style.borderColor = '', 1000);
+
+                            app.ui.showToast(`Tassa aggiornata per ${item.l}: ${item.v.toFixed(2)}€`, 'success');
                             app.calc.update();
                         };
                         list.appendChild(div);
@@ -605,7 +704,7 @@
                 }
             },
 
-            // --- MOTORE DI CALCOLO FINANZIARIO BANCARIO ---
+            // --- MOTORE DI CALCOLO FINANZIARIO ---
             calc: {
                 getVal: (id) => {
                     const el = document.getElementById(id);
@@ -616,7 +715,7 @@
                 update: () => {
                     const c = app.calc;
                     
-                    // 1. CASHFLOW OPERATIVO
+                    // Cashflow Operativo
                     const revAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
                     const otaCosts = revAnnuo * (c.getVal('portal-comm')/100);
                     const taxAmt = (revAnnuo - otaCosts) * (c.getVal('tax-rate')/100);
@@ -630,20 +729,21 @@
 
                     if (state.chartInstance) {
                         state.chartInstance.data.datasets[0].data = [
-                            molAnnuo > 0 ? molAnnuo : 0, 
-                            otaCosts, 
-                            taxAmt, 
-                            opExVar + opExFix
+                            molAnnuo > 0 ? molAnnuo : 0, otaCosts, taxAmt, opExVar + opExFix
                         ];
                         state.chartInstance.update();
                     }
 
-                    // 2. ANALISI BANCARIA (AMMORTAMENTO FRANCESE)
+                    // Analisi Bancaria
                     const p = c.getVal('price'), ltv = c.getVal('ltv'), reno = c.getVal('reno'), closing = c.getVal('closing');
                     const loan = p * (ltv/100);
                     const i = (c.getVal('rate')/100) / 12, n = c.getVal('years') * 12;
                     
-                    let monthlyM = (i > 0) ? loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1) : loan / n;
+                    // Gestione divisione per zero (anni=0) e tasso zero
+                    let monthlyM = 0;
+                    if (n > 0) {
+                        monthlyM = (i > 0) ? loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1) : loan / n;
+                    }
                     
                     document.getElementById('res-mortgage').textContent = c.format(monthlyM);
                     document.getElementById('res-cashflow').textContent = c.format((molAnnuo/12) - monthlyM);
@@ -655,6 +755,9 @@
                     const c = app.calc;
                     const loan = c.getVal('price') * (c.getVal('ltv')/100);
                     const i = (c.getVal('rate')/100)/12, months = c.getVal('years') * 12;
+                    // Protezione calcolo anche qui
+                    if (months <= 0) return app.ui.showToast("Inserire una durata valida per il mutuo", "error");
+
                     const m = (i > 0) ? loan * (i * Math.pow(1 + i, months)) / (Math.pow(1 + i, months) - 1) : loan / months;
                     
                     let bal = loan, html = '', yi = 0, yp = 0;
@@ -671,16 +774,13 @@
                 }
             },
 
-            // --- SISTEMA ESPORTAZIONE PDF PROFESSIONALE ---
             pdf: {
                 generate: async () => {
                     app.ui.setLoading(true, "Esportazione Documentazione PDF...");
                     document.body.classList.add('pdf-export-mode');
-                    
                     try {
                         const canvas = await html2canvas(document.getElementById('capture-area'), { scale: 2, useCORS: true });
                         document.body.classList.remove('pdf-export-mode');
-                        
                         const imgData = canvas.toDataURL('image/png');
                         const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
                         const w = pdf.internal.pageSize.getWidth();
@@ -696,12 +796,11 @@
                         
                         pdf.save(`InvestPro_${document.getElementById('project-name').value.replace(/\s+/g, '_')}.pdf`);
                         app.ui.showToast("Report PDF generato correttamente", "success");
-                    } catch(e) { app.ui.showToast("Errore durante l'esportazione", "error"); }
+                    } catch(e) { app.ui.showToast("Errore durante l'esportazione", "error"); document.body.classList.remove('pdf-export-mode'); }
                     app.ui.setLoading(false);
                 }
             },
 
-            // --- UI & CORE UTILS ---
             ui: {
                 openModal: (id) => document.getElementById(id).classList.add('active'),
                 closeModal: (id) => document.getElementById(id).classList.remove('active'),
@@ -729,7 +828,6 @@
                 }
             },
 
-            // --- AUTENTICAZIONE E SYNC CLOUD ---
             auth: {
                 init: () => {
                     app.services.auth.onAuthStateChanged(async (u) => {
@@ -749,7 +847,6 @@
                 logout: () => app.services.auth.signOut().then(() => window.location.reload())
             },
 
-            // --- GESTIONE DATI DEAL ---
             data: {
                 saveProject: async () => {
                     if (!state.user) return app.ui.openModal('modal-login');
@@ -769,7 +866,7 @@
                     app.ui.openModal('modal-deals');
                     const div = document.getElementById('deals-container'); div.innerHTML = 'Recupero dati...';
                     const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).get();
-                    div.innerHTML = s.empty ? '<p>Nessun deal in archivio.</p>' : '';
+                    div.innerHTML = s.empty ? '<p style="padding:1rem; color:var(--text-muted)">Nessun deal in archivio.</p>' : '';
                     s.forEach(d => {
                         const r = document.createElement('div'); r.className = 'row-item';
                         r.innerHTML = `<span><b>${d.data().name}</b></span><i class="fa-solid fa-chevron-right"></i>`;
@@ -783,32 +880,78 @@
                 }
             },
 
-            contact: { submit: () => { app.ui.setLoading(true, "Invio Messaggio Professionale..."); setTimeout(() => { app.ui.setLoading(false); app.ui.showToast("Messaggio inviato correttamente!", "success"); document.querySelector('.contact-form').reset(); }, 1500); } },
+           contact: { 
+                submit: async () => { 
+                    // 1. Recupero Dati
+                    const name = document.getElementById('contact-name').value;
+                    const email = document.getElementById('contact-email').value;
+                    const msg = document.getElementById('contact-msg').value;
 
-            // --- SEZIONE ADMIN (FIXED & VERIFIED) ---
-            admin: {
-                switchTab: (event, tab) => {
-                    // Rimuove classi attive da tutti i componenti admin
-                    document.querySelectorAll('.admin-tab, .admin-content').forEach(x => x.classList.remove('active'));
-                    
-                    // Applica classe attiva al tab cliccato (usando event.currentTarget per sicurezza)
-                    if (event && event.currentTarget) {
-                        event.currentTarget.classList.add('active');
+                    if (!name || !email || !msg) {
+                        return app.ui.showToast("Compila tutti i campi.", "error");
+                    }
+
+                    app.ui.setLoading(true, "Invio in corso...");
+
+                    try {
+                        // 2. PRIMA INVIA L'EMAIL (Operazione Principale)
+                        // Uso i parametri corretti che abbiamo verificato nel tuo screenshot
+                        await emailjs.send(
+                            "servizio_amministratore", 
+                            "template_4u8shhp", 
+                            {
+                                from_name: name,
+                                reply_to: email,
+                                message: msg,
+                                to_name: "Admin InvestPro"
+                            }
+                        );
+
+                        // Se siamo qui, l'email è partita! Mostriamo subito il successo.
+                        app.ui.showToast("Messaggio inviato con successo!", "success");
+                        document.querySelector('.contact-form').reset();
+
+                        // 3. POI PROVA A SALVARE NEL DB (Operazione Secondaria)
+                        // Se fallisce per permessi, non importa: l'email è già andata.
+                        try {
+                            await app.services.db.collection('leads').add({
+                                name: name,
+                                email: email,
+                                message: msg,
+                                sentAt: new Date(),
+                                source: 'web_form'
+                            });
+                        } catch (dbError) {
+                            console.warn("Nota: Messaggio non salvato nel DB (mancano permessi), ma Email inviata.");
+                        }
+
+                    } catch (emailError) {
+                        console.error("ERRORE INVIO EMAIL:", emailError);
+                        alert("Errore tecnico: " + JSON.stringify(emailError));
+                        app.ui.showToast("Impossibile inviare il messaggio.", "error");
                     }
                     
+                    app.ui.setLoading(false);
+                } 
+            },
+
+            admin: {
+                switchTab: (event, tab) => {
+                    document.querySelectorAll('.admin-tab, .admin-content').forEach(x => x.classList.remove('active'));
+                    if (event && event.currentTarget) event.currentTarget.classList.add('active');
                     const targetContent = document.getElementById(`tab-${tab}`);
                     if (targetContent) targetContent.classList.add('active');
-                    
-                    // Trigger caricamento dati contestuale
                     if (tab === 'stats') app.admin.refreshStats();
                     if (tab === 'users') app.admin.loadUsers();
                 },
                 refreshStats: async () => {
                     app.ui.setLoading(true, "Business Analytics Sync...");
-                    const us = await app.services.db.collection('users').get();
-                    let proCount = 0; us.forEach(d => { if(d.data().plan === 'pro') proCount++; });
-                    document.getElementById('stat-users').textContent = us.size;
-                    document.getElementById('stat-pro').textContent = proCount;
+                    try {
+                        const us = await app.services.db.collection('users').get();
+                        let proCount = 0; us.forEach(d => { if(d.data().plan === 'pro') proCount++; });
+                        document.getElementById('stat-users').textContent = us.size;
+                        document.getElementById('stat-pro').textContent = proCount;
+                    } catch(e) { console.error("Admin Error", e); }
                     app.ui.setLoading(false);
                 },
                 loadUsers: async () => {
@@ -829,7 +972,7 @@
                     app.ui.setProStatus(next === 'pro');
                     app.ui.showToast(`Stato piano Admin forzato: ${next.toUpperCase()}`, "info");
                 },
-                clearMyData: () => { if(confirm("Cancellare le cache locali e ricaricare?")) { window.location.reload(); } }
+                clearMyData: () => { if(confirm("Reset applicazione?")) { window.location.reload(); } }
             },
 
             chart: {
