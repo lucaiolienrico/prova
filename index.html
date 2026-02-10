@@ -3,1169 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Suite professionale per analisi investimenti immobiliari.">
-    <title>InvestPro | Suite Analisi Immobiliare Professionale</title>
+    <title>InvestPro | Dashboard & Admin</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
     <script src="https://www.paypal.com/sdk/js?client-id=AZkHBgnjtA-tFFuQc4LDvAQsfYsPnDpocp5hzjYfFiGPijMk9Z6cv-u94C406Xp1GK0RBfA_1jXfssSK&currency=EUR&intent=subscription&vault=true" data-sdk-integration-source="button-factory"></script>
 
     <style>
-        /* --- DESIGN SYSTEM: TEMA DARK PROFESSIONALE --- */
         :root {
-            --bg-body: #0f172a; --bg-card: #1e293b; --bg-input: #020617;
-            --primary: #10b981; --primary-hover: #059669; --danger: #ef4444;
-            --warning: #f59e0b; --info: #3b82f6; --text-main: #f8fafc;
-            --text-muted: #94a3b8; --border: #334155; --radius-lg: 16px;
-            --radius-md: 8px; --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            --font-main: 'Inter', sans-serif;
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Colori presi dall'immagine */
+            --bg-body: #0b1120;
+            --bg-sidebar: #0f172a;
+            --bg-card: #151f32;
+            --bg-input: #0b1120;
+            --primary: #10b981;  /* Verde */
+            --accent: #3b82f6;   /* Blu */
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+            --border: #1e293b;
+            --radius: 12px;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
-        html { scroll-behavior: smooth; }
-        
-        body { 
-            background-color: var(--bg-body); color: var(--text-main); 
-            font-family: var(--font-main); min-height: 100vh; 
-            display: flex; flex-direction: column; font-size: 16px; line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-main); display: flex; min-height: 100vh; overflow-x: hidden; }
+
+        /* --- 1. SIDEBAR (Fissa a sinistra) --- */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            display: flex; flex-direction: column;
+            padding: 1.5rem;
+            position: fixed; top: 0; bottom: 0; left: 0;
+            z-index: 50;
         }
-
-        /* HEADER & NAVIGATION */
-        header { background: rgba(15, 23, 42, 0.98); border-bottom: 1px solid var(--border); padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(15px); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 900; font-size: 1.7rem; color: var(--primary); display: flex; align-items: center; gap: 0.8rem; letter-spacing: -0.05em; text-decoration: none; }
-        .logo span { color: white; }
-
-        /* PULSANTI E AZIONI */
-        .btn { padding: 0.8rem 1.6rem; border-radius: var(--radius-md); cursor: pointer; font-weight: 700; font-size: 0.9rem; border: 1px solid var(--border); background: var(--bg-card); color: white; display: inline-flex; align-items: center; gap: 0.7rem; transition: var(--transition); text-decoration: none; white-space: nowrap; }
-        .btn:hover { background: var(--border); transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-        .btn-primary { background: var(--primary); border-color: var(--primary); color: #020617; }
-        .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
-        .btn-danger { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.05); }
-        .btn-danger:hover { background: var(--danger); color: white; }
-        .btn-admin { position: fixed; bottom: 30px; left: 30px; z-index: 200; background: var(--warning); color: #020617; font-weight: 900; border: none; box-shadow: 0 0 30px rgba(245, 158, 11, 0.4); padding: 1.1rem; border-radius: 50px; }
-        .badge { padding: 5px 10px; border-radius: 6px; font-weight: 800; font-size: 0.75rem; background: var(--border); color: var(--text-muted); }
-        .badge.pro { background: var(--primary); color: #020617; box-shadow: 0 0 10px rgba(16,185,129,0.3); }
-
-        /* TOOLBAR PROGETTO */
-        .toolbar { max-width: 1400px; margin: 3rem auto 0; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-        .project-input { background: transparent; border: none; border-bottom: 3px solid var(--border); color: white; font-size: 2rem; font-weight: 900; width: 100%; max-width: 550px; padding: 0.5rem 0; letter-spacing: -0.03em; transition: border-color 0.3s; }
-        .project-input:focus { border-color: var(--primary); }
-
-        /* DASHBOARD PRINCIPALE */
-        main { padding: 3rem 1.5rem; max-width: 1400px; margin: 0 auto; width: 100%; flex: 1; }
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 3rem; }
-
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; position: relative; display: flex; flex-direction: column; box-shadow: var(--shadow-xl); }
-        .card-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 18px; }
-        .card-header h3 { font-size: 1.5rem; font-weight: 800; color: white; }
-        .step-circle { width: 42px; height: 42px; border-radius: 50%; background: var(--primary); color: #020617; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-
-        /* SELETTORI */
-        .strategy-switch { display: flex; background: var(--bg-input); border-radius: var(--radius-md); padding: 5px; border: 1px solid var(--border); margin-bottom: 2.5rem; }
-        .strategy-btn { flex: 1; padding: 12px; background: transparent; border: none; color: var(--text-muted); font-weight: 800; cursor: pointer; border-radius: 6px; transition: all 0.2s; }
-        .strategy-btn.active { background: var(--primary); color: #020617; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); }
-        .strategy-btn:hover:not(.active) { color: white; }
-        .tax-switcher { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: var(--bg-input); padding: 6px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 1.5rem; }
-        .btn-tax { background: transparent; border: 1px solid transparent; color: var(--text-muted); padding: 10px 5px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 700; transition: all 0.2s; text-align: center; white-space: nowrap; }
-        .btn-tax.active { background: var(--primary); color: #020617; border-color: var(--primary); }
-        .btn-tax:hover:not(.active) { background: rgba(255,255,255,0.05); color: white; border-color: var(--border); }
-
-        /* INPUT E FORM */
-        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.7rem; position: relative; }
-        label { font-size: 0.75rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
-        input, textarea { width: 100%; background: var(--bg-input); border: 1px solid var(--border); color: white; padding: 1rem 1.2rem; border-radius: var(--radius-md); font-size: 1rem; transition: var(--transition); font-family: inherit; }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
-
-        /* KPI & CHARTS */
-        .kpi-container { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.4rem; margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
-        .kpi-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; }
-        .kpi-value { font-size: 1.6rem; font-weight: 900; color: var(--primary); font-variant-numeric: tabular-nums; }
-        .chart-wrapper { margin-top: 1rem; position: relative; height: 320px; width: 100%; }
-        .chart-toggle-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-        .chart-toggle { background: transparent; color: var(--text-muted); border: none; font-weight: 800; cursor: pointer; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: all 0.3s; }
-        .chart-toggle.active { color: var(--text-main); border-bottom-color: var(--primary); }
-        .chart-view { width: 100%; height: 100%; display: none; }
-        .chart-view.active { display: block; }
-
-        /* UTILS */
-        .hidden { display: none !important; }
-        .dropdown-menu { position: absolute; top: 105%; left: 0; width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); z-index: 150; max-height: 250px; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .dropdown-item { padding: 1rem 1.3rem; cursor: pointer; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; display: flex; align-items: center; }
-        .dropdown-item:hover { background: var(--primary); color: #020617; font-weight: 700; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: white; display: flex; align-items: center; gap: 10px; margin-bottom: 3rem; }
+        .logo span { background: var(--primary); padding: 2px 8px; border-radius: 6px; color: #000; }
         
-        /* BLOCCO PRO & PAYPAL */
-        .locked-blur { filter: blur(8px); pointer-events: none; opacity: 0.25; transition: all 0.5s ease; }
-        .overlay-lock { position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(4px); border-radius: var(--radius-lg); text-align: center; padding: 3rem; }
-        .is-unlocked .locked-blur { filter: none; pointer-events: auto; opacity: 1; }
-        .is-unlocked .overlay-lock { display: none; }
-        #paypal-button-container { width: 100%; max-width: 300px; margin-top: 25px; z-index: 50; }
+        .nav-menu { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .nav-item { padding: 0.8rem 1rem; border-radius: 8px; color: var(--text-muted); cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 12px; transition: 0.2s; }
+        .nav-item:hover, .nav-item.active { background: rgba(16, 185, 129, 0.1); color: var(--primary); }
+        .nav-item.admin-link { color: var(--warning); display: none; } /* Nascosto default */
 
-        /* EXPORT PDF MODE */
-        body.pdf-export-mode { background: white !important; color: #020617 !important; }
-        body.pdf-export-mode .card { background: white !important; border: 2px solid #e2e8f0 !important; color: #020617 !important; box-shadow: none !important; margin-bottom: 20px; }
-        body.pdf-export-mode .kpi-container { background: #f8fafc !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
-        body.pdf-export-mode .kpi-value { color: #059669 !important; }
-        body.pdf-export-mode input { background: white !important; border: 2px solid #cbd5e1 !important; color: #020617 !important; }
-        body.pdf-export-mode .logo span, body.pdf-export-mode h3 { color: #020617 !important; }
-        body.pdf-export-mode .step-circle { border: 2px solid #020617 !important; background: transparent !important; color: #020617 !important; }
-        body.pdf-export-mode canvas { max-width: 100%; }
-        body.pdf-export-mode .btn, body.pdf-export-mode .toolbar { display: none !important; }
+        .user-profile { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.85rem; }
+        .btn-auth { width: 100%; padding: 10px; background: var(--primary); color: #000; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; }
 
-        /* MODALI */
-        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.5s; }
-        .modal-backdrop.active { opacity: 1; pointer-events: auto; }
-        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 95%; max-width: 1000px; border-radius: 24px; padding: 4rem; box-shadow: 0 50px 100px rgba(0,0,0,0.9); max-height: 92vh; overflow-y: auto; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        /* --- 2. MAIN CONTENT (A destra) --- */
+        .main-content { margin-left: 260px; flex: 1; padding: 2rem 3rem; width: calc(100% - 260px); }
         
-        /* ADMIN */
-        .row-item { transition: background 0.2s; cursor: pointer; }
-        .row-item:hover { background: rgba(255,255,255,0.03); }
-        .admin-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
-        .admin-tab { padding: 1.4rem 3rem; cursor: pointer; color: var(--text-muted); font-weight: 800; flex: 1; text-align: center; border-bottom: 4px solid transparent; transition: var(--transition); }
-        .admin-tab.active { color: var(--warning); border-bottom-color: var(--warning); }
-        .admin-content { display: none; }
-        .admin-content.active { display: block; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; }
+        .page-title h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; }
+        .page-title p { color: var(--text-muted); font-size: 0.9rem; }
+        .project-name-input { background: transparent; border: none; color: var(--text-main); font-size: 1rem; width: 300px; font-weight: 600; }
 
-        /* FOOTER & REVIEWS */
-        .reviews-section { margin-top: 6rem; padding: 7rem 1.5rem; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
-        .section-header { text-align: center; margin-bottom: 5rem; }
-        .section-header h2 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
-        .review-card { background: var(--bg-card); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-xl); }
-        .star-row { color: var(--warning); margin-bottom: 1.5rem; font-size: 1.2rem; }
-        .review-text { font-style: italic; color: var(--text-main); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
-        .review-author { font-weight: 900; display: block; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
-        
-        .contact-section { padding: 8rem 1.5rem; max-width: 1100px; margin: 0 auto; }
-        .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 5rem; box-shadow: var(--shadow-xl); }
-        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-        .full-span { grid-column: span 2; }
-        
-        footer { background: #020617; padding: 7rem 2rem 4rem; border-top: 1px solid var(--border); color: var(--text-muted); }
-        .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 5rem; margin-bottom: 6rem; }
-        .footer-brand { font-weight: 900; color: white; font-size: 2rem; margin-bottom: 2rem; display: block; letter-spacing: -0.05em; }
-        .footer-title { color: white; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 2rem; font-weight: 800; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 1.4rem; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: var(--transition); }
-        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
-        .footer-legal-bottom { max-width: 1400px; margin: 0 auto; padding-top: 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem; font-size: 0.9rem; }
-        
-        .amortization-table { width: 100%; border-collapse: collapse; font-size: 1rem; margin-top: 2.5rem; }
-        .amortization-table th { text-align: right; padding: 1.4rem; border-bottom: 2px solid var(--border); color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; }
-        .amortization-table td { text-align: right; padding: 1.4rem; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; color: white; }
-        .amortization-table td:first-child { text-align: left; color: var(--primary); font-weight: 900; }
-        .amortization-table tr:hover { background: rgba(255,255,255,0.05); }
-        
-        /* OVERLAY & TOAST */
-        #loading-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.99); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
-        #loading-overlay.active { opacity: 1; pointer-events: auto; }
-        .spinner { width: 70px; height: 70px; border: 7px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.7s linear infinite; margin-bottom: 2.5rem; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        
-        #toast-container { position: fixed; bottom: 50px; right: 50px; z-index: 10000; display: flex; flex-direction: column; gap: 15px; }
-        .toast { background: var(--bg-card); border-left: 7px solid var(--primary); color: white; padding: 1.5rem 2.5rem; border-radius: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.7); transform: translateX(200%); transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28); min-width: 380px; }
-        .toast.show { transform: translateX(0); }
+        .actions { display: flex; gap: 10px; }
+        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: 1px solid var(--border); background: transparent; color: white; display: flex; align-items: center; gap: 8px; transition: 0.2s; }
+        .btn:hover { border-color: var(--primary); }
+        .btn-primary { background: var(--primary); color: #000; border: none; }
+        .btn-primary:hover { background: #059669; }
+
+        /* --- 3. DASHBOARD GRID (Layout Immagine) --- */
+        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+        .col-left, .col-right { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        /* Card Styles */
+        .card { background: var(--bg-card); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border); position: relative; }
+        .card-header { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* Inputs */
+        .row-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+        .input-wrap { position: relative; }
+        .input-wrap span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; }
+        .input-wrap input { width: 100%; background: var(--bg-input); border: 1px solid var(--border); padding: 10px 10px 10px 30px; border-radius: 6px; color: white; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+        .input-wrap input:focus { border-color: var(--primary); }
+        .input-wrap.simple input { padding-left: 12px; }
+
+        /* Toggles */
+        .toggle-group { background: var(--bg-input); padding: 4px; border-radius: 6px; display: inline-flex; margin-bottom: 1rem; }
+        .toggle-btn { padding: 8px 16px; border: none; background: transparent; color: var(--text-muted); font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; }
+        .toggle-btn.active { background: var(--bg-card); color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+        /* KPIs */
+        .kpi-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+        .kpi-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 5px; }
+        .kpi-value { font-size: 2rem; font-weight: 800; color: white; }
+        .text-green { color: var(--primary); }
+        .progress-container { width: 100%; height: 6px; background: #1e293b; border-radius: 3px; margin-top: 15px; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.5s; }
+        .kpi-sub { font-size: 0.8rem; color: var(--accent); margin-top: 5px; text-align: right; }
+
+        /* Pro Overlay */
+        .pro-locked { position: relative; overflow: hidden; }
+        .pro-overlay { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.9); z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem; }
+        .blur-content { filter: blur(4px); opacity: 0.5; pointer-events: none; }
+        .unlocked .pro-overlay { display: none; }
+        .unlocked .blur-content { filter: none; opacity: 1; pointer-events: auto; }
+
+        /* Modals */
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); z-index: 1000; display: none; align-items: center; justify-content: center; }
+        .modal-backdrop.active { display: flex; }
+        .modal-panel { background: var(--bg-card); border: 1px solid var(--border); width: 90%; max-width: 800px; border-radius: 16px; padding: 2rem; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+        /* PDF Export Tweaks */
+        body.pdf-mode .sidebar, body.pdf-mode .actions, body.pdf-mode .toggle-group { display: none !important; }
+        body.pdf-mode .main-content { margin-left: 0; padding: 0; width: 100%; }
+        body.pdf-mode .card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; }
+        body.pdf-mode .kpi-value { color: #000 !important; }
+        body.pdf-mode { background: #fff !important; color: #000 !important; }
     </style>
 </head>
 <body>
 
-    <div id="loading-overlay"><div class="spinner"></div><p id="loading-text" style="font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em;">Elaborazione Analitica...</p></div>
-    <div id="toast-container"></div>
+    <aside class="sidebar">
+        <div class="logo"><span>IP</span> InvestPro</div>
+        <ul class="nav-menu">
+            <li class="nav-item active"><i class="fa-solid fa-calculator"></i> Dashboard</li>
+            <li class="nav-item"><i class="fa-solid fa-folder"></i> Portafoglio</li>
+            <li class="nav-item admin-link" id="btn-admin" onclick="app.ui.openModal('modal-admin')">
+                <i class="fa-solid fa-user-shield"></i> Admin Panel
+            </li>
+        </ul>
+        <div class="user-profile" id="auth-ui">
+            <button class="btn-auth" onclick="app.auth.login()">Login Partner</button>
+        </div>
+    </aside>
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-building-columns"></i> <span>InvestPro</span></a>
-            <div style="display: flex; align-items: center; gap: 2rem;">
-                <div id="auth-guest">
-                    <button class="btn btn-primary" onclick="app.ui.openModal('modal-login')">Accesso Area Partner</button>
-                </div>
-                <div id="auth-user" class="hidden">
-                    <span id="badge-plan" class="badge">FREE</span>
-                    <span id="user-email-display" style="font-size: 0.95rem; font-weight: 800; margin: 0 20px; color: var(--text-muted);"></span>
-                    <button class="btn" onclick="app.auth.logout()" title="Logout"><i class="fa-solid fa-power-off"></i></button>
-                </div>
+    <main class="main-content" id="capture-area">
+        
+        <div class="header">
+            <div class="page-title">
+                <h1>Dashboard Analisi</h1>
+                <p>Status: <span id="status-badge" style="color:var(--warning)">FREE</span> | <input type="text" id="project-name" value="Nuova Analisi" class="project-name-input"></p>
+            </div>
+            <div class="actions">
+                <button class="btn" onclick="app.pdf.gen()"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                <button class="btn btn-primary" onclick="app.data.save()"><i class="fa-solid fa-floppy-disk"></i> Salva</button>
             </div>
         </div>
-    </header>
 
-    <section class="toolbar">
-        <input type="text" id="project-name" class="project-input" value="Nuova Analisi Asset" placeholder="Identificativo Progetto">
-        <div style="display: flex; gap: 1.5rem;">
-            <button class="btn" onclick="app.pdf.generate()"><i class="fa-solid fa-file-pdf"></i> Export Report Bancario</button>
-            <button class="btn" onclick="app.data.exportCSV()"><i class="fa-solid fa-file-csv"></i> Export Excel (CSV)</button>
-            <button class="btn" onclick="app.data.openDealsList()"><i class="fa-solid fa-database"></i> Portfolio Deal</button>
-            <button class="btn btn-primary" onclick="app.data.saveProject()"><i class="fa-solid fa-floppy-disk"></i> Salva Cloud</button>
+        <div class="toggle-group">
+            <button class="toggle-btn active">Acquista e tieni (affitta)</button>
+            <button class="toggle-btn">Trading (Flip)</button>
         </div>
-    </section>
 
-    <main id="capture-area">
         <div class="dashboard-grid">
-            
-            <div class="card" id="card-economics">
-                <div class="card-header"><div class="step-circle">1</div><h3>Valutazione Operativa</h3></div>
-                
-                <div class="strategy-switch">
-                    <button class="strategy-btn active" id="mode-rent" onclick="app.mode.set('rent')">Messa a Reddito (Rent)</button>
-                    <button class="strategy-btn" id="mode-flip" onclick="app.mode.set('flip')">Compravendita (Trading)</button>
-                </div>
-
-                <div class="form-group" style="position: relative; margin-bottom: 2.5rem;">
-                    <label>Indirizzo Geografico (Lookup Tasse)</label>
-                    <input type="text" id="geo-search" placeholder="Cerca città (es. Milano, Rodi Garganico)..." autocomplete="off">
-                    <div id="geo-results" class="dropdown-menu hidden"></div>
-                </div>
-
-                <div id="section-rent">
-                    <div class="input-grid">
-                        <div class="form-group">
-                            <label>Prezzo Medio per Notte (€)</label>
-                            <input type="number" id="adr" value="180">
-                        </div>
-                        <div class="form-group"><label>Tassa Soggiorno (€)</label><input type="number" id="city-tax" value="2.00" step="0.5"></div>
-                    </div>
-
-                    <div style="margin-bottom: 1.5rem;">
-                        <label style="margin-bottom: 8px; display:block;">Regime Fiscale (Italia)</label>
-                        <div class="tax-switcher">
-                            <button class="btn-tax active" data-tax="21" onclick="app.calc.setTax(21, this)">Cedolare 21%</button>
-                            <button class="btn-tax" data-tax="26" onclick="app.calc.setTax(26, this)">Cedolare 26%</button>
-                            <button class="btn-tax" data-tax="28" onclick="app.calc.setTax(28, this)">Società 28%</button>
+            <div class="col-left">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="card">
+                        <div class="card-header"><i class="fa-regular fa-building"></i> Attività & Acquisizione</div>
+                        <div class="form-group" style="margin-bottom:1rem"><label>Prezzo Acquisto</label><div class="input-wrap"><span>€</span><input type="number" id="price" value="200000"></div></div>
+                        <div class="row-inputs">
+                            <div class="form-group"><label>Ristrutturazione</label><div class="input-wrap"><span>€</span><input type="number" id="reno" value="30000"></div></div>
+                            <div class="form-group"><label>Costi Chiusura</label><div class="input-wrap"><span>€</span><input type="number" id="closing" value="5000"></div></div>
                         </div>
                     </div>
-
-                    <div class="input-grid">
-                        <div class="form-group"><label>Commissioni Canali (%)</label><input type="number" id="portal-comm" value="18"></div>
-                        <div class="form-group"><label>Aliquota Fiscale (%)</label><input type="number" id="tax-rate" value="21" oninput="app.calc.highlightCustomTax()"></div>
-                    </div>
-                    <div class="input-grid">
-                        <div class="form-group"><label>Costo Var/Notte (€)</label><input type="number" id="var-costs" value="30"></div>
-                        <div class="form-group"><label>Occupazione (%)</label><input type="number" id="occ" value="75"></div>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 2rem;"><label>Costi Fissi Mensili Gestione (€)</label><input type="number" id="fixed-costs" value="1000"></div>
-                    
-                    <div class="kpi-container"><span class="kpi-title">Utile Netto / Notte</span><span class="kpi-value" id="res-net-night">-- €</span></div>
-                    <div class="kpi-container" style="border-color: var(--primary); background: rgba(16, 185, 129, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--primary);">MOL Mensile Gestione</span><span class="kpi-value" id="res-mol-month">-- €</span></div>
-                </div>
-
-                <div id="section-flip" class="hidden">
-                    <div class="form-group" style="margin-bottom:1.5rem"><label>Prezzo Rivendita Stimato (€)</label><input type="number" id="resale-price" value="580000" style="border-color:var(--primary); font-weight:700;"></div>
-                    <div class="input-grid">
-                        <div class="form-group"><label>Durata Operazione (Mesi)</label><input type="number" id="flip-months" value="6"></div>
-                        <div class="form-group"><label>Agenzia Vendita (%)</label><input type="number" id="flip-agency" value="3"></div>
-                    </div>
-                    <div class="input-grid">
-                        <div class="form-group"><label>Spese Condominiali/Mese (€)</label><input type="number" id="flip-holding-extra" value="200"></div>
-                        <div class="form-group"><label>Tasse su Utile Operazione (%)</label><input type="number" id="flip-tax" value="26"></div>
-                    </div>
-                    
-                    <div class="kpi-container"><span class="kpi-title">Utile Netto Operazione</span><span class="kpi-value" id="res-flip-profit">-- €</span></div>
-                    <div class="kpi-container" style="border-color: var(--warning); background: rgba(245, 158, 11, 0.1); margin-top: 15px;"><span class="kpi-title" style="color: var(--warning);">ROI Totale Operazione</span><span class="kpi-value" id="res-flip-roi">-- %</span></div>
-                </div>
-
-                <div style="margin-top: 3rem;">
-                    <div id="rent-charts-ui">
-                        <div class="chart-toggle-container">
-                            <button class="chart-toggle active" id="btn-chart-profit" onclick="app.chart.switch('profit')">Analisi Utile</button>
-                            <button class="chart-toggle" id="btn-chart-proj" onclick="app.chart.switch('proj')">Proiezione Patrimoniale</button>
+                    <div class="card">
+                        <div class="card-header"><i class="fa-solid fa-wallet"></i> Struttura Finanziamento</div>
+                        <div class="row-inputs">
+                            <div class="form-group"><label>LTV (%)</label><div class="input-wrap simple"><input type="number" id="ltv" value="80"></div></div>
+                            <div class="form-group"><label>Tasso (%)</label><div class="input-wrap simple"><input type="number" id="rate" value="3.5" step="0.1"></div></div>
                         </div>
-                        <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
-                            <div class="form-group" style="width: 150px; display: none;" id="appreciation-group">
-                                <label style="font-size: 0.65rem;">Rivalutazione Annua (%)</label>
-                                <input type="number" id="appreciation" value="2.0" step="0.5" style="padding: 0.5rem;">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-wrapper">
-                        <div id="view-profit" class="chart-view active"><canvas id="profitChart"></canvas></div>
-                        <div id="view-proj" class="chart-view"><canvas id="projectionChart"></canvas></div>
+                        <div class="form-group" style="margin-bottom:1rem"><label>Anni</label><div class="input-wrap simple"><input type="number" id="years" value="25"></div></div>
+                        <div style="display:flex; justify-content:space-between; font-weight:700"><span>Rata Mensile</span><span id="res-mortgage">€ 0</span></div>
                     </div>
                 </div>
 
-                <div id="sensitivity-rent" style="margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
-                    <h4 style="color:var(--text-muted); font-size:0.8rem; margin-bottom:15px; font-weight:800; text-transform:uppercase;">ANALISI SENSIBILITÀ (Scenario ROI)</h4>
-                    <table style="width:100%; font-size:0.9rem; text-align:left; border-collapse: collapse;">
-                        <tr style="color:var(--text-muted); border-bottom:1px solid var(--border)"><th style="padding:8px 0">Scenario</th><th style="padding:8px 0">Occ.%</th><th style="padding:8px 0; text-align:right">Utile Netto Annuo</th></tr>
-                        <tr style="color:var(--danger); border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:8px 0">Pessimistico</td><td style="padding:8px 0">50%</td><td id="sens-50" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
-                        <tr style="color:var(--warning); border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:8px 0">Moderato</td><td style="padding:8px 0">65%</td><td id="sens-65" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
-                        <tr style="color:var(--primary)"><td style="padding:8px 0">Ottimistico</td><td style="padding:8px 0">85%</td><td id="sens-85" style="padding:8px 0; text-align:right; font-weight:700">--</td></tr>
-                    </table>
+                <div class="card">
+                    <div class="card-header"><i class="fa-solid fa-chart-line"></i> Operazioni Noleggio</div>
+                    <div class="row-inputs" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="form-group"><label>ADR (€)</label><div class="input-wrap"><span>€</span><input type="number" id="adr" value="150"></div></div>
+                        <div class="form-group"><label>Occ. (%)</label><div class="input-wrap simple"><input type="number" id="occ" value="80"></div></div>
+                        <div class="form-group"><label>City Tax</label><div class="input-wrap"><span>€</span><input type="number" id="city-tax" value="2"></div></div>
+                    </div>
+                    <div class="row-inputs" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="form-group"><label>Fee Portali (%)</label><div class="input-wrap simple"><input type="number" id="portal-fee" value="18"></div></div>
+                        <div class="form-group"><label>Fisso/Mese</label><div class="input-wrap"><span>€</span><input type="number" id="fixed-cost" value="300"></div></div>
+                        <div class="form-group"><label>Var/Notte</label><div class="input-wrap"><span>€</span><input type="number" id="var-cost" value="25"></div></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" id="card-pro">
-                <div class="overlay-lock">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
-                    <h2 style="margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Suite PRO Richiesta</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 3rem; max-width: 450px; font-size: 1.1rem;">Sblocca il calcolo dinamico dell'ammortamento francese, l'equity bankable e il cashflow post-debito.</p>
-                    
-                    <div id="paypal-button-container"></div>
-                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">Abbonamento mensile sicuro via PayPal</p>
+            <div class="col-right">
+                <div class="kpi-card">
+                    <div class="kpi-label">Equità Richiesta</div>
+                    <div class="kpi-value" id="res-equity">€ 0</div>
+                    <div class="progress-container"><div class="progress-bar" id="equity-bar"></div></div>
+                    <div class="kpi-sub" id="ltv-display">20% Acconto</div>
                 </div>
-                
-                <div class="card-header"><div class="step-circle" style="background: white; color: black;">2</div><h3>Struttura del Debito</h3></div>
-                
-                <div class="locked-blur">
-                    <div class="form-group" style="margin-bottom: 2rem;"><label>Prezzo d'Acquisto Asset (€)</label><input type="number" id="price" value="450000"></div>
-                    <div class="input-grid">
-                        <div class="form-group"><label>Capex / Ristrutturazione (€)</label><input type="number" id="reno" value="50000"></div>
-                        <div class="form-group"><label>Notaio & Oneri (€)</label><input type="number" id="closing" value="20000"></div>
+                <div class="kpi-card" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2);">
+                    <div class="kpi-label">Cashflow / Mese</div>
+                    <div class="kpi-value text-green" id="res-cashflow">€ 0</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Rendimento (CoC)</div>
+                    <div class="kpi-value" id="res-coc">0%</div>
+                </div>
+
+                <div class="card pro-locked" id="pro-card">
+                    <div class="pro-overlay">
+                        <i class="fa-solid fa-lock" style="font-size:2rem; color:var(--warning); margin-bottom:10px;"></i>
+                        <h4 style="color:white; margin-bottom:5px;">Funzione PRO</h4>
+                        <p style="color:var(--text-muted); font-size:0.8rem; margin-bottom:15px;">Sblocca i grafici avanzati</p>
+                        <div id="paypal-btn-container" style="width:100%;"></div>
                     </div>
-                    <div class="input-grid">
-                        <div class="form-group"><label>LTV Mutuo Bancario (%)</label><input type="number" id="ltv" value="80"></div>
-                        <div class="form-group"><label>Tasso d'Interesse Annuo (%)</label><input type="number" id="rate" value="4.0" step="0.1"></div>
+                    <div class="blur-content">
+                        <div class="kpi-label">Ripartizione P&L</div>
+                        <div style="height:200px; width:100%"><canvas id="plChart"></canvas></div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 3rem;"><label>Durata Finanziamento (Anni)</label><input type="number" id="years" value="25"></div>
-                    
-                    <div class="kpi-container"><span class="kpi-title">Rata Mensile Stimata</span><span class="kpi-value" id="res-mortgage">-- €</span></div>
-                    
-                    <div id="kpi-rent-bottom">
-                        <div class="kpi-container" style="background: var(--primary); border: none; margin-top: 15px;"><span class="kpi-title" style="color: #020617;">Cash Flow Netto Post-Debito</span><span class="kpi-value" id="res-cashflow" style="color: #020617;">-- €</span></div>
-                    </div>
-                    <div id="kpi-flip-bottom" class="hidden">
-                        <div class="kpi-container" style="background: #020617; border: 1px solid var(--border); margin-top: 15px;"><span class="kpi-title">Costi Holding (Mutuo+Spese)</span><span class="kpi-value" id="res-holding-costs">-- €</span></div>
-                    </div>
-                    
-                    <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
-                            <span class="kpi-title" style="font-size: 0.75rem;">Equity (Capitale Proprio)</span>
-                            <span class="kpi-value" id="res-downpayment" style="font-size: 1.3rem;">-- €</span>
-                        </div>
-                        <div class="kpi-container" style="padding: 1.5rem; flex-direction: column; align-items: flex-start;">
-                            <span class="kpi-title" style="font-size: 0.75rem;">Interessi Bancari Totali</span>
-                            <span class="kpi-value" id="res-total-interest" style="font-size: 1.3rem;">-- €</span>
-                        </div>
-                    </div>
-                    
-                    <button class="btn" style="width: 100%; margin-top: 2.5rem; justify-content: center; background: rgba(255,255,255,0.04);" onclick="app.calc.showAmortization()">
-                        <i class="fa-solid fa-table-list"></i> Piano di Ammortamento Analitico
-                    </button>
                 </div>
             </div>
         </div>
     </main>
 
-    <section class="reviews-section">
-        <div class="section-header"><h2>Affidabilità Certificata</h2><p style="color: var(--text-muted); font-size: 1.3rem;">Analisi precise utilizzate da oltre 5.000 investitori ogni mese.</p></div>
-        <div class="reviews-grid">
-            <div class="review-card"><div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"La precisione del calcolo dell'ammortamento bancario è chirurgica. Fondamentale per le delibere creditizie."</p><span class="review-author">Dott. Alessandro Riva | Private Equity</span></div>
-            <div class="review-card"><div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"L'integrazione del DB locale per le tasse di soggiorno è un asset impagabile per velocità e precisione."</p><span class="review-author">Valentina Costa | Short Rent Specialist</span></div>
-            <div class="review-card"><div class="star-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Piattaforma veloce e spietata nei numeri. Mi ha salvato da un acquisto che sarebbe stato un disastro finanziario."</p><span class="review-author">Roberto Marelli | Real Estate Investor</span></div>
-        </div>
-    </section>
-
-    <section class="contact-section">
-        <div class="contact-card">
-            <div class="section-header" style="margin-bottom: 4rem; text-align: left;"><h2>Richiedi Consulenza</h2><p style="color: var(--text-muted);">Integrazioni API e personalizzazioni per grandi portafogli immobiliari.</p></div>
-            <form class="contact-form" onsubmit="event.preventDefault(); app.contact.submit();">
-                <div class="form-group"><label>Nome e Cognome</label><input type="text" id="contact-name" placeholder="Mario Rossi" required></div>
-                <div class="form-group"><label>Email Professionale</label><input type="email" id="contact-email" placeholder="m.rossi@aziendale.it" required></div>
-                <div class="form-group full-span"><label>Qual è il tuo progetto?</label><textarea id="contact-msg" rows="6" placeholder="Descrivi qui le tue esigenze..." style="resize: none;" required></textarea></div>
-                <div class="full-span"><button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; justify-content: center; font-size: 1rem;">Invia Richiesta al Team</button></div>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div><span class="footer-brand">INVESTPRO</span><p style="max-width: 300px; line-height: 1.8;">Piattaforma SAAS leader in Italia per la modellazione finanziaria.</p></div>
-            <div class="footer-links"><h5 class="footer-title">Software</h5><ul><li><a href="#">Simulatore ROI</a></li><li><a href="#">Analisi Cashflow</a></li><li><a href="#">Piano Ammortamento</a></li><li><a href="#">API Documentation</a></li></ul></div>
-            <div class="footer-links"><h5 class="footer-title">Risorse</h5><ul><li><a href="#">Casi Studio</a></li><li><a href="#">Supporto Tecnico</a></li><li><a href="#">API Status</a></li><li><a href="#">Community Hub</a></li></ul></div>
-            <div class="footer-links"><h5 class="footer-title">Normativa</h5><ul><li><a href="#">Privacy Policy (GDPR)</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">Termini e Condizioni</a></li><li><a href="#">Esercizio Diritti</a></li></ul></div>
-        </div>
-        <div class="footer-legal-bottom">
-            <div>&copy; 2024 InvestPro Professional Suite. Tutti i diritti riservati.</div>
-            <div>InvestPro S.r.l. | P.IVA: IT09876543210 | Sede: Via della Moscova 18, 20121 Milano (MI)</div>
-            <div style="display: flex; gap: 2.5rem;"><i class="fa-brands fa-linkedin-in fa-xl"></i><i class="fa-brands fa-instagram fa-xl"></i><i class="fa-brands fa-twitter fa-xl"></i></div>
-        </div>
-    </footer>
-
-    <div id="modal-login" class="modal-backdrop">
-        <div class="modal-panel" style="text-align: center; max-width: 550px;">
-            <i class="fa-solid fa-fingerprint" style="font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem;"></i>
-            <h2 style="margin-bottom: 1.5rem;">Accesso Riservato</h2>
-            <p style="color: var(--text-muted); margin-bottom: 3rem;">Effettua il login per sincronizzare i tuoi deal sul cloud sicuro di InvestPro.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.4rem;" onclick="app.auth.loginGoogle()"><i class="fa-brands fa-google"></i> Continua con Google</button>
-            <button class="btn" style="width: 100%; margin-top: 1.8rem; justify-content: center;" onclick="app.ui.closeModal('modal-login')">Annulla</button>
-        </div>
-    </div>
-
-    <div id="modal-deals" class="modal-backdrop">
-        <div class="modal-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <h2>Archivio Asset e Deal</h2>
-                <button class="btn" onclick="app.ui.closeModal('modal-deals')"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div id="deals-container" class="deal-list"></div>
-        </div>
-    </div>
-
-    <div id="modal-amortization" class="modal-backdrop">
-        <div class="modal-panel" style="max-width: 1000px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-                <h2>Piano di Ammortamento Francese</h2>
-                <button class="btn" onclick="app.ui.closeModal('modal-amortization')"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div style="overflow-x: auto;">
-                <table class="amortization-table">
-                    <thead>
-                        <tr><th>Periodo</th><th>Quota Interessi</th><th>Quota Capitale</th><th>Debito Residuo</th></tr>
-                    </thead>
-                    <tbody id="amortization-body"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
     <div id="modal-admin" class="modal-backdrop">
         <div class="modal-panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
-                <h2>Console Amministrazione Globale</h2>
+            <div style="display:flex; justify-content:space-between; margin-bottom:2rem;">
+                <h2 style="color:white">Admin Console</h2>
                 <button class="btn" onclick="app.ui.closeModal('modal-admin')"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="admin-tabs">
-                <div class="admin-tab active" onclick="app.admin.switchTab(event, 'personal')">Il Mio Profilo</div>
-                <div class="admin-tab" onclick="app.admin.switchTab(event, 'stats')">Business Analytics</div>
-                <div class="admin-tab" onclick="app.admin.switchTab(event, 'users')">Anagrafica Partner</div>
-            </div>
-            <div id="tab-personal" class="admin-content active">
-                <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
-                    <h3>Strumenti Debug</h3><br>
-                    <div style="display: flex; gap: 1.5rem;">
-                        <button class="btn btn-primary" onclick="app.admin.toggleMyPlan()">Simula Abbonamento PRO</button>
-                        <button class="btn btn-danger" onclick="app.admin.clearMyData()">Reset Database Locale</button>
-                    </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem;">
+                <div class="kpi-card">
+                    <div class="kpi-label">Totale Users</div>
+                    <div class="kpi-value" id="adm-users">--</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label" style="color:var(--primary)">PRO Users</div>
+                    <div class="kpi-value" id="adm-pro">--</div>
                 </div>
             </div>
-            <div id="tab-stats" class="admin-content">
-                <div class="input-grid">
-                    <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Utenti Totali Registrati</span>
-                        <span class="kpi-value" id="stat-users">--</span>
-                    </div>
-                    <div class="kpi-container" style="flex-direction: column; align-items: flex-start;">
-                        <span class="kpi-title">Account PRO Attivi</span>
-                        <span class="kpi-value" id="stat-pro">--</span>
-                    </div>
-                </div>
-                <button class="btn" onclick="app.admin.refreshStats()" style="width: 100%; margin-top: 2rem; justify-content: center;">Sincronizza Statistiche Globali</button>
-            </div>
-            <div id="tab-users" class="admin-content">
-                <div id="admin-users-list" class="deal-list" style="max-height: 55vh; overflow-y: auto;"></div>
-            </div>
+            <button class="btn btn-primary" onclick="app.admin.refresh()">Aggiorna Dati</button>
+            <div id="adm-list" style="margin-top:2rem; color:var(--text-muted);"></div>
         </div>
     </div>
 
-    <button id="admin-trigger" class="btn btn-admin hidden" onclick="app.ui.openModal('modal-admin')">ADMIN CONSOLE</button>
-
     <script>
-        // --- 1. UTILITY FUNCTIONS ---
-        const debounce = (func, wait) => {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => { clearTimeout(timeout); func(...args); };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        };
-
-        const CITY_DB = [
-            { l: "Roma (RM)", v: 6.0, k: "roma" }, 
-            { l: "Milano (MI)", v: 4.5, k: "milano" },
-            { l: "Venezia (VE)", v: 5.0, k: "venezia" },
-            { l: "Firenze (FI)", v: 5.5, k: "firenze" },
-            { l: "Napoli (NA)", v: 4.5, k: "napoli" },
-            { l: "Torino (TO)", v: 2.8, k: "torino" },
-            { l: "Bologna (BO)", v: 3.0, k: "bologna" },
-            { l: "Verona (VR)", v: 3.5, k: "verona" }
-        ];
-
+        // CONFIG
         const CONFIG = {
             firebase: { apiKey: "AIzaSyDiGDvR2yXm0DE7vlJNGrIPQB0G-ntLHc0", authDomain: "analisimmobiliare-3b4a7.firebaseapp.com", projectId: "analisimmobiliare-3b4a7", storageBucket: "analisimmobiliare-3b4a7.firebasestorage.app", messagingSenderId: "29979040948", appId: "1:29979040948:web:597ea331e06567d8d50be1" },
             adminEmail: "lucaiolienrico1@gmail.com"
         };
 
-        const state = { 
-            user: null, 
-            isPro: false, 
-            currentDocId: null, 
-            chartInstance: null, 
-            projInstance: null, 
-            mode: 'rent' 
-        };
-
-        // --- 2. MAIN APPLICATION LOGIC ---
         const app = {
+            state: { user: null, isPro: false, chart: null },
+
             init: () => {
-                if (!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
-                emailjs.init("7HZ3JHWrZLuz6qLUp"); 
-
-                app.services.auth = firebase.auth();
-                app.services.db = firebase.firestore();
-                
-                app.auth.init();
-                app.chart.init(); 
-                app.data.restoreDraft(); 
-                app.calc.syncTaxUI(); 
-                app.calc.update();
-
-                const debouncedUpdate = debounce(() => {
-                    app.calc.update();
-                    app.data.autoSave();
-                }, 300);
-
-                document.querySelectorAll('input[type="number"]').forEach(input => {
-                    input.addEventListener('input', debouncedUpdate);
-                });
-
-                const geoIn = document.getElementById('geo-search');
-                geoIn.addEventListener('input', (e) => app.geo.search(e.target.value));
-                
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('#geo-search')) document.getElementById('geo-results').classList.add('hidden');
-                });
-                
-                app.mode.set('rent');
+                if(!firebase.apps.length) firebase.initializeApp(CONFIG.firebase);
+                app.auth.listen();
+                document.querySelectorAll('input').forEach(i => i.addEventListener('input', app.calc.run));
+                app.calc.run();
+                if(window.jspdf) window.jsPDF = window.jspdf.jsPDF;
             },
 
-            services: { auth: null, db: null },
-
-            // --- 4. GEO & MODE ---
-            geo: {
-                search: (query) => {
-                    const list = document.getElementById('geo-results');
-                    if (!query || query.length < 2) { list.classList.add('hidden'); return; }
-
-                    const q = query.toLowerCase().trim();
-                    const results = CITY_DB.filter(c => c.k.includes(q)).slice(0, 8); 
-
-                    list.innerHTML = '';
-                    if (results.length === 0) { list.classList.add('hidden'); return; }
-
-                    list.classList.remove('hidden');
-                    results.forEach(item => {
-                        const div = document.createElement('div');
-                        div.className = 'dropdown-item';
-                        div.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:10px; color:var(--primary)"></i> ${item.l}`;
-                        
-                        div.onclick = () => {
-                            document.getElementById('geo-search').value = item.l.split('(')[0].trim();
-                            list.classList.add('hidden');
-                            
-                            const taxInput = document.getElementById('city-tax');
-                            taxInput.value = item.v.toFixed(2);
-                            app.calc.update();
-                            app.data.autoSave();
-                        };
-                        list.appendChild(div);
-                    });
-                }
-            },
-
-            mode: {
-                set: (mode) => {
-                    state.mode = mode;
-                    document.getElementById('mode-rent').classList.toggle('active', mode === 'rent');
-                    document.getElementById('mode-flip').classList.toggle('active', mode === 'flip');
-                    
-                    document.getElementById('section-rent').classList.toggle('hidden', mode !== 'rent');
-                    document.getElementById('section-flip').classList.toggle('hidden', mode !== 'flip');
-                    
-                    document.getElementById('kpi-rent-bottom').classList.toggle('hidden', mode !== 'rent');
-                    document.getElementById('kpi-flip-bottom').classList.toggle('hidden', mode !== 'flip');
-                    
-                    document.getElementById('sensitivity-rent').classList.toggle('hidden', mode !== 'rent');
-                    document.getElementById('rent-charts-ui').classList.toggle('hidden', mode !== 'rent');
-                    
-                    if (mode === 'flip') app.chart.switch('profit');
-                    
-                    app.calc.update();
-                }
-            },
-
-            // --- 5. CALCULATION ENGINE ---
-            calc: {
-                getVal: (id) => {
-                    const el = document.getElementById(id);
-                    if (!el) return 0;
-                    return parseFloat(el.value.replace(',', '.')) || 0;
-                },
-                format: (n) => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' }),
-                
-                setTax: (rate, btnElement) => {
-                    document.getElementById('tax-rate').value = rate;
-                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
-                    if(btnElement) btnElement.classList.add('active');
-                    app.calc.update();
-                    app.data.autoSave();
-                    app.ui.showToast(`Regime Fiscale impostato: ${rate}%`, "info");
-                },
-                
-                syncTaxUI: () => {
-                    const val = app.calc.getVal('tax-rate');
-                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
-                    if(val === 21) document.querySelector('.btn-tax[data-tax="21"]')?.classList.add('active');
-                    else if(val === 26) document.querySelector('.btn-tax[data-tax="26"]')?.classList.add('active');
-                    else if(val === 28) document.querySelector('.btn-tax[data-tax="28"]')?.classList.add('active');
-                },
-
-                highlightCustomTax: () => {
-                    document.querySelectorAll('.btn-tax').forEach(b => b.classList.remove('active'));
-                },
-
-                update: () => {
-                    const c = app.calc;
-                    const price = c.getVal('price'), reno = c.getVal('reno'), closing = c.getVal('closing');
-                    const ltv = c.getVal('ltv'), rate = c.getVal('rate');
-                    
-                    const loan = price * (ltv/100);
-                    const equity = (price - loan) + reno + closing;
-                    
-                    const n = c.getVal('years') * 12;
-                    const i = (rate/100) / 12;
-                    let monthlyM = 0;
-                    if (n > 0) monthlyM = (i > 0) ? loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1) : loan / n;
-                    
-                    document.getElementById('res-mortgage').textContent = c.format(monthlyM);
-                    document.getElementById('res-downpayment').textContent = c.format(equity);
-                    document.getElementById('res-total-interest').textContent = c.format((monthlyM * n) - loan);
-
-                    if (state.mode === 'rent') {
-                        const revAnnuo = c.getVal('adr') * 365 * (c.getVal('occ')/100);
-                        const otaCosts = revAnnuo * (c.getVal('portal-comm')/100);
-                        const taxAmt = (revAnnuo - otaCosts) * (c.getVal('tax-rate')/100);
-                        const opExVar = (c.getVal('var-costs') + c.getVal('city-tax')) * 365 * (c.getVal('occ')/100);
-                        const opExFix = c.getVal('fixed-costs') * 12;
-                        const molAnnuo = revAnnuo - otaCosts - taxAmt - opExVar - opExFix;
-
-                        document.getElementById('res-mol-month').textContent = c.format(molAnnuo / 12);
-                        document.getElementById('res-net-night').textContent = c.format(molAnnuo / (365 * (c.getVal('occ')/100)) || 0);
-                        document.getElementById('res-cashflow').textContent = c.format((molAnnuo/12) - monthlyM);
-
-                        if (state.chartInstance) {
-                            state.chartInstance.data.labels = ['Utile', 'OTA', 'Tasse', 'Costi'];
-                            state.chartInstance.data.datasets[0].data = [molAnnuo > 0 ? molAnnuo : 0, otaCosts, taxAmt, opExVar + opExFix];
-                            state.chartInstance.data.datasets[0].backgroundColor = ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'];
-                            state.chartInstance.update();
-                        }
-                        app.chart.updateProjection(loan, price + reno + closing, rate, n, c.getVal('appreciation'));
-                        
-                        const baseRev = c.getVal('adr') * 365;
-                        const varCostPerNight = c.getVal('var-costs') + c.getVal('city-tax');
-                        const fixAnnual = c.getVal('fixed-costs') * 12;
-                        const tRate = c.getVal('tax-rate')/100;
-                        const cRate = c.getVal('portal-comm')/100;
-
-                        [50, 65, 85].forEach(occ => {
-                            const nights = 365 * (occ/100);
-                            const rev = baseRev * (occ/100);
-                            const profit = rev - (rev * cRate) - ((rev - rev*cRate)*tRate) - (varCostPerNight * nights) - fixAnnual;
-                            document.getElementById(`sens-${occ}`).textContent = c.format(profit);
-                        });
-
-                    } else {
-                        const months = c.getVal('flip-months');
-                        const resale = c.getVal('resale-price');
-                        const agencyFee = resale * (c.getVal('flip-agency')/100);
-                        
-                        const holdingExtra = c.getVal('flip-holding-extra');
-                        const holdingCosts = (monthlyM * months) + (holdingExtra * months);
-                        
-                        const totalCostBase = price + reno + closing + holdingCosts + agencyFee;
-                        const grossProfit = resale - totalCostBase;
-                        const taxFlip = grossProfit > 0 ? grossProfit * (c.getVal('flip-tax')/100) : 0;
-                        const netProfit = grossProfit - taxFlip;
-                        
-                        const investedCapital = equity + holdingCosts;
-                        const roi = investedCapital > 0 ? (netProfit / investedCapital) * 100 : 0;
-
-                        document.getElementById('res-flip-profit').textContent = c.format(netProfit);
-                        document.getElementById('res-flip-roi').textContent = roi.toFixed(2) + ' %';
-                        document.getElementById('res-holding-costs').textContent = c.format(holdingCosts);
-
-                        if (state.chartInstance) {
-                            state.chartInstance.data.labels = ['Utile Netto', 'Tasse', 'Agenzia', 'Costi (Acquisto+Reno+Holding)'];
-                            state.chartInstance.data.datasets[0].data = [
-                                netProfit > 0 ? netProfit : 0, 
-                                taxFlip, 
-                                agencyFee, 
-                                price + reno + closing + holdingCosts
-                            ];
-                            state.chartInstance.data.datasets[0].backgroundColor = ['#10b981', '#ef4444', '#f59e0b', '#3b82f6'];
-                            state.chartInstance.update();
-                        }
-                    }
-                },
-
-                showAmortization: () => {
-                    const c = app.calc;
-                    const loan = c.getVal('price') * (c.getVal('ltv')/100);
-                    const i = (c.getVal('rate')/100)/12, months = c.getVal('years') * 12;
-                    if (months <= 0) return app.ui.showToast("Inserire una durata valida per il mutuo", "error");
-
-                    const m = (i > 0) ? loan * (i * Math.pow(1 + i, months)) / (Math.pow(1 + i, months) - 1) : loan / months;
-                    
-                    let bal = loan, html = '', yi = 0, yp = 0;
-                    for (let x = 1; x <= months; x++) {
-                        let ip = bal * i, pp = m - ip;
-                        bal -= pp; yi += ip; yp += pp;
-                        if (x % 12 === 0) {
-                            html += `<tr><td>Anno ${x/12}</td><td>${c.format(yi)}</td><td>${c.format(yp)}</td><td>${c.format(bal > 0 ? bal : 0)}</td></tr>`;
-                            yi = 0; yp = 0;
-                        }
-                    }
-                    document.getElementById('amortization-body').innerHTML = html;
-                    app.ui.openModal('modal-amortization');
-                }
-            },
-
-            // --- 6. UI & AUTH ---
             ui: {
                 openModal: (id) => document.getElementById(id).classList.add('active'),
                 closeModal: (id) => document.getElementById(id).classList.remove('active'),
-                setLoading: (show, text) => { document.getElementById('loading-text').textContent = text; document.getElementById('loading-overlay').classList.toggle('active', show); },
-                showToast: (msg, type) => {
-                    const t = document.createElement('div'); t.className = `toast show ${type}`; t.textContent = msg;
-                    document.getElementById('toast-container').appendChild(t);
-                    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 500); }, 3500);
-                },
-                updateAuthUI: () => {
-                    const u = state.user;
-                    document.getElementById('auth-guest').classList.toggle('hidden', !!u);
-                    document.getElementById('auth-user').classList.toggle('hidden', !u);
-                    if (u) {
-                        document.getElementById('user-email-display').textContent = u.email;
-                        document.getElementById('admin-trigger').classList.toggle('hidden', u.email.toLowerCase() !== CONFIG.adminEmail.toLowerCase());
-                    }
-                },
                 setProStatus: (active) => {
-                    state.isPro = active;
-                    const b = document.getElementById('badge-plan');
-                    b.textContent = active ? "PRO" : "FREE";
-                    b.className = `badge ${active ? 'pro' : ''}`;
-                    document.getElementById('card-pro').classList.toggle('is-unlocked', active);
+                    app.state.isPro = active;
+                    const card = document.getElementById('pro-card');
+                    const badge = document.getElementById('status-badge');
+                    
+                    if(active) {
+                        card.classList.add('unlocked');
+                        badge.textContent = "PRO"; badge.style.color = "var(--primary)";
+                        app.chart.render();
+                    } else {
+                        card.classList.remove('unlocked');
+                        badge.textContent = "FREE"; badge.style.color = "var(--warning)";
+                        app.payment.init();
+                    }
                 }
             },
 
             auth: {
-                init: () => {
-                    app.services.auth.onAuthStateChanged(async (u) => {
-                        state.user = u;
-                        app.ui.updateAuthUI();
-                        if (u) {
+                listen: () => {
+                    firebase.auth().onAuthStateChanged(async (u) => {
+                        app.state.user = u;
+                        const ui = document.getElementById('auth-ui');
+                        const adminBtn = document.getElementById('btn-admin');
+                        
+                        if(u) {
+                            ui.innerHTML = `<button class="btn" style="border-color:var(--danger); color:var(--danger); width:100%" onclick="app.auth.logout()">Logout</button>`;
+                            
+                            // Check PRO
+                            const db = firebase.firestore();
                             try {
-                                const d = await app.services.db.collection('users').doc(u.uid).get();
-                                if (d.exists) app.ui.setProStatus(d.data().plan === 'pro');
-                                else await app.services.db.collection('users').doc(u.uid).set({ email: u.email, plan: 'free', joined: new Date() });
-                            } catch (e) { console.error(e); }
-                            app.ui.closeModal('modal-login');
+                                const doc = await db.collection('users').doc(u.uid).get();
+                                app.ui.setProStatus(doc.exists && doc.data().plan === 'pro');
+                            } catch(e) { console.log("DB Error", e); }
+
+                            // Check Admin
+                            if(u.email.toLowerCase() === CONFIG.adminEmail.toLowerCase()) adminBtn.style.display = 'flex';
+                        } else {
+                            ui.innerHTML = `<button class="btn-auth" onclick="app.auth.login()">Login Partner</button>`;
+                            app.ui.setProStatus(false);
+                            adminBtn.style.display = 'none';
                         }
-                        // INIZIALIZZA I BOTTONI SOLO DOPO IL CHECK UTENTE
-                        if (!state.isPro) app.payment.init();
                     });
                 },
-                loginGoogle: () => app.services.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()),
-                logout: () => app.services.auth.signOut().then(() => window.location.reload())
+                login: () => firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()),
+                logout: () => firebase.auth().signOut().then(() => location.reload())
             },
 
-            // --- 7. EXPORT & DATA ---
-            pdf: {
-                generate: async () => {
-                    window.scrollTo(0,0);
-                    app.ui.setLoading(true, "Esportazione PDF...");
-                    await new Promise(r => setTimeout(r, 500));
-                    
-                    document.body.classList.add('pdf-export-mode');
-                    const element = document.getElementById('capture-area');
-                    
-                    try {
-                        const canvas = await html2canvas(element, { scale: 2, useCORS: true, scrollY: -window.scrollY });
-                        document.body.classList.remove('pdf-export-mode');
-                        const imgData = canvas.toDataURL('image/png');
-                        
-                        // CORREZIONE LOGICA JSPDF
-                        const { jsPDF } = window.jspdf;
-                        const pdf = new jsPDF('p', 'mm', 'a4');
-                        const w = pdf.internal.pageSize.getWidth();
-                        
-                        pdf.setFontSize(22); pdf.setTextColor(16, 185, 129);
-                        pdf.text("INVESTPRO | REPORT ANALISI", 15, 20);
-                        pdf.setFontSize(10); pdf.setTextColor(100);
-                        pdf.text(`Riferimento: ${document.getElementById('project-name').value}`, 15, 28);
-                        pdf.text(`Data: ${new Date().toLocaleDateString()}`, 15, 33);
-                        pdf.line(15, 36, w - 15, 36);
-                        
-                        const imgH = (canvas.height * (w - 20)) / canvas.width;
-                        pdf.addImage(imgData, 'PNG', 10, 40, w - 20, imgH);
-                        
-                        pdf.save(`InvestPro_Report.pdf`);
-                        app.ui.showToast("PDF Scaricato con successo", "success");
-                    } catch (e) {
-                        console.error(e);
-                        document.body.classList.remove('pdf-export-mode');
-                        app.ui.showToast("Errore Export PDF. Riprova.", "error");
+            calc: {
+                get: (id) => parseFloat(document.getElementById(id).value) || 0,
+                fmt: (n) => new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR', maximumFractionDigits:0}).format(n),
+                run: () => {
+                    const c = app.calc;
+                    // Finanziamento
+                    const price = c.get('price'), ltv = c.get('ltv');
+                    const loan = price * (ltv/100);
+                    const equity = (price - loan) + c.get('reno') + c.get('closing');
+                    const r = (c.get('rate')/100)/12, n = c.get('years')*12;
+                    let mort = (loan * r) / (1 - Math.pow(1+r, -n));
+                    if(isNaN(mort)) mort = 0;
+
+                    // Operazioni
+                    const rev = c.get('adr') * 365 * (c.get('occ')/100);
+                    const costs = (rev * (c.get('portal-fee')/100)) + (c.get('fixed-cost')*12) + (c.get('var-cost')*365*(c.get('occ')/100)) + (rev*0.21);
+                    const cashflow = (rev - costs - (mort*12)) / 12;
+                    const coc = equity > 0 ? ((cashflow*12)/equity)*100 : 0;
+
+                    // UI Updates
+                    document.getElementById('res-equity').textContent = c.fmt(equity);
+                    document.getElementById('res-cashflow').textContent = c.fmt(cashflow);
+                    document.getElementById('res-coc').textContent = coc.toFixed(2) + '%';
+                    document.getElementById('res-mortgage').textContent = c.fmt(mort);
+                    document.getElementById('equity-bar').style.width = (100-ltv) + '%';
+                    document.getElementById('ltv-display').textContent = (100-ltv) + '% Acconto';
+
+                    // Update Chart
+                    if(app.state.chart) {
+                        app.state.chart.data.datasets[0].data = [cashflow*12, mort*12, costs];
+                        app.state.chart.update();
                     }
-                    app.ui.setLoading(false);
+                }
+            },
+
+            chart: {
+                render: () => {
+                    if(app.state.chart) return;
+                    const ctx = document.getElementById('plChart').getContext('2d');
+                    app.state.chart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Profitto', 'Mutuo', 'Spese'],
+                            datasets: [{ data: [1,1,1], backgroundColor: ['#10b981', '#3b82f6', '#f59e0b'], borderWidth:0 }]
+                        },
+                        options: { responsive:true, maintainAspectRatio:false, cutout:'70%', plugins:{legend:{position:'bottom', labels:{color:'#94a3b8'}}} }
+                    });
+                    app.calc.run();
+                }
+            },
+
+            payment: {
+                init: () => {
+                    const cont = document.getElementById('paypal-btn-container');
+                    if(!cont || cont.innerHTML !== '') return;
+                    if(typeof paypal === 'undefined') return;
+
+                    paypal.Buttons({
+                        style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'subscribe' },
+                        createSubscription: (data, actions) => {
+                            return actions.subscription.create({ 'plan_id': 'P-3GJ63621V0455625SNFXYMXA' });
+                        },
+                        onApprove: (data) => {
+                            app.ui.setProStatus(true);
+                            if(app.state.user) {
+                                firebase.firestore().collection('users').doc(app.state.user.uid).update({ plan: 'pro', subId: data.subscriptionID });
+                            }
+                            alert("Benvenuto PRO!");
+                        }
+                    }).render('#paypal-btn-container');
+                }
+            },
+
+            pdf: {
+                gen: async () => {
+                    document.body.classList.add('pdf-mode');
+                    const el = document.getElementById('capture-area');
+                    try {
+                        const canvas = await html2canvas(el, { scale: 2, useCORS: true });
+                        const img = canvas.toDataURL('image/png');
+                        const pdf = new window.jsPDF('l', 'mm', 'a4');
+                        const w = pdf.internal.pageSize.getWidth();
+                        const h = (canvas.height * w) / canvas.width;
+                        pdf.addImage(img, 'PNG', 0, 10, w, h);
+                        pdf.save('InvestPro.pdf');
+                    } catch(e) { alert("Errore PDF: "+e.message); }
+                    document.body.classList.remove('pdf-mode');
                 }
             },
 
             data: {
-                autoSave: () => {
-                    const data = {}; 
-                    document.querySelectorAll('input').forEach(i => {
-                        if(i.id && i.type !== 'hidden') data[i.id] = i.value;
-                    });
-                    localStorage.setItem('investpro_draft', JSON.stringify(data));
-                },
-                restoreDraft: () => {
-                    const draft = localStorage.getItem('investpro_draft');
-                    if (draft) {
-                        const data = JSON.parse(draft);
-                        Object.keys(data).forEach(k => { const el = document.getElementById(k); if (el) el.value = data[k]; });
-                        app.ui.showToast("Bozza ripristinata", "info");
-                    }
-                },
-                exportCSV: () => {
-                    const isRent = state.mode === 'rent';
-                    let rows = [
-                        ["PARAMETRO", "VALORE"],
-                        ["Progetto", document.getElementById('project-name').value],
-                        ["Modalità", isRent ? "Messa a Reddito" : "Trading / Flipping"],
-                        ["Data", new Date().toLocaleDateString()],
-                        ["", ""],
-                        ["--- DATI IMMOBILE ---", ""],
-                        ["Città", document.getElementById('geo-search').value],
-                        ["Prezzo Acquisto", document.getElementById('price').value + " €"],
-                        ["Ristrutturazione", document.getElementById('reno').value + " €"],
-                        ["Notaio & Oneri", document.getElementById('closing').value + " €"],
-                        ["", ""]
-                    ];
-
-                    if (isRent) {
-                        rows.push(
-                            ["--- PARAMETRI AFFITTO ---", ""],
-                            ["ADR Medio", document.getElementById('adr').value + " €"],
-                            ["Occupazione", document.getElementById('occ').value + " %"],
-                            ["Tasse", document.getElementById('tax-rate').value + " %"],
-                            ["--- RISULTATI RENT ---", ""],
-                            ["Cashflow Mensile", document.getElementById('res-cashflow').textContent],
-                            ["ROI Annuo", document.getElementById('res-mol-month').textContent]
-                        );
-                    } else {
-                        rows.push(
-                            ["--- PARAMETRI TRADING ---", ""],
-                            ["Prezzo Rivendita", document.getElementById('resale-price').value + " €"],
-                            ["Durata Mesi", document.getElementById('flip-months').value],
-                            ["Spese Holding Mese", document.getElementById('flip-holding-extra').value + " €"],
-                            ["Agenzia Vendita", document.getElementById('flip-agency').value + " %"],
-                            ["--- RISULTATI TRADING ---", ""],
-                            ["Utile Operazione", document.getElementById('res-flip-profit').textContent],
-                            ["ROI Totale", document.getElementById('res-flip-roi').textContent]
-                        );
-                    }
-
-                    const csvString = rows.map(e => e.join(";")).join("\n");
-                    const blob = new Blob(["\uFEFF" + csvString], { type: 'text/csv;charset=utf-8;' });
-                    const link = document.createElement("a");
-                    link.href = URL.createObjectURL(blob);
-                    link.download = `InvestPro_${document.getElementById('project-name').value}.csv`;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    app.ui.showToast("File CSV esportato correttamente", "success");
-                },
-                saveProject: async () => {
-                    // CONTROLLO RIGOROSO AUTENTICAZIONE
-                    if (!state.user) return app.ui.openModal('modal-login');
-                    
-                    app.ui.setLoading(true, "Archiviazione Deal...");
-                    const inputs = {}; 
-                    document.querySelectorAll('input').forEach(i => {
-                        if(i.id && i.id !== 'geo-search') inputs[i.id] = i.value;
-                    });
-                    
-                    const payload = { 
-                        uid: state.user.uid, 
-                        name: document.getElementById('project-name').value, 
-                        updatedAt: new Date(), 
-                        mode: state.mode, 
-                        inputs: inputs 
-                    };
-
+                save: async () => {
+                    if(!app.state.user) return alert("Login richiesto.");
+                    const inputs = {};
+                    document.querySelectorAll('input').forEach(i => inputs[i.id] = i.value);
                     try {
-                        if (state.currentDocId) await app.services.db.collection('projects').doc(state.currentDocId).update(payload);
-                        else state.currentDocId = (await app.services.db.collection('projects').add(payload)).id;
-                        app.ui.showToast("Analisi salvata nel Cloud", "success");
-                    } catch(e) { 
-                        console.error("Save Error:", e);
-                        app.ui.showToast("Errore salvataggio: Permessi DB", "error"); 
-                    }
-                    app.ui.setLoading(false);
-                },
-                openDealsList: async () => {
-                    if (!state.user) return app.ui.openModal('modal-login');
-                    app.ui.openModal('modal-deals');
-                    const div = document.getElementById('deals-container');
-                    div.innerHTML = 'Recupero dati...';
-                    
-                    try {
-                        const s = await app.services.db.collection('projects').where("uid", "==", state.user.uid).get();
-                        div.innerHTML = s.empty ? '<p style="padding:1rem; color:var(--text-muted)">Nessun deal in archivio.</p>' : '';
-                        s.forEach(d => {
-                            const r = document.createElement('div');
-                            r.className = 'row-item';
-                            r.innerHTML = `<span><b>${d.data().name}</b> (${d.data().mode || 'rent'})</span><i class="fa-solid fa-chevron-right"></i>`;
-                            r.onclick = () => {
-                                const i = d.data().inputs;
-                                Object.keys(i).forEach(k => { if(document.getElementById(k)) document.getElementById(k).value = i[k]; });
-                                if(d.data().mode) app.mode.set(d.data().mode);
-                                state.currentDocId = d.id;
-                                app.calc.syncTaxUI();
-                                app.ui.closeModal('modal-deals');
-                            };
-                            div.appendChild(r);
+                        await firebase.firestore().collection('projects').add({
+                            uid: app.state.user.uid,
+                            name: document.getElementById('project-name').value,
+                            date: new Date(),
+                            data: inputs
                         });
-                    } catch (e) {
-                         div.innerHTML = '<p style="padding:1rem; color:var(--danger)">Errore recupero lista (Permessi)</p>';
-                    }
+                        alert("Salvato!");
+                    } catch(e) { alert("Errore salvataggio."); }
                 }
             },
 
-            contact: { 
-                submit: async () => { 
-                    const name = document.getElementById('contact-name').value;
-                    const email = document.getElementById('contact-email').value;
-                    const msg = document.getElementById('contact-msg').value;
-
-                    if (!name || !email || !msg) return app.ui.showToast("Compila tutti i campi.", "error");
-
-                    app.ui.setLoading(true, "Invio in corso...");
-
-                    try {
-                        await emailjs.send("servizio_amministratore", "template_4u8shhp", {
-                            from_name: name, reply_to: email, message: msg, to_name: "Admin InvestPro"
-                        });
-
-                        app.ui.showToast("Messaggio inviato con successo!", "success");
-                        document.querySelector('.contact-form').reset();
-
-                        try {
-                            await app.services.db.collection('leads').add({
-                                name: name, email: email, message: msg, sentAt: new Date(), source: 'web_form'
-                            });
-                        } catch (dbError) { console.warn("Nota: Messaggio inviato, DB saltato (permessi)."); }
-
-                    } catch (emailError) {
-                        console.error("ERRORE INVIO EMAIL:", emailError);
-                        alert("Errore tecnico: " + JSON.stringify(emailError));
-                        app.ui.showToast("Impossibile inviare il messaggio.", "error");
-                    }
-                    app.ui.setLoading(false);
-                } 
-            },
-
-            // --- 8. ADMIN ---
             admin: {
-                switchTab: (event, tab) => {
-                    document.querySelectorAll('.admin-tab, .admin-content').forEach(x => x.classList.remove('active'));
-                    if (event && event.currentTarget) event.currentTarget.classList.add('active');
-                    const targetContent = document.getElementById(`tab-${tab}`);
-                    if (targetContent) targetContent.classList.add('active');
-                    if (tab === 'stats') app.admin.refreshStats();
-                    if (tab === 'users') app.admin.loadUsers();
-                },
-                
-                refreshStats: async () => {
-                    app.ui.setLoading(true, "Business Analytics Sync...");
-                    try {
-                        const us = await app.services.db.collection('users').get();
-                        let proCount = 0; 
-                        us.forEach(d => { if(d.data().plan === 'pro') proCount++; });
-                        document.getElementById('stat-users').textContent = us.size;
-                        document.getElementById('stat-pro').textContent = proCount;
-                    } catch(e) { console.error("Admin Error", e); }
-                    app.ui.setLoading(false);
-                },
-
-                loadUsers: async () => {
-                    const listContainer = document.getElementById('admin-users-list');
-                    listContainer.innerHTML = '<div style="padding:2rem; text-align:center; color:var(--text-muted)"><i class="fa-solid fa-circle-notch fa-spin"></i> Caricamento lista...</div>';
-
-                    try {
-                        const snapshot = await app.services.db.collection('users').limit(50).get();
-                        listContainer.innerHTML = ''; 
-
-                        if (snapshot.empty) {
-                            listContainer.innerHTML = '<p style="padding:1rem; text-align:center; color:var(--text-muted)">Nessun utente trovato.</p>';
-                            return;
-                        }
-
-                        snapshot.forEach(doc => {
-                            const u = doc.data();
-                            const isPro = u.plan === 'pro';
-                            const badgeStyle = isPro 
-                                ? 'background:var(--primary); color:#020617; box-shadow:0 0 15px rgba(16,185,129,0.4);' 
-                                : 'background:rgba(255,255,255,0.1); color:#94a3b8;';
-
-                            const html = `
-                                <div class='row-item' style="display:flex; justify-content:space-between; align-items:center; padding:1.2rem 1rem; border-bottom:1px solid var(--border);">
-                                    <div style="display:flex; align-items:center; gap:12px;">
-                                        <div style="width:32px; height:32px; background:rgba(255,255,255,0.05); border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                                            <i class="fa-solid fa-user" style="font-size:0.8rem; color:var(--text-muted)"></i>
-                                        </div>
-                                        <span style="font-weight:600; font-size:0.95rem; color:white;">${u.email}</span>
-                                    </div>
-                                    <span style="${badgeStyle} padding:5px 12px; border-radius:20px; font-size:0.7rem; font-weight:800; letter-spacing:0.05em;">
-                                        ${isPro ? 'PRO' : 'FREE'}
-                                    </span>
-                                </div>
-                            `;
-                            listContainer.insertAdjacentHTML('beforeend', html);
-                        });
-                    } catch(e) { 
-                        listContainer.innerHTML = '<p style="color:var(--danger); padding:1rem; text-align:center">Errore accesso DB. Verifica regole Firebase.</p>';
-                    }
-                },
-
-                toggleMyPlan: async () => {
-                    if (!state.user) return;
-                    const next = state.isPro ? 'free' : 'pro';
-                    await app.services.db.collection('users').doc(state.user.uid).update({ plan: next });
-                    app.ui.setProStatus(next === 'pro');
-                    app.ui.showToast(`Stato piano Admin forzato: ${next.toUpperCase()}`, "info");
-                    if(document.getElementById('tab-users').classList.contains('active')) app.admin.loadUsers();
-                },
-                
-                clearMyData: () => { if(confirm("Reset applicazione?")) { window.location.reload(); } }
-            },
-
-            // --- 9. CHARTS ---
-            chart: {
-                init: () => {
-                    const ctxP = document.getElementById('profitChart').getContext('2d');
-                    state.chartInstance = new Chart(ctxP, {
-                        type: 'doughnut',
-                        data: { labels: ['Utile', 'OTA', 'Tasse', 'Costi'], datasets: [{ data: [0, 0, 0, 0], backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#3b82f6'], borderWidth: 0 }] },
-                        options: { responsive: true, maintainAspectRatio: false, cutout: '80%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { weight: '800' }, padding: 25 } } } }
+                refresh: async () => {
+                    const db = firebase.firestore();
+                    const s = await db.collection('users').get();
+                    let pro = 0;
+                    let html = '';
+                    s.forEach(d => {
+                        const u = d.data();
+                        if(u.plan === 'pro') pro++;
+                        html += `<div style="padding:10px; border-bottom:1px solid #333; display:flex; justify-content:space-between"><span>${u.email}</span><span style="color:${u.plan==='pro'?'var(--primary)':'#666'}">${u.plan||'free'}</span></div>`;
                     });
-
-                    const ctxL = document.getElementById('projectionChart').getContext('2d');
-                    state.projInstance = new Chart(ctxL, {
-                        type: 'line',
-                        data: { labels: [], datasets: [
-                            { label: 'Valore Immobile', data: [], borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.4 },
-                            { label: 'Debito Residuo', data: [], borderColor: '#ef4444', borderDash: [5, 5], fill: false, tension: 0.4 }
-                        ]},
-                        options: { 
-                            responsive: true, maintainAspectRatio: false, 
-                            scales: { x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }, y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } } },
-                            plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { weight: '800' } } } }
-                        }
-                    });
-                },
-                switch: (type) => {
-                    document.querySelectorAll('.chart-toggle, .chart-view').forEach(el => el.classList.remove('active'));
-                    document.getElementById(`btn-chart-${type}`).classList.add('active');
-                    document.getElementById(`view-${type}`).classList.add('active');
-                    document.getElementById('appreciation-group').style.display = (type === 'proj') ? 'block' : 'none';
-                },
-                updateProjection: (loanAmount, startValue, rate, months, appreciationRate) => {
-                    if (!state.projInstance) return;
-                    const years = Math.ceil(months / 12);
-                    const labels = Array.from({length: years + 1}, (_, i) => `Anno ${i}`);
-                    const debtData = [loanAmount];
-                    const valueData = [startValue];
-                    
-                    let balance = loanAmount;
-                    let currentValue = startValue;
-                    const monthlyRate = (rate/100)/12;
-                    const payment = (monthlyRate > 0) ? loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1) : loanAmount / months;
-
-                    for (let y = 1; y <= years; y++) {
-                        for(let m=0; m<12; m++) {
-                            if(balance > 0) {
-                                const interest = balance * monthlyRate;
-                                const principal = payment - interest;
-                                balance -= principal;
-                            }
-                        }
-                        debtData.push(Math.max(0, balance));
-                        currentValue = currentValue * (1 + (appreciationRate/100));
-                        valueData.push(currentValue);
-                    }
-
-                    state.projInstance.data.labels = labels;
-                    state.projInstance.data.datasets[0].data = valueData;
-                    state.projInstance.data.datasets[1].data = debtData;
-                    state.projInstance.update();
+                    document.getElementById('adm-users').textContent = s.size;
+                    document.getElementById('adm-pro').textContent = pro;
+                    document.getElementById('adm-list').innerHTML = html;
                 }
-            },
-
-            // --- 10. PAYPAL SUBSCRIPTIONS INTEGRATION (FIXED) ---
-            payment: { 
-                init: () => {
-                    // Controlli di sicurezza
-                    if (state.isPro) return; 
-                    if (!window.paypal) {
-                        console.error("PayPal SDK non ancora caricato. Riprovo tra 1s...");
-                        setTimeout(app.payment.init, 1000);
-                        return;
-                    }
-
-                    // Pulisci contenitore se esistente
-                    document.getElementById('paypal-button-container').innerHTML = '';
-
-                    paypal.Buttons({
-                        style: {
-                            shape: 'rect',
-                            color: 'gold',
-                            layout: 'vertical',
-                            label: 'subscribe'
-                        },
-                        createSubscription: function(data, actions) {
-                            return actions.subscription.create({
-                                'plan_id': 'P-3GJ63621V0455625SNFXYMXA' 
-                            });
-                        },
-                        onApprove: function(data, actions) {
-                            app.ui.setProStatus(true);
-                            app.ui.showToast("Abbonamento attivato! Benvenuto in PRO.", "success");
-
-                            if(state.user) {
-                                app.services.db.collection('users').doc(state.user.uid).update({ 
-                                    plan: 'pro',
-                                    subscriptionId: data.subscriptionID,
-                                    updatedAt: new Date()
-                                });
-                            }
-                        },
-                        onError: function (err) {
-                            console.error("PayPal Error:", err);
-                            app.ui.showToast("Errore durante l'attivazione. Riprova.", "error");
-                        }
-                    }).render('#paypal-button-container');
-                } 
             }
         };
 
-        // AVVIO SISTEMA
         document.addEventListener('DOMContentLoaded', app.init);
     </script>
 </body>
