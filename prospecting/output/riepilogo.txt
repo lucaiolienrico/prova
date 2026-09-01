@@ -1,41 +1,42 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-01 11:48
+Generato: 2026-09-01 12:53
 ============================================================
-Prospect totali: .............. 226 (manuali 189, H24 37)
-Con contatto diretto ......... 156 (69%)
-Con sito web ................. 70
-Shortlist A+/A/B ............. 44
-Comuni/localita' distinti .... 57
+Prospect totali: .............. 401 (manuali 189, H24 212)
+Con contatto diretto ......... 212 (52%)
+Con sito web ................. 104
+Shortlist A+/A/B ............. 59
+Comuni/localita' distinti .... 61
 
-PRIORITA': A+=3, A=14, B=27, C=52, D=130
+PRIORITA': A+=3, A=15, B=41, C=71, D=271
 
 PER REGIONE:
   Lazio                  60
-  Piemonte               23
+  Emilia-Romagna         58
+  Lombardia              56
+  Piemonte               42
+  Sicilia                33
+  Liguria                28
+  Campania               24
   Veneto                 22
-  Sicilia                21
-  Emilia-Romagna         19
   Sardegna               18
   Puglia                 17
   Toscana                16
   Molise                 12
   Calabria               8
   Friuli-Venezia Giulia  2
-  Campania               2
   (senza regione)        2
   Marche                 2
-  Lombardia              1
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     41
+  Veterinari                                     182
+  Pet shop                                       42
   Ambulatori veterinari                          32
-  Toelettature                                   27
+  Toelettature                                   30
+  Rifugi per animali                             22
   Negozi per animali                             18
-  Rifugi per animali                             18
-  Pet shop                                       16
+  Pensioni per animali                           11
   Associazioni animaliste                        10
-  Pensioni per animali                           10
   Educatori cinofili                             9
   Canili                                         8
   Centri cinofili                                8
@@ -66,4 +67,4 @@ TOP 15 PROSPECT PER SCORE:
    82 A   Associazione Rifugio a Quattro Zampe                 Altamura             Rifugi per animali
    82 A   Aristogatti - Gattile di Empoli                      Empoli               Rifugi per animali
    82 A   Ambulatorio veterinario Spiezia                      Roma                 Veterinari
-   81 A   Animalife - Pensione per animali                     Vezza d'Alba         Pensioni per animali
+   82 A   MyPetClinic                                          Milano               Veterinari

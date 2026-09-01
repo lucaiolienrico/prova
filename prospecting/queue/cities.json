@@ -16,8 +16,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 1242123,
-    "lat": null,
-    "lon": null
+    "lat": 30.7079205,
+    "lon": -96.8612035
   },
   {
     "name": "Napoli",
@@ -26,8 +26,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 962003,
-    "lat": null,
-    "lon": null
+    "lat": 40.853658,
+    "lon": 14.242934
   },
   {
     "name": "Torino",
@@ -36,8 +36,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 872367,
-    "lat": null,
-    "lon": null
+    "lat": 45.073505,
+    "lon": 7.6755868
   },
   {
     "name": "Palermo",
@@ -46,8 +46,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 657561,
-    "lat": null,
-    "lon": null
+    "lat": 38.1372501,
+    "lon": 13.3471523
   },
   {
     "name": "Genova",
@@ -56,8 +56,8 @@
     "province": "Genova",
     "region": "Liguria",
     "population": 586180,
-    "lat": null,
-    "lon": null
+    "lat": 44.4491564,
+    "lon": 8.8806624
   },
   {
     "name": "Bologna",
@@ -66,8 +66,8 @@
     "province": "Bologna",
     "region": "Emilia-Romagna",
     "population": 371337,
-    "lat": null,
-    "lon": null
+    "lat": 44.4885736,
+    "lon": 11.3315338
   },
   {
     "name": "Firenze",

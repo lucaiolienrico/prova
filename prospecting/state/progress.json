@@ -1,9 +1,15 @@
 {
   "done": [
-    "Roma"
+    "Bologna",
+    "Genova",
+    "Milano",
+    "Napoli",
+    "Palermo",
+    "Roma",
+    "Torino"
   ],
-  "last_run": "2026-09-01T11:48:48Z",
-  "runs": 1,
-  "new_total": 38,
-  "enrich_total": 4
+  "last_run": "2026-09-01T12:53:32Z",
+  "runs": 2,
+  "new_total": 215,
+  "enrich_total": 7
 }
