@@ -1,0 +1,30 @@
+[
+  {
+    "n": "La Castellina",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Prato",
+    "prov": "PO",
+    "reg": "Toscana",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/600543402",
+    "osm_id": 600543402,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "La Castellina"
+    },
+    "lat": 43.8883916,
+    "lon": 11.1067907,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

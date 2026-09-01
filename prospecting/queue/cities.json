@@ -136,8 +136,8 @@
     "province": "Padova",
     "region": "Veneto",
     "population": 206192,
-    "lat": null,
-    "lon": null
+    "lat": 45.3984697,
+    "lon": 11.8909234
   },
   {
     "name": "Trieste",
@@ -146,8 +146,8 @@
     "province": "Trieste",
     "region": "Friuli-Venezia Giulia",
     "population": 202123,
-    "lat": null,
-    "lon": null
+    "lat": 45.6767074,
+    "lon": 13.7833139
   },
   {
     "name": "Taranto",
@@ -156,8 +156,8 @@
     "province": "Taranto",
     "region": "Puglia",
     "population": 200154,
-    "lat": null,
-    "lon": null
+    "lat": 40.4608367,
+    "lon": 17.294631
   },
   {
     "name": "Brescia",
@@ -166,8 +166,8 @@
     "province": "Brescia",
     "region": "Lombardia",
     "population": 189902,
-    "lat": null,
-    "lon": null
+    "lat": 45.5353461,
+    "lon": 10.2236435
   },
   {
     "name": "Prato",
@@ -176,8 +176,8 @@
     "province": "Prato",
     "region": "Toscana",
     "population": 185456,
-    "lat": null,
-    "lon": null
+    "lat": 43.8826186,
+    "lon": 11.0913927
   },
   {
     "name": "Reggio di Calabria",
@@ -186,8 +186,8 @@
     "province": "Reggio Calabria",
     "region": "Calabria",
     "population": 180817,
-    "lat": null,
-    "lon": null
+    "lat": 38.1029726,
+    "lon": 15.7476358
   },
   {
     "name": "Modena",

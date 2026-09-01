@@ -29,3 +29,15 @@
 
 **Bilancio**: 6 citta' ok, 40 elementi OSM, 40 schede candidate, 39 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~375.
 
+## Giro del 2026-09-01T20:21:45Z (run_20260901_202145_e0d2)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Padova | 5 | 5 | 5 | 0 (0 integrati) | ok |
+| Trieste | 7 | 7 | 7 | 0 (0 integrati) | ok |
+| Taranto | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Brescia | 10 | 10 | 9 | 1 (0 integrati) | ok |
+| Prato | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Reggio di Calabria | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 24 elementi OSM, 24 schede candidate, 23 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~369.
+

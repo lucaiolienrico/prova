@@ -1,35 +1,35 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-01 16:00
+Generato: 2026-09-01 20:28
 ============================================================
-Prospect totali: .............. 440 (manuali 189, H24 251)
-Con contatto diretto ......... 226 (51%)
-Con sito web ................. 113
-Shortlist A+/A/B ............. 62
-Comuni/localita' distinti .... 67
+Prospect totali: .............. 463 (manuali 189, H24 274)
+Con contatto diretto ......... 235 (50%)
+Con sito web ................. 119
+Shortlist A+/A/B ............. 64
+Comuni/localita' distinti .... 72
 
-PRIORITA': A+=3, A=15, B=44, C=78, D=300
+PRIORITA': A+=3, A=17, B=44, C=84, D=315
 
 PER REGIONE:
+  Lombardia              65
   Lazio                  60
   Emilia-Romagna         58
-  Lombardia              56
   Piemonte               42
   Sicilia                41
-  Veneto                 31
-  Puglia                 28
+  Veneto                 36
+  Puglia                 29
+  Toscana                28
   Liguria                28
-  Toscana                27
   Campania               24
   Sardegna               18
   Molise                 12
+  Friuli-Venezia Giulia  9
   Calabria               8
-  Friuli-Venezia Giulia  2
   (senza regione)        2
   Marche                 2
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     221
+  Veterinari                                     244
   Pet shop                                       42
   Ambulatori veterinari                          32
   Toelettature                                   30
@@ -66,5 +66,5 @@ TOP 15 PROSPECT PER SCORE:
    82 A   Polivet - Policlinico Veterinario Roma Nord          Roma                 Ospedali veterinari
    82 A   Associazione Rifugio a Quattro Zampe                 Altamura             Rifugi per animali
    82 A   Aristogatti - Gattile di Empoli                      Empoli               Rifugi per animali
-   82 A   Ambulatorio veterinario Spiezia                      Roma                 Veterinari
-   82 A   MyPetClinic                                          Milano               Veterinari
+   82 A   Ambulatorio veterinario Gerlanz Furio                Trieste              Veterinari
+   82 A   Ambulatorio veterinario Murray                       Trieste              Veterinari
