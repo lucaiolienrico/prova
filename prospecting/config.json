@@ -1,0 +1,48 @@
+{
+  "_commento": "Configurazione pipeline PetNote Prospecting. Modificare qui i pesi di scoring, le categorie canoniche e le soglie di priorita'; poi rilanciare: python3 prospecting/process.py",
+
+  "categories": [
+    "Veterinari", "Cliniche veterinarie", "Ambulatori veterinari", "Ospedali veterinari",
+    "Canili", "Rifugi per animali", "Associazioni animaliste", "Allevatori",
+    "Allevamenti professionali", "Educatori cinofili", "Addestratori", "Centri cinofili",
+    "Scuole per cani", "Pet shop", "Negozi per animali", "Toelettature",
+    "Pensioni per animali", "Pet hotel", "Dog sitter", "Cat sitter",
+    "Professionisti del comportamento animale", "Fisioterapisti veterinari",
+    "Servizi di pet care", "Agenzie e servizi dedicati agli animali domestici"
+  ],
+
+  "base_score": {
+    "Ospedali veterinari": 32, "Cliniche veterinarie": 30, "Ambulatori veterinari": 28,
+    "Veterinari": 28, "Fisioterapisti veterinari": 26,
+    "Professionisti del comportamento animale": 26, "Pet hotel": 27,
+    "Pensioni per animali": 26, "Centri cinofili": 26, "Scuole per cani": 26,
+    "Educatori cinofili": 24, "Addestratori": 24, "Toelettature": 23,
+    "Pet shop": 23, "Agenzie e servizi dedicati agli animali domestici": 22,
+    "Allevamenti professionali": 22, "Negozi per animali": 20, "Allevatori": 20,
+    "Servizi di pet care": 20, "Canili": 18, "Rifugi per animali": 18,
+    "Associazioni animaliste": 18, "Dog sitter": 18, "Cat sitter": 18,
+    "_default": 20
+  },
+
+  "weights": {
+    "website": 14,
+    "email": 14,
+    "phone": 12,
+    "instagram_url": 8,
+    "facebook_url": 7,
+    "address": 8,
+    "contact_name": 6,
+    "subcategory": 3,
+    "digital_channel": 4,          "rating_reviews": 6,         "social_reach": 6,           "updated_recent": 3,           "chain_group_penalty": -12,        "unverified_penalty_each": 3,        "unverified_penalty_cap": 2,       "old_source_penalty": 3            },
+
+  "priority_thresholds": { "A+": 90, "A": 80, "B": 65, "C": 50 },
+  "score_min": 5,
+  "score_max": 100,
+
+  "output": {
+    "json": "petnote_prospects.json",
+    "csv": "petnote_prospects.csv",
+    "shortlist": "shortlist_AB.csv",
+    "riepilogo": "riepilogo.txt"
+  }
+}
