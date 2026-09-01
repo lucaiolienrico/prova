@@ -44,5 +44,40 @@
     "csv": "petnote_prospects.csv",
     "shortlist": "shortlist_AB.csv",
     "riepilogo": "riepilogo.txt"
+  },
+
+  "_comandi_h24": "Ricerca automatica H24 (GitHub Actions ogni 6h o manuale). Uso: python3 prospecting/find_candidates.py [--batch N | --cities 'Nome,Nome'] poi python3 prospecting/process.py",
+
+  "cities_per_run": 6,
+  "queue_file": "queue/cities.json",
+
+  "overpass": {
+    "_commento": "Solo OpenStreetMap (licenza ODbL): nessuno scraping di directory con termini d'uso restrittivi. Endpoint di fallback e cortesie di rate-limit.",
+    "endpoints": [
+      "https://overpass-api.de/api/interpreter",
+      "https://overpass.kumi.systems/api/interpreter"
+    ],
+    "timeout_s": 60,
+    "min_delay_s": 1.5,
+    "max_retries": 3,
+    "max_elements_per_city": 1500,
+    "radius_by_population": [
+      [1000000, 15000],
+      [300000, 10000],
+      [100000, 8000],
+      [50000, 6000]
+    ],
+    "default_radius_m": 5000,
+    "_recipe": "Ogni categoria ha 'queries': dentro una query i tag sono in AND (es. amenity=animal_shelter E shelter_type=dog), tra query in OR, tra categorie in UNION. In una query \"chiave\": \"*\" significa tag presente (qualsiasi valore). Prima categoria che combacia vince. Le categorie senza regola (dog sitter, educatori, ecc.) non hanno un tag OSM standard e NON vengono ricercate automaticamente: nessuno scraping di directory.",
+    "recipe": [
+      { "category": "Veterinari", "queries": [ { "amenity": "veterinary" }, { "healthcare": "veterinary" } ] },
+      { "category": "Pet shop", "queries": [ { "shop": "pet" } ] },
+      { "category": "Toelettature", "queries": [ { "shop": "pet_grooming" }, { "shop": "grooming" } ] },
+      { "category": "Pensioni per animali", "queries": [ { "amenity": "animal_boarding" } ] },
+      { "category": "Canili", "queries": [ { "amenity": "animal_shelter", "shelter_type": "dog" }, { "amenity": "animal_shelter", "animal": "dog" } ] },
+      { "category": "Rifugi per animali", "queries": [ { "amenity": "animal_shelter" } ] },
+      { "category": "Allevamenti professionali", "queries": [ { "amenity": "animal_breeding", "breed": "*" }, { "landuse": "animal_breeding", "breed": "*" } ] },
+      { "category": "Allevatori", "queries": [ { "amenity": "animal_breeding" }, { "landuse": "animal_breeding" } ] }
+    ]
   }
 }

@@ -141,6 +141,7 @@ def similar_names(a, b):
     return inter >= 2 or ratio > 0.72
 
 # ---------- LOAD ----------
+# 1) ondate manuali (raw/wave*.json) ...
 rows = []
 for f in RAW:
     with open(f, encoding="utf-8") as fh:
@@ -148,6 +149,17 @@ for f in RAW:
     for r in data:
         r["_wave"] = os.path.basename(f)
         rows.append(r)
+
+# 2) ... + archivio della ricerca AUTOMATICA H24 (OpenStreetMap),
+#    mantenuto da prospecting/find_candidates.py (anti-duplicato sui 5 controlli).
+ARCHIVE = os.path.join(BASE, "candidates", "archive.json")
+if os.path.exists(ARCHIVE):
+    with open(ARCHIVE, encoding="utf-8") as fh:
+        data = json.load(fh)
+    for r in data:
+        r["_system"] = "automatica"
+        rows.append(r)
+    print(f"  + archivio automatico (H24): {len(data)} righe")
 
 print(f"Righe grezze caricate: {len(rows)}")
 
@@ -264,11 +276,16 @@ def build(r):
         "contact_name": r.get("contact"),
         "source": r.get("src"),
         "source_url": r.get("srcurl"),
+        "provenienza": "automatica" if r.get("_system") == "automatica" else "manuale",
         "data_quality": 0,
         "score": 0,
         "priority": "",
         "notes": notes or None,
     }
+    if r.get("_found_at"):
+        out["found_at"] = r["_found_at"]
+    if r.get("osm_id") is not None:
+        out["osm_id"] = r["osm_id"]
 
     fields = ["business_name","category","subcategory","city","province","region","address","website","email","phone","instagram_url","facebook_url","contact_name"]
     out["data_quality"] = round(100 * sum(1 for f in fields if out[f]) / len(fields))
@@ -310,8 +327,14 @@ results.sort(key=lambda x: ((x["category"] or ""), (x["region"] or "~~~"), (x["p
 with open(os.path.join(OUT_DIR, F_JSON), "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
+ALL_FIELDS = []
+for _r in results:
+    for _k in _r:
+        if _k not in ALL_FIELDS:
+            ALL_FIELDS.append(_k)
+
 with open(os.path.join(OUT_DIR, F_CSV), "w", encoding="utf-8", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(results[0].keys()), delimiter=";")
+    w = csv.DictWriter(f, fieldnames=ALL_FIELDS, delimiter=";")
     w.writeheader()
     for r in results:
         w.writerow({k: ("" if v is None else v) for k, v in r.items()})
@@ -319,7 +342,7 @@ with open(os.path.join(OUT_DIR, F_CSV), "w", encoding="utf-8", newline="") as f:
 # ---------- SHORTLIST OPERATIVA (A+/A/B, pronta per l'azione commerciale) ----------
 short = sorted([r for r in results if r["priority"] in ("A+", "A", "B")], key=lambda x: -x["score"])
 with open(os.path.join(OUT_DIR, F_SHORT), "w", encoding="utf-8", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=list(results[0].keys()), delimiter=";")
+    w = csv.DictWriter(f, fieldnames=ALL_FIELDS, delimiter=";")
     w.writeheader()
     for r in short:
         w.writerow({k: ("" if v is None else v) for k, v in r.items()})
@@ -334,8 +357,11 @@ by_reg = Counter(r["region"] for r in results)
 cities = sorted({(r["region"], r["province"], r["city"]) for r in results if r["city"]})
 with_contact = sum(1 for r in results if r["email"] or r["phone"])
 with_site = sum(1 for r in results if r["website"])
+n_auto = sum(1 for r in results if r.get("provenienza") == "automatica")
+n_man = n - n_auto
+
 print(f"\n=== RIEPILOGO ===")
-print(f"Prospect totali: {n}")
+print(f"Prospect totali: {n} (manuali: {n_man}, automatici H24: {n_auto})")
 print(f"Con contatto diretto (email/tel): {with_contact}  ({100*with_contact//n}%)")
 print(f"Con sito web: {with_site}")
 print("Priorita':", dict(by_prio))
@@ -349,7 +375,7 @@ lines = []
 lines.append("PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO")
 lines.append("Generato: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 lines.append("=" * 60)
-lines.append(f"Prospect totali: .............. {n}")
+lines.append(f"Prospect totali: .............. {n} (manuali {n_man}, H24 {n_auto})")
 lines.append(f"Con contatto diretto ......... {with_contact} ({100*with_contact//n}%)")
 lines.append(f"Con sito web ................. {with_site}")
 lines.append(f"Shortlist A+/A/B ............. {len(short)}")
