@@ -1,16 +1,16 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-01 11:27
+Generato: 2026-09-01 11:48
 ============================================================
-Prospect totali: .............. 189 (manuali 189, H24 0)
-Con contatto diretto ......... 135 (71%)
-Con sito web ................. 59
-Shortlist A+/A/B ............. 35
+Prospect totali: .............. 226 (manuali 189, H24 37)
+Con contatto diretto ......... 156 (69%)
+Con sito web ................. 70
+Shortlist A+/A/B ............. 44
 Comuni/localita' distinti .... 57
 
-PRIORITA': A+=1, A=13, B=21, C=47, D=107
+PRIORITA': A+=3, A=14, B=27, C=52, D=130
 
 PER REGIONE:
-  Lazio                  23
+  Lazio                  60
   Piemonte               23
   Veneto                 22
   Sicilia                21
@@ -28,6 +28,7 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
+  Veterinari                                     41
   Ambulatori veterinari                          32
   Toelettature                                   27
   Negozi per animali                             18
@@ -41,7 +42,6 @@ PER CATEGORIA:
   Cliniche veterinarie                           6
   Allevamenti professionali                      5
   Servizi di pet care                            4
-  Veterinari                                     4
   Addestratori                                   3
   Ospedali veterinari                            3
   Agenzie e servizi dedicati agli animali domestici 2
@@ -53,6 +53,8 @@ PER CATEGORIA:
 
 TOP 15 PROSPECT PER SCORE:
    97 A+  Bolle & Cucce                                        Empoli               Toelettature
+   97 A+  Ambulatorio Veterinario Gattamelata                  Roma                 Veterinari
+   91 A+  Centro veterinario Ostia                             Roma                 Veterinari
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
    85 A   Ambulatorio Veterinario Festa (Dott. Ezio Festa)     Bassano del Grappa   Ambulatori veterinari
@@ -63,7 +65,5 @@ TOP 15 PROSPECT PER SCORE:
    82 A   Polivet - Policlinico Veterinario Roma Nord          Roma                 Ospedali veterinari
    82 A   Associazione Rifugio a Quattro Zampe                 Altamura             Rifugi per animali
    82 A   Aristogatti - Gattile di Empoli                      Empoli               Rifugi per animali
+   82 A   Ambulatorio veterinario Spiezia                      Roma                 Veterinari
    81 A   Animalife - Pensione per animali                     Vezza d'Alba         Pensioni per animali
-   80 A   Love Pet Toelettatura e Spa                          Vezza d'Alba         Toelettature
-   80 A   L'Oasi di Rex                                        Altamura             Toelettature
-   78 B   Agripet Acireale (Agripet S.r.l.)                    Acireale             Pet shop
