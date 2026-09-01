@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Associato Concordia",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Venezia",
+    "prov": "VE",
+    "reg": "Veneto",
+    "addr": "Via Nicolò Tommaseo 1, 30175",
+    "site": null,
+    "email": null,
+    "tel": "+39 041 930974",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12479045907",
+    "osm_id": 12479045907,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Marghera",
+      "addr:housenumber": "1",
+      "addr:postcode": "30175",
+      "addr:street": "Via Nicolò Tommaseo",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Associato Concordia",
+      "opening_hours": "Mo-Fr 09:00-12:00,15:30-19:00; Sa 08:30-12:00; Su,PH off",
+      "phone": "+39 041 930974",
+      "reservation": "required"
+    },
+    "lat": 45.4721924,
+    "lon": 12.224476,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 09:00-12:00,15:30-19:00; Sa 08:30-12:00; Su,PH off",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

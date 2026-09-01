@@ -76,8 +76,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 358079,
-    "lat": null,
-    "lon": null
+    "lat": 43.7806674,
+    "lon": 11.2443321
   },
   {
     "name": "Bari",
@@ -86,8 +86,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 315933,
-    "lat": null,
-    "lon": null
+    "lat": 41.0929211,
+    "lon": 16.8753242
   },
   {
     "name": "Catania",
@@ -96,8 +96,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 293902,
-    "lat": null,
-    "lon": null
+    "lat": 37.4603415,
+    "lon": 15.0308307
   },
   {
     "name": "Venezia",
@@ -106,8 +106,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 261362,
-    "lat": null,
-    "lon": null
+    "lat": 45.4046223,
+    "lon": 12.3817029
   },
   {
     "name": "Verona",
@@ -116,8 +116,8 @@
     "province": "Verona",
     "region": "Veneto",
     "population": 252520,
-    "lat": null,
-    "lon": null
+    "lat": 34.188971,
+    "lon": -88.7198037
   },
   {
     "name": "Messina",
@@ -126,8 +126,8 @@
     "province": "Messina",
     "region": "Sicilia",
     "population": 243262,
-    "lat": null,
-    "lon": null
+    "lat": 38.1784981,
+    "lon": 15.5305069
   },
   {
     "name": "Padova",

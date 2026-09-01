@@ -1,15 +1,21 @@
 {
   "done": [
+    "Bari",
     "Bologna",
+    "Catania",
+    "Firenze",
     "Genova",
+    "Messina",
     "Milano",
     "Napoli",
     "Palermo",
     "Roma",
-    "Torino"
+    "Torino",
+    "Venezia",
+    "Verona"
   ],
-  "last_run": "2026-09-01T12:53:32Z",
-  "runs": 2,
-  "new_total": 215,
+  "last_run": "2026-09-01T16:00:52Z",
+  "runs": 3,
+  "new_total": 254,
   "enrich_total": 7
 }
