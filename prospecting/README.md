@@ -15,15 +15,20 @@ prospecting/
 ├── README.md                    ← metodo, rubriche, compliance
 ├── registry.md                  ← registro ricerca continua (categoria × città completate)
 ├── REPORT_USO.md                ← GUIDA OPERATIVA: come usare il database
-├── config.json                  ← parametri pipeline (categorie, pesi scoring, soglie, nomi output)
+├── config.json                  ← parametri pipeline (categorie, pesi scoring, soglie, H24)
 ├── process.py                   ← pipeline: normalizza → deduplica → scoring → output
 ├── raw/                         ← estratti grezzi per ondata (fonte primaria dichiarata per ogni riga)
 │   ├── wave01_altamura.json     ... wave10_roma_ospedali.json
-└── output/                      ← tutto rigenerato da process.py
-    ├── petnote_prospects.json   ← DATABASE FINALE (schema completo, null per dati mancanti)
-    ├── petnote_prospects.csv    ← stessa vista, per fogli di calcolo / CRM (delimitatore ";")
-    ├── shortlist_AB.csv         ← SOLO prospect A+/A/B, ordinati per score: la lista d'azione
-    └── riepilogo.txt            ← statistiche automatiche (conteggi, top 15)
+├── queue/                       ← coda di lavoro H24 (388 comuni, dati ISTAT)
+│   ├── cities.json              ← generata da prospecting/tools/generate_queue.py
+│   └── README.md                ← metodo e attribuzione
+├── find_candidates.py           ← ricerca automatica H24 (OpenStreetMap/Overpass, ODbL)
+├── candidates/                  ← output del sistema H24
+│   ├── archive.json             ← archivio unico schede automatiche (anti-duplicato)
+│   └── runs/<giro>/<città>.json ← dati grezzi per città
+├── state/                       ← run_log.md (diario), progress.json (coda)
+├── tools/generate_queue.py      ← rigenera la coda comuni
+└── tests/fixture_h24.json       ← test offline riproducibile della ricerca H24
 ```
 
 Rigenera gli output dopo ogni nuova ondata o modifica di `config.json`:
@@ -32,9 +37,38 @@ Rigenera gli output dopo ogni nuova ondata o modifica di `config.json`:
 python3 prospecting/process.py
 ```
 
+Il sistema H24 (attivato dal workflow `.github/workflows/petnote-prospecting-h24.yml`,
+ogni 6 ore o manualmente) trova nuove schede da **OpenStreetMap** e le aggiunge
+all'archivio; `process.py` produce poi il database unificato con il campo
+`provenienza` (`manuale` / `automatica`). I dati dei prospect manuali non vengono
+mai modificati dal sistema automatico.
+
 ---
 
-## Metodo di raccolta
+## Ricerca automatica H24 (OpenStreetMap)
+
+- **Fonte**: solo OpenStreetMap via Overpass API (licenza **ODbL**). Nessuno scraping
+  di directory con termini d'uso restrittivi.
+- **Copertura**: coda di 388 comuni (i più popolosi d'Italia, dati ISTAT) processati
+  a `cities_per_run` (default 6) città per giro; 4 giri/giorno via GitHub Actions.
+- **Categorie automatiche**: Veterinari, Pet shop, Toelettature, Pensioni per animali,
+  Canili, Rifugi per animali, Allevamenti professionali, Allevatori — mapping in
+  `config.json → overpass.recipe`. Le altre categorie non hanno un tag OSM standard
+  e restano ricerca manuale.
+- **Anti-duplicato**: ogni candidato passa 5 controlli (id oggetto OSM, email,
+  telefono, sito, nome+città anche simile) contro **tutto** l'archivio; se la scheda
+  esiste già, vengono integrati **solo** i contatti mancanti (mai sovrascritture).
+- **Tracciabilità**: ogni scheda automatica riporta `source` (Overpass API, ODbL),
+  `source_url` (pagina elemento OSM), `osm_id`, `found_at`, `provenienza: automatica`
+  e un promemoria di verifica dei contatti in `notes`.
+- **Comandi di base**, dalla root del repo:
+  ```bash
+  python3 prospecting/find_candidates.py --batch 6      # giro di 6 città
+  python3 prospecting/find_candidates.py --list-done    # stato coda
+  python3 prospecting/process.py                        # rigenera gli output
+  ```
+
+## Metodo di raccolta (manuale)
 
 1. Ricerche web separate per **combinazione `categoria × città`** (es. `veterinari Altamura`,
    `toelettatura cani Altamura`, `canile rifugio Altamura`…).
@@ -63,7 +97,8 @@ python3 prospecting/process.py
 
 Campi per prospect: `business_name, category, subcategory, city, province, region, address,
 website, email, phone, instagram_username, instagram_url, facebook_url, contact_name, source,
-source_url, data_quality (0-100), score (0-100), priority (A+/A/B/C/D), notes`.
+source_url, provinenza (manuale/automatica), data_quality (0-100), score (0-100),
+priority (A+/A/B/C/D), notes` (+ `found_at`, `osm_id` per le schede automatiche).
 
 - `data_quality` = % di campi popolati su 13 campi chiave
   (nome, categoria, sottocategoria, città, provincia, regione, indirizzo, sito, email,
@@ -95,10 +130,11 @@ La classe D non indica "inutile": indica scheda da arricchire prima dell'approcc
 
 ## Stato della copertura (tranche 1)
 
-- **189 prospect** validati (da 193 estratti, 4 duplicati fusi)
+- **189 prospect manuali** validati (da 193 estratti, 4 duplicati fusi) — base fissa
 - **15/20 regioni** toccate, **57 comuni/località** distinti, 23/24 categorie popolate
 - 71% con almeno un contatto diretto (telefono e/o email pubblici)
 - Shortlist commerciale: **1 A+ · 13 A · 21 B**
+- Il sistema H24 **aggiunge** schede `provenienza: automatica` senza toccare le schede esistenti
 - Regioni ancora da avviare: **Marche (parziale), Umbria, Abruzzo, Basilicata, Valle d'Aosta**
 - Top A+ della tranche: *Bolle & Cucce* (Empoli) — scheda completa di sito, email, telefono, FB, referente e segnali operativi.
 

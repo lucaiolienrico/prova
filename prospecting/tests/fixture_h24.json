@@ -1,0 +1,101 @@
+{
+  "_commento": "Fixture per test offline della ricerca H24 (nessuna rete). Risposte Overpass sintetiche: esercitano categorie, campi di contatto, dedup sui 5 controlli e integrazione.",
+  "responses": {
+    "Roma": {
+      "elements": [
+        {
+          "type": "node", "id": 900001, "lat": 41.902, "lon": 12.496,
+          "tags": {
+            "amenity": "veterinary", "name": "Clinica Veterinaria Flora",
+            "phone": "+39 06 1234567", "website": "https://www.clinicaflora.example",
+            "email": "info@clinicaflora.example",
+            "addr:street": "Via dei Tulipani", "addr:housenumber": "12",
+            "addr:postcode": "00100", "opening_hours": "Mo-Fr 09:00-19:00"
+          }
+        },
+        {
+          "type": "way", "id": 900002, "center": {"lat": 41.91, "lon": 12.5},
+          "tags": {
+            "shop": "pet", "name": "Bau Store Roma", "addr:street": "Via del Cane", "addr:housenumber": "3", "operator": "Maria Rossi"
+          }
+        },
+        {
+          "type": "node", "id": 900003, "lat": 41.905, "lon": 12.49,
+          "tags": {"shop": "pet_grooming", "name": "Toelettatura Zampetta", "contact:instagram": "@zampetta.roma"}
+        },
+        {
+          "type": "node", "id": 900004, "lat": 41.9, "lon": 12.49,
+          "tags": {"amenity": "animal_shelter", "name": "Canile Comunale Roma", "shelter_type": "dog", "operator": "Comune di Roma"}
+        },
+        {
+          "type": "node", "id": 900005, "lat": 41.9, "lon": 12.48,
+          "tags": {"amenity": "animal_breeding", "name": "Allevamento Cuccioli d'Oro", "breed": "Labrador", "website": "https://cucciolidoro.example"}
+        },
+        {
+          "type": "node", "id": 900006, "lat": 41.9, "lon": 12.47,
+          "tags": {"shop": "pet"} 
+        },
+        {
+          "type": "node", "id": 900007, "lat": 41.9, "lon": 12.46,
+          "tags": {"amenity": "veterinary", "name": "Ambulatorio Veterinario Sannio", "phone": "+39 06 7654321", "email": "amb@sannio.example"}
+        },
+        {
+          "type": "node", "id": 900008, "lat": 41.9, "lon": 12.45,
+          "tags": {"amenity": "animal_boarding", "name": "Pensione Bella Vita", "contact:phone": "06 1112233", "contact:facebook": "https://www.facebook.com/bellavita.pension"}
+        },
+        {
+          "type": "node", "id": 900007, "lat": 41.9, "lon": 12.46,
+          "tags": {"amenity": "veterinary", "name": "Ambulatorio Veterinario Sannio"}
+        },
+        {
+          "type": "node", "id": 900010, "lat": 41.9, "lon": 12.44,
+          "tags": {"amenity": "veterinary", "name": "Clinica Veterinaria Flora", "email": "altro@flora.example", "phone": "+39 06 999", "addr:street": "Via dei Violetti", "addr:housenumber": "5", "contact:instagram": "flora.roma"},
+          "_test_": "stesso nome di 900001 in stessa citta' ma OSM id diverso -> controllo nome+citta' (con campi nuovi: arricchimento)"
+        },
+        {
+          "type": "node", "id": 900011, "lat": 41.9, "lon": 12.43,
+          "tags": {"amenity": "veterinary", "name": "Veterinario Della Piazza", "email": "veterinario@piazza.example", "website": "https://www.piazza.example"}
+        }
+      ]
+    },
+    "Milano": {
+      "elements": [
+        {
+          "type": "node", "id": 900101, "lat": 45.464, "lon": 9.19,
+          "tags": {"amenity": "veterinary", "name": "Poliambulatorio Veterinario Meneghino", "email": "info@clinicaflora.example", "phone": "+39 02 1111111"},
+          "_test_": "stessa EMAIL di Clinica Flora (Roma) -> controllo email (trans-citta')"
+        },
+        {
+          "type": "node", "id": 900102, "lat": 45.464, "lon": 9.191,
+          "tags": {"amenity": "veterinary", "name": "Ambulatorio Veterinario Sannio Milano", "phone": "+39 06 7654321"},
+          "_test_": "stesso TELEFONO + nome simile di 900007 -> controllo telefono"
+        },
+        {
+          "type": "node", "id": 900103, "lat": 45.464, "lon": 9.192,
+          "tags": {"shop": "pet", "name": "Milan Pet Shop", "website": "https://www.clinicaflora.example"},
+          "_test_": "stesso DOMINIO sito di 900001 -> controllo sito web"
+        },
+        {
+          "type": "node", "id": 900104, "lat": 45.464, "lon": 9.193,
+          "tags": {"shop": "pet_grooming", "name": "Bau Chic Milano", "contact:instagram": "bauchicmi", "addr:street": "Via Napoli", "addr:housenumber": "1", "addr:postcode": "20100"}
+        },
+        {
+          "type": "way", "id": 900105, "center": {"lat": 45.46, "lon": 9.18},
+          "tags": {"amenity": "animal_shelter", "name": "Rifugio Arcobaleno Milano", "animal": "cat"}
+        },
+        {
+          "type": "node", "id": 900106, "lat": 45.46, "lon": 9.181,
+          "tags": {"amenity": "animal_breeding", "name": "Allevamento Gatti Persiani", "breed": "Persiano"}
+        },
+        {
+          "type": "node", "id": 900107, "lat": 45.46, "lon": 9.182,
+          "tags": {"leisure": "dog_park", "name": "Parco Cani"}
+        },
+        {
+          "type": "way", "id": 900108, "center": {"lat": 45.463, "lon": 9.19},
+          "tags": {"shop": "pet", "name": "Super Animali Milano", "contact:email": "superanimali@example.it", "phone": "02 222333444", "contact:facebook": "https://www.facebook.com/superanimali.mi", "opening_hours": "Mo-Sa 09:00-20:00"}
+        }
+      ]
+    }
+  }
+}

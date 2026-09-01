@@ -1,0 +1,3882 @@
+[
+  {
+    "name": "Roma",
+    "code": "058091",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 2617175,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Milano",
+    "code": "015146",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 1242123,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Napoli",
+    "code": "063049",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 962003,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Torino",
+    "code": "001272",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 872367,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Palermo",
+    "code": "082053",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 657561,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Genova",
+    "code": "010025",
+    "sigla": "GE",
+    "province": "Genova",
+    "region": "Liguria",
+    "population": 586180,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bologna",
+    "code": "037006",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 371337,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Firenze",
+    "code": "048017",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 358079,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bari",
+    "code": "072006",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 315933,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Catania",
+    "code": "087015",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 293902,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Venezia",
+    "code": "027042",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 261362,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Verona",
+    "code": "023091",
+    "sigla": "VR",
+    "province": "Verona",
+    "region": "Veneto",
+    "population": 252520,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Messina",
+    "code": "083048",
+    "sigla": "ME",
+    "province": "Messina",
+    "region": "Sicilia",
+    "population": 243262,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Padova",
+    "code": "028060",
+    "sigla": "PD",
+    "province": "Padova",
+    "region": "Veneto",
+    "population": 206192,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Trieste",
+    "code": "032006",
+    "sigla": "TS",
+    "province": "Trieste",
+    "region": "Friuli-Venezia Giulia",
+    "population": 202123,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Taranto",
+    "code": "073027",
+    "sigla": "TA",
+    "province": "Taranto",
+    "region": "Puglia",
+    "population": 200154,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Brescia",
+    "code": "017029",
+    "sigla": "BS",
+    "province": "Brescia",
+    "region": "Lombardia",
+    "population": 189902,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Prato",
+    "code": "100005",
+    "sigla": "PO",
+    "province": "Prato",
+    "region": "Toscana",
+    "population": 185456,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Reggio di Calabria",
+    "code": "080063",
+    "sigla": "RC",
+    "province": "Reggio Calabria",
+    "region": "Calabria",
+    "population": 180817,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Modena",
+    "code": "036023",
+    "sigla": "MO",
+    "province": "Modena",
+    "region": "Emilia-Romagna",
+    "population": 179149,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Parma",
+    "code": "034027",
+    "sigla": "PR",
+    "province": "Parma",
+    "region": "Emilia-Romagna",
+    "population": 175895,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Perugia",
+    "code": "054039",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 162449,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Reggio nell'Emilia",
+    "code": "035033",
+    "sigla": "RE",
+    "province": "Reggio nell'Emilia",
+    "region": "Emilia-Romagna",
+    "population": 162082,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Livorno",
+    "code": "049009",
+    "sigla": "LI",
+    "province": "Livorno",
+    "region": "Toscana",
+    "population": 157052,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ravenna",
+    "code": "039014",
+    "sigla": "RA",
+    "province": "Ravenna",
+    "region": "Emilia-Romagna",
+    "population": 153740,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cagliari",
+    "code": "092009",
+    "sigla": "CA",
+    "province": "Cagliari",
+    "region": "Sardegna",
+    "population": 149883,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Foggia",
+    "code": "071024",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 147036,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rimini",
+    "code": "099014",
+    "sigla": "RN",
+    "province": "Rimini",
+    "region": "Emilia-Romagna",
+    "population": 139601,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Salerno",
+    "code": "065116",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 132608,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ferrara",
+    "code": "038008",
+    "sigla": "FE",
+    "province": "Ferrara",
+    "region": "Emilia-Romagna",
+    "population": 132545,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sassari",
+    "code": "090064",
+    "sigla": "SS",
+    "province": "Sassari",
+    "region": "Sardegna",
+    "population": 123782,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Monza",
+    "code": "108033",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 119856,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Siracusa",
+    "code": "089017",
+    "sigla": "SR",
+    "province": "Siracusa",
+    "region": "Sicilia",
+    "population": 118385,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Latina",
+    "code": "059011",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 117892,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pescara",
+    "code": "068028",
+    "sigla": "PE",
+    "province": "Pescara",
+    "region": "Abruzzo",
+    "population": 117166,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Forlì",
+    "code": "040012",
+    "sigla": "FC",
+    "province": "Forlì-Cesena",
+    "region": "Emilia-Romagna",
+    "population": 116434,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bergamo",
+    "code": "016024",
+    "sigla": "BG",
+    "province": "Bergamo",
+    "region": "Lombardia",
+    "population": 115349,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Trento",
+    "code": "022205",
+    "sigla": "TN",
+    "province": "Trento",
+    "region": "Trentino-Alto Adige/Südtirol",
+    "population": 114198,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vicenza",
+    "code": "024116",
+    "sigla": "VI",
+    "province": "Vicenza",
+    "region": "Veneto",
+    "population": 111500,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Terni",
+    "code": "055032",
+    "sigla": "TR",
+    "province": "Terni",
+    "region": "Umbria",
+    "population": 109193,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Giugliano in Campania",
+    "code": "063034",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 108793,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bolzano",
+    "code": "021008",
+    "sigla": "BZ",
+    "province": "Bolzano/Bozen",
+    "region": "Trentino-Alto Adige/Südtirol",
+    "population": 102575,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Novara",
+    "code": "003106",
+    "sigla": "NO",
+    "province": "Novara",
+    "region": "Piemonte",
+    "population": 101952,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ancona",
+    "code": "042002",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 100497,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Piacenza",
+    "code": "033032",
+    "sigla": "PC",
+    "province": "Piacenza",
+    "region": "Emilia-Romagna",
+    "population": 100311,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Andria",
+    "code": "110001",
+    "sigla": "BT",
+    "province": "Barletta-Andria-Trani",
+    "region": "Puglia",
+    "population": 100052,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Udine",
+    "code": "030129",
+    "sigla": "UD",
+    "province": "Udine",
+    "region": "Friuli-Venezia Giulia",
+    "population": 98287,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Arezzo",
+    "code": "051002",
+    "sigla": "AR",
+    "province": "Arezzo",
+    "region": "Toscana",
+    "population": 98144,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cesena",
+    "code": "040007",
+    "sigla": "FC",
+    "province": "Forlì-Cesena",
+    "region": "Emilia-Romagna",
+    "population": 95990,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Barletta",
+    "code": "110002",
+    "sigla": "BT",
+    "province": "Barletta-Andria-Trani",
+    "region": "Puglia",
+    "population": 94239,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pesaro",
+    "code": "041044",
+    "sigla": "PU",
+    "province": "Pesaro e Urbino",
+    "region": "Marche",
+    "population": 94237,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "La Spezia",
+    "code": "011015",
+    "sigla": "SP",
+    "province": "La Spezia",
+    "region": "Liguria",
+    "population": 92659,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lecce",
+    "code": "075035",
+    "sigla": "LE",
+    "province": "Lecce",
+    "region": "Puglia",
+    "population": 89916,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Alessandria",
+    "code": "006003",
+    "sigla": "AL",
+    "province": "Alessandria",
+    "region": "Piemonte",
+    "population": 89411,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Catanzaro",
+    "code": "079023",
+    "sigla": "CZ",
+    "province": "Catanzaro",
+    "region": "Calabria",
+    "population": 89364,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pistoia",
+    "code": "047014",
+    "sigla": "PT",
+    "province": "Pistoia",
+    "region": "Toscana",
+    "population": 89101,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Brindisi",
+    "code": "074001",
+    "sigla": "BR",
+    "province": "Brindisi",
+    "region": "Puglia",
+    "population": 88812,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lucca",
+    "code": "046017",
+    "sigla": "LU",
+    "province": "Lucca",
+    "region": "Toscana",
+    "population": 87200,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Torre del Greco",
+    "code": "063084",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 85922,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pisa",
+    "code": "050026",
+    "sigla": "PI",
+    "province": "Pisa",
+    "region": "Toscana",
+    "population": 85858,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Como",
+    "code": "013075",
+    "sigla": "CO",
+    "province": "Como",
+    "region": "Lombardia",
+    "population": 82045,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Guidonia Montecelio",
+    "code": "058047",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 81447,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Treviso",
+    "code": "026086",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 81014,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pozzuoli",
+    "code": "063060",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 80357,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Marsala",
+    "code": "081011",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 80218,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Varese",
+    "code": "012133",
+    "sigla": "VA",
+    "province": "Varese",
+    "region": "Lombardia",
+    "population": 79793,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Busto Arsizio",
+    "code": "012026",
+    "sigla": "VA",
+    "province": "Varese",
+    "region": "Lombardia",
+    "population": 79692,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Casoria",
+    "code": "063023",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 78647,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Grosseto",
+    "code": "053011",
+    "sigla": "GR",
+    "province": "Grosseto",
+    "region": "Toscana",
+    "population": 78630,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sesto San Giovanni",
+    "code": "015209",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 76514,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gela",
+    "code": "085007",
+    "sigla": "CL",
+    "province": "Caltanissetta",
+    "region": "Sicilia",
+    "population": 75668,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Caserta",
+    "code": "061022",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 75640,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Corigliano-Rossano",
+    "code": "078157",
+    "sigla": "CS",
+    "province": "Cosenza",
+    "region": "Calabria",
+    "population": 74848,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Asti",
+    "code": "005005",
+    "sigla": "AT",
+    "province": "Asti",
+    "region": "Piemonte",
+    "population": 73899,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cinisello Balsamo",
+    "code": "015077",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 71128,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lamezia Terme",
+    "code": "079160",
+    "sigla": "CZ",
+    "province": "Catanzaro",
+    "region": "Calabria",
+    "population": 70336,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ragusa",
+    "code": "088009",
+    "sigla": "RG",
+    "province": "Ragusa",
+    "region": "Sicilia",
+    "population": 69794,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cremona",
+    "code": "019036",
+    "sigla": "CR",
+    "province": "Cremona",
+    "region": "Lombardia",
+    "population": 69589,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Altamura",
+    "code": "072004",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 69529,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cosenza",
+    "code": "078045",
+    "sigla": "CS",
+    "province": "Cosenza",
+    "region": "Calabria",
+    "population": 69484,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Quartu Sant'Elena",
+    "code": "092051",
+    "sigla": "CA",
+    "province": "Cagliari",
+    "region": "Sardegna",
+    "population": 69296,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Trapani",
+    "code": "081021",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 69241,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Massa",
+    "code": "045010",
+    "sigla": "MS",
+    "province": "Massa-Carrara",
+    "region": "Toscana",
+    "population": 68856,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pavia",
+    "code": "018110",
+    "sigla": "PV",
+    "province": "Pavia",
+    "region": "Lombardia",
+    "population": 68280,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Imola",
+    "code": "037032",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 67892,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fiumicino",
+    "code": "058120",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 67626,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Carpi",
+    "code": "036005",
+    "sigla": "MO",
+    "province": "Modena",
+    "region": "Emilia-Romagna",
+    "population": 67268,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Aprilia",
+    "code": "059001",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 66979,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "L'Aquila",
+    "code": "066049",
+    "sigla": "AQ",
+    "province": "L'Aquila",
+    "region": "Abruzzo",
+    "population": 66964,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Potenza",
+    "code": "076063",
+    "sigla": "PZ",
+    "province": "Potenza",
+    "region": "Basilicata",
+    "population": 66777,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Castellammare di Stabia",
+    "code": "063024",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 65944,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Carrara",
+    "code": "045003",
+    "sigla": "MS",
+    "province": "Massa-Carrara",
+    "region": "Toscana",
+    "population": 64689,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Afragola",
+    "code": "063002",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 63820,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Viterbo",
+    "code": "056059",
+    "sigla": "VT",
+    "province": "Viterbo",
+    "region": "Lazio",
+    "population": 63209,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fano",
+    "code": "041013",
+    "sigla": "PU",
+    "province": "Pesaro e Urbino",
+    "region": "Marche",
+    "population": 62901,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Viareggio",
+    "code": "046033",
+    "sigla": "LU",
+    "province": "Lucca",
+    "region": "Toscana",
+    "population": 61857,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Caltanissetta",
+    "code": "085004",
+    "sigla": "CL",
+    "province": "Caltanissetta",
+    "region": "Sicilia",
+    "population": 61711,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Benevento",
+    "code": "062008",
+    "sigla": "BN",
+    "province": "Benevento",
+    "region": "Campania",
+    "population": 61489,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vittoria",
+    "code": "088012",
+    "sigla": "RG",
+    "province": "Ragusa",
+    "region": "Sicilia",
+    "population": 61006,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Savona",
+    "code": "009056",
+    "sigla": "SV",
+    "province": "Savona",
+    "region": "Liguria",
+    "population": 60661,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Molfetta",
+    "code": "072029",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 60433,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vigevano",
+    "code": "018177",
+    "sigla": "PV",
+    "province": "Pavia",
+    "region": "Lombardia",
+    "population": 60109,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Matera",
+    "code": "077014",
+    "sigla": "MT",
+    "province": "Matera",
+    "region": "Basilicata",
+    "population": 59796,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Crotone",
+    "code": "101010",
+    "sigla": "KR",
+    "province": "Crotone",
+    "region": "Calabria",
+    "population": 58881,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Agrigento",
+    "code": "084001",
+    "sigla": "AG",
+    "province": "Agrigento",
+    "region": "Sicilia",
+    "population": 58323,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Faenza",
+    "code": "039010",
+    "sigla": "RA",
+    "province": "Ravenna",
+    "region": "Emilia-Romagna",
+    "population": 57748,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Legnano",
+    "code": "015118",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 57647,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Marano di Napoli",
+    "code": "063041",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 57204,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cerignola",
+    "code": "071020",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 56653,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Acerra",
+    "code": "063001",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 56465,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pomezia",
+    "code": "058079",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 56372,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bitonto",
+    "code": "072011",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 56258,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Manfredonia",
+    "code": "071029",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 56257,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Foligno",
+    "code": "054018",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 56045,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Moncalieri",
+    "code": "001156",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 55875,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Trani",
+    "code": "110009",
+    "sigla": "BT",
+    "province": "Barletta-Andria-Trani",
+    "region": "Puglia",
+    "population": 55842,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Portici",
+    "code": "063059",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 55765,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cuneo",
+    "code": "004078",
+    "sigla": "CN",
+    "province": "Cuneo",
+    "region": "Piemonte",
+    "population": 55013,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Severo",
+    "code": "071051",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 54906,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bisceglie",
+    "code": "110003",
+    "sigla": "BT",
+    "province": "Barletta-Andria-Trani",
+    "region": "Puglia",
+    "population": 54678,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Teramo",
+    "code": "067041",
+    "sigla": "TE",
+    "province": "Teramo",
+    "region": "Abruzzo",
+    "population": 54294,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bagheria",
+    "code": "082006",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 54257,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Avellino",
+    "code": "064008",
+    "sigla": "AV",
+    "province": "Avellino",
+    "region": "Campania",
+    "population": 54222,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sanremo",
+    "code": "008055",
+    "sigla": "IM",
+    "province": "Imperia",
+    "region": "Liguria",
+    "population": 54137,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Modica",
+    "code": "088006",
+    "sigla": "RG",
+    "province": "Ragusa",
+    "region": "Sicilia",
+    "population": 53959,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cava de' Tirreni",
+    "code": "065037",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 53885,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ercolano",
+    "code": "063064",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 53677,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Olbia",
+    "code": "090047",
+    "sigla": "SS",
+    "province": "Sassari",
+    "region": "Sardegna",
+    "population": 53307,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Tivoli",
+    "code": "058104",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 52910,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Siena",
+    "code": "052032",
+    "sigla": "SI",
+    "province": "Siena",
+    "region": "Toscana",
+    "population": 52839,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Aversa",
+    "code": "061005",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 52830,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Velletri",
+    "code": "058111",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 52295,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Chieti",
+    "code": "069022",
+    "sigla": "CH",
+    "province": "Chieti",
+    "region": "Abruzzo",
+    "population": 51484,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Acireale",
+    "code": "087004",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 51456,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Civitavecchia",
+    "code": "058032",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 51229,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pordenone",
+    "code": "093033",
+    "sigla": "PN",
+    "province": "Pordenone",
+    "region": "Friuli-Venezia Giulia",
+    "population": 50583,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Battipaglia",
+    "code": "065014",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 50464,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gallarate",
+    "code": "012070",
+    "sigla": "VA",
+    "province": "Varese",
+    "region": "Lombardia",
+    "population": 50456,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Montesilvano",
+    "code": "068024",
+    "sigla": "PE",
+    "province": "Pescara",
+    "region": "Abruzzo",
+    "population": 50413,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rovigo",
+    "code": "029041",
+    "sigla": "RO",
+    "province": "Rovigo",
+    "region": "Veneto",
+    "population": 50164,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rho",
+    "code": "015182",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 50052,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Scafati",
+    "code": "065137",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 50013,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mazara del Vallo",
+    "code": "081012",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 49995,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ascoli Piceno",
+    "code": "044007",
+    "sigla": "AP",
+    "province": "Ascoli Piceno",
+    "region": "Marche",
+    "population": 49958,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Scandicci",
+    "code": "048041",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 49765,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Chioggia",
+    "code": "027008",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 49735,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Anzio",
+    "code": "058007",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 49731,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Collegno",
+    "code": "001090",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 49083,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Martina Franca",
+    "code": "073013",
+    "sigla": "TA",
+    "province": "Taranto",
+    "region": "Puglia",
+    "population": 49009,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Campobasso",
+    "code": "070006",
+    "sigla": "CB",
+    "province": "Campobasso",
+    "region": "Molise",
+    "population": 48747,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rivoli",
+    "code": "001219",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 48632,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Casalnuovo di Napoli",
+    "code": "063017",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 48621,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Monopoli",
+    "code": "072030",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 48529,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Corato",
+    "code": "072020",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 48072,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Paternò",
+    "code": "087033",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 47870,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nichelino",
+    "code": "001164",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 47851,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sesto Fiorentino",
+    "code": "048043",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 47742,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Misterbianco",
+    "code": "087029",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 47356,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Benedetto del Tronto",
+    "code": "044066",
+    "sigla": "AP",
+    "province": "Ascoli Piceno",
+    "region": "Marche",
+    "population": 46963,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Settimo Torinese",
+    "code": "001265",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 46873,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lecco",
+    "code": "097042",
+    "sigla": "LC",
+    "province": "Lecco",
+    "region": "Lombardia",
+    "population": 46705,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mantova",
+    "code": "020030",
+    "sigla": "MN",
+    "province": "Mantova",
+    "region": "Lombardia",
+    "population": 46649,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Frosinone",
+    "code": "060038",
+    "sigla": "FR",
+    "province": "Frosinone",
+    "region": "Lazio",
+    "population": 46649,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nocera Inferiore",
+    "code": "065078",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 46563,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Paderno Dugnano",
+    "code": "015166",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 46562,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Empoli",
+    "code": "048014",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 46541,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vercelli",
+    "code": "002158",
+    "sigla": "VC",
+    "province": "Vercelli",
+    "region": "Piemonte",
+    "population": 46308,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rieti",
+    "code": "057059",
+    "sigla": "RI",
+    "province": "Rieti",
+    "region": "Lazio",
+    "population": 46187,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cologno Monzese",
+    "code": "015081",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 45786,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giorgio a Cremano",
+    "code": "063067",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 45523,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nettuno",
+    "code": "058072",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 45460,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Alcamo",
+    "code": "081001",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 45314,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Capannori",
+    "code": "046007",
+    "sigla": "LU",
+    "province": "Lucca",
+    "region": "Toscana",
+    "population": 44898,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Senigallia",
+    "code": "042045",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 44361,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Terracina",
+    "code": "059032",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 44233,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ardea",
+    "code": "058117",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 44202,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cascina",
+    "code": "050008",
+    "sigla": "PI",
+    "province": "Pisa",
+    "region": "Toscana",
+    "population": 43833,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Biella",
+    "code": "096004",
+    "sigla": "BI",
+    "province": "Biella",
+    "region": "Piemonte",
+    "population": 43818,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gravina in Puglia",
+    "code": "072023",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 43614,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Torre Annunziata",
+    "code": "063083",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 43521,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lodi",
+    "code": "098031",
+    "sigla": "LO",
+    "province": "Lodi",
+    "region": "Lombardia",
+    "population": 43332,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Seregno",
+    "code": "108039",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 43001,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bassano del Grappa",
+    "code": "024012",
+    "sigla": "VI",
+    "province": "Vicenza",
+    "region": "Veneto",
+    "population": 42984,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Campi Bisenzio",
+    "code": "048006",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 42929,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Imperia",
+    "code": "008031",
+    "sigla": "IM",
+    "province": "Imperia",
+    "region": "Liguria",
+    "population": 42322,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lissone",
+    "code": "108028",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 42220,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Macerata",
+    "code": "043023",
+    "sigla": "MC",
+    "province": "Macerata",
+    "region": "Marche",
+    "population": 42019,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Barcellona Pozzo di Gotto",
+    "code": "083005",
+    "sigla": "ME",
+    "province": "Messina",
+    "region": "Sicilia",
+    "population": 41632,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sciacca",
+    "code": "084041",
+    "sigla": "AG",
+    "province": "Agrigento",
+    "region": "Sicilia",
+    "population": 40899,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Avezzano",
+    "code": "066006",
+    "sigla": "AQ",
+    "province": "L'Aquila",
+    "region": "Abruzzo",
+    "population": 40744,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Donà di Piave",
+    "code": "027033",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 40646,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Alghero",
+    "code": "090003",
+    "sigla": "SS",
+    "province": "Sassari",
+    "region": "Sardegna",
+    "population": 40641,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Desio",
+    "code": "108023",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 40397,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Jesi",
+    "code": "042021",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 40303,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Marcianise",
+    "code": "061049",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 40297,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Civitanova Marche",
+    "code": "043013",
+    "sigla": "MC",
+    "province": "Macerata",
+    "region": "Marche",
+    "population": 40217,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pomigliano d'Arco",
+    "code": "063057",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 40083,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Città di Castello",
+    "code": "054013",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 40064,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rozzano",
+    "code": "015189",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 39983,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sassuolo",
+    "code": "036040",
+    "sigla": "MO",
+    "province": "Modena",
+    "region": "Emilia-Romagna",
+    "population": 39885,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Monterotondo",
+    "code": "058065",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 39502,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fasano",
+    "code": "074007",
+    "sigla": "BR",
+    "province": "Brindisi",
+    "region": "Puglia",
+    "population": 39482,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Maddaloni",
+    "code": "061048",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 39409,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Quarto",
+    "code": "063063",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 39221,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Schio",
+    "code": "024100",
+    "sigla": "VI",
+    "province": "Vicenza",
+    "region": "Veneto",
+    "population": 39131,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vasto",
+    "code": "069099",
+    "sigla": "CH",
+    "province": "Chieti",
+    "region": "Abruzzo",
+    "population": 38747,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cantù",
+    "code": "013041",
+    "sigla": "CO",
+    "province": "Como",
+    "region": "Lombardia",
+    "population": 38717,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Saronno",
+    "code": "012119",
+    "sigla": "VA",
+    "province": "Varese",
+    "region": "Lombardia",
+    "population": 38598,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mira",
+    "code": "027023",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 38552,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Albano Laziale",
+    "code": "058003",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 38433,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Spoleto",
+    "code": "054051",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 38429,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Marino",
+    "code": "058057",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 38245,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Eboli",
+    "code": "065050",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 38219,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Voghera",
+    "code": "018182",
+    "sigla": "PV",
+    "province": "Pavia",
+    "region": "Lombardia",
+    "population": 38174,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Licata",
+    "code": "084021",
+    "sigla": "AG",
+    "province": "Agrigento",
+    "region": "Sicilia",
+    "population": 38125,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Caltagirone",
+    "code": "087011",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 38123,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Monreale",
+    "code": "082049",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 38018,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rovereto",
+    "code": "022161",
+    "sigla": "TN",
+    "province": "Trento",
+    "region": "Trentino-Alto Adige/Südtirol",
+    "population": 37754,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Caivano",
+    "code": "063011",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 37654,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Modugno",
+    "code": "072027",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 37532,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Merano",
+    "code": "021051",
+    "sigla": "BZ",
+    "province": "Bolzano/Bozen",
+    "region": "Trentino-Alto Adige/Südtirol",
+    "population": 37368,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ladispoli",
+    "code": "058116",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 37293,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ciampino",
+    "code": "058118",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 37235,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Grugliasco",
+    "code": "001120",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 37194,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fondi",
+    "code": "059007",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 37180,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fermo",
+    "code": "109006",
+    "sigla": "FM",
+    "province": "Fermo",
+    "region": "Marche",
+    "population": 37016,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cesano Maderno",
+    "code": "108019",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 37010,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Francavilla Fontana",
+    "code": "074008",
+    "sigla": "BR",
+    "province": "Brindisi",
+    "region": "Puglia",
+    "population": 36955,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Melito di Napoli",
+    "code": "063045",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 36933,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nuoro",
+    "code": "091051",
+    "sigla": "NU",
+    "province": "Nuoro",
+    "region": "Sardegna",
+    "population": 36674,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Formia",
+    "code": "059008",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 36331,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Augusta",
+    "code": "089001",
+    "sigla": "SR",
+    "province": "Siracusa",
+    "region": "Sicilia",
+    "population": 36169,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giuliano Milanese",
+    "code": "015195",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 35971,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Chieri",
+    "code": "001078",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 35962,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lanciano",
+    "code": "069046",
+    "sigla": "CH",
+    "province": "Chieti",
+    "region": "Abruzzo",
+    "population": 35921,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Carini",
+    "code": "082021",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 35681,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Belluno",
+    "code": "025006",
+    "sigla": "BL",
+    "province": "Belluno",
+    "region": "Veneto",
+    "population": 35591,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bollate",
+    "code": "015027",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 35557,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cisterna di Latina",
+    "code": "059005",
+    "sigla": "LT",
+    "province": "Latina",
+    "region": "Lazio",
+    "population": 35551,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Adrano",
+    "code": "087006",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 35549,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gorizia",
+    "code": "031007",
+    "sigla": "GO",
+    "province": "Gorizia",
+    "region": "Friuli-Venezia Giulia",
+    "population": 35212,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cerveteri",
+    "code": "058029",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 35207,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Casalecchio di Reno",
+    "code": "037011",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 35173,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pioltello",
+    "code": "015175",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 35066,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Arzano",
+    "code": "063005",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 34933,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Canicattì",
+    "code": "084011",
+    "sigla": "AG",
+    "province": "Agrigento",
+    "region": "Sicilia",
+    "population": 34863,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pinerolo",
+    "code": "001191",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 34854,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Casale Monferrato",
+    "code": "006039",
+    "sigla": "AL",
+    "province": "Alessandria",
+    "region": "Piemonte",
+    "population": 34812,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cento",
+    "code": "038004",
+    "sigla": "FE",
+    "province": "Ferrara",
+    "region": "Emilia-Romagna",
+    "population": 34723,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pagani",
+    "code": "065088",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 34671,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Somma Vesuviana",
+    "code": "063079",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 34592,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Riccione",
+    "code": "099013",
+    "sigla": "RN",
+    "province": "Rimini",
+    "region": "Emilia-Romagna",
+    "population": 34536,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mugnano di Napoli",
+    "code": "063048",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 34504,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Conegliano",
+    "code": "026021",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 34428,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Piombino",
+    "code": "049012",
+    "sigla": "LI",
+    "province": "Livorno",
+    "region": "Toscana",
+    "population": 34419,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lucera",
+    "code": "071028",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 34333,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sant'Antimo",
+    "code": "063073",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 34107,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Aosta",
+    "code": "007003",
+    "sigla": "AO",
+    "province": "Valle d'Aosta/Vallée d'Aoste",
+    "region": "Valle d'Aosta/Vallée d'Aoste",
+    "population": 34102,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Osimo",
+    "code": "042034",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 33991,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nola",
+    "code": "063050",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 33979,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Limbiate",
+    "code": "108027",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 33903,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Venaria Reale",
+    "code": "001292",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 33741,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Corsico",
+    "code": "015093",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 33669,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Formigine",
+    "code": "036015",
+    "sigla": "MO",
+    "province": "Modena",
+    "region": "Emilia-Romagna",
+    "population": 33667,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cassino",
+    "code": "060019",
+    "sigla": "FR",
+    "province": "Frosinone",
+    "region": "Lazio",
+    "population": 33658,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rende",
+    "code": "078102",
+    "sigla": "CS",
+    "province": "Cosenza",
+    "region": "Calabria",
+    "population": 33555,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Segrate",
+    "code": "015205",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 33519,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vibo Valentia",
+    "code": "102047",
+    "sigla": "VV",
+    "province": "Vibo Valentia",
+    "region": "Calabria",
+    "population": 33357,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Brugherio",
+    "code": "108012",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 33170,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Crema",
+    "code": "019035",
+    "sigla": "CR",
+    "province": "Cremona",
+    "region": "Lombardia",
+    "population": 33091,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Favara",
+    "code": "084017",
+    "sigla": "AG",
+    "province": "Agrigento",
+    "region": "Sicilia",
+    "population": 32972,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Castelfranco Veneto",
+    "code": "026012",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 32894,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Termoli",
+    "code": "070078",
+    "sigla": "CB",
+    "province": "Campobasso",
+    "region": "Molise",
+    "population": 32793,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Villafranca di Verona",
+    "code": "023096",
+    "sigla": "VR",
+    "province": "Verona",
+    "region": "Veneto",
+    "population": 32747,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Angri",
+    "code": "065007",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 32576,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Santa Maria Capua Vetere",
+    "code": "061083",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 32503,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Grottaglie",
+    "code": "073008",
+    "sigla": "TA",
+    "province": "Taranto",
+    "region": "Puglia",
+    "population": 32503,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gubbio",
+    "code": "054024",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 32432,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Massafra",
+    "code": "073015",
+    "sigla": "TA",
+    "province": "Taranto",
+    "region": "Puglia",
+    "population": 32381,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Milazzo",
+    "code": "083049",
+    "sigla": "ME",
+    "province": "Messina",
+    "region": "Sicilia",
+    "population": 32146,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Camaiore",
+    "code": "046005",
+    "sigla": "LU",
+    "province": "Lucca",
+    "region": "Toscana",
+    "population": 32083,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lugo",
+    "code": "039012",
+    "sigla": "RA",
+    "province": "Ravenna",
+    "region": "Emilia-Romagna",
+    "population": 32062,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ostuni",
+    "code": "074012",
+    "sigla": "BR",
+    "province": "Brindisi",
+    "region": "Puglia",
+    "population": 31860,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Castelvetrano",
+    "code": "081006",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 31824,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rosignano Marittimo",
+    "code": "049017",
+    "sigla": "LI",
+    "province": "Livorno",
+    "region": "Toscana",
+    "population": 31752,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Nardò",
+    "code": "075052",
+    "sigla": "LE",
+    "province": "Lecce",
+    "region": "Puglia",
+    "population": 31688,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Castelfranco Emilia",
+    "code": "036006",
+    "sigla": "MO",
+    "province": "Modena",
+    "region": "Emilia-Romagna",
+    "population": 31656,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Partinico",
+    "code": "082054",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 31401,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Avola",
+    "code": "089002",
+    "sigla": "SR",
+    "province": "Siracusa",
+    "region": "Sicilia",
+    "population": 31328,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Oristano",
+    "code": "095038",
+    "sigla": "OR",
+    "province": "Oristano",
+    "region": "Sardegna",
+    "population": 31155,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giuliano Terme",
+    "code": "050031",
+    "sigla": "PI",
+    "province": "Pisa",
+    "region": "Toscana",
+    "population": 31103,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Lazzaro di Savena",
+    "code": "037054",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 31091,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sarno",
+    "code": "065135",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 31030,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fabriano",
+    "code": "042017",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 31020,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Abbiategrasso",
+    "code": "015002",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 30994,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Donato Milanese",
+    "code": "015192",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 30992,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Manduria",
+    "code": "073012",
+    "sigla": "TA",
+    "province": "Taranto",
+    "region": "Puglia",
+    "population": 30921,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Alba",
+    "code": "004003",
+    "sigla": "CN",
+    "province": "Cuneo",
+    "region": "Piemonte",
+    "population": 30804,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Montebelluna",
+    "code": "026046",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 30765,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cernusco sul Naviglio",
+    "code": "015070",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 30697,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fonte Nuova",
+    "code": "058122",
+    "sigla": "RM",
+    "province": "Roma",
+    "region": "Lazio",
+    "population": 30572,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Canosa di Puglia",
+    "code": "110004",
+    "sigla": "BT",
+    "province": "Barletta-Andria-Trani",
+    "region": "Puglia",
+    "population": 30422,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Verbania",
+    "code": "103072",
+    "sigla": "VB",
+    "province": "Verbano-Cusio-Ossola",
+    "region": "Piemonte",
+    "population": 30332,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Marigliano",
+    "code": "063043",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 30247,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Frattamaggiore",
+    "code": "063032",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 30241,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Villaricca",
+    "code": "063087",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 30052,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mascalucia",
+    "code": "087024",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 29984,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gragnano",
+    "code": "063035",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 29509,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Valsamoggia",
+    "code": "037061",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 29427,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Rapallo",
+    "code": "010046",
+    "sigla": "GE",
+    "province": "Genova",
+    "region": "Liguria",
+    "population": 29226,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Comiso",
+    "code": "088003",
+    "sigla": "RG",
+    "province": "Ragusa",
+    "region": "Sicilia",
+    "population": 29184,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Poggibonsi",
+    "code": "052022",
+    "sigla": "SI",
+    "province": "Siena",
+    "region": "Toscana",
+    "population": 28952,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bra",
+    "code": "004029",
+    "sigla": "CN",
+    "province": "Cuneo",
+    "region": "Piemonte",
+    "population": 28935,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cervia",
+    "code": "039007",
+    "sigla": "RA",
+    "province": "Ravenna",
+    "region": "Emilia-Romagna",
+    "population": 28896,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Carbonia",
+    "code": "111009",
+    "sigla": "SU",
+    "province": "Sud Sardegna",
+    "region": "Sardegna",
+    "population": 28882,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Aci Catena",
+    "code": "087003",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 28749,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Selargius",
+    "code": "092068",
+    "sigla": "CA",
+    "province": "Cagliari",
+    "region": "Sardegna",
+    "population": 28684,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vittorio Veneto",
+    "code": "026092",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 28656,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Alatri",
+    "code": "060003",
+    "sigla": "FR",
+    "province": "Frosinone",
+    "region": "Lazio",
+    "population": 28609,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Carmagnola",
+    "code": "001059",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 28563,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Treviglio",
+    "code": "016219",
+    "sigla": "BG",
+    "province": "Bergamo",
+    "region": "Lombardia",
+    "population": 28410,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Giarre",
+    "code": "087017",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 28114,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pontedera",
+    "code": "050029",
+    "sigla": "PI",
+    "province": "Pisa",
+    "region": "Toscana",
+    "population": 28061,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Erice",
+    "code": "081008",
+    "sigla": "TP",
+    "province": "Trapani",
+    "region": "Sicilia",
+    "population": 28012,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cecina",
+    "code": "049007",
+    "sigla": "LI",
+    "province": "Livorno",
+    "region": "Toscana",
+    "population": 27992,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Niscemi",
+    "code": "085013",
+    "sigla": "CL",
+    "province": "Caltanissetta",
+    "region": "Sicilia",
+    "population": 27975,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Enna",
+    "code": "086009",
+    "sigla": "EN",
+    "province": "Enna",
+    "region": "Sicilia",
+    "population": 27894,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gioia del Colle",
+    "code": "072021",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 27889,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mesagne",
+    "code": "074010",
+    "sigla": "BR",
+    "province": "Brindisi",
+    "region": "Puglia",
+    "population": 27753,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Novi Ligure",
+    "code": "006114",
+    "sigla": "AL",
+    "province": "Alessandria",
+    "region": "Piemonte",
+    "population": 27682,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Iglesias",
+    "code": "111035",
+    "sigla": "SU",
+    "province": "Sud Sardegna",
+    "region": "Sardegna",
+    "population": 27674,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mogliano Veneto",
+    "code": "026043",
+    "sigla": "TV",
+    "province": "Treviso",
+    "region": "Veneto",
+    "population": 27608,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Miniato",
+    "code": "050032",
+    "sigla": "PI",
+    "province": "Pisa",
+    "region": "Toscana",
+    "population": 27585,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Misilmeri",
+    "code": "082048",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 27570,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giuseppe Vesuviano",
+    "code": "063068",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 27467,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Boscoreale",
+    "code": "063008",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 27457,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Assisi",
+    "code": "054001",
+    "sigla": "PG",
+    "province": "Perugia",
+    "region": "Umbria",
+    "population": 27377,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Chiavari",
+    "code": "010015",
+    "sigla": "GE",
+    "province": "Genova",
+    "region": "Liguria",
+    "population": 27338,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giovanni Rotondo",
+    "code": "071046",
+    "sigla": "FG",
+    "province": "Foggia",
+    "region": "Puglia",
+    "population": 27329,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sant'Anastasia",
+    "code": "063072",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 27296,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Galatina",
+    "code": "075029",
+    "sigla": "LE",
+    "province": "Lecce",
+    "region": "Puglia",
+    "population": 27214,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Putignano",
+    "code": "072036",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 27083,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mondragone",
+    "code": "061052",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 27070,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Monfalcone",
+    "code": "031012",
+    "sigla": "GO",
+    "province": "Gorizia",
+    "region": "Friuli-Venezia Giulia",
+    "population": 27041,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Triggiano",
+    "code": "072046",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 27007,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "San Giovanni in Persiceto",
+    "code": "037053",
+    "sigla": "BO",
+    "province": "Bologna",
+    "region": "Emilia-Romagna",
+    "population": 26992,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Terlizzi",
+    "code": "072043",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 26986,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Spinea",
+    "code": "027038",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 26862,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Desenzano del Garda",
+    "code": "017067",
+    "sigla": "BS",
+    "province": "Brescia",
+    "region": "Lombardia",
+    "population": 26793,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Santeramo in Colle",
+    "code": "072041",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 26770,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Falconara Marittima",
+    "code": "042018",
+    "sigla": "AN",
+    "province": "Ancona",
+    "region": "Marche",
+    "population": 26710,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bacoli",
+    "code": "063006",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 26648,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Assemini",
+    "code": "092003",
+    "sigla": "CA",
+    "province": "Cagliari",
+    "region": "Sardegna",
+    "population": 26620,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Parabiago",
+    "code": "015168",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 26617,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Valdagno",
+    "code": "024111",
+    "sigla": "VI",
+    "province": "Vicenza",
+    "region": "Veneto",
+    "population": 26575,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Gravina di Catania",
+    "code": "087019",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 26543,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Buccinasco",
+    "code": "015036",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 26503,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mirano",
+    "code": "027024",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 26456,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Belpasso",
+    "code": "087007",
+    "sigla": "CT",
+    "province": "Catania",
+    "region": "Sicilia",
+    "population": 26378,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Garbagnate Milanese",
+    "code": "015105",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 26262,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Sora",
+    "code": "060074",
+    "sigla": "FR",
+    "province": "Frosinone",
+    "region": "Lazio",
+    "population": 26247,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Termini Imerese",
+    "code": "082070",
+    "sigla": "PA",
+    "province": "Palermo",
+    "region": "Sicilia",
+    "population": 26201,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Tortona",
+    "code": "006174",
+    "sigla": "AL",
+    "province": "Alessandria",
+    "region": "Piemonte",
+    "population": 25986,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Scicli",
+    "code": "088011",
+    "sigla": "RG",
+    "province": "Ragusa",
+    "region": "Sicilia",
+    "population": 25922,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Chivasso",
+    "code": "001082",
+    "sigla": "TO",
+    "province": "Torino",
+    "region": "Piemonte",
+    "population": 25914,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bresso",
+    "code": "015032",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 25712,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Noicattaro",
+    "code": "072032",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 25710,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Conversano",
+    "code": "072019",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 25683,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Ruvo di Puglia",
+    "code": "072038",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 25662,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Arzignano",
+    "code": "024008",
+    "sigla": "VI",
+    "province": "Vicenza",
+    "region": "Veneto",
+    "population": 25589,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Mola di Bari",
+    "code": "072028",
+    "sigla": "BA",
+    "province": "Bari",
+    "region": "Puglia",
+    "population": 25567,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fidenza",
+    "code": "034014",
+    "sigla": "PR",
+    "province": "Parma",
+    "region": "Emilia-Romagna",
+    "population": 25521,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pompei",
+    "code": "063058",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 25440,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Cesenatico",
+    "code": "040008",
+    "sigla": "FC",
+    "province": "Forlì-Cesena",
+    "region": "Emilia-Romagna",
+    "population": 25412,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Bagno a Ripoli",
+    "code": "048001",
+    "sigla": "FI",
+    "province": "Firenze",
+    "region": "Toscana",
+    "population": 25403,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Quarrata",
+    "code": "047017",
+    "sigla": "PT",
+    "province": "Pistoia",
+    "region": "Toscana",
+    "population": 25378,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Porto Sant'Elpidio",
+    "code": "109034",
+    "sigla": "FM",
+    "province": "Fermo",
+    "region": "Marche",
+    "population": 25324,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Vimercate",
+    "code": "108050",
+    "sigla": "MB",
+    "province": "Monza e della Brianza",
+    "region": "Lombardia",
+    "population": 25309,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Portogruaro",
+    "code": "027029",
+    "sigla": "VE",
+    "province": "Venezia",
+    "region": "Veneto",
+    "population": 25140,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Pontecagnano Faiano",
+    "code": "065099",
+    "sigla": "SA",
+    "province": "Salerno",
+    "region": "Campania",
+    "population": 25096,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Lainate",
+    "code": "015116",
+    "sigla": "MI",
+    "province": "Milano",
+    "region": "Lombardia",
+    "population": 25054,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Legnago",
+    "code": "023044",
+    "sigla": "VR",
+    "province": "Verona",
+    "region": "Veneto",
+    "population": 24992,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Roseto degli Abruzzi",
+    "code": "067037",
+    "sigla": "TE",
+    "province": "Teramo",
+    "region": "Abruzzo",
+    "population": 24940,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Correggio",
+    "code": "035020",
+    "sigla": "RE",
+    "province": "Reggio nell'Emilia",
+    "region": "Emilia-Romagna",
+    "population": 24825,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Orta di Atella",
+    "code": "061053",
+    "sigla": "CE",
+    "province": "Caserta",
+    "region": "Campania",
+    "population": 24796,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Scandiano",
+    "code": "035040",
+    "sigla": "RE",
+    "province": "Reggio nell'Emilia",
+    "region": "Emilia-Romagna",
+    "population": 24792,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Qualiano",
+    "code": "063062",
+    "sigla": "NA",
+    "province": "Napoli",
+    "region": "Campania",
+    "population": 24744,
+    "lat": null,
+    "lon": null
+  },
+  {
+    "name": "Fossano",
+    "code": "004089",
+    "sigla": "CN",
+    "province": "Cuneo",
+    "region": "Piemonte",
+    "population": 24710,
+    "lat": null,
+    "lon": null
+  }
+]

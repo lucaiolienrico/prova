@@ -1,7 +1,7 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-01 09:25
+Generato: 2026-09-01 11:27
 ============================================================
-Prospect totali: .............. 189
+Prospect totali: .............. 189 (manuali 189, H24 0)
 Con contatto diretto ......... 135 (71%)
 Con sito web ................. 59
 Shortlist A+/A/B ............. 35

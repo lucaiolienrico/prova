@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# File temporanei della pipeline
+prospecting/candidates/archive.json.tmp
+prospecting/queue/cities.json.tmp
+prospecting/state/progress.json.tmp
