@@ -15,7 +15,11 @@ RAW = sorted(glob.glob(os.path.join(BASE, "raw", "*.json")))
 OUT_DIR = os.path.join(BASE, "output")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-CANONICAL_CATEGORIES = [
+# ---------- CONFIG (tutto modificabile da prospecting/config.json) ----------
+CFG_PATH = os.path.join(BASE, "config.json")
+CFG = json.load(open(CFG_PATH, encoding="utf-8")) if os.path.exists(CFG_PATH) else {}
+
+CANONICAL_CATEGORIES = CFG.get("categories", [
     "Veterinari", "Cliniche veterinarie", "Ambulatori veterinari", "Ospedali veterinari",
     "Canili", "Rifugi per animali", "Associazioni animaliste", "Allevatori",
     "Allevamenti professionali", "Educatori cinofili", "Addestratori", "Centri cinofili",
@@ -23,19 +27,27 @@ CANONICAL_CATEGORIES = [
     "Pensioni per animali", "Pet hotel", "Dog sitter", "Cat sitter",
     "Professionisti del comportamento animale", "Fisioterapisti veterinari",
     "Servizi di pet care", "Agenzie e servizi dedicati agli animali domestici",
-]
+])
 
-BASE_SCORE = {
-    "Ospedali veterinari": 32, "Cliniche veterinarie": 30, "Ambulatori veterinari": 28,
-    "Veterinari": 28, "Fisioterapisti veterinari": 26,
-    "Professionisti del comportamento animale": 26, "Pet hotel": 27,
-    "Pensioni per animali": 26, "Centri cinofili": 26, "Scuole per cani": 26,
-    "Educatori cinofili": 24, "Addestratori": 24, "Toelettature": 23,
-    "Pet shop": 23, "Agenzie e servizi dedicati agli animali domestici": 22,
-    "Allevamenti professionali": 22, "Negozi per animali": 20, "Allevatori": 20,
-    "Servizi di pet care": 20, "Canili": 18, "Rifugi per animali": 18,
-    "Associazioni animaliste": 18, "Dog sitter": 18, "Cat sitter": 18,
-}
+BASE_SCORE = dict(CFG.get("base_score", {}))
+SCORE_DEFAULT = BASE_SCORE.pop("_default", 20)
+
+W = dict({
+    "website": 14, "email": 14, "phone": 12, "instagram_url": 8, "facebook_url": 7,
+    "address": 8, "contact_name": 6, "subcategory": 3, "digital_channel": 4,
+    "rating_reviews": 6, "social_reach": 6, "updated_recent": 3,
+    "chain_group_penalty": -12, "unverified_penalty_each": 3, "unverified_penalty_cap": 2,
+    "old_source_penalty": 3,
+})
+W.update(CFG.get("weights", {}))
+
+PRIO = CFG.get("priority_thresholds", {"A+": 90, "A": 80, "B": 65, "C": 50})
+S_MIN, S_MAX = CFG.get("score_min", 5), CFG.get("score_max", 100)
+OUT_F = CFG.get("output", {})
+F_JSON = OUT_F.get("json", "petnote_prospects.json")
+F_CSV = OUT_F.get("csv", "petnote_prospects.csv")
+F_SHORT = OUT_F.get("shortlist", "shortlist_AB.csv")
+F_SUM = OUT_F.get("riepilogo", "riepilogo.txt")
 
 STOPWORDS = {"d'", "de", "del", "della", "delle", "di", "da", "dei", "e", "a", "in", "al"}
 CITY_FIX = {
@@ -261,48 +273,57 @@ def build(r):
     fields = ["business_name","category","subcategory","city","province","region","address","website","email","phone","instagram_url","facebook_url","contact_name"]
     out["data_quality"] = round(100 * sum(1 for f in fields if out[f]) / len(fields))
 
-    sc = BASE_SCORE.get(out["category"], 20)
-    if out["website"]: sc += 14
-    if out["email"]: sc += 14
-    if out["phone"]: sc += 12
-    if out["instagram_url"]: sc += 8
-    if out["facebook_url"]: sc += 7
-    if out["address"]: sc += 8
-    if out["contact_name"]: sc += 6
-    if out["subcategory"]: sc += 3
+    sc = BASE_SCORE.get(out["category"], SCORE_DEFAULT)
+    if out["website"]: sc += W["website"]
+    if out["email"]: sc += W["email"]
+    if out["phone"]: sc += W["phone"]
+    if out["instagram_url"]: sc += W["instagram_url"]
+    if out["facebook_url"]: sc += W["facebook_url"]
+    if out["address"]: sc += W["address"]
+    if out["contact_name"]: sc += W["contact_name"]
+    if out["subcategory"]: sc += W["subcategory"]
     blob = " ".join(str(out.get(k) or "") for k in ("subcategory","notes")).lower()
     raw_other = (r.get("other") or "").lower(); raw_desc = (r.get("desc") or "").lower()
     everything = blob + " " + raw_other + " " + raw_desc
     if re.search(r"whatsapp|online|consegn|ordina e ritira|prenotaz", everything):
-        sc += 4
+        sc += W["digital_channel"]
     if re.search(r"4,\d|4\.\d|5,0|5\.0", everything) and re.search(r"recension|rating", everything):
-        sc += 6
+        sc += W["rating_reviews"]
     if re.search(r"\d{3,}[^.]{0,30}(like|follower|recension)|[0-9]{1,2}\.[0-9]{3} (like|recensioni|follower)|16\.000", everything):
-        sc += 6
+        sc += W["social_reach"]
     if re.search(r"20(24|25|26)", everything):
-        sc += 3
+        sc += W["updated_recent"]
     if "catena" in everything or "insegna" in everything or "corporate" in everything:
-        sc -= 12
+        sc += W["chain_group_penalty"]
     pen = everything.count("da verificare") + everything.count("da confermare") + everything.count("da integrare")
-    sc -= min(pen, 2) * 3
+    sc -= min(pen, W["unverified_penalty_cap"]) * W["unverified_penalty_each"]
     if "fonte del 2016" in everything or "fonte del 2018" in everything:
-        sc -= 3
-    out["score"] = max(5, min(100, sc))
+        sc -= W["old_source_penalty"]
+    out["score"] = max(S_MIN, min(S_MAX, sc))
     s = out["score"]
-    out["priority"] = "A+" if s >= 90 else "A" if s >= 80 else "B" if s >= 65 else "C" if s >= 50 else "D"
+    out["priority"] = "A+" if s >= PRIO["A+"] else "A" if s >= PRIO["A"] else "B" if s >= PRIO["B"] else "C" if s >= PRIO["C"] else "D"
     return out
 
 results = [build(r) for r in finals]
 results.sort(key=lambda x: ((x["category"] or ""), (x["region"] or "~~~"), (x["province"] or "~~"), (x["city"] or "~~~"), -x["score"]))
 
-with open(os.path.join(OUT_DIR, "petnote_prospects.json"), "w", encoding="utf-8") as f:
+with open(os.path.join(OUT_DIR, F_JSON), "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 
-with open(os.path.join(OUT_DIR, "petnote_prospects.csv"), "w", encoding="utf-8", newline="") as f:
+with open(os.path.join(OUT_DIR, F_CSV), "w", encoding="utf-8", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(results[0].keys()), delimiter=";")
     w.writeheader()
     for r in results:
         w.writerow({k: ("" if v is None else v) for k, v in r.items()})
+
+# ---------- SHORTLIST OPERATIVA (A+/A/B, pronta per l'azione commerciale) ----------
+short = sorted([r for r in results if r["priority"] in ("A+", "A", "B")], key=lambda x: -x["score"])
+with open(os.path.join(OUT_DIR, F_SHORT), "w", encoding="utf-8", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=list(results[0].keys()), delimiter=";")
+    w.writeheader()
+    for r in short:
+        w.writerow({k: ("" if v is None else v) for k, v in r.items()})
+print(f"Shortlist operativa ({F_SHORT}): {len(short)} prospect (A+/A/B)")
 
 # ---------- STATS ----------
 from collections import Counter
@@ -321,3 +342,33 @@ print("Priorita':", dict(by_prio))
 print("Regioni coperte:", len([k for k in by_reg if k]), dict(sorted(by_reg.items(), key=lambda x: -x[1])))
 print(f"Comuni/localita' distinti: {len(cities)}")
 print("Per categoria:", dict(sorted(by_cat.items(), key=lambda x: -x[1])))
+
+# ---------- RIEPILOGO TESTUALE (output/riepilogo.txt) ----------
+import datetime
+lines = []
+lines.append("PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO")
+lines.append("Generato: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+lines.append("=" * 60)
+lines.append(f"Prospect totali: .............. {n}")
+lines.append(f"Con contatto diretto ......... {with_contact} ({100*with_contact//n}%)")
+lines.append(f"Con sito web ................. {with_site}")
+lines.append(f"Shortlist A+/A/B ............. {len(short)}")
+lines.append(f"Comuni/localita' distinti .... {len(cities)}")
+lines.append("")
+lines.append("PRIORITA': " + ", ".join(f"{k}={by_prio.get(k,0)}" for k in ("A+","A","B","C","D")))
+lines.append("")
+lines.append("PER REGIONE:")
+for k, v in sorted(by_reg.items(), key=lambda x: -x[1]):
+    reg_name = k or "(senza regione)"
+    lines.append(f"  {reg_name:<22} {v}")
+lines.append("")
+lines.append("PER CATEGORIA:")
+for k, v in sorted(by_cat.items(), key=lambda x: -x[1]):
+    lines.append(f"  {k:<46} {v}")
+lines.append("")
+lines.append("TOP 15 PROSPECT PER SCORE:")
+for r in sorted(results, key=lambda x: -x["score"])[:15]:
+    lines.append(f"  {r['score']:>3} {r['priority']:<2}  {r['business_name'][:52]:<52} {r['city'] or '-':<20} {r['category']}")
+with open(os.path.join(OUT_DIR, F_SUM), "w", encoding="utf-8") as f:
+    f.write("\n".join(lines) + "\n")
+print(f"Riepilogo scritto in {F_SUM}")

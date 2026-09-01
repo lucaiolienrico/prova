@@ -12,26 +12,21 @@ Sessione corrente: prima tranche operativa (10 ondate di ricerca), focalizzata s
 
 ```
 prospecting/
-├── README.md                    ← questo file (metodo, rubriche, compliance)
+├── README.md                    ← metodo, rubriche, compliance
 ├── registry.md                  ← registro ricerca continua (categoria × città completate)
+├── REPORT_USO.md                ← GUIDA OPERATIVA: come usare il database
+├── config.json                  ← parametri pipeline (categorie, pesi scoring, soglie, nomi output)
 ├── process.py                   ← pipeline: normalizza → deduplica → scoring → output
 ├── raw/                         ← estratti grezzi per ondata (fonte primaria dichiarata per ogni riga)
-│   ├── wave01_altamura.json
-│   ├── wave02_faenza.json
-│   ├── wave03_empoli.json
-│   ├── wave04_alba.json
-│   ├── wave05_acireale.json
-│   ├── wave06_quartu.json
-│   ├── wave07_bassano.json
-│   ├── wave08_tivoli.json
-│   ├── wave09_campobasso_tropea.json
-│   └── wave10_roma_ospedali.json
-└── output/
+│   ├── wave01_altamura.json     ... wave10_roma_ospedali.json
+└── output/                      ← tutto rigenerato da process.py
     ├── petnote_prospects.json   ← DATABASE FINALE (schema completo, null per dati mancanti)
-    └── petnote_prospects.csv    ← stessa vista, per fogli di calcolo / CRM
+    ├── petnote_prospects.csv    ← stessa vista, per fogli di calcolo / CRM (delimitatore ";")
+    ├── shortlist_AB.csv         ← SOLO prospect A+/A/B, ordinati per score: la lista d'azione
+    └── riepilogo.txt            ← statistiche automatiche (conteggi, top 15)
 ```
 
-Rigenera gli output dopo ogni nuova ondata:
+Rigenera gli output dopo ogni nuova ondata o modifica di `config.json`:
 
 ```bash
 python3 prospecting/process.py

@@ -1,0 +1,69 @@
+PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
+Generato: 2026-09-01 09:25
+============================================================
+Prospect totali: .............. 189
+Con contatto diretto ......... 135 (71%)
+Con sito web ................. 59
+Shortlist A+/A/B ............. 35
+Comuni/localita' distinti .... 57
+
+PRIORITA': A+=1, A=13, B=21, C=47, D=107
+
+PER REGIONE:
+  Lazio                  23
+  Piemonte               23
+  Veneto                 22
+  Sicilia                21
+  Emilia-Romagna         19
+  Sardegna               18
+  Puglia                 17
+  Toscana                16
+  Molise                 12
+  Calabria               8
+  Friuli-Venezia Giulia  2
+  Campania               2
+  (senza regione)        2
+  Marche                 2
+  Lombardia              1
+  Trentino-Alto Adige    1
+
+PER CATEGORIA:
+  Ambulatori veterinari                          32
+  Toelettature                                   27
+  Negozi per animali                             18
+  Rifugi per animali                             18
+  Pet shop                                       16
+  Associazioni animaliste                        10
+  Pensioni per animali                           10
+  Educatori cinofili                             9
+  Canili                                         8
+  Centri cinofili                                8
+  Cliniche veterinarie                           6
+  Allevamenti professionali                      5
+  Servizi di pet care                            4
+  Veterinari                                     4
+  Addestratori                                   3
+  Ospedali veterinari                            3
+  Agenzie e servizi dedicati agli animali domestici 2
+  Pet hotel                                      2
+  Allevatori                                     1
+  Cat sitter                                     1
+  Dog sitter                                     1
+  Fisioterapisti veterinari                      1
+
+TOP 15 PROSPECT PER SCORE:
+   97 A+  Bolle & Cucce                                        Empoli               Toelettature
+   86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
+   85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
+   85 A   Ambulatorio Veterinario Festa (Dott. Ezio Festa)     Bassano del Grappa   Ambulatori veterinari
+   84 A   Centro Cinofilo Bauhaus Bassano                      Bassano del Grappa   Centri cinofili
+   84 A   Palla di Pelo                                        Tivoli               Pet shop
+   83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
+   83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
+   82 A   Polivet - Policlinico Veterinario Roma Nord          Roma                 Ospedali veterinari
+   82 A   Associazione Rifugio a Quattro Zampe                 Altamura             Rifugi per animali
+   82 A   Aristogatti - Gattile di Empoli                      Empoli               Rifugi per animali
+   81 A   Animalife - Pensione per animali                     Vezza d'Alba         Pensioni per animali
+   80 A   Love Pet Toelettatura e Spa                          Vezza d'Alba         Toelettature
+   80 A   L'Oasi di Rex                                        Altamura             Toelettature
+   78 B   Agripet Acireale (Agripet S.r.l.)                    Acireale             Pet shop
