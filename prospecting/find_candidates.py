@@ -55,7 +55,15 @@ RUN_LOG_PATH = os.path.join(STATE_DIR, "run_log.md")
 
 CFG = json.load(open(CFG_PATH, encoding="utf-8")) if os.path.exists(CFG_PATH) else {}
 OPS = CFG.get("overpass", {})
-ENDPOINTS = OPS.get("endpoints", ["https://overpass-api.de/api/interpreter"])
+# Endpoint di fallback: i config possono specificarne una parte, ma i default
+# vengono sempre aggiunti (dedup, ordine preservato) per massimizzare la resilienza.
+DEFAULT_ENDPOINTS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://lz4.overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.osm.ch/api/interpreter",
+]
+ENDPOINTS = list(dict.fromkeys((OPS.get("endpoints") or []) + DEFAULT_ENDPOINTS))
 TIMEOUT = int(OPS.get("timeout_s", 60))
 MIN_DELAY = float(OPS.get("min_delay_s", 1.5))
 MAX_RETRIES = int(OPS.get("max_retries", 3))
@@ -303,6 +311,12 @@ def overpass_post(query, endpoint, dry_run=False):
 
 
 def overpass_with_retry(query, dry_run=False, log=print):
+    """Retry con backoff limitato su una lista di endpoint (rotate).
+
+    Non solleva mai errori di rete "a meta'": se tutti i tentativi falliscono
+    solleva RuntimeError (gestito per-citta' da run()), cosi' una citta'
+    fallita non ferma mai il giro.
+    """
     last = None
     for attempt in range(MAX_RETRIES + 1):
         endpoint = ENDPOINTS[attempt % len(ENDPOINTS)]
@@ -312,12 +326,16 @@ def overpass_with_retry(query, dry_run=False, log=print):
                 json.JSONDecodeError, OSError) as exc:
             last = exc
             code = getattr(exc, "code", None)
+            reason = getattr(exc, "reason", None) or getattr(exc, "msg", None) or type(exc).__name__
             if code == 429:
-                wait = 15 * (attempt + 1)
-                log(f"    rate-limit (429): attendo {wait}s...")
+                wait = min(45, 15 * (attempt + 1))
+                log(f"    rate-limit (429) da {endpoint}: attendo {wait}s...")
+            elif code in (400, 504):
+                wait = min(30, 8 * (attempt + 1))
+                log(f"    Overpass {code} ({reason}) da {endpoint}: riprovo tra {wait}s...")
             else:
-                wait = 3 * (attempt + 1)
-                log(f"    errore temporaneo ({type(exc).__name__}): riprovo tra {wait}s...")
+                wait = min(30, 5 * (attempt + 1))
+                log(f"    errore temporaneo ({reason}) da {endpoint}: riprovo tra {wait}s...")
             time.sleep(wait)
     raise RuntimeError(f"Overpass non raggiungibile dopo {MAX_RETRIES + 1} tentativi: {last}")
 
@@ -525,7 +543,7 @@ def run(log=print, dry_run=False):
                  "| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |",
                  "|---|---|---|---|---|---|"]
     stats = {"cities": 0, "elements": 0, "found": 0, "new": 0, "enrich": 0,
-             "dups": 0, "failed": []}
+             "dups": 0, "failed": [], "done_cities": []}
 
     t0 = time.time()
     for i, city in enumerate(sel):
@@ -534,14 +552,16 @@ def run(log=print, dry_run=False):
             records, geo = search_city(city, dry_run, log)
         except Exception as exc:  # una citta' non deve fermare il giro
             log(f"    ERRORE: {exc}")
-            stats["failed"].append(city["name"])
-            log_lines.append(f"| {city['name']} | - | - | - | - | ERRORE |")
+            stats["failed"].append({"name": city["name"], "error": str(exc)})
+            log_lines.append(
+                f"| {city['name']} | - | - | - | - | ERRORE: {str(exc)[:80]} |")
             continue
         if geo is None:
-            stats["failed"].append(city["name"])
+            stats["failed"].append({"name": city["name"], "error": "geocodifica fallita"})
             log_lines.append(f"| {city['name']} | - | - | - | - | geocodifica fallita |")
             continue
         stats["cities"] += 1
+        stats["done_cities"].append(city["name"])
         stats["elements"] += len(records)
         stats["found"] += len(records)
 
@@ -577,7 +597,9 @@ def run(log=print, dry_run=False):
         time.sleep(MIN_DELAY)
 
     # --- persistenza ---
-    progress["done"] = sorted(set(progress.get("done", [])) | {c["name"] for c in sel})
+    # Solo le citta' riuscite vengono marcate come completate: quelle fallite
+    # (rate-limit, timeout, geocodifica) verranno ritentate al prossimo giro.
+    progress["done"] = sorted(set(progress.get("done", [])) | set(stats["done_cities"]))
     progress["runs"] = int(progress.get("runs", 0)) + 1
     progress["last_run"] = utc_now()
     progress["new_total"] = int(progress.get("new_total", 0)) + stats["new"]
@@ -591,11 +613,17 @@ def run(log=print, dry_run=False):
         save_json(QUEUE_PATH, queue)
         lines = log_lines + [
             "",
-            f"**Bilancio**: {stats['cities']} citta', {stats['elements']} elementi OSM, "
+            f"**Bilancio**: {stats['cities']} citta' ok, {stats['elements']} elementi OSM, "
             f"{stats['found']} schede candidate, {stats['new']} nuove, "
-            f"{stats['enrich']} integrate, coda rimanente ~{stats.get('remaining', 0)}.",
+            f"{stats['enrich']} integrate, {len(stats['failed'])} citta' fallite "
+            f"(verranno ritentate), coda rimanente ~{stats.get('remaining', 0)}.",
             "",
         ]
+        if stats["failed"]:
+            lines.append("**Citta' fallite (ritentate al prossimo giro):**")
+            for f in stats["failed"]:
+                lines.append(f"- {f['name']}: {f['error']}")
+            lines.append("")
         with open(RUN_LOG_PATH, "a", encoding="utf-8") as fh:
             fh.write("\n".join(lines) + "\n")
 
@@ -606,7 +634,10 @@ def run(log=print, dry_run=False):
         f"(integrate con nuovi contatti: {stats['enrich']})")
     log(f"archivio totale: {len(archive.rows)} | coda completata: "
         f"{len(progress['done'])}/{len(queue)} | durata: {int(time.time() - t0)}s")
-    return 0 if not stats["failed"] else 1
+    # Il giro termina SEMPRE con codice 0: i fallimenti per-citta' sono loggati
+    # e non devono far fallire il job di GitHub Actions (che salterebbe gli
+    # step successivi di rigenerazione e commit dei risultati parziali).
+    return 0
 
 
 # --------------------------------------------------------------------------
