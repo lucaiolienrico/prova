@@ -1,0 +1,51 @@
+name: PetNote Prospecting H24
+
+on:
+  schedule:
+    # 4 giri al giorno: 00:00, 06:00, 12:00, 18:00 UTC (con il ritardo tipico di GitHub)
+    - cron: "0 0,6,12,18 * * *"
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: "Numero di citta' da processare in questo giro"
+        required: false
+        default: 6
+        type: number
+
+permissions:
+  contents: write
+
+concurrency:
+  group: petnote-prospecting-h24
+  cancel-in-progress: false
+
+jobs:
+  prospecting-h24:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ricerca nuove schede (OpenStreetMap, ODbL)
+        run: python3 prospecting/find_candidates.py --batch "${{ github.event.inputs.batch || '6' }}"
+
+      - name: Rigenera database, scoring e riepilogo
+        run: python3 prospecting/process.py
+
+      - name: Commit e push dei risultati
+        run: |
+          git config user.name "petnote-h24-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nessuna nuova scheda: nessun commit necessario."
+            exit 0
+          fi
+          git commit -m "H24: aggiornamento automatico database prospect [$(date -u +%FT%TZ)]"
+          git push
