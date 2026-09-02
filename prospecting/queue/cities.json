@@ -316,8 +316,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 119856,
-    "lat": null,
-    "lon": null
+    "lat": 45.5927427,
+    "lon": 9.2757063
   },
   {
     "name": "Siracusa",
@@ -326,8 +326,8 @@
     "province": "Siracusa",
     "region": "Sicilia",
     "population": 118385,
-    "lat": null,
-    "lon": null
+    "lat": 37.0316879,
+    "lon": 15.2098489
   },
   {
     "name": "Latina",
@@ -336,8 +336,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 117892,
-    "lat": null,
-    "lon": null
+    "lat": 41.4727575,
+    "lon": 12.8721583
   },
   {
     "name": "Pescara",
@@ -346,8 +346,8 @@
     "province": "Pescara",
     "region": "Abruzzo",
     "population": 117166,
-    "lat": null,
-    "lon": null
+    "lat": 42.4549035,
+    "lon": 14.2033654
   },
   {
     "name": "Forlì",
@@ -356,8 +356,8 @@
     "province": "Forlì-Cesena",
     "region": "Emilia-Romagna",
     "population": 116434,
-    "lat": null,
-    "lon": null
+    "lat": 44.2288679,
+    "lon": 12.0671766
   },
   {
     "name": "Bergamo",
@@ -366,8 +366,8 @@
     "province": "Bergamo",
     "region": "Lombardia",
     "population": 115349,
-    "lat": null,
-    "lon": null
+    "lat": 45.6934118,
+    "lon": 9.6665313
   },
   {
     "name": "Trento",

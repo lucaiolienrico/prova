@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Clinica veterinaria dott.ssa Martino",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Latina",
+    "prov": "LT",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11090965790",
+    "osm_id": 11090965790,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Clinica veterinaria dott.ssa Martino"
+    },
+    "lat": 41.446181,
+    "lon": 12.878657,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

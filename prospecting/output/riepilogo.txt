@@ -1,21 +1,21 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-02 10:23
+Generato: 2026-09-02 15:52
 ============================================================
-Prospect totali: .............. 517 (manuali 189, H24 328)
-Con contatto diretto ......... 250 (48%)
-Con sito web ................. 125
-Shortlist A+/A/B ............. 68
-Comuni/localita' distinti .... 83
+Prospect totali: .............. 564 (manuali 189, H24 375)
+Con contatto diretto ......... 265 (46%)
+Con sito web ................. 133
+Shortlist A+/A/B ............. 72
+Comuni/localita' distinti .... 89
 
-PRIORITA': A+=3, A=17, B=48, C=88, D=361
+PRIORITA': A+=4, A=20, B=48, C=95, D=397
 
 PER REGIONE:
-  Emilia-Romagna         84
-  Lombardia              65
-  Lazio                  60
+  Lombardia              91
+  Emilia-Romagna         86
+  Lazio                  61
+  Sicilia                55
   Toscana                42
   Piemonte               42
-  Sicilia                41
   Veneto                 36
   Puglia                 32
   Campania               29
@@ -24,17 +24,18 @@ PER REGIONE:
   Molise                 12
   Friuli-Venezia Giulia  9
   Calabria               8
+  Abruzzo                4
   Umbria                 4
   (senza regione)        2
   Marche                 2
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     293
-  Pet shop                                       45
+  Veterinari                                     323
+  Pet shop                                       59
   Ambulatori veterinari                          32
-  Toelettature                                   31
-  Rifugi per animali                             23
+  Toelettature                                   32
+  Rifugi per animali                             24
   Negozi per animali                             18
   Pensioni per animali                           11
   Associazioni animaliste                        10
@@ -47,8 +48,8 @@ PER CATEGORIA:
   Addestratori                                   3
   Ospedali veterinari                            3
   Agenzie e servizi dedicati agli animali domestici 2
+  Allevatori                                     2
   Pet hotel                                      2
-  Allevatori                                     1
   Cat sitter                                     1
   Dog sitter                                     1
   Fisioterapisti veterinari                      1
@@ -56,6 +57,7 @@ PER CATEGORIA:
 TOP 15 PROSPECT PER SCORE:
    97 A+  Bolle & Cucce                                        Empoli               Toelettature
    97 A+  Ambulatorio Veterinario Gattamelata                  Roma                 Veterinari
+   97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
@@ -64,8 +66,7 @@ TOP 15 PROSPECT PER SCORE:
    84 A   Palla di Pelo                                        Tivoli               Pet shop
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
    83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
+   83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari
+   83 A   Clinica Veterinaria Porta Schiavonia                 Forlì                Veterinari
+   83 A   Ambulatorio Veterinario Silver                       Forlì                Veterinari
    82 A   Polivet - Policlinico Veterinario Roma Nord          Roma                 Ospedali veterinari
-   82 A   Associazione Rifugio a Quattro Zampe                 Altamura             Rifugi per animali
-   82 A   Aristogatti - Gattile di Empoli                      Empoli               Rifugi per animali
-   82 A   Ambulatorio veterinario Gerlanz Furio                Trieste              Veterinari
-   82 A   Ambulatorio veterinario Murray                       Trieste              Veterinari
