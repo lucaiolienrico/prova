@@ -1,0 +1,63 @@
+[
+  {
+    "n": "Veterinaria Barone Rossi",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cagliari",
+    "prov": "CA",
+    "reg": "Sardegna",
+    "addr": "Via Barone Salvatore Rossi 15",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2592872365",
+    "osm_id": 2592872365,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Cagliari",
+      "addr:country": "IT",
+      "addr:housenumber": "15",
+      "addr:street": "Via Barone Salvatore Rossi",
+      "amenity": "veterinary",
+      "name": "Veterinaria Barone Rossi"
+    },
+    "lat": 39.210684,
+    "lon": 9.1210242,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Clinica San Giuseppe",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cagliari",
+    "prov": "CA",
+    "reg": "Sardegna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/6027843485",
+    "osm_id": 6027843485,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Clinica San Giuseppe",
+      "name:it": "Clinica San Giuseppe"
+    },
+    "lat": 39.2438347,
+    "lon": 9.1407513,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
