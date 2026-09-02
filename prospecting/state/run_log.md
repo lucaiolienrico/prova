@@ -77,3 +77,15 @@
 
 **Bilancio**: 6 citta' ok, 55 elementi OSM, 55 schede candidate, 47 nuove, 3 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~351.
 
+## Giro del 2026-09-02T20:20:55Z (run_20260902_202055_d0b4)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Trento | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Vicenza | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Terni | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Giugliano in Campania | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Bolzano | 5 | 5 | 5 | 0 (0 integrati) | ok |
+| Novara | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 11 elementi OSM, 11 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~345.
+

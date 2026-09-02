@@ -376,8 +376,8 @@
     "province": "Trento",
     "region": "Trentino-Alto Adige/Südtirol",
     "population": 114198,
-    "lat": null,
-    "lon": null
+    "lat": 46.0639482,
+    "lon": 11.1076683
   },
   {
     "name": "Vicenza",
@@ -386,8 +386,8 @@
     "province": "Vicenza",
     "region": "Veneto",
     "population": 111500,
-    "lat": null,
-    "lon": null
+    "lat": 45.5462715,
+    "lon": 11.550314
   },
   {
     "name": "Terni",
@@ -396,8 +396,8 @@
     "province": "Terni",
     "region": "Umbria",
     "population": 109193,
-    "lat": null,
-    "lon": null
+    "lat": 42.5881696,
+    "lon": 12.6646689
   },
   {
     "name": "Giugliano in Campania",
@@ -406,8 +406,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 108793,
-    "lat": null,
-    "lon": null
+    "lat": 40.9239052,
+    "lon": 14.120133
   },
   {
     "name": "Bolzano",
@@ -416,8 +416,8 @@
     "province": "Bolzano/Bozen",
     "region": "Trentino-Alto Adige/Südtirol",
     "population": 102575,
-    "lat": null,
-    "lon": null
+    "lat": 46.4876488,
+    "lon": 11.3539834
   },
   {
     "name": "Novara",
@@ -426,8 +426,8 @@
     "province": "Novara",
     "region": "Piemonte",
     "population": 101952,
-    "lat": null,
-    "lon": null
+    "lat": 45.4432963,
+    "lon": 8.6162311
   },
   {
     "name": "Ancona",
