@@ -1,0 +1,63 @@
+[
+  {
+    "n": "Clinica Veterinaria San Gaetanino",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Ravenna",
+    "prov": "RA",
+    "reg": "Emilia-Romagna",
+    "addr": "Circonvallazione San Gaetanino 203",
+    "site": "https://www.clinicaveterinariasangaetanino.it",
+    "email": null,
+    "tel": "+39 0544 456328",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8887778560",
+    "osm_id": 8887778560,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "203",
+      "addr:street": "Circonvallazione San Gaetanino",
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria San Gaetanino",
+      "opening_hours": "Mo-Sa 10:00-19:00",
+      "phone": "+39 0544 456328",
+      "website": "https://www.clinicaveterinariasangaetanino.it"
+    },
+    "lat": 44.4231787,
+    "lon": 12.1991887,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Sa 10:00-19:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Ravenna",
+    "prov": "RA",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/604243996",
+    "osm_id": 604243996,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterinario"
+    },
+    "lat": 44.4238184,
+    "lon": 12.1869194,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

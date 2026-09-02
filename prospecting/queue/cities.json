@@ -196,8 +196,8 @@
     "province": "Modena",
     "region": "Emilia-Romagna",
     "population": 179149,
-    "lat": null,
-    "lon": null
+    "lat": 44.6526981,
+    "lon": 10.8971783
   },
   {
     "name": "Parma",
@@ -206,8 +206,8 @@
     "province": "Parma",
     "region": "Emilia-Romagna",
     "population": 175895,
-    "lat": null,
-    "lon": null
+    "lat": 44.7815731,
+    "lon": 10.3292247
   },
   {
     "name": "Perugia",
@@ -216,8 +216,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 162449,
-    "lat": null,
-    "lon": null
+    "lat": 43.1397602,
+    "lon": 12.3690717
   },
   {
     "name": "Reggio nell'Emilia",
@@ -226,8 +226,8 @@
     "province": "Reggio nell'Emilia",
     "region": "Emilia-Romagna",
     "population": 162082,
-    "lat": null,
-    "lon": null
+    "lat": 44.6994559,
+    "lon": 10.6321796
   },
   {
     "name": "Livorno",
@@ -236,8 +236,8 @@
     "province": "Livorno",
     "region": "Toscana",
     "population": 157052,
-    "lat": null,
-    "lon": null
+    "lat": 43.5076369,
+    "lon": 10.1538196
   },
   {
     "name": "Ravenna",
@@ -246,8 +246,8 @@
     "province": "Ravenna",
     "region": "Emilia-Romagna",
     "population": 153740,
-    "lat": null,
-    "lon": null
+    "lat": 33.670416,
+    "lon": -96.240483
   },
   {
     "name": "Cagliari",

@@ -41,3 +41,15 @@
 
 **Bilancio**: 6 citta' ok, 24 elementi OSM, 24 schede candidate, 23 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~369.
 
+## Giro del 2026-09-02T02:14:55Z (run_20260902_021455_c5cc)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Modena | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Parma | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Perugia | 5 | 5 | 4 | 1 (1 integrati) | ok |
+| Reggio nell'Emilia | 7 | 7 | 7 | 0 (0 integrati) | ok |
+| Livorno | 15 | 15 | 14 | 1 (0 integrati) | ok |
+| Ravenna | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 36 elementi OSM, 36 schede candidate, 34 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~363.
+

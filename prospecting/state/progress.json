@@ -6,13 +6,19 @@
     "Catania",
     "Firenze",
     "Genova",
+    "Livorno",
     "Messina",
     "Milano",
+    "Modena",
     "Napoli",
     "Padova",
     "Palermo",
+    "Parma",
+    "Perugia",
     "Prato",
+    "Ravenna",
     "Reggio di Calabria",
+    "Reggio nell'Emilia",
     "Roma",
     "Taranto",
     "Torino",
@@ -20,8 +26,8 @@
     "Venezia",
     "Verona"
   ],
-  "last_run": "2026-09-01T20:28:01Z",
-  "runs": 4,
-  "new_total": 277,
-  "enrich_total": 7
+  "last_run": "2026-09-02T02:20:01Z",
+  "runs": 5,
+  "new_total": 311,
+  "enrich_total": 8
 }
