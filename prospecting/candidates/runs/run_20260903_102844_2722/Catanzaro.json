@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Salvatore Rotella",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Catanzaro",
+    "prov": "CZ",
+    "reg": "Calabria",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": "Salvatore Rotella",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/10104446555",
+    "osm_id": 10104446555,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "operator": "Salvatore Rotella"
+    },
+    "lat": 38.9217605,
+    "lon": 16.5620185,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

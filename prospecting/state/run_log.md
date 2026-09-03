@@ -101,3 +101,15 @@
 
 **Bilancio**: 6 citta' ok, 22 elementi OSM, 22 schede candidate, 21 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~339.
 
+## Giro del 2026-09-03T10:28:44Z (run_20260903_102844_2722)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Barletta | 7 | 7 | 7 | 0 (0 integrati) | ok |
+| Pesaro | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| La Spezia | 5 | 5 | 4 | 1 (0 integrati) | ok |
+| Lecce | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Alessandria | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Catanzaro | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 20 elementi OSM, 20 schede candidate, 19 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~333.
+

@@ -1,13 +1,13 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-03 02:25
+Generato: 2026-09-03 10:38
 ============================================================
-Prospect totali: .............. 596 (manuali 189, H24 407)
-Con contatto diretto ......... 276 (46%)
-Con sito web ................. 140
+Prospect totali: .............. 615 (manuali 189, H24 426)
+Con contatto diretto ......... 280 (45%)
+Con sito web ................. 141
 Shortlist A+/A/B ............. 75
-Comuni/localita' distinti .... 98
+Comuni/localita' distinti .... 104
 
-PRIORITA': A+=4, A=21, B=50, C=100, D=421
+PRIORITA': A+=4, A=21, B=50, C=102, D=438
 
 PER REGIONE:
   Lombardia              91
@@ -15,28 +15,28 @@ PER REGIONE:
   Lazio                  61
   Sicilia                55
   Toscana                46
-  Piemonte               43
+  Piemonte               44
+  Puglia                 43
   Veneto                 37
-  Puglia                 32
+  Liguria                32
   Campania               29
-  Liguria                28
   Sardegna               20
   Friuli-Venezia Giulia  15
+  Marche                 13
   Molise                 12
-  Marche                 11
+  Calabria               9
   Trentino-Alto Adige/Südtirol 9
-  Calabria               8
   Abruzzo                4
   Umbria                 4
   (senza regione)        2
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     354
-  Pet shop                                       60
+  Veterinari                                     362
+  Pet shop                                       67
+  Toelettature                                   35
   Ambulatori veterinari                          32
-  Toelettature                                   32
-  Rifugi per animali                             24
+  Rifugi per animali                             25
   Negozi per animali                             18
   Pensioni per animali                           11
   Associazioni animaliste                        10

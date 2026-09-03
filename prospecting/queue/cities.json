@@ -496,8 +496,8 @@
     "province": "Barletta-Andria-Trani",
     "region": "Puglia",
     "population": 94239,
-    "lat": null,
-    "lon": null
+    "lat": 41.2945097,
+    "lon": 16.2109988
   },
   {
     "name": "Pesaro",
@@ -506,8 +506,8 @@
     "province": "Pesaro e Urbino",
     "region": "Marche",
     "population": 94237,
-    "lat": null,
-    "lon": null
+    "lat": 43.8673147,
+    "lon": 12.866896
   },
   {
     "name": "La Spezia",
@@ -516,8 +516,8 @@
     "province": "La Spezia",
     "region": "Liguria",
     "population": 92659,
-    "lat": null,
-    "lon": null
+    "lat": 44.1076715,
+    "lon": 9.8280276
   },
   {
     "name": "Lecce",
@@ -526,8 +526,8 @@
     "province": "Lecce",
     "region": "Puglia",
     "population": 89916,
-    "lat": null,
-    "lon": null
+    "lat": 40.4093937,
+    "lon": 18.1736424
   },
   {
     "name": "Alessandria",
@@ -536,8 +536,8 @@
     "province": "Alessandria",
     "region": "Piemonte",
     "population": 89411,
-    "lat": null,
-    "lon": null
+    "lat": 44.9168136,
+    "lon": 8.6464533
   },
   {
     "name": "Catanzaro",
@@ -546,8 +546,8 @@
     "province": "Catanzaro",
     "region": "Calabria",
     "population": 89364,
-    "lat": null,
-    "lon": null
+    "lat": 38.8917117,
+    "lon": 16.612941
   },
   {
     "name": "Pistoia",
