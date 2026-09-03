@@ -616,8 +616,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 81447,
-    "lat": null,
-    "lon": null
+    "lat": 41.9854472,
+    "lon": 12.695606
   },
   {
     "name": "Treviso",
@@ -626,8 +626,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 81014,
-    "lat": null,
-    "lon": null
+    "lat": 45.6607499,
+    "lon": 12.2289622
   },
   {
     "name": "Pozzuoli",
@@ -636,8 +636,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 80357,
-    "lat": null,
-    "lon": null
+    "lat": 40.8480216,
+    "lon": 14.1009371
   },
   {
     "name": "Marsala",
@@ -646,8 +646,8 @@
     "province": "Trapani",
     "region": "Sicilia",
     "population": 80218,
-    "lat": null,
-    "lon": null
+    "lat": 37.8241809,
+    "lon": 12.5594263
   },
   {
     "name": "Varese",
@@ -656,8 +656,8 @@
     "province": "Varese",
     "region": "Lombardia",
     "population": 79793,
-    "lat": null,
-    "lon": null
+    "lat": 45.8312096,
+    "lon": 8.8034482
   },
   {
     "name": "Busto Arsizio",
@@ -666,8 +666,8 @@
     "province": "Varese",
     "region": "Lombardia",
     "population": 79692,
-    "lat": null,
-    "lon": null
+    "lat": 45.6053799,
+    "lon": 8.8433804
   },
   {
     "name": "Casoria",

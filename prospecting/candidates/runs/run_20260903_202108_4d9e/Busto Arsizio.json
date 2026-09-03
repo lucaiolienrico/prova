@@ -1,0 +1,32 @@
+[
+  {
+    "n": "Dr. Paolo De Bernardi",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Busto Arsizio",
+    "prov": "VA",
+    "reg": "Lombardia",
+    "addr": "Via Madonna in Campagna 2d",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13308724909",
+    "osm_id": 13308724909,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "2d",
+      "addr:street": "Via Madonna in Campagna",
+      "amenity": "veterinary",
+      "name": "Dr. Paolo De Bernardi"
+    },
+    "lat": 45.5974528,
+    "lon": 8.8373478,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

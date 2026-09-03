@@ -125,3 +125,15 @@
 
 **Bilancio**: 6 citta' ok, 22 elementi OSM, 22 schede candidate, 21 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~327.
 
+## Giro del 2026-09-03T20:21:08Z (run_20260903_202108_4d9e)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Guidonia Montecelio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Treviso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pozzuoli | 9 | 9 | 5 | 4 (0 integrati) | ok |
+| Marsala | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Varese | 19 | 19 | 16 | 3 (2 integrati) | ok |
+| Busto Arsizio | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 30 elementi OSM, 30 schede candidate, 23 nuove, 2 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~321.
+

@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Tierarzt",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Marsala",
+    "prov": "TP",
+    "reg": "Sicilia",
+    "addr": "Via Mazara 230",
+    "site": null,
+    "email": null,
+    "tel": "+39 349 233 0215",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13378286602",
+    "osm_id": 13378286602,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "230",
+      "addr:street": "Via Mazara",
+      "amenity": "veterinary",
+      "name": "Tierarzt",
+      "phone": "+39 349 233 0215"
+    },
+    "lat": 37.7814873,
+    "lon": 12.4557971,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
