@@ -556,8 +556,8 @@
     "province": "Pistoia",
     "region": "Toscana",
     "population": 89101,
-    "lat": null,
-    "lon": null
+    "lat": 43.9864733,
+    "lon": 10.9103098
   },
   {
     "name": "Brindisi",
@@ -566,8 +566,8 @@
     "province": "Brindisi",
     "region": "Puglia",
     "population": 88812,
-    "lat": null,
-    "lon": null
+    "lat": 40.5934501,
+    "lon": 17.888472
   },
   {
     "name": "Lucca",
@@ -576,8 +576,8 @@
     "province": "Lucca",
     "region": "Toscana",
     "population": 87200,
-    "lat": null,
-    "lon": null
+    "lat": 43.859194,
+    "lon": 10.4682541
   },
   {
     "name": "Torre del Greco",
@@ -586,8 +586,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 85922,
-    "lat": null,
-    "lon": null
+    "lat": 40.7863929,
+    "lon": 14.3954279
   },
   {
     "name": "Pisa",
@@ -596,8 +596,8 @@
     "province": "Pisa",
     "region": "Toscana",
     "population": 85858,
-    "lat": null,
-    "lon": null
+    "lat": 43.665749,
+    "lon": 10.3623692
   },
   {
     "name": "Como",
@@ -606,8 +606,8 @@
     "province": "Como",
     "region": "Lombardia",
     "population": 82045,
-    "lat": null,
-    "lon": null
+    "lat": 45.8003917,
+    "lon": 9.0839013
   },
   {
     "name": "Guidonia Montecelio",
