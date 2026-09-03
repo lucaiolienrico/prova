@@ -1,0 +1,34 @@
+[
+  {
+    "n": "Maxizoo",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Cesena",
+    "prov": "FC",
+    "reg": "Emilia-Romagna",
+    "addr": "Via Cavalcavia 121",
+    "site": null,
+    "email": null,
+    "tel": "+39 0547 25342",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11308950529",
+    "osm_id": 11308950529,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "121",
+      "addr:street": "Via Cavalcavia",
+      "name": "Maxizoo",
+      "opening_hours": "Mo-Sa 09:00-20:00; Su 09:00-19:30",
+      "phone": "+39 0547 25342",
+      "shop": "pet"
+    },
+    "lat": 44.1458913,
+    "lon": 12.2401966,
+    "other": "OSM: opening_hours=Mo-Sa 09:00-20:00; Su 09:00-19:30, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

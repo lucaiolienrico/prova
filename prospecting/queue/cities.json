@@ -436,8 +436,8 @@
     "province": "Ancona",
     "region": "Marche",
     "population": 100497,
-    "lat": null,
-    "lon": null
+    "lat": 43.5700027,
+    "lon": 13.4926211
   },
   {
     "name": "Piacenza",
@@ -446,8 +446,8 @@
     "province": "Piacenza",
     "region": "Emilia-Romagna",
     "population": 100311,
-    "lat": null,
-    "lon": null
+    "lat": 45.0528044,
+    "lon": 9.7128942
   },
   {
     "name": "Andria",
@@ -456,8 +456,8 @@
     "province": "Barletta-Andria-Trani",
     "region": "Puglia",
     "population": 100052,
-    "lat": null,
-    "lon": null
+    "lat": 41.1400232,
+    "lon": 16.2237905
   },
   {
     "name": "Udine",
@@ -466,8 +466,8 @@
     "province": "Udine",
     "region": "Friuli-Venezia Giulia",
     "population": 98287,
-    "lat": null,
-    "lon": null
+    "lat": 46.0594078,
+    "lon": 13.2394829
   },
   {
     "name": "Arezzo",
@@ -476,8 +476,8 @@
     "province": "Arezzo",
     "region": "Toscana",
     "population": 98144,
-    "lat": null,
-    "lon": null
+    "lat": 43.4423179,
+    "lon": 11.9093013
   },
   {
     "name": "Cesena",
@@ -486,8 +486,8 @@
     "province": "Forlì-Cesena",
     "region": "Emilia-Romagna",
     "population": 95990,
-    "lat": null,
-    "lon": null
+    "lat": 44.1267443,
+    "lon": 12.2283508
   },
   {
     "name": "Barletta",

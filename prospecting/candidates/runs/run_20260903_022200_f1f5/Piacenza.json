@@ -1,0 +1,35 @@
+[
+  {
+    "n": "Centro Veterinario Cer.Pa SNC di L. Ferrari - V. Olivi - H. Civettini",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Piacenza",
+    "prov": "PC",
+    "reg": "Emilia-Romagna",
+    "addr": "Via Luigi Pirandello 11, 29122",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13922502604",
+    "osm_id": 13922502604,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Piacenza",
+      "addr:housenumber": "11",
+      "addr:postcode": "29122",
+      "addr:street": "Via Luigi Pirandello",
+      "amenity": "veterinary",
+      "name": "Centro Veterinario Cer.Pa SNC di L. Ferrari - V. Olivi - H. Civettini",
+      "opening_hours": "Mo-Fr 09:00-18:30; Sa 09:00-13:00"
+    },
+    "lat": 45.0499883,
+    "lon": 9.6597551,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 09:00-18:30; Sa 09:00-13:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

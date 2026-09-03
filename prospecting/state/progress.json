@@ -1,5 +1,8 @@
 {
   "done": [
+    "Ancona",
+    "Andria",
+    "Arezzo",
     "Bari",
     "Bergamo",
     "Bologna",
@@ -7,6 +10,7 @@
     "Brescia",
     "Cagliari",
     "Catania",
+    "Cesena",
     "Ferrara",
     "Firenze",
     "Foggia",
@@ -26,6 +30,7 @@
     "Parma",
     "Perugia",
     "Pescara",
+    "Piacenza",
     "Prato",
     "Ravenna",
     "Reggio di Calabria",
@@ -40,12 +45,13 @@
     "Torino",
     "Trento",
     "Trieste",
+    "Udine",
     "Venezia",
     "Verona",
     "Vicenza"
   ],
-  "last_run": "2026-09-02T20:31:44Z",
-  "runs": 8,
-  "new_total": 389,
-  "enrich_total": 11
+  "last_run": "2026-09-03T02:25:43Z",
+  "runs": 9,
+  "new_total": 410,
+  "enrich_total": 12
 }

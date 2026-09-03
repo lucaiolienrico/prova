@@ -89,3 +89,15 @@
 
 **Bilancio**: 6 citta' ok, 11 elementi OSM, 11 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~345.
 
+## Giro del 2026-09-03T02:22:00Z (run_20260903_022200_f1f5)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Ancona | 10 | 10 | 9 | 1 (1 integrati) | ok |
+| Piacenza | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Andria | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Udine | 6 | 6 | 6 | 0 (0 integrati) | ok |
+| Arezzo | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Cesena | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 22 elementi OSM, 22 schede candidate, 21 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~339.
+
