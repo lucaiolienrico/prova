@@ -1,20 +1,20 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-04 10:30
+Generato: 2026-09-04 15:43
 ============================================================
-Prospect totali: .............. 689 (manuali 189, H24 500)
-Con contatto diretto ......... 300 (43%)
-Con sito web ................. 155
-Shortlist A+/A/B ............. 79
-Comuni/localita' distinti .... 121
+Prospect totali: .............. 702 (manuali 189, H24 513)
+Con contatto diretto ......... 304 (43%)
+Con sito web ................. 159
+Shortlist A+/A/B ............. 81
+Comuni/localita' distinti .... 124
 
-PRIORITA': A+=4, A=22, B=53, C=108, D=502
+PRIORITA': A+=4, A=23, B=54, C=108, D=513
 
 PER REGIONE:
-  Lombardia              116
-  Emilia-Romagna         88
+  Lombardia              117
+  Emilia-Romagna         96
+  Toscana                64
   Sicilia                63
   Lazio                  61
-  Toscana                61
   Puglia                 49
   Campania               47
   Piemonte               46
@@ -24,7 +24,7 @@ PER REGIONE:
   Friuli-Venezia Giulia  15
   Marche                 13
   Molise                 12
-  Calabria               9
+  Calabria               10
   Trentino-Alto Adige/Südtirol 9
   Abruzzo                4
   Umbria                 4
@@ -32,9 +32,9 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     401
-  Pet shop                                       90
-  Toelettature                                   40
+  Veterinari                                     411
+  Pet shop                                       92
+  Toelettature                                   41
   Ambulatori veterinari                          32
   Rifugi per animali                             26
   Negozi per animali                             18
@@ -68,6 +68,6 @@ TOP 15 PROSPECT PER SCORE:
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
    83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
    83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari
+   83 A   Clinica Veterinaria San Francesco                    Imola                Veterinari
    83 A   Clinica Veterinaria Porta Schiavonia                 Forlì                Veterinari
    83 A   Ambulatorio Veterinario Silver                       Forlì                Veterinari
-   82 A   Polivet - Policlinico Veterinario Roma Nord          Roma                 Ospedali veterinari

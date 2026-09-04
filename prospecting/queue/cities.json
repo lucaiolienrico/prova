@@ -796,8 +796,8 @@
     "province": "Cosenza",
     "region": "Calabria",
     "population": 69484,
-    "lat": null,
-    "lon": null
+    "lat": 39.2821644,
+    "lon": 16.2714701
   },
   {
     "name": "Quartu Sant'Elena",
@@ -806,8 +806,8 @@
     "province": "Cagliari",
     "region": "Sardegna",
     "population": 69296,
-    "lat": null,
-    "lon": null
+    "lat": 39.2133328,
+    "lon": 9.2751286
   },
   {
     "name": "Trapani",
@@ -816,8 +816,8 @@
     "province": "Trapani",
     "region": "Sicilia",
     "population": 69241,
-    "lat": null,
-    "lon": null
+    "lat": 37.9401475,
+    "lon": 12.6196722
   },
   {
     "name": "Massa",
@@ -826,8 +826,8 @@
     "province": "Massa-Carrara",
     "region": "Toscana",
     "population": 68856,
-    "lat": null,
-    "lon": null
+    "lat": 44.0509859,
+    "lon": 10.1513753
   },
   {
     "name": "Pavia",
@@ -836,8 +836,8 @@
     "province": "Pavia",
     "region": "Lombardia",
     "population": 68280,
-    "lat": null,
-    "lon": null
+    "lat": 45.1945233,
+    "lon": 9.1654656
   },
   {
     "name": "Imola",
@@ -846,8 +846,8 @@
     "province": "Bologna",
     "region": "Emilia-Romagna",
     "population": 67892,
-    "lat": null,
-    "lon": null
+    "lat": 44.4261525,
+    "lon": 11.697952
   },
   {
     "name": "Fiumicino",

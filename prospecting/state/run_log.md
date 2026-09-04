@@ -161,3 +161,15 @@
 
 **Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 12 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~309.
 
+## Giro del 2026-09-04T15:31:57Z (run_20260904_153157_0e68)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Cosenza | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Quartu Sant'Elena | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Trapani | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Massa | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Pavia | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Imola | 8 | 8 | 8 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 13 elementi OSM, 13 schede candidate, 13 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~303.
+

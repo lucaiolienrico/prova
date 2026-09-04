@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Poliambulatorio Veterinario Dott. Filippo De Santis",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cosenza",
+    "prov": "CS",
+    "reg": "Calabria",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/1805848564",
+    "osm_id": 1805848564,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Poliambulatorio Veterinario Dott. Filippo De Santis"
+    },
+    "lat": 39.2986513,
+    "lon": 16.251746,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
