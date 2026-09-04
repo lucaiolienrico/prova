@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Arcaplanet",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Carpi",
+    "prov": "MO",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11900947531",
+    "osm_id": 11900947531,
+    "osm_type": "node",
+    "osm_tags": {
+      "brand": "Arcaplanet",
+      "brand:wikidata": "Q105530937",
+      "name": "Arcaplanet",
+      "shop": "pet",
+      "wheelchair": "yes"
+    },
+    "lat": 44.7782335,
+    "lon": 10.8636404,
+    "other": "OSM: brand=Arcaplanet, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

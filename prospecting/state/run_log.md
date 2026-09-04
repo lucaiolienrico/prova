@@ -173,3 +173,15 @@
 
 **Bilancio**: 6 citta' ok, 13 elementi OSM, 13 schede candidate, 13 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~303.
 
+## Giro del 2026-09-04T20:06:35Z (run_20260904_200635_38a0)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Fiumicino | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Carpi | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Aprilia | 4 | 4 | 2 | 2 (0 integrati) | ok |
+| L'Aquila | 5 | 5 | 5 | 0 (0 integrati) | ok |
+| Potenza | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Castellammare di Stabia | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 15 elementi OSM, 15 schede candidate, 13 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~297.
+

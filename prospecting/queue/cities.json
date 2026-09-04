@@ -856,8 +856,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 67626,
-    "lat": null,
-    "lon": null
+    "lat": 41.8805818,
+    "lon": 12.2220233
   },
   {
     "name": "Carpi",
@@ -866,8 +866,8 @@
     "province": "Modena",
     "region": "Emilia-Romagna",
     "population": 67268,
-    "lat": null,
-    "lon": null
+    "lat": 44.8023668,
+    "lon": 10.9114885
   },
   {
     "name": "Aprilia",
@@ -876,8 +876,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 66979,
-    "lat": null,
-    "lon": null
+    "lat": 41.58488,
+    "lon": 12.6509528
   },
   {
     "name": "L'Aquila",
@@ -886,8 +886,8 @@
     "province": "L'Aquila",
     "region": "Abruzzo",
     "population": 66964,
-    "lat": null,
-    "lon": null
+    "lat": 42.3540992,
+    "lon": 13.4156644
   },
   {
     "name": "Potenza",
@@ -896,8 +896,8 @@
     "province": "Potenza",
     "region": "Basilicata",
     "population": 66777,
-    "lat": null,
-    "lon": null
+    "lat": 40.6595144,
+    "lon": 15.8039668
   },
   {
     "name": "Castellammare di Stabia",
@@ -906,8 +906,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 65944,
-    "lat": null,
-    "lon": null
+    "lat": 40.7035827,
+    "lon": 14.472104
   },
   {
     "name": "Carrara",
