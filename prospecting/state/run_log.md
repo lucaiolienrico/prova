@@ -149,3 +149,15 @@
 
 **Bilancio**: 6 citta' ok, 19 elementi OSM, 19 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~315.
 
+## Giro del 2026-09-04T10:16:53Z (run_20260904_101653_8d75)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Asti | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Cinisello Balsamo | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Lamezia Terme | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Ragusa | 6 | 6 | 6 | 0 (0 integrati) | ok |
+| Cremona | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Altamura | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 12 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~309.
+

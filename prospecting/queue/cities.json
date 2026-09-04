@@ -736,8 +736,8 @@
     "province": "Asti",
     "region": "Piemonte",
     "population": 73899,
-    "lat": null,
-    "lon": null
+    "lat": 44.9177844,
+    "lon": 8.2023445
   },
   {
     "name": "Cinisello Balsamo",
@@ -746,8 +746,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 71128,
-    "lat": null,
-    "lon": null
+    "lat": 45.5579012,
+    "lon": 9.2236819
   },
   {
     "name": "Lamezia Terme",
@@ -756,8 +756,8 @@
     "province": "Catanzaro",
     "region": "Calabria",
     "population": 70336,
-    "lat": null,
-    "lon": null
+    "lat": 38.9364021,
+    "lon": 16.2918598
   },
   {
     "name": "Ragusa",
@@ -766,8 +766,8 @@
     "province": "Ragusa",
     "region": "Sicilia",
     "population": 69794,
-    "lat": null,
-    "lon": null
+    "lat": 36.9077671,
+    "lon": 14.6577844
   },
   {
     "name": "Cremona",
@@ -776,8 +776,8 @@
     "province": "Cremona",
     "region": "Lombardia",
     "population": 69589,
-    "lat": null,
-    "lon": null
+    "lat": 45.1364777,
+    "lon": 10.0260679
   },
   {
     "name": "Altamura",
@@ -786,8 +786,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 69529,
-    "lat": null,
-    "lon": null
+    "lat": 40.8528969,
+    "lon": 16.5217049
   },
   {
     "name": "Cosenza",
