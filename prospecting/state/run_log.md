@@ -137,3 +137,15 @@
 
 **Bilancio**: 6 citta' ok, 30 elementi OSM, 30 schede candidate, 23 nuove, 2 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~321.
 
+## Giro del 2026-09-04T02:17:08Z (run_20260904_021708_302c)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Casoria | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Grosseto | 5 | 5 | 5 | 0 (0 integrati) | ok |
+| Sesto San Giovanni | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Gela | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Caserta | 11 | 11 | 11 | 0 (0 integrati) | ok |
+| Corigliano-Rossano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 19 elementi OSM, 19 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~315.
+

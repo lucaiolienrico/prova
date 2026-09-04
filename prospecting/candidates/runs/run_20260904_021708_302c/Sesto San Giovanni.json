@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Bplus - HUB SPEDIZIONI",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Sesto San Giovanni",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": "Via Giuseppe Mazzini 33, 20099",
+    "site": "http://www.bplusmarketing.it/",
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4056310614",
+    "osm_id": 4056310614,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:country": "IT",
+      "addr:housenumber": "33",
+      "addr:postcode": "20099",
+      "addr:street": "Via Giuseppe Mazzini",
+      "amenity": "veterinary",
+      "check_date": "2025-01-13",
+      "name": "Bplus - HUB SPEDIZIONI",
+      "opening_hours": "Mo-Fr 09:00-13:00,14:00-18:00; Sa-Su off",
+      "website": "http://www.bplusmarketing.it/"
+    },
+    "lat": 45.5383036,
+    "lon": 9.2445373,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 09:00-13:00,14:00-18:00; Sa-Su off",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -676,8 +676,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 78647,
-    "lat": null,
-    "lon": null
+    "lat": 40.901853,
+    "lon": 14.3061245
   },
   {
     "name": "Grosseto",
@@ -686,8 +686,8 @@
     "province": "Grosseto",
     "region": "Toscana",
     "population": 78630,
-    "lat": null,
-    "lon": null
+    "lat": 42.7399357,
+    "lon": 11.0554838
   },
   {
     "name": "Sesto San Giovanni",
@@ -696,8 +696,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 76514,
-    "lat": null,
-    "lon": null
+    "lat": 45.5370537,
+    "lon": 9.2393357
   },
   {
     "name": "Gela",
@@ -706,8 +706,8 @@
     "province": "Caltanissetta",
     "region": "Sicilia",
     "population": 75668,
-    "lat": null,
-    "lon": null
+    "lat": 37.087094,
+    "lon": 14.2795377
   },
   {
     "name": "Caserta",
@@ -716,8 +716,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 75640,
-    "lat": null,
-    "lon": null
+    "lat": 41.0878864,
+    "lon": 14.3566812
   },
   {
     "name": "Corigliano-Rossano",
@@ -726,8 +726,8 @@
     "province": "Cosenza",
     "region": "Calabria",
     "population": 74848,
-    "lat": null,
-    "lon": null
+    "lat": 39.6044685,
+    "lon": 16.5519265
   },
   {
     "name": "Asti",
