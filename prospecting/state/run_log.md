@@ -197,3 +197,15 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~291.
 
+## Giro del 2026-09-05T09:44:48Z (run_20260905_094448_baec)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Benevento | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Vittoria | 6 | 6 | 5 | 1 (0 integrati) | ok |
+| Savona | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Molfetta | 2 | 2 | 1 | 1 (1 integrati) | ok |
+| Vigevano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Matera | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 13 elementi OSM, 13 schede candidate, 11 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~285.
+

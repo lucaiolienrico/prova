@@ -10,6 +10,7 @@
     "Asti",
     "Bari",
     "Barletta",
+    "Benevento",
     "Bergamo",
     "Bologna",
     "Bolzano",
@@ -52,9 +53,11 @@
     "Lucca",
     "Marsala",
     "Massa",
+    "Matera",
     "Messina",
     "Milano",
     "Modena",
+    "Molfetta",
     "Monza",
     "Napoli",
     "Novara",
@@ -80,6 +83,7 @@
     "Roma",
     "Salerno",
     "Sassari",
+    "Savona",
     "Sesto San Giovanni",
     "Siracusa",
     "Taranto",
@@ -96,10 +100,12 @@
     "Verona",
     "Viareggio",
     "Vicenza",
-    "Viterbo"
+    "Vigevano",
+    "Viterbo",
+    "Vittoria"
   ],
-  "last_run": "2026-09-05T02:18:50Z",
-  "runs": 17,
-  "new_total": 535,
-  "enrich_total": 14
+  "last_run": "2026-09-05T09:46:26Z",
+  "runs": 18,
+  "new_total": 546,
+  "enrich_total": 15
 }

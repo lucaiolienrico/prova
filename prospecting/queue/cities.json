@@ -976,8 +976,8 @@
     "province": "Benevento",
     "region": "Campania",
     "population": 61489,
-    "lat": null,
-    "lon": null
+    "lat": 41.1574849,
+    "lon": 14.7893548
   },
   {
     "name": "Vittoria",
@@ -986,8 +986,8 @@
     "province": "Ragusa",
     "region": "Sicilia",
     "population": 61006,
-    "lat": null,
-    "lon": null
+    "lat": 36.9636007,
+    "lon": 14.4925021
   },
   {
     "name": "Savona",
@@ -996,8 +996,8 @@
     "province": "Savona",
     "region": "Liguria",
     "population": 60661,
-    "lat": null,
-    "lon": null
+    "lat": 44.3345939,
+    "lon": 8.4238233
   },
   {
     "name": "Molfetta",
@@ -1006,8 +1006,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 60433,
-    "lat": null,
-    "lon": null
+    "lat": 41.1838059,
+    "lon": 16.5744404
   },
   {
     "name": "Vigevano",
@@ -1016,8 +1016,8 @@
     "province": "Pavia",
     "region": "Lombardia",
     "population": 60109,
-    "lat": null,
-    "lon": null
+    "lat": 45.3077489,
+    "lon": 8.8849171
   },
   {
     "name": "Matera",
@@ -1026,8 +1026,8 @@
     "province": "Matera",
     "region": "Basilicata",
     "population": 59796,
-    "lat": null,
-    "lon": null
+    "lat": 40.6659731,
+    "lon": 16.5709306
   },
   {
     "name": "Crotone",

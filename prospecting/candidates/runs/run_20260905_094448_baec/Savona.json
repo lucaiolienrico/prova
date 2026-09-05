@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Clinica Veterinaria Letimbro",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Savona",
+    "prov": "SV",
+    "reg": "Liguria",
+    "addr": "Via Eroine della Resistenza",
+    "site": null,
+    "email": null,
+    "tel": "+39 019 880077",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5215734990",
+    "osm_id": 5215734990,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:street": "Via Eroine della Resistenza",
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria Letimbro",
+      "phone": "+39 019 880077",
+      "wheelchair": "yes"
+    },
+    "lat": 44.3085639,
+    "lon": 8.4721228,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "n": "Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Matera",
+    "prov": "MT",
+    "reg": "Basilicata",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2506121071",
+    "osm_id": 2506121071,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterinario"
+    },
+    "lat": 40.6642131,
+    "lon": 16.5974429,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Ambulatorio Veterinario Direttore sanitario Dott.essa Russo Claudia",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Matera",
+    "prov": "MT",
+    "reg": "Basilicata",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9929438589",
+    "osm_id": 9929438589,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "check_date": "2022-08-03",
+      "name": "Ambulatorio Veterinario Direttore sanitario Dott.essa Russo Claudia"
+    },
+    "lat": 40.6730211,
+    "lon": 16.6058823,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
