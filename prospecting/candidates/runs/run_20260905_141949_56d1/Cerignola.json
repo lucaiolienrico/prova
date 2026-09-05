@@ -1,0 +1,39 @@
+[
+  {
+    "n": "Centro Medico Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cerignola",
+    "prov": "FG",
+    "reg": "Puglia",
+    "addr": "Via Pasquale Specchio 10, 71042",
+    "site": null,
+    "email": null,
+    "tel": "+39 0885 423769",
+    "ig": null,
+    "fb": null,
+    "contact": "dott. Michele Monopoli",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3689748336",
+    "osm_id": 3689748336,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Cerignola",
+      "addr:country": "IT",
+      "addr:housenumber": "10",
+      "addr:postcode": "71042",
+      "addr:province": "FG",
+      "addr:street": "Via Pasquale Specchio",
+      "amenity": "veterinary",
+      "name": "Centro Medico Veterinario",
+      "operator": "dott. Michele Monopoli",
+      "phone": "+39 0885 423769",
+      "phone:mobile": "+39 329 387 4199"
+    },
+    "lat": 41.2683931,
+    "lon": 15.9064507,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

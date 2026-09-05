@@ -1036,8 +1036,8 @@
     "province": "Crotone",
     "region": "Calabria",
     "population": 58881,
-    "lat": null,
-    "lon": null
+    "lat": 39.1064966,
+    "lon": 17.1033303
   },
   {
     "name": "Agrigento",
@@ -1046,8 +1046,8 @@
     "province": "Agrigento",
     "region": "Sicilia",
     "population": 58323,
-    "lat": null,
-    "lon": null
+    "lat": 37.3151607,
+    "lon": 13.5726378
   },
   {
     "name": "Faenza",
@@ -1056,8 +1056,8 @@
     "province": "Ravenna",
     "region": "Emilia-Romagna",
     "population": 57748,
-    "lat": null,
-    "lon": null
+    "lat": 44.2953655,
+    "lon": 11.8968375
   },
   {
     "name": "Legnano",
@@ -1066,8 +1066,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 57647,
-    "lat": null,
-    "lon": null
+    "lat": 45.595806,
+    "lon": 8.9059818
   },
   {
     "name": "Marano di Napoli",
@@ -1076,8 +1076,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 57204,
-    "lat": null,
-    "lon": null
+    "lat": 40.8889808,
+    "lon": 14.1625546
   },
   {
     "name": "Cerignola",
@@ -1086,8 +1086,8 @@
     "province": "Foggia",
     "region": "Puglia",
     "population": 56653,
-    "lat": null,
-    "lon": null
+    "lat": 41.2917752,
+    "lon": 15.8672565
   },
   {
     "name": "Acerra",

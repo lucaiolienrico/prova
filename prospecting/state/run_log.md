@@ -209,3 +209,15 @@
 
 **Bilancio**: 6 citta' ok, 13 elementi OSM, 13 schede candidate, 11 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~285.
 
+## Giro del 2026-09-05T14:19:49Z (run_20260905_141949_56d1)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Crotone | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Agrigento | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Faenza | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Legnano | 27 | 27 | 23 | 4 (0 integrati) | ok |
+| Marano di Napoli | 10 | 10 | 2 | 8 (0 integrati) | ok |
+| Cerignola | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 44 elementi OSM, 44 schede candidate, 32 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~279.
+

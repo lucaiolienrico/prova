@@ -1,22 +1,22 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-05 09:46
+Generato: 2026-09-05 14:25
 ============================================================
-Prospect totali: .............. 732 (manuali 189, H24 543)
-Con contatto diretto ......... 309 (42%)
-Con sito web ................. 161
-Shortlist A+/A/B ............. 81
-Comuni/localita' distinti .... 139
+Prospect totali: .............. 763 (manuali 189, H24 574)
+Con contatto diretto ......... 323 (42%)
+Con sito web ................. 168
+Shortlist A+/A/B ............. 85
+Comuni/localita' distinti .... 143
 
-PRIORITA': A+=4, A=24, B=53, C=111, D=540
+PRIORITA': A+=4, A=25, B=56, C=115, D=563
 
 PER REGIONE:
-  Lombardia              117
-  Emilia-Romagna         97
+  Lombardia              140
+  Emilia-Romagna         100
   Sicilia                69
   Toscana                66
   Lazio                  65
-  Puglia                 50
-  Campania               50
+  Campania               52
+  Puglia                 51
   Piemonte               46
   Veneto                 37
   Liguria                33
@@ -24,7 +24,7 @@ PER REGIONE:
   Friuli-Venezia Giulia  15
   Marche                 15
   Molise                 12
-  Calabria               10
+  Calabria               12
   Abruzzo                9
   Trentino-Alto Adige/Südtirol 9
   Basilicata             5
@@ -33,18 +33,18 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     418
-  Pet shop                                       111
-  Toelettature                                   42
+  Veterinari                                     431
+  Pet shop                                       122
+  Toelettature                                   45
   Ambulatori veterinari                          32
-  Rifugi per animali                             29
+  Rifugi per animali                             31
   Negozi per animali                             18
-  Pensioni per animali                           13
+  Pensioni per animali                           14
   Associazioni animaliste                        10
   Educatori cinofili                             9
   Canili                                         8
   Centri cinofili                                8
-  Allevatori                                     6
+  Allevatori                                     7
   Cliniche veterinarie                           6
   Allevamenti professionali                      5
   Servizi di pet care                            4
@@ -62,6 +62,7 @@ TOP 15 PROSPECT PER SCORE:
    97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
+   85 A   Ambulatorio Veterinario Zama                         Faenza               Ambulatori veterinari
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
    85 A   Ambulatorio Veterinario Festa (Dott. Ezio Festa)     Bassano del Grappa   Ambulatori veterinari
    84 A   Centro Cinofilo Bauhaus Bassano                      Bassano del Grappa   Centri cinofili
@@ -71,4 +72,3 @@ TOP 15 PROSPECT PER SCORE:
    83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari
    83 A   Clinica Veterinaria San Francesco                    Imola                Veterinari
    83 A   Clinica Veterinaria Porta Schiavonia                 Forlì                Veterinari
-   83 A   Ambulatorio Veterinario Silver                       Forlì                Veterinari

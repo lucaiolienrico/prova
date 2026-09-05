@@ -1,6 +1,7 @@
 {
   "done": [
     "Afragola",
+    "Agrigento",
     "Alessandria",
     "Altamura",
     "Ancona",
@@ -26,12 +27,15 @@
     "Castellammare di Stabia",
     "Catania",
     "Catanzaro",
+    "Cerignola",
     "Cesena",
     "Cinisello Balsamo",
     "Como",
     "Corigliano-Rossano",
     "Cosenza",
     "Cremona",
+    "Crotone",
+    "Faenza",
     "Fano",
     "Ferrara",
     "Firenze",
@@ -49,8 +53,10 @@
     "Lamezia Terme",
     "Latina",
     "Lecce",
+    "Legnano",
     "Livorno",
     "Lucca",
+    "Marano di Napoli",
     "Marsala",
     "Massa",
     "Matera",
@@ -104,8 +110,8 @@
     "Viterbo",
     "Vittoria"
   ],
-  "last_run": "2026-09-05T09:46:26Z",
-  "runs": 18,
-  "new_total": 546,
+  "last_run": "2026-09-05T14:25:00Z",
+  "runs": 19,
+  "new_total": 578,
   "enrich_total": 15
 }

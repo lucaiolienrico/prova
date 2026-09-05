@@ -1,0 +1,58 @@
+[
+  {
+    "n": "Calabro Pet",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Crotone",
+    "prov": "KR",
+    "reg": "Calabria",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2631040253",
+    "osm_id": 2631040253,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Calabro Pet"
+    },
+    "lat": 39.0471631,
+    "lon": 17.1159074,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Darwin",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Crotone",
+    "prov": "KR",
+    "reg": "Calabria",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2613214730",
+    "osm_id": 2613214730,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Darwin"
+    },
+    "lat": 39.0814208,
+    "lon": 17.1192548,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
