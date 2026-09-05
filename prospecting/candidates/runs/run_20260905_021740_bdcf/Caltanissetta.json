@@ -1,0 +1,31 @@
+[
+  {
+    "n": "Il Cucciolotto",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Caltanissetta",
+    "prov": "CL",
+    "reg": "Sicilia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11508139871",
+    "osm_id": 11508139871,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Il Cucciolotto",
+      "shop": "pet",
+      "wheelchair": "yes"
+    },
+    "lat": 37.4722948,
+    "lon": 13.9973337,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

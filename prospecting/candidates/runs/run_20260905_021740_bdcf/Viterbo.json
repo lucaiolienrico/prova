@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Clinica Veterinaria",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Viterbo",
+    "prov": "VT",
+    "reg": "Lazio",
+    "addr": "Via Francesco Baracca 43",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13240574325",
+    "osm_id": 13240574325,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "43",
+      "addr:street": "Via Francesco Baracca",
+      "amenity": "veterinary",
+      "check_date": "2025-10-18",
+      "name": "Clinica Veterinaria"
+    },
+    "lat": 42.4274517,
+    "lon": 12.1063985,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

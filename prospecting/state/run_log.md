@@ -185,3 +185,15 @@
 
 **Bilancio**: 6 citta' ok, 15 elementi OSM, 15 schede candidate, 13 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~297.
 
+## Giro del 2026-09-05T02:17:40Z (run_20260905_021740_bdcf)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Carrara | 5 | 5 | 2 | 3 (0 integrati) | ok |
+| Afragola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Viterbo | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Fano | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Viareggio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Caltanissetta | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~291.
+

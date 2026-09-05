@@ -916,8 +916,8 @@
     "province": "Massa-Carrara",
     "region": "Toscana",
     "population": 64689,
-    "lat": null,
-    "lon": null
+    "lat": 44.0782032,
+    "lon": 10.0949365
   },
   {
     "name": "Afragola",
@@ -926,8 +926,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 63820,
-    "lat": null,
-    "lon": null
+    "lat": 40.922303,
+    "lon": 14.3272094
   },
   {
     "name": "Viterbo",
@@ -936,8 +936,8 @@
     "province": "Viterbo",
     "region": "Lazio",
     "population": 63209,
-    "lat": null,
-    "lon": null
+    "lat": 42.4431879,
+    "lon": 12.0646942
   },
   {
     "name": "Fano",
@@ -946,8 +946,8 @@
     "province": "Pesaro e Urbino",
     "region": "Marche",
     "population": 62901,
-    "lat": null,
-    "lon": null
+    "lat": 43.8176248,
+    "lon": 13.0110065
   },
   {
     "name": "Viareggio",
@@ -956,8 +956,8 @@
     "province": "Lucca",
     "region": "Toscana",
     "population": 61857,
-    "lat": null,
-    "lon": null
+    "lat": 43.8562208,
+    "lon": 10.2695199
   },
   {
     "name": "Caltanissetta",
@@ -966,8 +966,8 @@
     "province": "Caltanissetta",
     "region": "Sicilia",
     "population": 61711,
-    "lat": null,
-    "lon": null
+    "lat": 37.4640221,
+    "lon": 14.0085484
   },
   {
     "name": "Benevento",
