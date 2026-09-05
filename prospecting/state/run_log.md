@@ -221,3 +221,15 @@
 
 **Bilancio**: 6 citta' ok, 44 elementi OSM, 44 schede candidate, 32 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~279.
 
+## Giro del 2026-09-05T19:45:58Z (run_20260905_194558_5a11)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Acerra | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Pomezia | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Bitonto | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Manfredonia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Foligno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Moncalieri | 3 | 3 | 3 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 8 elementi OSM, 8 schede candidate, 8 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~273.
+

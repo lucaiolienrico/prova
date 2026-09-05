@@ -1096,8 +1096,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 56465,
-    "lat": null,
-    "lon": null
+    "lat": 40.9616931,
+    "lon": 14.395684
   },
   {
     "name": "Pomezia",
@@ -1106,8 +1106,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 56372,
-    "lat": null,
-    "lon": null
+    "lat": 41.6551245,
+    "lon": 12.5057133
   },
   {
     "name": "Bitonto",
@@ -1116,8 +1116,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 56258,
-    "lat": null,
-    "lon": null
+    "lat": 41.0500379,
+    "lon": 16.6141093
   },
   {
     "name": "Manfredonia",
@@ -1126,8 +1126,8 @@
     "province": "Foggia",
     "region": "Puglia",
     "population": 56257,
-    "lat": null,
-    "lon": null
+    "lat": 41.5460118,
+    "lon": 15.8209424
   },
   {
     "name": "Foligno",
@@ -1136,8 +1136,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 56045,
-    "lat": null,
-    "lon": null
+    "lat": 42.9880811,
+    "lon": 12.7815186
   },
   {
     "name": "Moncalieri",
@@ -1146,8 +1146,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 55875,
-    "lat": null,
-    "lon": null
+    "lat": 44.9795487,
+    "lon": 7.7025653
   },
   {
     "name": "Trani",

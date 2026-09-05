@@ -1,0 +1,36 @@
+[
+  {
+    "n": "Ambulatorio Dir. San. Cornel Petcu",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Bitonto",
+    "prov": "BA",
+    "reg": "Puglia",
+    "addr": "Via Massimo D'Azeglio 15, 70032",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": "Cornel Petcu",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5763293837",
+    "osm_id": 5763293837,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Bitonto",
+      "addr:housenumber": "15",
+      "addr:postcode": "70032",
+      "addr:street": "Via Massimo D'Azeglio",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Dir. San. Cornel Petcu",
+      "opening_hours": "Tu,Th 10:00-13:00; Sa 17:00-20:00",
+      "operator": "Cornel Petcu"
+    },
+    "lat": 41.1126948,
+    "lon": 16.695015,
+    "other": "OSM: amenity=veterinary, opening_hours=Tu,Th 10:00-13:00; Sa 17:00-20:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
