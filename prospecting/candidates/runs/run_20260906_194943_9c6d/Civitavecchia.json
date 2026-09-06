@@ -1,0 +1,62 @@
+[
+  {
+    "n": "Very important pet",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Civitavecchia",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": "Via del Mercato 7",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3889138896",
+    "osm_id": 3889138896,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Via del Mercato",
+      "name": "Very important pet",
+      "shop": "pet"
+    },
+    "lat": 42.0923387,
+    "lon": 11.7935986,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Amici A 4 Zampe",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Civitavecchia",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": "Via Donato Bramante 33",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3883449207",
+    "osm_id": 3883449207,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "33",
+      "addr:street": "Via Donato Bramante",
+      "name": "Amici A 4 Zampe",
+      "shop": "pet"
+    },
+    "lat": 42.0885817,
+    "lon": 11.8017706,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

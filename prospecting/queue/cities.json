@@ -1336,8 +1336,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 51456,
-    "lat": null,
-    "lon": null
+    "lat": 37.6283089,
+    "lon": 15.1575668
   },
   {
     "name": "Civitavecchia",
@@ -1346,8 +1346,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 51229,
-    "lat": null,
-    "lon": null
+    "lat": 42.1108401,
+    "lon": 11.8033113
   },
   {
     "name": "Pordenone",
@@ -1356,8 +1356,8 @@
     "province": "Pordenone",
     "region": "Friuli-Venezia Giulia",
     "population": 50583,
-    "lat": null,
-    "lon": null
+    "lat": 45.9528019,
+    "lon": 12.6566726
   },
   {
     "name": "Battipaglia",
@@ -1366,8 +1366,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 50464,
-    "lat": null,
-    "lon": null
+    "lat": 40.5949292,
+    "lon": 14.9518182
   },
   {
     "name": "Gallarate",
@@ -1376,8 +1376,8 @@
     "province": "Varese",
     "region": "Lombardia",
     "population": 50456,
-    "lat": null,
-    "lon": null
+    "lat": 45.6608129,
+    "lon": 8.7930563
   },
   {
     "name": "Montesilvano",
@@ -1386,8 +1386,8 @@
     "province": "Pescara",
     "region": "Abruzzo",
     "population": 50413,
-    "lat": null,
-    "lon": null
+    "lat": 42.4962364,
+    "lon": 14.1428514
   },
   {
     "name": "Rovigo",

@@ -1,6 +1,7 @@
 {
   "done": [
     "Acerra",
+    "Acireale",
     "Afragola",
     "Agrigento",
     "Alessandria",
@@ -15,6 +16,7 @@
     "Bagheria",
     "Bari",
     "Barletta",
+    "Battipaglia",
     "Benevento",
     "Bergamo",
     "Bisceglie",
@@ -38,6 +40,7 @@
     "Cesena",
     "Chieti",
     "Cinisello Balsamo",
+    "Civitavecchia",
     "Como",
     "Corigliano-Rossano",
     "Cosenza",
@@ -53,6 +56,7 @@
     "Foggia",
     "Foligno",
     "Forlì",
+    "Gallarate",
     "Gela",
     "Genova",
     "Giugliano in Campania",
@@ -78,6 +82,7 @@
     "Modica",
     "Molfetta",
     "Moncalieri",
+    "Montesilvano",
     "Monza",
     "Napoli",
     "Novara",
@@ -93,6 +98,7 @@
     "Pisa",
     "Pistoia",
     "Pomezia",
+    "Pordenone",
     "Portici",
     "Potenza",
     "Pozzuoli",
@@ -134,8 +140,8 @@
     "Viterbo",
     "Vittoria"
   ],
-  "last_run": "2026-09-06T14:53:04Z",
-  "runs": 23,
-  "new_total": 630,
+  "last_run": "2026-09-06T19:52:39Z",
+  "runs": 24,
+  "new_total": 643,
   "enrich_total": 16
 }

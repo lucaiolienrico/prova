@@ -1,0 +1,35 @@
+[
+  {
+    "n": "Dog & Cat Megastore",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Battipaglia",
+    "prov": "SA",
+    "reg": "Campania",
+    "addr": "Strada Statale 18/viale Giuseppe Verdi-via Amerigo Vespucci 18, 84090",
+    "site": "https://www.dogecatmegastore.it/",
+    "email": null,
+    "tel": "+39 0828350031",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12087887309",
+    "osm_id": 12087887309,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "18",
+      "addr:postcode": "84090",
+      "addr:street": "Strada Statale 18/viale Giuseppe Verdi-via Amerigo Vespucci",
+      "name": "Dog & Cat Megastore",
+      "phone": "+39 0828350031",
+      "shop": "pet",
+      "website": "https://www.dogecatmegastore.it/"
+    },
+    "lat": 40.6312259,
+    "lon": 14.9068127,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
