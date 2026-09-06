@@ -1,0 +1,34 @@
+[
+  {
+    "n": "veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Tivoli",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": "Via Camillo Pierattini 16,18,20, 00019",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11088915762",
+    "osm_id": 11088915762,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Tivoli",
+      "addr:housenumber": "16,18,20",
+      "addr:postcode": "00019",
+      "addr:street": "Via Camillo Pierattini",
+      "amenity": "veterinary",
+      "name": "veterinario"
+    },
+    "lat": 41.9684032,
+    "lon": 12.7724394,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

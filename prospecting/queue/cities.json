@@ -1276,8 +1276,8 @@
     "province": "Sassari",
     "region": "Sardegna",
     "population": 53307,
-    "lat": null,
-    "lon": null
+    "lat": 40.8949732,
+    "lon": 9.5636966
   },
   {
     "name": "Tivoli",
@@ -1286,8 +1286,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 52910,
-    "lat": null,
-    "lon": null
+    "lat": 41.9614391,
+    "lon": 12.7688411
   },
   {
     "name": "Siena",
@@ -1296,8 +1296,8 @@
     "province": "Siena",
     "region": "Toscana",
     "population": 52839,
-    "lat": null,
-    "lon": null
+    "lat": 43.3081132,
+    "lon": 11.3292794
   },
   {
     "name": "Aversa",
@@ -1306,8 +1306,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 52830,
-    "lat": null,
-    "lon": null
+    "lat": 40.9706548,
+    "lon": 14.2046445
   },
   {
     "name": "Velletri",
@@ -1316,8 +1316,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 52295,
-    "lat": null,
-    "lon": null
+    "lat": 41.6559996,
+    "lon": 12.7691668
   },
   {
     "name": "Chieti",
@@ -1326,8 +1326,8 @@
     "province": "Chieti",
     "region": "Abruzzo",
     "population": 51484,
-    "lat": null,
-    "lon": null
+    "lat": 42.3707237,
+    "lon": 14.1522779
   },
   {
     "name": "Acireale",
