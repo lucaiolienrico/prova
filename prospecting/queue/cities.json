@@ -1216,8 +1216,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 54257,
-    "lat": null,
-    "lon": null
+    "lat": 38.0776718,
+    "lon": 13.4989502
   },
   {
     "name": "Avellino",
@@ -1226,8 +1226,8 @@
     "province": "Avellino",
     "region": "Campania",
     "population": 54222,
-    "lat": null,
-    "lon": null
+    "lat": 40.912969,
+    "lon": 14.7895658
   },
   {
     "name": "Sanremo",
@@ -1236,8 +1236,8 @@
     "province": "Imperia",
     "region": "Liguria",
     "population": 54137,
-    "lat": null,
-    "lon": null
+    "lat": 43.8362079,
+    "lon": 7.7776336
   },
   {
     "name": "Modica",
@@ -1246,8 +1246,8 @@
     "province": "Ragusa",
     "region": "Sicilia",
     "population": 53959,
-    "lat": null,
-    "lon": null
+    "lat": 36.871169,
+    "lon": 14.8253852
   },
   {
     "name": "Cava de' Tirreni",
@@ -1256,8 +1256,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 53885,
-    "lat": null,
-    "lon": null
+    "lat": 40.7121705,
+    "lon": 14.7028171
   },
   {
     "name": "Ercolano",
@@ -1266,8 +1266,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 53677,
-    "lat": null,
-    "lon": null
+    "lat": 40.8151905,
+    "lon": 14.3877518
   },
   {
     "name": "Olbia",

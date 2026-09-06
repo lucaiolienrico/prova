@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Arcaplanet",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Sanremo",
+    "prov": "IM",
+    "reg": "Liguria",
+    "addr": "Corso Matuzia 83, 18038",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/1722892445",
+    "osm_id": 1722892445,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "83",
+      "addr:postcode": "18038",
+      "addr:street": "Corso Matuzia",
+      "brand": "Arcaplanet",
+      "brand:wikidata": "Q105530937",
+      "name": "Arcaplanet",
+      "opening_hours": "Mo-Sa 09:00-20:00; Su 10:00-13:00,16:00-20:00",
+      "shop": "pet",
+      "wheelchair": "yes"
+    },
+    "lat": 43.8108066,
+    "lon": 7.7611353,
+    "other": "OSM: brand=Arcaplanet, opening_hours=Mo-Sa 09:00-20:00; Su 10:00-13:00,16:00-20:00, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

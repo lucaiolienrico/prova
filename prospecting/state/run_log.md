@@ -245,3 +245,15 @@
 
 **Bilancio**: 6 citta' ok, 13 elementi OSM, 13 schede candidate, 9 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~267.
 
+## Giro del 2026-09-06T10:00:42Z (run_20260906_100042_fd46)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Bagheria | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Avellino | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Sanremo | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Modica | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Cava de' Tirreni | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Ercolano | 5 | 5 | 1 | 4 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 10 elementi OSM, 10 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~261.
+
