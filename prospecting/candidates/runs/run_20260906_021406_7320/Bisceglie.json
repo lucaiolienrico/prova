@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Ambulatorio veterinario Dott. Sassara",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Bisceglie",
+    "prov": "BT",
+    "reg": "Puglia",
+    "addr": "Via dell'Emancipazione 15, 76011",
+    "site": null,
+    "email": null,
+    "tel": "+39 349 429 6698",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5859247026",
+    "osm_id": 5859247026,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Bisceglie",
+      "addr:country": "IT",
+      "addr:housenumber": "15",
+      "addr:postcode": "76011",
+      "addr:province": "Barletta-Andria-Trani",
+      "addr:street": "Via dell'Emancipazione",
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario Dott. Sassara",
+      "phone": "+39 349 429 6698"
+    },
+    "lat": 41.236824,
+    "lon": 16.5059586,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

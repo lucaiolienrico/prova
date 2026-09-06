@@ -1156,8 +1156,8 @@
     "province": "Barletta-Andria-Trani",
     "region": "Puglia",
     "population": 55842,
-    "lat": null,
-    "lon": null
+    "lat": 41.2336156,
+    "lon": 16.3972624
   },
   {
     "name": "Portici",
@@ -1166,8 +1166,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 55765,
-    "lat": null,
-    "lon": null
+    "lat": 40.8173534,
+    "lon": 14.3402613
   },
   {
     "name": "Cuneo",
@@ -1176,8 +1176,8 @@
     "province": "Cuneo",
     "region": "Piemonte",
     "population": 55013,
-    "lat": null,
-    "lon": null
+    "lat": 44.4185918,
+    "lon": 7.5576418
   },
   {
     "name": "San Severo",
@@ -1186,8 +1186,8 @@
     "province": "Foggia",
     "region": "Puglia",
     "population": 54906,
-    "lat": null,
-    "lon": null
+    "lat": 41.6592255,
+    "lon": 15.4517232
   },
   {
     "name": "Bisceglie",
@@ -1196,8 +1196,8 @@
     "province": "Barletta-Andria-Trani",
     "region": "Puglia",
     "population": 54678,
-    "lat": null,
-    "lon": null
+    "lat": 41.2024821,
+    "lon": 16.4854674
   },
   {
     "name": "Teramo",
@@ -1206,8 +1206,8 @@
     "province": "Teramo",
     "region": "Abruzzo",
     "population": 54294,
-    "lat": null,
-    "lon": null
+    "lat": 42.6572162,
+    "lon": 13.7051568
   },
   {
     "name": "Bagheria",

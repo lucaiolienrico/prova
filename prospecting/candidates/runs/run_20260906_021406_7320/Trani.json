@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Centro Veterinario Konrad Lorenz",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Trani",
+    "prov": "BT",
+    "reg": "Puglia",
+    "addr": "Via Giovanni Falcone 18, 76125",
+    "site": null,
+    "email": null,
+    "tel": "+39 0883 589 090",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2522472300",
+    "osm_id": 2522472300,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Trani",
+      "addr:country": "IT",
+      "addr:housename": "Konrad Lorenz",
+      "addr:housenumber": "18",
+      "addr:postcode": "76125",
+      "addr:street": "Via Giovanni Falcone",
+      "amenity": "veterinary",
+      "name": "Centro Veterinario Konrad Lorenz",
+      "phone": "+39 0883 589 090"
+    },
+    "lat": 41.269414,
+    "lon": 16.4237782,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
