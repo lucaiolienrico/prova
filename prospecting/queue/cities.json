@@ -1576,8 +1576,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 47356,
-    "lat": null,
-    "lon": null
+    "lat": 37.501683,
+    "lon": 15.0110559
   },
   {
     "name": "San Benedetto del Tronto",
@@ -1596,8 +1596,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 46873,
-    "lat": null,
-    "lon": null
+    "lat": 45.1432298,
+    "lon": 7.7747225
   },
   {
     "name": "Lecco",
@@ -1606,8 +1606,8 @@
     "province": "Lecco",
     "region": "Lombardia",
     "population": 46705,
-    "lat": null,
-    "lon": null
+    "lat": 45.8591663,
+    "lon": 9.4258304
   },
   {
     "name": "Mantova",
@@ -1616,8 +1616,8 @@
     "province": "Mantova",
     "region": "Lombardia",
     "population": 46649,
-    "lat": null,
-    "lon": null
+    "lat": 45.1443943,
+    "lon": 10.8135892
   },
   {
     "name": "Frosinone",
@@ -1626,8 +1626,8 @@
     "province": "Frosinone",
     "region": "Lazio",
     "population": 46649,
-    "lat": null,
-    "lon": null
+    "lat": 41.6345503,
+    "lon": 13.3282807
   },
   {
     "name": "Nocera Inferiore",

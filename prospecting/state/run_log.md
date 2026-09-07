@@ -317,3 +317,18 @@
 
 **Bilancio**: 6 citta' ok, 27 elementi OSM, 27 schede candidate, 16 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~231.
 
+## Giro del 2026-09-07T20:57:11Z (run_20260907_205711_6db2)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Misterbianco | 13 | 13 | 10 | 3 (0 integrati) | ok |
+| San Benedetto del Tronto | - | - | - | - | geocodifica fallita |
+| Settimo Torinese | 2 | 2 | 1 | 1 (0 integrati) | ok |
+| Lecco | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Mantova | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Frosinone | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 5 citta' ok, 19 elementi OSM, 19 schede candidate, 15 nuove, 0 integrate, 1 citta' fallite (verranno ritentate), coda rimanente ~225.
+
+**Citta' fallite (ritentate al prossimo giro):**
+- San Benedetto del Tronto: geocodifica fallita
+

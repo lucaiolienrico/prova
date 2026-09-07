@@ -1,0 +1,34 @@
+[
+  {
+    "n": "Dr. Ferlini Luca",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Mantova",
+    "prov": "MN",
+    "reg": "Lombardia",
+    "addr": "Via Cremona 29, 46100",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7847217748",
+    "osm_id": 7847217748,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Mantova",
+      "addr:housenumber": "29",
+      "addr:postcode": "46100",
+      "addr:street": "Via Cremona",
+      "amenity": "veterinary",
+      "name": "Dr. Ferlini Luca"
+    },
+    "lat": 45.1560699,
+    "lon": 10.763821,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
