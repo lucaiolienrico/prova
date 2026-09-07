@@ -1516,8 +1516,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 48621,
-    "lat": null,
-    "lon": null
+    "lat": 40.9044976,
+    "lon": 14.3511822
   },
   {
     "name": "Monopoli",
@@ -1526,8 +1526,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 48529,
-    "lat": null,
-    "lon": null
+    "lat": 40.8996417,
+    "lon": 17.2883925
   },
   {
     "name": "Corato",
@@ -1536,8 +1536,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 48072,
-    "lat": null,
-    "lon": null
+    "lat": 41.0942898,
+    "lon": 16.3657785
   },
   {
     "name": "Paternò",
@@ -1546,8 +1546,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 47870,
-    "lat": null,
-    "lon": null
+    "lat": 37.5179904,
+    "lon": 14.8551232
   },
   {
     "name": "Nichelino",
@@ -1556,8 +1556,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 47851,
-    "lat": null,
-    "lon": null
+    "lat": 44.987081,
+    "lon": 7.6214143
   },
   {
     "name": "Sesto Fiorentino",
@@ -1566,8 +1566,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 47742,
-    "lat": null,
-    "lon": null
+    "lat": 43.8398696,
+    "lon": 11.2181067
   },
   {
     "name": "Misterbianco",

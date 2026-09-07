@@ -305,3 +305,15 @@
 
 **Bilancio**: 6 citta' ok, 6 elementi OSM, 6 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~237.
 
+## Giro del 2026-09-07T16:57:44Z (run_20260907_165744_1db5)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Casalnuovo di Napoli | 12 | 12 | 7 | 5 (0 integrati) | ok |
+| Monopoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Corato | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Paternò | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Nichelino | 11 | 11 | 6 | 5 (1 integrati) | ok |
+| Sesto Fiorentino | 4 | 4 | 3 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 27 elementi OSM, 27 schede candidate, 16 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~231.
+

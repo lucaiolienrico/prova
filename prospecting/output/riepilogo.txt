@@ -1,23 +1,23 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-07 11:19
+Generato: 2026-09-07 17:12
 ============================================================
-Prospect totali: .............. 848 (manuali 189, H24 659)
-Con contatto diretto ......... 354 (41%)
-Con sito web ................. 186
+Prospect totali: .............. 864 (manuali 189, H24 675)
+Con contatto diretto ......... 356 (41%)
+Con sito web ................. 187
 Shortlist A+/A/B ............. 90
-Comuni/localita' distinti .... 176
+Comuni/localita' distinti .... 179
 
-PRIORITA': A+=4, A=29, B=57, C=131, D=627
+PRIORITA': A+=4, A=29, B=57, C=131, D=643
 
 PER REGIONE:
   Lombardia              142
   Emilia-Romagna         100
-  Toscana                84
+  Toscana                87
+  Campania               76
   Sicilia                75
   Lazio                  72
-  Campania               69
+  Piemonte               61
   Puglia                 55
-  Piemonte               55
   Veneto                 39
   Liguria                34
   Sardegna               22
@@ -33,18 +33,18 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     479
-  Pet shop                                       145
-  Toelettature                                   54
+  Veterinari                                     481
+  Pet shop                                       154
+  Toelettature                                   58
   Rifugi per animali                             35
   Ambulatori veterinari                          32
   Negozi per animali                             18
   Pensioni per animali                           15
   Associazioni animaliste                        10
   Educatori cinofili                             9
+  Allevatori                                     8
   Canili                                         8
   Centri cinofili                                8
-  Allevatori                                     7
   Cliniche veterinarie                           6
   Allevamenti professionali                      5
   Servizi di pet care                            4
