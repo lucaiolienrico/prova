@@ -1456,8 +1456,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 49735,
-    "lat": null,
-    "lon": null
+    "lat": 45.2183969,
+    "lon": 12.2432992
   },
   {
     "name": "Anzio",
@@ -1466,8 +1466,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 49731,
-    "lat": null,
-    "lon": null
+    "lat": 41.4936924,
+    "lon": 12.5990662
   },
   {
     "name": "Collegno",
@@ -1476,8 +1476,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 49083,
-    "lat": null,
-    "lon": null
+    "lat": 45.0946799,
+    "lon": 7.5887854
   },
   {
     "name": "Martina Franca",
@@ -1486,8 +1486,8 @@
     "province": "Taranto",
     "region": "Puglia",
     "population": 49009,
-    "lat": null,
-    "lon": null
+    "lat": 40.6914216,
+    "lon": 17.32081
   },
   {
     "name": "Campobasso",
@@ -1496,8 +1496,8 @@
     "province": "Campobasso",
     "region": "Molise",
     "population": 48747,
-    "lat": null,
-    "lon": null
+    "lat": 41.5738765,
+    "lon": 14.6607231
   },
   {
     "name": "Rivoli",
@@ -1506,8 +1506,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 48632,
-    "lat": null,
-    "lon": null
+    "lat": 45.0674954,
+    "lon": 7.5279792
   },
   {
     "name": "Casalnuovo di Napoli",

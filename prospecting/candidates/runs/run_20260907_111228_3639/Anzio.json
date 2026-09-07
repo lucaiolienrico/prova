@@ -1,0 +1,60 @@
+[
+  {
+    "n": "Clinica Veterinaria Europa",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Anzio",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11827161232",
+    "osm_id": 11827161232,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria Europa",
+      "opening_hours": "24/7",
+      "wheelchair": "yes"
+    },
+    "lat": 41.4667689,
+    "lon": 12.6272563,
+    "other": "OSM: amenity=veterinary, opening_hours=24/7",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Veterinario Dr. Polverino Carlo",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Anzio",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11827004348",
+    "osm_id": 11827004348,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterinario Dr. Polverino Carlo"
+    },
+    "lat": 41.4962907,
+    "lon": 12.6255889,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
