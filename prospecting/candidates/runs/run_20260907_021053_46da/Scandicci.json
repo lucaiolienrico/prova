@@ -1,0 +1,31 @@
+[
+  {
+    "n": "Chirone",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Scandicci",
+    "prov": "FI",
+    "reg": "Toscana",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/6776532486",
+    "osm_id": 6776532486,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Chirone",
+      "opening_hours": "Mo-Fr 09:00-19:30"
+    },
+    "lat": 43.7608293,
+    "lon": 11.1777215,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 09:00-19:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

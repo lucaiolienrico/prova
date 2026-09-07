@@ -1,29 +1,29 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-06 19:52
+Generato: 2026-09-07 02:13
 ============================================================
-Prospect totali: .............. 827 (manuali 189, H24 638)
-Con contatto diretto ......... 347 (41%)
-Con sito web ................. 183
-Shortlist A+/A/B ............. 87
-Comuni/localita' distinti .... 165
+Prospect totali: .............. 842 (manuali 189, H24 653)
+Con contatto diretto ......... 354 (42%)
+Con sito web ................. 186
+Shortlist A+/A/B ............. 90
+Comuni/localita' distinti .... 171
 
-PRIORITA': A+=4, A=26, B=57, C=127, D=613
+PRIORITA': A+=4, A=29, B=57, C=131, D=621
 
 PER REGIONE:
-  Lombardia              140
+  Lombardia              142
   Emilia-Romagna         100
-  Toscana                83
-  Sicilia                74
+  Toscana                84
+  Sicilia                75
   Lazio                  70
-  Campania               65
+  Campania               69
   Puglia                 54
   Piemonte               53
-  Veneto                 37
+  Veneto                 38
   Liguria                34
   Sardegna               22
+  Marche                 21
   Abruzzo                19
   Friuli-Venezia Giulia  16
-  Marche                 15
   Molise                 12
   Calabria               12
   Trentino-Alto Adige/Südtirol 9
@@ -33,10 +33,10 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     462
-  Pet shop                                       142
+  Veterinari                                     473
+  Pet shop                                       145
   Toelettature                                   54
-  Rifugi per animali                             34
+  Rifugi per animali                             35
   Ambulatori veterinari                          32
   Negozi per animali                             18
   Pensioni per animali                           15
@@ -66,9 +66,9 @@ TOP 15 PROSPECT PER SCORE:
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
    85 A   Ambulatorio Veterinario Festa (Dott. Ezio Festa)     Bassano del Grappa   Ambulatori veterinari
    84 A   Centro Cinofilo Bauhaus Bassano                      Bassano del Grappa   Centri cinofili
+   84 A   Aquarium                                             Scafati              Pet shop
    84 A   Palla di Pelo                                        Tivoli               Pet shop
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
    83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
    83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari
    83 A   Clinica Veterinaria San Francesco                    Imola                Veterinari
-   83 A   Clinica Veterinaria Porta Schiavonia                 Forlì                Veterinari

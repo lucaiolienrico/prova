@@ -1396,8 +1396,8 @@
     "province": "Rovigo",
     "region": "Veneto",
     "population": 50164,
-    "lat": null,
-    "lon": null
+    "lat": 45.0712298,
+    "lon": 11.7976521
   },
   {
     "name": "Rho",
@@ -1406,8 +1406,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 50052,
-    "lat": null,
-    "lon": null
+    "lat": 45.5310434,
+    "lon": 9.0514282
   },
   {
     "name": "Scafati",
@@ -1416,8 +1416,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 50013,
-    "lat": null,
-    "lon": null
+    "lat": 40.7635433,
+    "lon": 14.5409728
   },
   {
     "name": "Mazara del Vallo",
@@ -1426,8 +1426,8 @@
     "province": "Trapani",
     "region": "Sicilia",
     "population": 49995,
-    "lat": null,
-    "lon": null
+    "lat": 37.688987,
+    "lon": 12.6386339
   },
   {
     "name": "Ascoli Piceno",
@@ -1436,8 +1436,8 @@
     "province": "Ascoli Piceno",
     "region": "Marche",
     "population": 49958,
-    "lat": null,
-    "lon": null
+    "lat": 42.8510859,
+    "lon": 13.5803746
   },
   {
     "name": "Scandicci",
@@ -1446,8 +1446,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 49765,
-    "lat": null,
-    "lon": null
+    "lat": 43.7357852,
+    "lon": 11.1487267
   },
   {
     "name": "Chioggia",

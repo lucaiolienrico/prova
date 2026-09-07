@@ -1,0 +1,36 @@
+[
+  {
+    "n": "Centro Veterinario \"Città di Mazara\"",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Mazara del Vallo",
+    "prov": "TP",
+    "reg": "Sicilia",
+    "addr": null,
+    "site": null,
+    "email": "vetmaz@gmail.com",
+    "tel": "+39 0923 364832",
+    "ig": null,
+    "fb": null,
+    "contact": "Giosuè Ruggiano",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/1364722234",
+    "osm_id": 1364722234,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "contact:email": "vetmaz@gmail.com",
+      "contact:mobile": "+39 347 8030991",
+      "contact:phone": "+39 0923 364832",
+      "name": "Centro Veterinario \"Città di Mazara\"",
+      "opening_hours": "Mo-Fr 10:00-12:30,15:30-20:00",
+      "operator": "Giosuè Ruggiano",
+      "ref:it:vat": "02422660817"
+    },
+    "lat": 37.6495318,
+    "lon": 12.6021801,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-12:30,15:30-20:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

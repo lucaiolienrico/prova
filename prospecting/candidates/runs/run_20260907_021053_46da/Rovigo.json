@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Galiazzo",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Rovigo",
+    "prov": "RO",
+    "reg": "Veneto",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7188070427",
+    "osm_id": 7188070427,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Galiazzo",
+      "shop": "pet"
+    },
+    "lat": 45.0712465,
+    "lon": 11.7866343,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
