@@ -1,27 +1,27 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-07 21:04
+Generato: 2026-09-08 02:23
 ============================================================
-Prospect totali: .............. 879 (manuali 189, H24 690)
-Con contatto diretto ......... 358 (40%)
-Con sito web ................. 187
-Shortlist A+/A/B ............. 90
-Comuni/localita' distinti .... 183
+Prospect totali: .............. 890 (manuali 189, H24 701)
+Con contatto diretto ......... 364 (40%)
+Con sito web ................. 188
+Shortlist A+/A/B ............. 91
+Comuni/localita' distinti .... 188
 
-PRIORITA': A+=4, A=29, B=57, C=131, D=658
+PRIORITA': A+=5, A=29, B=57, C=132, D=667
 
 PER REGIONE:
-  Lombardia              146
+  Lombardia              147
   Emilia-Romagna         100
-  Toscana                87
+  Toscana                89
   Sicilia                85
-  Campania               76
-  Lazio                  72
-  Piemonte               62
+  Campania               78
+  Lazio                  73
+  Piemonte               66
   Puglia                 55
   Veneto                 39
   Liguria                34
   Sardegna               22
-  Marche                 21
+  Marche                 22
   Abruzzo                19
   Friuli-Venezia Giulia  16
   Molise                 12
@@ -33,7 +33,7 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     487
+  Veterinari                                     498
   Pet shop                                       159
   Toelettature                                   59
   Rifugi per animali                             36
@@ -58,6 +58,7 @@ PER CATEGORIA:
 
 TOP 15 PROSPECT PER SCORE:
    97 A+  Bolle & Cucce                                        Empoli               Toelettature
+   97 A+  Animal Care Clinica Veterinaria                      Nocera Inferiore     Veterinari
    97 A+  Ambulatorio Veterinario Gattamelata                  Roma                 Veterinari
    97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
@@ -71,4 +72,3 @@ TOP 15 PROSPECT PER SCORE:
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
    83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
    83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari
-   83 A   Clinica Veterinaria San Francesco                    Imola                Veterinari

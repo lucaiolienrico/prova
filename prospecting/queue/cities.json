@@ -1586,8 +1586,8 @@
     "province": "Ascoli Piceno",
     "region": "Marche",
     "population": 46963,
-    "lat": null,
-    "lon": null
+    "lat": 42.927174,
+    "lon": 13.8752255
   },
   {
     "name": "Settimo Torinese",
@@ -1636,8 +1636,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 46563,
-    "lat": null,
-    "lon": null
+    "lat": 40.7525948,
+    "lon": 14.635035
   },
   {
     "name": "Paderno Dugnano",
@@ -1646,8 +1646,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 46562,
-    "lat": null,
-    "lon": null
+    "lat": 45.5719081,
+    "lon": 9.1691464
   },
   {
     "name": "Empoli",
@@ -1656,8 +1656,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 46541,
-    "lat": null,
-    "lon": null
+    "lat": 43.696027,
+    "lon": 10.9407543
   },
   {
     "name": "Vercelli",
@@ -1666,8 +1666,8 @@
     "province": "Vercelli",
     "region": "Piemonte",
     "population": 46308,
-    "lat": null,
-    "lon": null
+    "lat": 45.3250387,
+    "lon": 8.4149259
   },
   {
     "name": "Rieti",
@@ -1676,8 +1676,8 @@
     "province": "Rieti",
     "region": "Lazio",
     "population": 46187,
-    "lat": null,
-    "lon": null
+    "lat": 42.4090066,
+    "lon": 12.853207
   },
   {
     "name": "Cologno Monzese",

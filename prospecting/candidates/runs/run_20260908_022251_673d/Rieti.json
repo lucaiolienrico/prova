@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ambulatorio veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Rieti",
+    "prov": "RI",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9613579569",
+    "osm_id": 9613579569,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario"
+    },
+    "lat": 42.4059122,
+    "lon": 12.890333,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

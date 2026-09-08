@@ -1,0 +1,36 @@
+[
+  {
+    "n": "Clinica Veterinaria Dr.Grosso Dr.Fausti Dr.Cantatore",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "San Benedetto del Tronto",
+    "prov": "AP",
+    "reg": "Marche",
+    "addr": "Via della Liberazione 18, 63074",
+    "site": null,
+    "email": null,
+    "tel": "+39 0735 81661",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7049744804",
+    "osm_id": 7049744804,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "San Benedetto del Tronto",
+      "addr:housenumber": "18",
+      "addr:postcode": "63074",
+      "addr:street": "Via della Liberazione",
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria Dr.Grosso Dr.Fausti Dr.Cantatore",
+      "opening_hours": "24/7",
+      "phone": "+39 0735 81661"
+    },
+    "lat": 42.9405382,
+    "lon": 13.8803861,
+    "other": "OSM: amenity=veterinary, opening_hours=24/7",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

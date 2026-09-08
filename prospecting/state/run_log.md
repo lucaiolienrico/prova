@@ -332,3 +332,15 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - San Benedetto del Tronto: geocodifica fallita
 
+## Giro del 2026-09-08T02:22:51Z (run_20260908_022251_673d)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| San Benedetto del Tronto | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Nocera Inferiore | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Paderno Dugnano | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Empoli | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Vercelli | 5 | 5 | 4 | 1 (0 integrati) | ok |
+| Rieti | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~220.
+
