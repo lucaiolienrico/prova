@@ -1,0 +1,40 @@
+[
+  {
+    "n": "GammaVet",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Seregno",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": "Via Mosè Gerosa 42, 20831",
+    "site": null,
+    "email": "gammavet5@gmail.com",
+    "tel": "+3903621441462",
+    "ig": "gammavet_clinica_veterinaria",
+    "fb": "https://www.facebook.com/GammavetSeregno/",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5224705091",
+    "osm_id": 5224705091,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Seregno",
+      "addr:housenumber": "42",
+      "addr:postcode": "20831",
+      "addr:street": "Via Mosè Gerosa",
+      "amenity": "veterinary",
+      "contact:facebook": "https://www.facebook.com/GammavetSeregno/",
+      "contact:instagram": "https://www.instagram.com/gammavet_clinica_veterinaria/",
+      "contact:youtube": "https://www.youtube.com/channel/UCioeTySnGBaSUzGiFPobE1g",
+      "email": "gammavet5@gmail.com",
+      "name": "GammaVet",
+      "phone": "+3903621441462",
+      "ref:vatin": "IT09504920969"
+    },
+    "lat": 45.6561527,
+    "lon": 9.2015987,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

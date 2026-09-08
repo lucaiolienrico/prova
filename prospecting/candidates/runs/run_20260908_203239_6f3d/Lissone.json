@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Centro Lombardo di Osteopatia Animale e Biorisonanza",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Lissone",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": "Via Carlo Porta 35, 20851",
+    "site": "https://www.centroosteopatiaanimale.it/",
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": "Arianna Viganò",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11560061288",
+    "osm_id": 11560061288,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Lissone",
+      "addr:housenumber": "35",
+      "addr:postcode": "20851",
+      "addr:street": "Via Carlo Porta",
+      "amenity": "veterinary",
+      "mobile": "+39 391 778 39 94",
+      "name": "Centro Lombardo di Osteopatia Animale e Biorisonanza",
+      "opening_hours": "Mo-Fr 09:00-19:30",
+      "operator": "Arianna Viganò",
+      "website": "https://www.centroosteopatiaanimale.it/"
+    },
+    "lat": 45.6044843,
+    "lon": 9.2510407,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 09:00-19:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

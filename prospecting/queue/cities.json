@@ -1806,8 +1806,8 @@
     "province": "Lodi",
     "region": "Lombardia",
     "population": 43332,
-    "lat": null,
-    "lon": null
+    "lat": 45.3151449,
+    "lon": 9.4972608
   },
   {
     "name": "Seregno",
@@ -1816,8 +1816,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 43001,
-    "lat": null,
-    "lon": null
+    "lat": 45.6499801,
+    "lon": 9.2080052
   },
   {
     "name": "Bassano del Grappa",
@@ -1826,8 +1826,8 @@
     "province": "Vicenza",
     "region": "Veneto",
     "population": 42984,
-    "lat": null,
-    "lon": null
+    "lat": 45.7726429,
+    "lon": 11.7038199
   },
   {
     "name": "Campi Bisenzio",
@@ -1836,8 +1836,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 42929,
-    "lat": null,
-    "lon": null
+    "lat": 43.8218084,
+    "lon": 11.1147298
   },
   {
     "name": "Imperia",
@@ -1846,8 +1846,8 @@
     "province": "Imperia",
     "region": "Liguria",
     "population": 42322,
-    "lat": null,
-    "lon": null
+    "lat": 43.903039,
+    "lon": 8.009206
   },
   {
     "name": "Lissone",
@@ -1856,8 +1856,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 42220,
-    "lat": null,
-    "lon": null
+    "lat": 45.6194273,
+    "lon": 9.2426676
   },
   {
     "name": "Macerata",
