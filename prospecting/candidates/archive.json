@@ -24433,5 +24433,43 @@
     "_archive_id": 706,
     "_found_at": "2026-09-08T02:23:21Z",
     "_wave": "run_20260908_022251_673d"
+  },
+  {
+    "n": "Centro Veterinario Milanese",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cologno Monzese",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": "Via Piero Calamandrei 15, 20093",
+    "site": null,
+    "email": null,
+    "tel": "+39 022540272",
+    "ig": null,
+    "fb": "https://www.facebook.com/pages/Centro%20Veterinario%20Milanese/176175769102396/",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8524309668",
+    "osm_id": 8524309668,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Cologno Monzese",
+      "addr:housenumber": "15",
+      "addr:postcode": "20093",
+      "addr:street": "Via Piero Calamandrei",
+      "amenity": "veterinary",
+      "contact:facebook": "https://www.facebook.com/pages/Centro%20Veterinario%20Milanese/176175769102396/",
+      "name": "Centro Veterinario Milanese",
+      "phone": "+39 022540272",
+      "veterinary:treats:rabbit": "yes"
+    },
+    "lat": 45.5272688,
+    "lon": 9.2685939,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica",
+    "_archive_id": 707,
+    "_found_at": "2026-09-08T10:23:35Z",
+    "_wave": "run_20260908_102209_4da8"
   }
 ]

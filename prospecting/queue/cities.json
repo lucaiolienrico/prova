@@ -1686,8 +1686,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 45786,
-    "lat": null,
-    "lon": null
+    "lat": 45.5330385,
+    "lon": 9.2841671
   },
   {
     "name": "San Giorgio a Cremano",
@@ -1696,8 +1696,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 45523,
-    "lat": null,
-    "lon": null
+    "lat": 40.8351471,
+    "lon": 14.3358799
   },
   {
     "name": "Nettuno",
@@ -1706,8 +1706,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 45460,
-    "lat": null,
-    "lon": null
+    "lat": 41.4734814,
+    "lon": 12.6985427
   },
   {
     "name": "Alcamo",
@@ -1716,8 +1716,8 @@
     "province": "Trapani",
     "region": "Sicilia",
     "population": 45314,
-    "lat": null,
-    "lon": null
+    "lat": 37.9684685,
+    "lon": 12.9751894
   },
   {
     "name": "Capannori",
@@ -1726,8 +1726,8 @@
     "province": "Lucca",
     "region": "Toscana",
     "population": 44898,
-    "lat": null,
-    "lon": null
+    "lat": 43.8459081,
+    "lon": 10.5724657
   },
   {
     "name": "Senigallia",
@@ -1736,8 +1736,8 @@
     "province": "Ancona",
     "region": "Marche",
     "population": 44361,
-    "lat": null,
-    "lon": null
+    "lat": 43.6774121,
+    "lon": 13.2100827
   },
   {
     "name": "Terracina",

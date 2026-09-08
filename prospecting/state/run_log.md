@@ -344,3 +344,15 @@
 
 **Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~220.
 
+## Giro del 2026-09-08T10:22:09Z (run_20260908_102209_4da8)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Cologno Monzese | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| San Giorgio a Cremano | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Nettuno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Alcamo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Capannori | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Senigallia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~214.
+

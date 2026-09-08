@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Clinica Veterinaria Beethoven Vet",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "San Giorgio a Cremano",
+    "prov": "NA",
+    "reg": "Campania",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9960931462",
+    "osm_id": 9960931462,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria Beethoven Vet"
+    },
+    "lat": 40.8290968,
+    "lon": 14.3261033,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
