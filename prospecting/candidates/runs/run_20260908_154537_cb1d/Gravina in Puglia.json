@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ambulatorio veterinario Dott. ssa Di Lauro",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Gravina in Puglia",
+    "prov": "BA",
+    "reg": "Puglia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12039077176",
+    "osm_id": 12039077176,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario Dott. ssa Di Lauro"
+    },
+    "lat": 40.8224857,
+    "lon": 16.4175173,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

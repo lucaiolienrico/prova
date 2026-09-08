@@ -1746,8 +1746,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 44233,
-    "lat": null,
-    "lon": null
+    "lat": 41.3184426,
+    "lon": 13.1872765
   },
   {
     "name": "Ardea",
@@ -1756,8 +1756,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 44202,
-    "lat": null,
-    "lon": null
+    "lat": 41.6129814,
+    "lon": 12.5603969
   },
   {
     "name": "Cascina",
@@ -1766,8 +1766,8 @@
     "province": "Pisa",
     "region": "Toscana",
     "population": 43833,
-    "lat": null,
-    "lon": null
+    "lat": 43.6698624,
+    "lon": 10.4938291
   },
   {
     "name": "Biella",
@@ -1776,8 +1776,8 @@
     "province": "Biella",
     "region": "Piemonte",
     "population": 43818,
-    "lat": null,
-    "lon": null
+    "lat": 45.5912343,
+    "lon": 8.0156825
   },
   {
     "name": "Gravina in Puglia",
@@ -1786,8 +1786,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 43614,
-    "lat": null,
-    "lon": null
+    "lat": 40.8536255,
+    "lon": 16.366715
   },
   {
     "name": "Torre Annunziata",
@@ -1796,8 +1796,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 43521,
-    "lat": null,
-    "lon": null
+    "lat": 40.7479225,
+    "lon": 14.4532387
   },
   {
     "name": "Lodi",

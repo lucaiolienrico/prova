@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ambulatorio Veterinario \"San Lorenzo\"",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cascina",
+    "prov": "PI",
+    "reg": "Toscana",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11677707009",
+    "osm_id": 11677707009,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario \"San Lorenzo\""
+    },
+    "lat": 43.6895005,
+    "lon": 10.4779839,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

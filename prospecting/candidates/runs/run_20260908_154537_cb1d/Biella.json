@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Mifido",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Biella",
+    "prov": "BI",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5130209431",
+    "osm_id": 5130209431,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Mifido",
+      "shop": "pet"
+    },
+    "lat": 45.5504733,
+    "lon": 8.0149515,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
