@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Ambulatorio veterinario Morici",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Macerata",
+    "prov": "MC",
+    "reg": "Marche",
+    "addr": "Via Eugenio Montale 27, 62100",
+    "site": null,
+    "email": null,
+    "tel": "+39 0733 1834225; +39 349 6030229; +39 360 2633510",
+    "ig": null,
+    "fb": null,
+    "contact": "Federica Morici",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/936401506",
+    "osm_id": 936401506,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Macerata",
+      "addr:country": "IT",
+      "addr:housenumber": "27",
+      "addr:postcode": "62100",
+      "addr:street": "Via Eugenio Montale",
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario Morici",
+      "opening_hours": "Mo,Tu 09:00-19:00; We,Fr 09:00-16:00; Th 09:00-14:00; Sa 09:00-12:00",
+      "operator": "Federica Morici",
+      "phone": "+39 0733 1834225; +39 349 6030229; +39 360 2633510"
+    },
+    "lat": 43.2836606,
+    "lon": 13.4306863,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo,Tu 09:00-19:00; We,Fr 09:00-16:00; Th 09:00-14:00; Sa 09:00-12:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -1866,8 +1866,8 @@
     "province": "Macerata",
     "region": "Marche",
     "population": 42019,
-    "lat": null,
-    "lon": null
+    "lat": 43.305448,
+    "lon": 13.4563985
   },
   {
     "name": "Barcellona Pozzo di Gotto",
@@ -1876,8 +1876,8 @@
     "province": "Messina",
     "region": "Sicilia",
     "population": 41632,
-    "lat": null,
-    "lon": null
+    "lat": 38.1277139,
+    "lon": 15.2223854
   },
   {
     "name": "Sciacca",
@@ -1886,8 +1886,8 @@
     "province": "Agrigento",
     "region": "Sicilia",
     "population": 40899,
-    "lat": null,
-    "lon": null
+    "lat": 37.5492787,
+    "lon": 13.1074621
   },
   {
     "name": "Avezzano",
@@ -1896,8 +1896,8 @@
     "province": "L'Aquila",
     "region": "Abruzzo",
     "population": 40744,
-    "lat": null,
-    "lon": null
+    "lat": 42.040005,
+    "lon": 13.4363765
   },
   {
     "name": "San Donà di Piave",
@@ -1906,8 +1906,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 40646,
-    "lat": null,
-    "lon": null
+    "lat": 45.6262569,
+    "lon": 12.5922791
   },
   {
     "name": "Alghero",
@@ -1916,8 +1916,8 @@
     "province": "Sassari",
     "region": "Sardegna",
     "population": 40641,
-    "lat": null,
-    "lon": null
+    "lat": 40.5844763,
+    "lon": 8.2790427
   },
   {
     "name": "Desio",

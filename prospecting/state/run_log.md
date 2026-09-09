@@ -380,3 +380,15 @@
 
 **Bilancio**: 6 citta' ok, 22 elementi OSM, 22 schede candidate, 20 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~202.
 
+## Giro del 2026-09-09T02:25:24Z (run_20260909_022524_512b)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Macerata | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Barcellona Pozzo di Gotto | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Sciacca | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Avezzano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Donà di Piave | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Alghero | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~196.
+

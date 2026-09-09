@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Veterifarma",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Alghero",
+    "prov": "SS",
+    "reg": "Sardegna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7826581679",
+    "osm_id": 7826581679,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterifarma"
+    },
+    "lat": 40.5643184,
+    "lon": 8.3181202,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
