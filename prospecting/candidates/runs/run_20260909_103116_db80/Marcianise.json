@@ -1,0 +1,35 @@
+[
+  {
+    "n": "Agri Zoo Farm",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Marcianise",
+    "prov": "CE",
+    "reg": "Campania",
+    "addr": "Via Vittorio Veneto 85, 81025",
+    "site": null,
+    "email": null,
+    "tel": "+39 0823 824801",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13164575601",
+    "osm_id": 13164575601,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "85",
+      "addr:postcode": "81025",
+      "addr:street": "Via Vittorio Veneto",
+      "amenity": "veterinary",
+      "name": "Agri Zoo Farm",
+      "opening_hours": "Mo-Fr 08:30-13:00, 15:45-19:00; Sa 08:30-12:30",
+      "phone": "+39 0823 824801"
+    },
+    "lat": 41.03098,
+    "lon": 14.298291,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 08:30-13:00, 15:45-19:00; Sa 08:30-12:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

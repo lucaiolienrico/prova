@@ -1926,8 +1926,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 40397,
-    "lat": null,
-    "lon": null
+    "lat": 45.6162892,
+    "lon": 9.2048853
   },
   {
     "name": "Jesi",
@@ -1946,8 +1946,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 40297,
-    "lat": null,
-    "lon": null
+    "lat": 41.0215732,
+    "lon": 14.2938505
   },
   {
     "name": "Civitanova Marche",
@@ -1956,8 +1956,8 @@
     "province": "Macerata",
     "region": "Marche",
     "population": 40217,
-    "lat": null,
-    "lon": null
+    "lat": 43.3120213,
+    "lon": 13.6863157
   },
   {
     "name": "Pomigliano d'Arco",
@@ -1966,8 +1966,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 40083,
-    "lat": null,
-    "lon": null
+    "lat": 40.9106764,
+    "lon": 14.3859495
   },
   {
     "name": "Città di Castello",
@@ -1976,8 +1976,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 40064,
-    "lat": null,
-    "lon": null
+    "lat": 43.4493469,
+    "lon": 12.2537965
   },
   {
     "name": "Rozzano",

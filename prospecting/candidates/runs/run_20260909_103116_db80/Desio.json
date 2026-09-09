@@ -1,0 +1,63 @@
+[
+  {
+    "n": "Ambulatorio veterinario Gaia",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Desio",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4846097411",
+    "osm_id": 4846097411,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "check_date": "2025-01-01",
+      "name": "Ambulatorio veterinario Gaia"
+    },
+    "lat": 45.6236013,
+    "lon": 9.1867134,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Casa del cane",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Desio",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": "Via per Seregno 9, 20832",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7647521376",
+    "osm_id": 7647521376,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Desio",
+      "addr:housenumber": "9",
+      "addr:postcode": "20832",
+      "addr:street": "Via per Seregno",
+      "amenity": "veterinary",
+      "name": "Casa del cane"
+    },
+    "lat": 45.620998,
+    "lon": 9.2328028,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
