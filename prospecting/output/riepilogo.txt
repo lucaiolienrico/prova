@@ -1,16 +1,16 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-09 15:54
+Generato: 2026-09-09 20:24
 ============================================================
-Prospect totali: .............. 956 (manuali 189, H24 767)
-Con contatto diretto ......... 381 (39%)
-Con sito web ................. 196
-Shortlist A+/A/B ............. 94
-Comuni/localita' distinti .... 208
+Prospect totali: .............. 973 (manuali 189, H24 784)
+Con contatto diretto ......... 389 (39%)
+Con sito web ................. 203
+Shortlist A+/A/B ............. 99
+Comuni/localita' distinti .... 210
 
-PRIORITA': A+=5, A=30, B=59, C=141, D=721
+PRIORITA': A+=5, A=34, B=60, C=146, D=728
 
 PER REGIONE:
-  Lombardia              169
+  Lombardia              183
   Emilia-Romagna         104
   Toscana                92
   Sicilia                88
@@ -18,7 +18,7 @@ PER REGIONE:
   Lazio                  77
   Piemonte               67
   Puglia                 56
-  Veneto                 42
+  Veneto                 45
   Liguria                40
   Marche                 28
   Sardegna               23
@@ -33,14 +33,14 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     540
-  Pet shop                                       178
-  Toelettature                                   60
-  Rifugi per animali                             37
+  Veterinari                                     546
+  Pet shop                                       183
+  Toelettature                                   61
+  Rifugi per animali                             38
   Ambulatori veterinari                          32
+  Pensioni per animali                           21
   Negozi per animali                             18
-  Pensioni per animali                           18
-  Allevatori                                     10
+  Allevatori                                     11
   Associazioni animaliste                        10
   Educatori cinofili                             9
   Canili                                         8
@@ -62,6 +62,7 @@ TOP 15 PROSPECT PER SCORE:
    97 A+  Ambulatorio Veterinario Gattamelata                  Roma                 Veterinari
    97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
+   89 A   Le betulle                                           Saronno              Allevatori
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
    85 A   Ambulatorio Veterinario Zama                         Faenza               Ambulatori veterinari
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
@@ -71,4 +72,3 @@ TOP 15 PROSPECT PER SCORE:
    84 A   Palla di Pelo                                        Tivoli               Pet shop
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
    83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili
-   83 A   Ambulatorio Veterinario Viale Kennedy                Pescara              Veterinari

@@ -419,3 +419,15 @@
 
 **Bilancio**: 6 citta' ok, 23 elementi OSM, 23 schede candidate, 19 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~185.
 
+## Giro del 2026-09-09T20:15:07Z (run_20260909_201507_3166)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Quarto | 9 | 9 | 0 | 9 (0 integrati) | ok |
+| Schio | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Vasto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cantù | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Saronno | 17 | 17 | 14 | 3 (0 integrati) | ok |
+| Mira | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 29 elementi OSM, 29 schede candidate, 17 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~179.
+

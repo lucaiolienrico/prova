@@ -2036,8 +2036,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 39221,
-    "lat": null,
-    "lon": null
+    "lat": 40.884872,
+    "lon": 14.1285094
   },
   {
     "name": "Schio",
@@ -2046,8 +2046,8 @@
     "province": "Vicenza",
     "region": "Veneto",
     "population": 39131,
-    "lat": null,
-    "lon": null
+    "lat": 45.7233582,
+    "lon": 11.3570245
   },
   {
     "name": "Vasto",
@@ -2056,8 +2056,8 @@
     "province": "Chieti",
     "region": "Abruzzo",
     "population": 38747,
-    "lat": null,
-    "lon": null
+    "lat": 42.1166226,
+    "lon": 14.6969268
   },
   {
     "name": "Cantù",
@@ -2066,8 +2066,8 @@
     "province": "Como",
     "region": "Lombardia",
     "population": 38717,
-    "lat": null,
-    "lon": null
+    "lat": 45.7377352,
+    "lon": 9.134194
   },
   {
     "name": "Saronno",
@@ -2076,8 +2076,8 @@
     "province": "Varese",
     "region": "Lombardia",
     "population": 38598,
-    "lat": null,
-    "lon": null
+    "lat": 45.6273396,
+    "lon": 9.0380667
   },
   {
     "name": "Mira",
@@ -2086,8 +2086,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 38552,
-    "lat": null,
-    "lon": null
+    "lat": 45.410883,
+    "lon": 12.1760249
   },
   {
     "name": "Albano Laziale",
