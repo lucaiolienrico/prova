@@ -1,0 +1,36 @@
+[
+  {
+    "n": "Clinica Veterinaria Carotti Giardinieri Francella",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Jesi",
+    "prov": "AN",
+    "reg": "Marche",
+    "addr": "Via Arnaldo Bellagamba 2, 60035",
+    "site": "https://cgf-jesi.gruppoanimalia.it/",
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4114310492",
+    "osm_id": 4114310492,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Jesi",
+      "addr:housenumber": "2",
+      "addr:postcode": "60035",
+      "addr:street": "Via Arnaldo Bellagamba",
+      "amenity": "veterinary",
+      "emergency": "yes",
+      "name": "Clinica Veterinaria Carotti Giardinieri Francella",
+      "website": "https://cgf-jesi.gruppoanimalia.it/"
+    },
+    "lat": 43.5311378,
+    "lon": 13.2614126,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

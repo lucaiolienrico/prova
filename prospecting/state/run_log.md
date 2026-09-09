@@ -407,3 +407,15 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - Jesi: geocodifica fallita
 
+## Giro del 2026-09-09T15:41:04Z (run_20260909_154104_3d53)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Jesi | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Rozzano | 11 | 11 | 8 | 3 (0 integrati) | ok |
+| Sassuolo | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Monterotondo | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Fasano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Maddaloni | 4 | 4 | 3 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 23 elementi OSM, 23 schede candidate, 19 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~185.
+

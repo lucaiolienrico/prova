@@ -1936,8 +1936,8 @@
     "province": "Ancona",
     "region": "Marche",
     "population": 40303,
-    "lat": null,
-    "lon": null
+    "lat": 43.5234637,
+    "lon": 13.2567065
   },
   {
     "name": "Marcianise",
@@ -1986,8 +1986,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 39983,
-    "lat": null,
-    "lon": null
+    "lat": 45.381658,
+    "lon": 9.1638306
   },
   {
     "name": "Sassuolo",
@@ -1996,8 +1996,8 @@
     "province": "Modena",
     "region": "Emilia-Romagna",
     "population": 39885,
-    "lat": null,
-    "lon": null
+    "lat": 44.546851,
+    "lon": 10.7682852
   },
   {
     "name": "Monterotondo",
@@ -2006,8 +2006,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 39502,
-    "lat": null,
-    "lon": null
+    "lat": 42.0681922,
+    "lon": 12.6215643
   },
   {
     "name": "Fasano",
@@ -2016,8 +2016,8 @@
     "province": "Brindisi",
     "region": "Puglia",
     "population": 39482,
-    "lat": null,
-    "lon": null
+    "lat": 40.8263001,
+    "lon": 17.400699
   },
   {
     "name": "Maddaloni",
@@ -2026,8 +2026,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 39409,
-    "lat": null,
-    "lon": null
+    "lat": 41.0282732,
+    "lon": 14.3959305
   },
   {
     "name": "Quarto",

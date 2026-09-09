@@ -1,26 +1,26 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-09 10:40
+Generato: 2026-09-09 15:54
 ============================================================
-Prospect totali: .............. 937 (manuali 189, H24 748)
-Con contatto diretto ......... 377 (40%)
-Con sito web ................. 192
-Shortlist A+/A/B ............. 93
-Comuni/localita' distinti .... 204
+Prospect totali: .............. 956 (manuali 189, H24 767)
+Con contatto diretto ......... 381 (39%)
+Con sito web ................. 196
+Shortlist A+/A/B ............. 94
+Comuni/localita' distinti .... 208
 
-PRIORITA': A+=5, A=29, B=59, C=138, D=706
+PRIORITA': A+=5, A=30, B=59, C=141, D=721
 
 PER REGIONE:
-  Lombardia              161
-  Emilia-Romagna         100
+  Lombardia              169
+  Emilia-Romagna         104
   Toscana                92
   Sicilia                88
-  Campania               81
-  Lazio                  74
+  Campania               84
+  Lazio                  77
   Piemonte               67
   Puglia                 56
   Veneto                 42
   Liguria                40
-  Marche                 27
+  Marche                 28
   Sardegna               23
   Abruzzo                19
   Friuli-Venezia Giulia  16
@@ -33,15 +33,15 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     533
-  Pet shop                                       169
+  Veterinari                                     540
+  Pet shop                                       178
   Toelettature                                   60
   Rifugi per animali                             37
   Ambulatori veterinari                          32
   Negozi per animali                             18
-  Pensioni per animali                           16
+  Pensioni per animali                           18
+  Allevatori                                     10
   Associazioni animaliste                        10
-  Allevatori                                     9
   Educatori cinofili                             9
   Canili                                         8
   Centri cinofili                                8
