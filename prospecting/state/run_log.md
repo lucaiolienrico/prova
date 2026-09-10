@@ -431,3 +431,15 @@
 
 **Bilancio**: 6 citta' ok, 29 elementi OSM, 29 schede candidate, 17 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~179.
 
+## Giro del 2026-09-10T02:25:15Z (run_20260910_022515_435b)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Albano Laziale | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Spoleto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Marino | 4 | 4 | 3 | 1 (0 integrati) | ok |
+| Eboli | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Voghera | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Licata | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 8 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~173.
+

@@ -1,0 +1,34 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Zompetti",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Albano Laziale",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": "Via Gioacchino Rossini 28",
+    "site": "https://www.veterinariozonetti.it/",
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13026196406",
+    "osm_id": 13026196406,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Via Gioacchino Rossini",
+      "amenity": "veterinary",
+      "level": "0",
+      "name": "Ambulatorio Veterinario Zompetti",
+      "website": "https://www.veterinariozonetti.it/"
+    },
+    "lat": 41.724009,
+    "lon": 12.6556788,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -2096,8 +2096,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 38433,
-    "lat": null,
-    "lon": null
+    "lat": 41.7132759,
+    "lon": 12.6423621
   },
   {
     "name": "Spoleto",
@@ -2106,8 +2106,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 38429,
-    "lat": null,
-    "lon": null
+    "lat": 42.7201751,
+    "lon": 12.7023246
   },
   {
     "name": "Marino",
@@ -2116,8 +2116,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 38245,
-    "lat": null,
-    "lon": null
+    "lat": 41.7601348,
+    "lon": 12.6341402
   },
   {
     "name": "Eboli",
@@ -2126,8 +2126,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 38219,
-    "lat": null,
-    "lon": null
+    "lat": 40.5665772,
+    "lon": 15.0022964
   },
   {
     "name": "Voghera",
@@ -2136,8 +2136,8 @@
     "province": "Pavia",
     "region": "Lombardia",
     "population": 38174,
-    "lat": null,
-    "lon": null
+    "lat": 45.0140292,
+    "lon": 9.0156793
   },
   {
     "name": "Licata",
@@ -2146,8 +2146,8 @@
     "province": "Agrigento",
     "region": "Sicilia",
     "population": 38125,
-    "lat": null,
-    "lon": null
+    "lat": 37.1596146,
+    "lon": 13.9247158
   },
   {
     "name": "Caltagirone",

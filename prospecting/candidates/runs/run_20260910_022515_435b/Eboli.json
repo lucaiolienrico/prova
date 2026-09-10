@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Studio veterinario dottor Alfonso Bisogno",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Eboli",
+    "prov": "SA",
+    "reg": "Campania",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11210521558",
+    "osm_id": 11210521558,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Studio veterinario dottor Alfonso Bisogno"
+    },
+    "lat": 40.5797892,
+    "lon": 15.0487563,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
