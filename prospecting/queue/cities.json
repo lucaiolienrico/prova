@@ -2156,8 +2156,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 38123,
-    "lat": null,
-    "lon": null
+    "lat": 37.17939,
+    "lon": 14.5189598
   },
   {
     "name": "Monreale",
@@ -2166,8 +2166,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 38018,
-    "lat": null,
-    "lon": null
+    "lat": 37.9432051,
+    "lon": 13.1763706
   },
   {
     "name": "Rovereto",
@@ -2176,8 +2176,8 @@
     "province": "Trento",
     "region": "Trentino-Alto Adige/Südtirol",
     "population": 37754,
-    "lat": null,
-    "lon": null
+    "lat": 45.8595422,
+    "lon": 11.0607932
   },
   {
     "name": "Caivano",
@@ -2186,8 +2186,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 37654,
-    "lat": null,
-    "lon": null
+    "lat": 40.9693021,
+    "lon": 14.3234434
   },
   {
     "name": "Modugno",
@@ -2196,8 +2196,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 37532,
-    "lat": null,
-    "lon": null
+    "lat": 41.0819019,
+    "lon": 16.7891688
   },
   {
     "name": "Merano",

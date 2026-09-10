@@ -443,3 +443,18 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 8 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~173.
 
+## Giro del 2026-09-10T10:20:29Z (run_20260910_102029_390c)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Caltagirone | 3 | 3 | 1 | 2 (0 integrati) | ok |
+| Monreale | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rovereto | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Caivano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Modugno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Merano | - | - | - | - | geocodifica fallita |
+
+**Bilancio**: 5 citta' ok, 4 elementi OSM, 4 schede candidate, 2 nuove, 0 integrate, 1 citta' fallite (verranno ritentate), coda rimanente ~167.
+
+**Citta' fallite (ritentate al prossimo giro):**
+- Merano: geocodifica fallita
+

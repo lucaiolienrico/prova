@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Veterinario Holzhauser",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Rovereto",
+    "prov": "TN",
+    "reg": "Trentino-Alto Adige/Südtirol",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2868375795",
+    "osm_id": 2868375795,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterinario Holzhauser"
+    },
+    "lat": 45.8876323,
+    "lon": 11.0238506,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
