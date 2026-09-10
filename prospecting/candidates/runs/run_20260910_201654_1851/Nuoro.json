@@ -1,0 +1,32 @@
+[
+  {
+    "n": "Canile",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Nuoro",
+    "prov": "NU",
+    "reg": "Sardegna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/514971354",
+    "osm_id": 514971354,
+    "osm_type": "way",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "animal_shelter": "dog",
+      "barrier": "wall",
+      "name": "Canile"
+    },
+    "lat": 40.3243545,
+    "lon": 9.2841499,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

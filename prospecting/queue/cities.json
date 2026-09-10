@@ -2206,8 +2206,8 @@
     "province": "Bolzano/Bozen",
     "region": "Trentino-Alto Adige/Südtirol",
     "population": 37368,
-    "lat": null,
-    "lon": null
+    "lat": 46.655644,
+    "lon": 11.188072
   },
   {
     "name": "Ladispoli",
@@ -2266,8 +2266,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 37010,
-    "lat": null,
-    "lon": null
+    "lat": 45.6290132,
+    "lon": 9.1496241
   },
   {
     "name": "Francavilla Fontana",
@@ -2276,8 +2276,8 @@
     "province": "Brindisi",
     "region": "Puglia",
     "population": 36955,
-    "lat": null,
-    "lon": null
+    "lat": 40.5223796,
+    "lon": 17.5684379
   },
   {
     "name": "Melito di Napoli",
@@ -2286,8 +2286,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 36933,
-    "lat": null,
-    "lon": null
+    "lat": 40.9188435,
+    "lon": 14.2291219
   },
   {
     "name": "Nuoro",
@@ -2296,8 +2296,8 @@
     "province": "Nuoro",
     "region": "Sardegna",
     "population": 36674,
-    "lat": null,
-    "lon": null
+    "lat": 40.3324429,
+    "lon": 9.3045514
   },
   {
     "name": "Formia",
@@ -2306,8 +2306,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 36331,
-    "lat": null,
-    "lon": null
+    "lat": 41.2907497,
+    "lon": 13.6298091
   },
   {
     "name": "Augusta",

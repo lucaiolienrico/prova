@@ -55,6 +55,7 @@
     "Catanzaro",
     "Cava de' Tirreni",
     "Cerignola",
+    "Cesano Maderno",
     "Cesena",
     "Chieti",
     "Chioggia",
@@ -87,6 +88,8 @@
     "Foligno",
     "Fondi",
     "Forlì",
+    "Formia",
+    "Francavilla Fontana",
     "Frosinone",
     "Gallarate",
     "Gela",
@@ -124,6 +127,8 @@
     "Massa",
     "Matera",
     "Mazara del Vallo",
+    "Melito di Napoli",
+    "Merano",
     "Messina",
     "Milano",
     "Mira",
@@ -143,6 +148,7 @@
     "Nichelino",
     "Nocera Inferiore",
     "Novara",
+    "Nuoro",
     "Olbia",
     "Paderno Dugnano",
     "Padova",
@@ -226,8 +232,8 @@
     "Vittoria",
     "Voghera"
   ],
-  "last_run": "2026-09-10T15:45:41Z",
-  "runs": 39,
-  "new_total": 813,
-  "enrich_total": 18
+  "last_run": "2026-09-10T20:19:05Z",
+  "runs": 40,
+  "new_total": 821,
+  "enrich_total": 19
 }

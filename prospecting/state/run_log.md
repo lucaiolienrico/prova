@@ -473,3 +473,15 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - Merano: geocodifica fallita
 
+## Giro del 2026-09-10T20:16:54Z (run_20260910_201654_1851)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Merano | 3 | 3 | 2 | 1 (1 integrati) | ok |
+| Cesano Maderno | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Francavilla Fontana | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Melito di Napoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Nuoro | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Formia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 8 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~157.
+
