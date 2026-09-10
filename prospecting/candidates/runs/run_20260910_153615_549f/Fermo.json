@@ -1,0 +1,33 @@
+[
+  {
+    "n": "L'Isola dei Tesori",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Fermo",
+    "prov": "FM",
+    "reg": "Marche",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1346069996",
+    "osm_id": 1346069996,
+    "osm_type": "way",
+    "osm_tags": {
+      "brand": "L'Isola dei Tesori",
+      "brand:wikidata": "Q108578003",
+      "building": "yes",
+      "name": "L'Isola dei Tesori",
+      "shop": "pet"
+    },
+    "lat": 43.1782626,
+    "lon": 13.6751913,
+    "other": "OSM: brand=L'Isola dei Tesori, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

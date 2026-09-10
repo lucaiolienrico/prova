@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ospedale Veterinario Universitario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Grugliasco",
+    "prov": "TO",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4839678925",
+    "osm_id": 4839678925,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ospedale Veterinario Universitario"
+    },
+    "lat": 45.0679786,
+    "lon": 7.5910723,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

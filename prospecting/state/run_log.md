@@ -458,3 +458,18 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - Merano: geocodifica fallita
 
+## Giro del 2026-09-10T15:36:15Z (run_20260910_153615_549f)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Merano | - | - | - | - | geocodifica fallita |
+| Ladispoli | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Ciampino | 7 | 7 | 5 | 2 (0 integrati) | ok |
+| Grugliasco | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Fondi | 5 | 5 | 5 | 0 (0 integrati) | ok |
+| Fermo | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 5 citta' ok, 16 elementi OSM, 16 schede candidate, 14 nuove, 0 integrate, 1 citta' fallite (verranno ritentate), coda rimanente ~162.
+
+**Citta' fallite (ritentate al prossimo giro):**
+- Merano: geocodifica fallita
+

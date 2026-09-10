@@ -2216,8 +2216,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 37293,
-    "lat": null,
-    "lon": null
+    "lat": 41.9527333,
+    "lon": 12.0976124
   },
   {
     "name": "Ciampino",
@@ -2226,8 +2226,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 37235,
-    "lat": null,
-    "lon": null
+    "lat": 41.7983856,
+    "lon": 12.6141912
   },
   {
     "name": "Grugliasco",
@@ -2236,8 +2236,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 37194,
-    "lat": null,
-    "lon": null
+    "lat": 45.0524455,
+    "lon": 7.5900139
   },
   {
     "name": "Fondi",
@@ -2246,8 +2246,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 37180,
-    "lat": null,
-    "lon": null
+    "lat": 41.3391507,
+    "lon": 13.3969451
   },
   {
     "name": "Fermo",
@@ -2256,8 +2256,8 @@
     "province": "Fermo",
     "region": "Marche",
     "population": 37016,
-    "lat": null,
-    "lon": null
+    "lat": 43.1701293,
+    "lon": 13.6592433
   },
   {
     "name": "Cesano Maderno",
