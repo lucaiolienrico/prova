@@ -2,6 +2,7 @@
   "done": [
     "Acerra",
     "Acireale",
+    "Adrano",
     "Afragola",
     "Agrigento",
     "Albano Laziale",
@@ -33,6 +34,7 @@
     "Biella",
     "Bisceglie",
     "Bitonto",
+    "Bollate",
     "Bologna",
     "Bolzano",
     "Brescia",
@@ -49,6 +51,7 @@
     "Carini",
     "Carpi",
     "Carrara",
+    "Casalecchio di Reno",
     "Casalnuovo di Napoli",
     "Cascina",
     "Caserta",
@@ -58,6 +61,7 @@
     "Catanzaro",
     "Cava de' Tirreni",
     "Cerignola",
+    "Cerveteri",
     "Cesano Maderno",
     "Cesena",
     "Chieri",
@@ -65,6 +69,7 @@
     "Chioggia",
     "Ciampino",
     "Cinisello Balsamo",
+    "Cisterna di Latina",
     "Città di Castello",
     "Civitanova Marche",
     "Civitavecchia",
@@ -99,6 +104,7 @@
     "Gela",
     "Genova",
     "Giugliano in Campania",
+    "Gorizia",
     "Gravina in Puglia",
     "Grosseto",
     "Grugliasco",
@@ -238,8 +244,8 @@
     "Vittoria",
     "Voghera"
   ],
-  "last_run": "2026-09-11T02:20:57Z",
-  "runs": 41,
-  "new_total": 842,
-  "enrich_total": 21
+  "last_run": "2026-09-11T10:32:42Z",
+  "runs": 42,
+  "new_total": 857,
+  "enrich_total": 22
 }

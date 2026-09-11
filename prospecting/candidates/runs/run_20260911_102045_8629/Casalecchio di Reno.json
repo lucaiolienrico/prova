@@ -1,0 +1,59 @@
+[
+  {
+    "n": "Parco Reno",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Casalecchio di Reno",
+    "prov": "BO",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5109399229",
+    "osm_id": 5109399229,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Parco Reno",
+      "opening_hours": "Mo-Sa 09:00-19:30"
+    },
+    "lat": 44.4736756,
+    "lon": 11.2775955,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Sa 09:00-19:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Casalecchio di Reno",
+    "prov": "BO",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7204573003",
+    "osm_id": 7204573003,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Veterinario"
+    },
+    "lat": 44.4810887,
+    "lon": 11.2564455,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

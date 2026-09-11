@@ -2376,8 +2376,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 35557,
-    "lat": null,
-    "lon": null
+    "lat": 45.549679,
+    "lon": 9.1158496
   },
   {
     "name": "Cisterna di Latina",
@@ -2386,8 +2386,8 @@
     "province": "Latina",
     "region": "Lazio",
     "population": 35551,
-    "lat": null,
-    "lon": null
+    "lat": 41.570361,
+    "lon": 12.8542637
   },
   {
     "name": "Adrano",
@@ -2396,8 +2396,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 35549,
-    "lat": null,
-    "lon": null
+    "lat": 37.6914948,
+    "lon": 14.8928448
   },
   {
     "name": "Gorizia",
@@ -2406,8 +2406,8 @@
     "province": "Gorizia",
     "region": "Friuli-Venezia Giulia",
     "population": 35212,
-    "lat": null,
-    "lon": null
+    "lat": 45.947711,
+    "lon": 13.595634
   },
   {
     "name": "Cerveteri",
@@ -2416,8 +2416,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 35207,
-    "lat": null,
-    "lon": null
+    "lat": 42.0076968,
+    "lon": 12.1000565
   },
   {
     "name": "Casalecchio di Reno",
@@ -2426,8 +2426,8 @@
     "province": "Bologna",
     "region": "Emilia-Romagna",
     "population": 35173,
-    "lat": null,
-    "lon": null
+    "lat": 44.4714998,
+    "lon": 11.2646822
   },
   {
     "name": "Pioltello",

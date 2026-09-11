@@ -497,3 +497,15 @@
 
 **Bilancio**: 6 citta' ok, 25 elementi OSM, 25 schede candidate, 21 nuove, 2 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~151.
 
+## Giro del 2026-09-11T10:20:45Z (run_20260911_102045_8629)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Bollate | 21 | 21 | 15 | 6 (1 integrati) | ok |
+| Cisterna di Latina | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Adrano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Gorizia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cerveteri | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Casalecchio di Reno | 2 | 2 | 0 | 2 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 24 elementi OSM, 24 schede candidate, 15 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~145.
+
