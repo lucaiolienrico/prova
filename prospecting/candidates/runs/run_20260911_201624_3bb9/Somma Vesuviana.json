@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Cucciolito",
+    "cat": "Toelettature",
+    "sub": null,
+    "city": "Somma Vesuviana",
+    "prov": "NA",
+    "reg": "Campania",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9172584068",
+    "osm_id": 9172584068,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Cucciolito",
+      "shop": "pet_grooming"
+    },
+    "lat": 40.8694082,
+    "lon": 14.3999098,
+    "other": "OSM: shop=pet_grooming",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

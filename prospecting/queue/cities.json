@@ -2496,8 +2496,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 34671,
-    "lat": null,
-    "lon": null
+    "lat": 40.7523237,
+    "lon": 14.6035455
   },
   {
     "name": "Somma Vesuviana",
@@ -2506,8 +2506,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 34592,
-    "lat": null,
-    "lon": null
+    "lat": 40.8723234,
+    "lon": 14.4504739
   },
   {
     "name": "Riccione",
@@ -2516,8 +2516,8 @@
     "province": "Rimini",
     "region": "Emilia-Romagna",
     "population": 34536,
-    "lat": null,
-    "lon": null
+    "lat": 43.9995833,
+    "lon": 12.6452204
   },
   {
     "name": "Mugnano di Napoli",
@@ -2526,8 +2526,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 34504,
-    "lat": null,
-    "lon": null
+    "lat": 40.9099241,
+    "lon": 14.2090349
   },
   {
     "name": "Conegliano",
@@ -2536,8 +2536,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 34428,
-    "lat": null,
-    "lon": null
+    "lat": 45.9037392,
+    "lon": 12.2903273
   },
   {
     "name": "Piombino",
@@ -2546,8 +2546,8 @@
     "province": "Livorno",
     "region": "Toscana",
     "population": 34419,
-    "lat": null,
-    "lon": null
+    "lat": 42.9728741,
+    "lon": 10.6172998
   },
   {
     "name": "Lucera",

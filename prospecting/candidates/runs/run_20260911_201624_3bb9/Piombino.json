@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Ambulatorio Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Piombino",
+    "prov": "LI",
+    "reg": "Toscana",
+    "addr": "Via Risorgimento 41, 57025",
+    "site": null,
+    "email": null,
+    "tel": "+390565220245",
+    "ig": null,
+    "fb": null,
+    "contact": "dottoressa R. Tappa;dottoressa C. Monticelli",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8707085217",
+    "osm_id": 8707085217,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Piombino",
+      "addr:country": "IT",
+      "addr:housenumber": "41",
+      "addr:postcode": "57025",
+      "addr:street": "Via Risorgimento",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario",
+      "operator": "dottoressa R. Tappa;dottoressa C. Monticelli",
+      "phone": "+390565220245"
+    },
+    "lat": 42.9320464,
+    "lon": 10.5202805,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

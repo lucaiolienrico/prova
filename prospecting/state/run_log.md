@@ -521,3 +521,15 @@
 
 **Bilancio**: 6 citta' ok, 21 elementi OSM, 21 schede candidate, 15 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~139.
 
+## Giro del 2026-09-11T20:16:24Z (run_20260911_201624_3bb9)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Pagani | 10 | 10 | 4 | 6 (0 integrati) | ok |
+| Somma Vesuviana | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Riccione | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Mugnano di Napoli | 6 | 6 | 0 | 6 (0 integrati) | ok |
+| Conegliano | 8 | 8 | 8 | 0 (0 integrati) | ok |
+| Piombino | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 30 elementi OSM, 30 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~133.
+
