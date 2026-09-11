@@ -1,0 +1,31 @@
+[
+  {
+    "n": "Alba",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Carini",
+    "prov": "PA",
+    "reg": "Sicilia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11553459357",
+    "osm_id": 11553459357,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Alba",
+      "wheelchair": "yes"
+    },
+    "lat": 38.1648922,
+    "lon": 13.2118665,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

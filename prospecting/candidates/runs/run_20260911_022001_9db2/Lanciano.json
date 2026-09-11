@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Per Un Pelo",
+    "cat": "Toelettature",
+    "sub": null,
+    "city": "Lanciano",
+    "prov": "CH",
+    "reg": "Abruzzo",
+    "addr": "Via dei Peligni 1, 66032",
+    "site": null,
+    "email": null,
+    "tel": "+39 392 2529979",
+    "ig": null,
+    "fb": "https://www.facebook.com/profile.php?id=100063525134771",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7679342413",
+    "osm_id": 7679342413,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Castel Frentano",
+      "addr:housenumber": "1",
+      "addr:postcode": "66032",
+      "addr:street": "Via dei Peligni",
+      "check_date": "2024-08-11",
+      "contact:facebook": "https://www.facebook.com/profile.php?id=100063525134771",
+      "level": "0",
+      "name": "Per Un Pelo",
+      "phone": "+39 392 2529979",
+      "shop": "pet_grooming"
+    },
+    "lat": 42.1980283,
+    "lon": 14.3529004,
+    "other": "OSM: shop=pet_grooming",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

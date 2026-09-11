@@ -2316,8 +2316,8 @@
     "province": "Siracusa",
     "region": "Sicilia",
     "population": 36169,
-    "lat": null,
-    "lon": null
+    "lat": 37.2634964,
+    "lon": 15.1452383
   },
   {
     "name": "San Giuliano Milanese",
@@ -2326,8 +2326,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 35971,
-    "lat": null,
-    "lon": null
+    "lat": 45.3805448,
+    "lon": 9.2779177
   },
   {
     "name": "Chieri",
@@ -2336,8 +2336,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 35962,
-    "lat": null,
-    "lon": null
+    "lat": 45.0068017,
+    "lon": 7.8322619
   },
   {
     "name": "Lanciano",
@@ -2346,8 +2346,8 @@
     "province": "Chieti",
     "region": "Abruzzo",
     "population": 35921,
-    "lat": null,
-    "lon": null
+    "lat": 42.2118509,
+    "lon": 14.4036846
   },
   {
     "name": "Carini",
@@ -2356,8 +2356,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 35681,
-    "lat": null,
-    "lon": null
+    "lat": 38.1315343,
+    "lon": 13.1555981
   },
   {
     "name": "Belluno",
@@ -2366,8 +2366,8 @@
     "province": "Belluno",
     "region": "Veneto",
     "population": 35591,
-    "lat": null,
-    "lon": null
+    "lat": 46.134935,
+    "lon": 12.2125304
   },
   {
     "name": "Bollate",

@@ -485,3 +485,15 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 8 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~157.
 
+## Giro del 2026-09-11T02:20:01Z (run_20260911_022001_9db2)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Augusta | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| San Giuliano Milanese | 11 | 11 | 9 | 2 (2 integrati) | ok |
+| Chieri | 8 | 8 | 6 | 2 (0 integrati) | ok |
+| Lanciano | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Carini | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Belluno | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 25 elementi OSM, 25 schede candidate, 21 nuove, 2 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~151.
+
