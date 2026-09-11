@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Cocoricò Cento",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Cento",
+    "prov": "FE",
+    "reg": "Emilia-Romagna",
+    "addr": "Via Ferrarese 37, 44042",
+    "site": "https://cocoricoshop.it",
+    "email": null,
+    "tel": "+39 051 901111",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2199589566",
+    "osm_id": 2199589566,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Cento",
+      "addr:country": "IT",
+      "addr:housenumber": "37",
+      "addr:postcode": "44042",
+      "addr:street": "Via Ferrarese",
+      "name": "Cocoricò Cento",
+      "phone": "+39 051 901111",
+      "shop": "pet",
+      "website": "https://cocoricoshop.it"
+    },
+    "lat": 44.7432873,
+    "lon": 11.29678,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

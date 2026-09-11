@@ -509,3 +509,15 @@
 
 **Bilancio**: 6 citta' ok, 24 elementi OSM, 24 schede candidate, 15 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~145.
 
+## Giro del 2026-09-11T15:38:03Z (run_20260911_153803_a2f5)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Pioltello | 13 | 13 | 12 | 1 (1 integrati) | ok |
+| Arzano | 7 | 7 | 2 | 5 (0 integrati) | ok |
+| Canicattì | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pinerolo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Casale Monferrato | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cento | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 21 elementi OSM, 21 schede candidate, 15 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~139.
+

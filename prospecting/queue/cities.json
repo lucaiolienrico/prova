@@ -2436,8 +2436,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 35066,
-    "lat": null,
-    "lon": null
+    "lat": 45.48748,
+    "lon": 9.3254903
   },
   {
     "name": "Arzano",
@@ -2446,8 +2446,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 34933,
-    "lat": null,
-    "lon": null
+    "lat": 40.9131229,
+    "lon": 14.2657851
   },
   {
     "name": "Canicattì",
@@ -2456,8 +2456,8 @@
     "province": "Agrigento",
     "region": "Sicilia",
     "population": 34863,
-    "lat": null,
-    "lon": null
+    "lat": 37.3781269,
+    "lon": 13.835738
   },
   {
     "name": "Pinerolo",
@@ -2466,8 +2466,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 34854,
-    "lat": null,
-    "lon": null
+    "lat": 44.9099973,
+    "lon": 7.3506464
   },
   {
     "name": "Casale Monferrato",
@@ -2476,8 +2476,8 @@
     "province": "Alessandria",
     "region": "Piemonte",
     "population": 34812,
-    "lat": null,
-    "lon": null
+    "lat": 45.1083372,
+    "lon": 8.4582469
   },
   {
     "name": "Cento",
@@ -2486,8 +2486,8 @@
     "province": "Ferrara",
     "region": "Emilia-Romagna",
     "population": 34723,
-    "lat": null,
-    "lon": null
+    "lat": 44.7720263,
+    "lon": 11.3166629
   },
   {
     "name": "Pagani",
