@@ -2616,8 +2616,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 33741,
-    "lat": null,
-    "lon": null
+    "lat": 45.1439083,
+    "lon": 7.61892
   },
   {
     "name": "Corsico",
@@ -2626,8 +2626,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 33669,
-    "lat": null,
-    "lon": null
+    "lat": 45.4348406,
+    "lon": 9.0975208
   },
   {
     "name": "Formigine",
@@ -2636,8 +2636,8 @@
     "province": "Modena",
     "region": "Emilia-Romagna",
     "population": 33667,
-    "lat": null,
-    "lon": null
+    "lat": 44.5831807,
+    "lon": 10.8528434
   },
   {
     "name": "Cassino",
@@ -2646,8 +2646,8 @@
     "province": "Frosinone",
     "region": "Lazio",
     "population": 33658,
-    "lat": null,
-    "lon": null
+    "lat": 41.4802496,
+    "lon": 13.8429097
   },
   {
     "name": "Rende",
@@ -2656,8 +2656,8 @@
     "province": "Cosenza",
     "region": "Calabria",
     "population": 33555,
-    "lat": null,
-    "lon": null
+    "lat": 39.3509844,
+    "lon": 16.198236
   },
   {
     "name": "Segrate",
@@ -2666,8 +2666,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 33519,
-    "lat": null,
-    "lon": null
+    "lat": 45.4827591,
+    "lon": 9.2858945
   },
   {
     "name": "Vibo Valentia",

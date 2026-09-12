@@ -1,0 +1,61 @@
+[
+  {
+    "n": "Casa di Pluto",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Cassino",
+    "prov": "FR",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1312081312",
+    "osm_id": 1312081312,
+    "osm_type": "way",
+    "osm_tags": {
+      "addr:city": "Cassino",
+      "building": "yes",
+      "name": "Casa di Pluto",
+      "shop": "pet"
+    },
+    "lat": 41.4870809,
+    "lon": 13.8299908,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Animal city",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Cassino",
+    "prov": "FR",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1176671363",
+    "osm_id": 1176671363,
+    "osm_type": "way",
+    "osm_tags": {
+      "building": "yes",
+      "name": "Animal city",
+      "shop": "pet"
+    },
+    "lat": 41.4840251,
+    "lon": 13.8596648,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

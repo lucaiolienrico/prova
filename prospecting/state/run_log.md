@@ -545,3 +545,15 @@
 
 **Bilancio**: 6 citta' ok, 35 elementi OSM, 35 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~127.
 
+## Giro del 2026-09-12T09:52:23Z (run_20260912_095223_a49a)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Venaria Reale | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Corsico | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Formigine | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cassino | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Rende | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Segrate | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~121.
+
