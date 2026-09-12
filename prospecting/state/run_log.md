@@ -533,3 +533,15 @@
 
 **Bilancio**: 6 citta' ok, 30 elementi OSM, 30 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~133.
 
+## Giro del 2026-09-12T02:27:24Z (run_20260912_022724_f4fb)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Lucera | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Sant'Antimo | 5 | 5 | 0 | 5 (0 integrati) | ok |
+| Aosta | 7 | 7 | 7 | 0 (0 integrati) | ok |
+| Osimo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Nola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Limbiate | 23 | 23 | 11 | 12 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 35 elementi OSM, 35 schede candidate, 18 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~127.
+

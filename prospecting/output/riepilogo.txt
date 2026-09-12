@@ -1,16 +1,16 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-11 20:24
+Generato: 2026-09-12 02:28
 ============================================================
-Prospect totali: .............. 1074 (manuali 189, H24 885)
-Con contatto diretto ......... 424 (39%)
-Con sito web ................. 222
-Shortlist A+/A/B ............. 109
-Comuni/localita' distinti .... 238
+Prospect totali: .............. 1092 (manuali 189, H24 903)
+Con contatto diretto ......... 433 (39%)
+Con sito web ................. 226
+Shortlist A+/A/B ............. 112
+Comuni/localita' distinti .... 240
 
-PRIORITA': A+=5, A=36, B=68, C=162, D=803
+PRIORITA': A+=5, A=37, B=70, C=162, D=818
 
 PER REGIONE:
-  Lombardia              224
+  Lombardia              235
   Emilia-Romagna         109
   Lazio                  93
   Toscana                93
@@ -28,19 +28,20 @@ PER REGIONE:
   Calabria               12
   Trentino-Alto Adige/Südtirol 12
   Umbria                 10
+  Valle d'Aosta/Vallée d'Aoste 7
   Basilicata             5
   (senza regione)        2
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     587
-  Pet shop                                       220
-  Toelettature                                   71
+  Veterinari                                     591
+  Pet shop                                       227
+  Toelettature                                   75
   Rifugi per animali                             49
   Ambulatori veterinari                          32
-  Pensioni per animali                           23
+  Pensioni per animali                           25
   Negozi per animali                             18
-  Allevatori                                     11
+  Allevatori                                     12
   Associazioni animaliste                        10
   Educatori cinofili                             9
   Canili                                         8
@@ -63,6 +64,7 @@ TOP 15 PROSPECT PER SCORE:
    97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
    89 A   Le betulle                                           Saronno              Allevatori
+   87 A   Azienda Agricola La Quercia                          Limbiate             Pensioni per animali
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
    85 A   Ambulatorio Veterinario Zama                         Faenza               Ambulatori veterinari
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
@@ -71,4 +73,3 @@ TOP 15 PROSPECT PER SCORE:
    84 A   Aquarium                                             Scafati              Pet shop
    84 A   Palla di Pelo                                        Tivoli               Pet shop
    83 A   Centro Cinofilo Erika Striulli - ACAFOC SSD arl      Quartu Sant'Elena    Centri cinofili
-   83 A   ASD Centro Cinofilo Il Lupo - Scuola di Educazione C Empoli               Centri cinofili

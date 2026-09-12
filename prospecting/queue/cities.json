@@ -2556,8 +2556,8 @@
     "province": "Foggia",
     "region": "Puglia",
     "population": 34333,
-    "lat": null,
-    "lon": null
+    "lat": 41.4972913,
+    "lon": 15.3348301
   },
   {
     "name": "Sant'Antimo",
@@ -2566,8 +2566,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 34107,
-    "lat": null,
-    "lon": null
+    "lat": 40.9438087,
+    "lon": 14.2335483
   },
   {
     "name": "Aosta",
@@ -2576,8 +2576,8 @@
     "province": "Valle d'Aosta/Vallée d'Aoste",
     "region": "Valle d'Aosta/Vallée d'Aoste",
     "population": 34102,
-    "lat": null,
-    "lon": null
+    "lat": 45.7494532,
+    "lon": 7.2932874
   },
   {
     "name": "Osimo",
@@ -2586,8 +2586,8 @@
     "province": "Ancona",
     "region": "Marche",
     "population": 33991,
-    "lat": null,
-    "lon": null
+    "lat": 43.4835922,
+    "lon": 13.4489085
   },
   {
     "name": "Nola",
@@ -2596,8 +2596,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 33979,
-    "lat": null,
-    "lon": null
+    "lat": 40.9200395,
+    "lon": 14.5137068
   },
   {
     "name": "Limbiate",
@@ -2606,8 +2606,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 33903,
-    "lat": null,
-    "lon": null
+    "lat": 45.6043091,
+    "lon": 9.1199843
   },
   {
     "name": "Venaria Reale",
