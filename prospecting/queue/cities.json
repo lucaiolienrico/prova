@@ -2736,8 +2736,8 @@
     "province": "Verona",
     "region": "Veneto",
     "population": 32747,
-    "lat": null,
-    "lon": null
+    "lat": 45.3614183,
+    "lon": 10.8576471
   },
   {
     "name": "Angri",
@@ -2746,8 +2746,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 32576,
-    "lat": null,
-    "lon": null
+    "lat": 40.7402807,
+    "lon": 14.5641503
   },
   {
     "name": "Santa Maria Capua Vetere",
@@ -2756,8 +2756,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 32503,
-    "lat": null,
-    "lon": null
+    "lat": 41.0669953,
+    "lon": 14.2449617
   },
   {
     "name": "Grottaglie",
@@ -2766,8 +2766,8 @@
     "province": "Taranto",
     "region": "Puglia",
     "population": 32503,
-    "lat": null,
-    "lon": null
+    "lat": 40.53395,
+    "lon": 17.4043862
   },
   {
     "name": "Gubbio",
@@ -2776,8 +2776,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 32432,
-    "lat": null,
-    "lon": null
+    "lat": 43.3479225,
+    "lon": 12.5417476
   },
   {
     "name": "Massafra",
@@ -2786,8 +2786,8 @@
     "province": "Taranto",
     "region": "Puglia",
     "population": 32381,
-    "lat": null,
-    "lon": null
+    "lat": 40.6010368,
+    "lon": 17.1185244
   },
   {
     "name": "Milazzo",

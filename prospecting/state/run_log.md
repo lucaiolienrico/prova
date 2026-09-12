@@ -569,3 +569,15 @@
 
 **Bilancio**: 6 citta' ok, 4 elementi OSM, 4 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~115.
 
+## Giro del 2026-09-12T20:07:14Z (run_20260912_200714_e9d2)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Villafranca di Verona | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Angri | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Santa Maria Capua Vetere | 8 | 8 | 7 | 1 (0 integrati) | ok |
+| Grottaglie | 6 | 6 | 6 | 0 (0 integrati) | ok |
+| Gubbio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Massafra | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 14 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~109.
+

@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Righetti",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Villafranca di Verona",
+    "prov": "VR",
+    "reg": "Veneto",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5477400684",
+    "osm_id": 5477400684,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Righetti"
+    },
+    "lat": 45.3949035,
+    "lon": 10.9132192,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
