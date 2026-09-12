@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Santini e Clerici",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Crema",
+    "prov": "CR",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2460933175",
+    "osm_id": 2460933175,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Santini e Clerici"
+    },
+    "lat": 45.3519159,
+    "lon": 9.6907876,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

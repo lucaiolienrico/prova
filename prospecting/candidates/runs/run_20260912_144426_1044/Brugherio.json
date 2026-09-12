@@ -1,0 +1,41 @@
+[
+  {
+    "n": "Veterinario Brugherio",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Brugherio",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": "Via Volturno 80, 20861",
+    "site": "www.veterinariobrugherio.mb.it",
+    "email": null,
+    "tel": "+39 039 881088",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3887483299",
+    "osm_id": 3887483299,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Brugherio",
+      "addr:housenumber": "80",
+      "addr:postcode": "20861",
+      "addr:street": "Via Volturno",
+      "amenity": "veterinary",
+      "check_date:opening_hours": "2024-03-18",
+      "contact:facebook": "facebook.com/ambulatoriovolturno",
+      "mobile": "+39 335 681 2945",
+      "name": "Veterinario Brugherio",
+      "opening_hours": "Mo-Fr 10:00-12:30,16:00-19:00; Sa 10:00-12:30; PH closed",
+      "phone": "+39 039 881088",
+      "website": "www.veterinariobrugherio.mb.it",
+      "wheelchair": "yes"
+    },
+    "lat": 45.5429408,
+    "lon": 9.295444,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-12:30,16:00-19:00; Sa 10:00-12:30; PH closed",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

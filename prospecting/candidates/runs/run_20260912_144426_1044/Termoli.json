@@ -1,0 +1,30 @@
+[
+  {
+    "n": "TermoliVet",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Termoli",
+    "prov": "CB",
+    "reg": "Molise",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12345638652",
+    "osm_id": 12345638652,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "TermoliVet"
+    },
+    "lat": 42.0000157,
+    "lon": 14.9896723,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

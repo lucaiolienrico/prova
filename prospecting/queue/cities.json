@@ -2676,8 +2676,8 @@
     "province": "Vibo Valentia",
     "region": "Calabria",
     "population": 33357,
-    "lat": null,
-    "lon": null
+    "lat": 38.6792779,
+    "lon": 16.0923429
   },
   {
     "name": "Brugherio",
@@ -2686,8 +2686,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 33170,
-    "lat": null,
-    "lon": null
+    "lat": 45.5541319,
+    "lon": 9.2966825
   },
   {
     "name": "Crema",
@@ -2696,8 +2696,8 @@
     "province": "Cremona",
     "region": "Lombardia",
     "population": 33091,
-    "lat": null,
-    "lon": null
+    "lat": 45.3660174,
+    "lon": 9.6842403
   },
   {
     "name": "Favara",
@@ -2706,8 +2706,8 @@
     "province": "Agrigento",
     "region": "Sicilia",
     "population": 32972,
-    "lat": null,
-    "lon": null
+    "lat": 37.315142,
+    "lon": 13.6730609
   },
   {
     "name": "Castelfranco Veneto",
@@ -2716,8 +2716,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 32894,
-    "lat": null,
-    "lon": null
+    "lat": 45.6604581,
+    "lon": 11.9324246
   },
   {
     "name": "Termoli",
@@ -2726,8 +2726,8 @@
     "province": "Campobasso",
     "region": "Molise",
     "population": 32793,
-    "lat": null,
-    "lon": null
+    "lat": 41.9737829,
+    "lon": 14.9604585
   },
   {
     "name": "Villafranca di Verona",

@@ -1,16 +1,16 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-12 10:04
+Generato: 2026-09-12 14:47
 ============================================================
-Prospect totali: .............. 1094 (manuali 189, H24 905)
-Con contatto diretto ......... 433 (39%)
-Con sito web ................. 226
+Prospect totali: .............. 1098 (manuali 189, H24 909)
+Con contatto diretto ......... 434 (39%)
+Con sito web ................. 227
 Shortlist A+/A/B ............. 112
-Comuni/localita' distinti .... 241
+Comuni/localita' distinti .... 245
 
-PRIORITA': A+=5, A=37, B=70, C=162, D=820
+PRIORITA': A+=5, A=37, B=70, C=163, D=823
 
 PER REGIONE:
-  Lombardia              235
+  Lombardia              237
   Emilia-Romagna         109
   Lazio                  95
   Toscana                93
@@ -18,13 +18,13 @@ PER REGIONE:
   Sicilia                92
   Piemonte               74
   Puglia                 59
-  Veneto                 55
+  Veneto                 56
   Liguria                40
   Marche                 29
   Sardegna               24
   Abruzzo                20
   Friuli-Venezia Giulia  16
-  Molise                 12
+  Molise                 13
   Calabria               12
   Trentino-Alto Adige/Südtirol 12
   Umbria                 10
@@ -34,7 +34,7 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     591
+  Veterinari                                     595
   Pet shop                                       229
   Toelettature                                   75
   Rifugi per animali                             49

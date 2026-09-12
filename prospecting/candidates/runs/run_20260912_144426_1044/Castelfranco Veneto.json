@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Ambulatorio veterinario Serraglio",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Castelfranco Veneto",
+    "prov": "TV",
+    "reg": "Veneto",
+    "addr": "Via Bella Venezia 67",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5553740431",
+    "osm_id": 5553740431,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "67",
+      "addr:street": "Via Bella Venezia",
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario Serraglio",
+      "opening_hours": "Mo-Sa 09:00-12:00; Mo-Fr 16:30-19:00"
+    },
+    "lat": 45.6852281,
+    "lon": 11.9177681,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Sa 09:00-12:00; Mo-Fr 16:30-19:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

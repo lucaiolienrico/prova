@@ -557,3 +557,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~121.
 
+## Giro del 2026-09-12T14:44:26Z (run_20260912_144426_1044)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Vibo Valentia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Brugherio | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Crema | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Favara | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Castelfranco Veneto | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Termoli | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 4 elementi OSM, 4 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~115.
+
