@@ -2856,8 +2856,8 @@
     "province": "Lecce",
     "region": "Puglia",
     "population": 31688,
-    "lat": null,
-    "lon": null
+    "lat": 40.2420607,
+    "lon": 17.9391929
   },
   {
     "name": "Castelfranco Emilia",
@@ -2866,8 +2866,8 @@
     "province": "Modena",
     "region": "Emilia-Romagna",
     "population": 31656,
-    "lat": null,
-    "lon": null
+    "lat": 44.592202,
+    "lon": 11.0673432
   },
   {
     "name": "Partinico",
@@ -2876,8 +2876,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 31401,
-    "lat": null,
-    "lon": null
+    "lat": 38.015092,
+    "lon": 13.0681489
   },
   {
     "name": "Avola",
@@ -2886,8 +2886,8 @@
     "province": "Siracusa",
     "region": "Sicilia",
     "population": 31328,
-    "lat": null,
-    "lon": null
+    "lat": 36.924255,
+    "lon": 15.1285543
   },
   {
     "name": "Oristano",
@@ -2896,8 +2896,8 @@
     "province": "Oristano",
     "region": "Sardegna",
     "population": 31155,
-    "lat": null,
-    "lon": null
+    "lat": 39.9150344,
+    "lon": 8.6085538
   },
   {
     "name": "San Giuliano Terme",
@@ -2906,8 +2906,8 @@
     "province": "Pisa",
     "region": "Toscana",
     "population": 31103,
-    "lat": null,
-    "lon": null
+    "lat": 43.7662138,
+    "lon": 10.3866737
   },
   {
     "name": "San Lazzaro di Savena",

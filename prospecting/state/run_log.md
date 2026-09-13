@@ -593,3 +593,15 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 9 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~103.
 
+## Giro del 2026-09-13T10:52:08Z (run_20260913_105208_8a0a)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Nardò | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Castelfranco Emilia | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Partinico | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Avola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Oristano | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| San Giuliano Terme | 3 | 3 | 3 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~97.
+
