@@ -1,5 +1,6 @@
 {
   "done": [
+    "Abbiategrasso",
     "Acerra",
     "Acireale",
     "Adrano",
@@ -102,6 +103,7 @@
     "Eboli",
     "Empoli",
     "Ercolano",
+    "Fabriano",
     "Faenza",
     "Fano",
     "Fasano",
@@ -235,14 +237,17 @@
     "Rozzano",
     "Salerno",
     "San Benedetto del Tronto",
+    "San Donato Milanese",
     "San Donà di Piave",
     "San Giorgio a Cremano",
     "San Giuliano Milanese",
     "San Giuliano Terme",
+    "San Lazzaro di Savena",
     "San Severo",
     "Sanremo",
     "Sant'Antimo",
     "Santa Maria Capua Vetere",
+    "Sarno",
     "Saronno",
     "Sassari",
     "Sassuolo",
@@ -292,8 +297,8 @@
     "Vittoria",
     "Voghera"
   ],
-  "last_run": "2026-09-13T10:56:39Z",
-  "runs": 50,
-  "new_total": 944,
+  "last_run": "2026-09-13T15:39:42Z",
+  "runs": 51,
+  "new_total": 946,
   "enrich_total": 23
 }

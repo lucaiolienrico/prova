@@ -605,3 +605,18 @@
 
 **Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~97.
 
+## Giro del 2026-09-13T15:23:44Z (run_20260913_152344_266e)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| San Lazzaro di Savena | 8 | 8 | 1 | 7 (0 integrati) | ok |
+| Sarno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fabriano | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Abbiategrasso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Donato Milanese | 3 | 3 | 0 | 3 (0 integrati) | ok |
+| Manduria | - | - | - | - | geocodifica fallita |
+
+**Bilancio**: 5 citta' ok, 12 elementi OSM, 12 schede candidate, 2 nuove, 0 integrate, 1 citta' fallite (verranno ritentate), coda rimanente ~91.
+
+**Citta' fallite (ritentate al prossimo giro):**
+- Manduria: geocodifica fallita
+
