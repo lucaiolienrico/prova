@@ -1,0 +1,34 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Gabbro",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Rosignano Marittimo",
+    "prov": "LI",
+    "reg": "Toscana",
+    "addr": null,
+    "site": "https://ambulatorioveterinariogabbro.it/",
+    "email": null,
+    "tel": "+39 0586 742575",
+    "ig": null,
+    "fb": null,
+    "contact": "D.ssa Giulia Lopardo",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2584319888",
+    "osm_id": 2584319888,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Gabbro",
+      "opening_hours": "Mo-Fr 10:30-13:00; Mo-We,Fr 16:30-19:00; Sa,PH off",
+      "operator": "D.ssa Giulia Lopardo",
+      "phone": "+39 0586 742575",
+      "website": "https://ambulatorioveterinariogabbro.it/"
+    },
+    "lat": 43.4819061,
+    "lon": 10.4431242,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:30-13:00; Mo-We,Fr 16:30-19:00; Sa,PH off",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

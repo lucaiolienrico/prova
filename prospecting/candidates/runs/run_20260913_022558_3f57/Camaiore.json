@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Dottoressa Dalle Luche",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Camaiore",
+    "prov": "LU",
+    "reg": "Toscana",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4270640464",
+    "osm_id": 4270640464,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Dottoressa Dalle Luche"
+    },
+    "lat": 43.9389954,
+    "lon": 10.3055478,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

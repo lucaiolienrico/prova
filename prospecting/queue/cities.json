@@ -2796,8 +2796,8 @@
     "province": "Messina",
     "region": "Sicilia",
     "population": 32146,
-    "lat": null,
-    "lon": null
+    "lat": 38.2200656,
+    "lon": 15.2410928
   },
   {
     "name": "Camaiore",
@@ -2806,8 +2806,8 @@
     "province": "Lucca",
     "region": "Toscana",
     "population": 32083,
-    "lat": null,
-    "lon": null
+    "lat": 43.9278239,
+    "lon": 10.3124689
   },
   {
     "name": "Lugo",
@@ -2816,8 +2816,8 @@
     "province": "Ravenna",
     "region": "Emilia-Romagna",
     "population": 32062,
-    "lat": null,
-    "lon": null
+    "lat": 44.4763433,
+    "lon": 11.9118392
   },
   {
     "name": "Ostuni",
@@ -2826,8 +2826,8 @@
     "province": "Brindisi",
     "region": "Puglia",
     "population": 31860,
-    "lat": null,
-    "lon": null
+    "lat": 40.7297127,
+    "lon": 17.520645
   },
   {
     "name": "Castelvetrano",
@@ -2836,8 +2836,8 @@
     "province": "Trapani",
     "region": "Sicilia",
     "population": 31824,
-    "lat": null,
-    "lon": null
+    "lat": 37.664741,
+    "lon": 12.8156559
   },
   {
     "name": "Rosignano Marittimo",
@@ -2846,8 +2846,8 @@
     "province": "Livorno",
     "region": "Toscana",
     "population": 31752,
-    "lat": null,
-    "lon": null
+    "lat": 43.4132974,
+    "lon": 10.4440245
   },
   {
     "name": "Nardò",

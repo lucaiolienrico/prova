@@ -1,0 +1,59 @@
+[
+  {
+    "n": "ENPA Bizzuno",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Lugo",
+    "prov": "RA",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12089607565",
+    "osm_id": 12089607565,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "animal_shelter": "cat",
+      "name": "ENPA Bizzuno"
+    },
+    "lat": 44.4620604,
+    "lon": 11.9186198,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Clinica Veterinaria",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Lugo",
+    "prov": "RA",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/1716121554",
+    "osm_id": 1716121554,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Clinica Veterinaria"
+    },
+    "lat": 44.4650076,
+    "lon": 11.9619689,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

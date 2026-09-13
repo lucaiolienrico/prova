@@ -581,3 +581,15 @@
 
 **Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 14 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~109.
 
+## Giro del 2026-09-13T02:25:58Z (run_20260913_022558_3f57)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Milazzo | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Camaiore | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Lugo | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Ostuni | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Castelvetrano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rosignano Marittimo | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 9 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~103.
+
