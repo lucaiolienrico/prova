@@ -620,3 +620,15 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - Manduria: geocodifica fallita
 
+## Giro del 2026-09-13T20:03:51Z (run_20260913_200351_10f6)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Manduria | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Alba | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Montebelluna | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cernusco sul Naviglio | 13 | 13 | 2 | 11 (0 integrati) | ok |
+| Fonte Nuova | 2 | 2 | 1 | 1 (0 integrati) | ok |
+| Canosa di Puglia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~86.
+

@@ -2966,8 +2966,8 @@
     "province": "Taranto",
     "region": "Puglia",
     "population": 30921,
-    "lat": null,
-    "lon": null
+    "lat": 40.3799908,
+    "lon": 17.6565537
   },
   {
     "name": "Alba",
@@ -2976,8 +2976,8 @@
     "province": "Cuneo",
     "region": "Piemonte",
     "population": 30804,
-    "lat": null,
-    "lon": null
+    "lat": 44.6862366,
+    "lon": 8.0324802
   },
   {
     "name": "Montebelluna",
@@ -2986,8 +2986,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 30765,
-    "lat": null,
-    "lon": null
+    "lat": 45.7680626,
+    "lon": 12.0450021
   },
   {
     "name": "Cernusco sul Naviglio",
@@ -2996,8 +2996,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 30697,
-    "lat": null,
-    "lon": null
+    "lat": 45.5241417,
+    "lon": 9.3334253
   },
   {
     "name": "Fonte Nuova",
@@ -3006,8 +3006,8 @@
     "province": "Roma",
     "region": "Lazio",
     "population": 30572,
-    "lat": null,
-    "lon": null
+    "lat": 42.0019401,
+    "lon": 12.6337786
   },
   {
     "name": "Canosa di Puglia",
@@ -3016,8 +3016,8 @@
     "province": "Barletta-Andria-Trani",
     "region": "Puglia",
     "population": 30422,
-    "lat": null,
-    "lon": null
+    "lat": 41.1926224,
+    "lon": 16.0075207
   },
   {
     "name": "Verbania",

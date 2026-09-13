@@ -1,0 +1,31 @@
+[
+  {
+    "n": "Ambulatorio Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Alba",
+    "prov": "CN",
+    "reg": "Piemonte",
+    "addr": "Corso Bra",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9453941989",
+    "osm_id": 9453941989,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:street": "Corso Bra",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario"
+    },
+    "lat": 44.7094685,
+    "lon": 8.0255072,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "n": "Animal conpany",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Fonte Nuova",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7935405086",
+    "osm_id": 7935405086,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Animal conpany",
+      "shop": "pet"
+    },
+    "lat": 41.9823925,
+    "lon": 12.6166859,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Reptyfood",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Fonte Nuova",
+    "prov": "RM",
+    "reg": "Lazio",
+    "addr": "Via Nomentana 68",
+    "site": "https://reptyfood.com/",
+    "email": null,
+    "tel": "+39 06 909 4679",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4447515189",
+    "osm_id": 4447515189,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "68",
+      "addr:street": "Via Nomentana",
+      "name": "Reptyfood",
+      "phone": "+39 06 909 4679",
+      "shop": "pet",
+      "website": "https://reptyfood.com/"
+    },
+    "lat": 42.0296037,
+    "lon": 12.6455494,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
