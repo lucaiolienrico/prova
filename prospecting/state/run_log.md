@@ -632,3 +632,15 @@
 
 **Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~86.
 
+## Giro del 2026-09-14T02:42:37Z (run_20260914_024237_d940)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Verbania | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Marigliano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Frattamaggiore | 5 | 5 | 0 | 5 (0 integrati) | ok |
+| Villaricca | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Mascalucia | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Gragnano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~80.
+

@@ -3026,8 +3026,8 @@
     "province": "Verbano-Cusio-Ossola",
     "region": "Piemonte",
     "population": 30332,
-    "lat": null,
-    "lon": null
+    "lat": 45.9373435,
+    "lon": 8.5257509
   },
   {
     "name": "Marigliano",
@@ -3036,8 +3036,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 30247,
-    "lat": null,
-    "lon": null
+    "lat": 40.9363585,
+    "lon": 14.4481594
   },
   {
     "name": "Frattamaggiore",
@@ -3046,8 +3046,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 30241,
-    "lat": null,
-    "lon": null
+    "lat": 40.9369042,
+    "lon": 14.2745233
   },
   {
     "name": "Villaricca",
@@ -3056,8 +3056,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 30052,
-    "lat": null,
-    "lon": null
+    "lat": 40.9131191,
+    "lon": 14.1588723
   },
   {
     "name": "Mascalucia",
@@ -3066,8 +3066,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 29984,
-    "lat": null,
-    "lon": null
+    "lat": 37.5861605,
+    "lon": 15.0399228
   },
   {
     "name": "Gragnano",
@@ -3076,8 +3076,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 29509,
-    "lat": null,
-    "lon": null
+    "lat": 40.6892548,
+    "lon": 14.5387213
   },
   {
     "name": "Valsamoggia",
