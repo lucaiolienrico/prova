@@ -1,0 +1,42 @@
+[
+  {
+    "n": "Veterinario Sant'Antonio",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Erice",
+    "prov": "TP",
+    "reg": "Sicilia",
+    "addr": "Via Cosenza, 91016",
+    "site": "https://www.ambulatorioveterinario-trapani.it/",
+    "email": "info@veterinario-trapani.it",
+    "tel": "+39 3208826140",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/10718744089",
+    "osm_id": 10718744089,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Erice",
+      "addr:postcode": "91016",
+      "addr:street": "Via Cosenza",
+      "amenity": "veterinary",
+      "check_date:currency:XBT": "2023-12-31",
+      "currency:XBT": "yes",
+      "email": "info@veterinario-trapani.it",
+      "name": "Veterinario Sant'Antonio",
+      "opening_hours": "Mo-Sa 09:30-13:00,15:30-20:00",
+      "payment:lightning": "yes",
+      "payment:lightning_contactless": "no",
+      "payment:onchain": "yes",
+      "phone": "+39 3208826140",
+      "website": "https://www.ambulatorioveterinario-trapani.it/"
+    },
+    "lat": 38.0262775,
+    "lon": 12.5490245,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Sa 09:30-13:00,15:30-20:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

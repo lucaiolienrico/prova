@@ -671,3 +671,15 @@
 
 **Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 5 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~69.
 
+## Giro del 2026-09-14T21:14:14Z (run_20260914_211414_a11c)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Carmagnola | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Treviglio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Giarre | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Pontedera | 8 | 8 | 8 | 0 (0 integrati) | ok |
+| Erice | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Cecina | 4 | 4 | 3 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 18 elementi OSM, 18 schede candidate, 17 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~63.
+

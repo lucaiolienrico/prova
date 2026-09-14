@@ -1,0 +1,60 @@
+[
+  {
+    "n": "Can Ca Baula",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Carmagnola",
+    "prov": "TO",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1484033310",
+    "osm_id": 1484033310,
+    "osm_type": "way",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "animal_shelter": "dog",
+      "name": "Can Ca Baula"
+    },
+    "lat": 44.8349965,
+    "lon": 7.7112557,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Canile Municipale",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Carmagnola",
+    "prov": "TO",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1474390621",
+    "osm_id": 1474390621,
+    "osm_type": "way",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "animal_shelter": "dog",
+      "name": "Canile Municipale"
+    },
+    "lat": 44.8675039,
+    "lon": 7.7076322,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
