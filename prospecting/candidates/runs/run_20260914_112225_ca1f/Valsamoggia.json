@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Mingardi",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Valsamoggia",
+    "prov": "BO",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5681928506",
+    "osm_id": 5681928506,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Mingardi"
+    },
+    "lat": 44.4693521,
+    "lon": 11.1044086,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

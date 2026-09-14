@@ -3086,8 +3086,8 @@
     "province": "Bologna",
     "region": "Emilia-Romagna",
     "population": 29427,
-    "lat": null,
-    "lon": null
+    "lat": 44.4393669,
+    "lon": 11.0867685
   },
   {
     "name": "Rapallo",
@@ -3106,8 +3106,8 @@
     "province": "Ragusa",
     "region": "Sicilia",
     "population": 29184,
-    "lat": null,
-    "lon": null
+    "lat": 36.9714259,
+    "lon": 14.5896144
   },
   {
     "name": "Poggibonsi",
@@ -3116,8 +3116,8 @@
     "province": "Siena",
     "region": "Toscana",
     "population": 28952,
-    "lat": null,
-    "lon": null
+    "lat": 43.4621586,
+    "lon": 11.155754
   },
   {
     "name": "Bra",
@@ -3126,8 +3126,8 @@
     "province": "Cuneo",
     "region": "Piemonte",
     "population": 28935,
-    "lat": null,
-    "lon": null
+    "lat": 44.7065268,
+    "lon": 7.8362293
   },
   {
     "name": "Cervia",
@@ -3136,8 +3136,8 @@
     "province": "Ravenna",
     "region": "Emilia-Romagna",
     "population": 28896,
-    "lat": null,
-    "lon": null
+    "lat": 44.2499205,
+    "lon": 12.3070411
   },
   {
     "name": "Carbonia",

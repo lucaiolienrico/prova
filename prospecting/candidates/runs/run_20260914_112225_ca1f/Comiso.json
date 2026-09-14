@@ -1,0 +1,31 @@
+[
+  {
+    "n": "Centro Veterinario Kasmeneo",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Comiso",
+    "prov": "RG",
+    "reg": "Sicilia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/1033064825",
+    "osm_id": 1033064825,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Centro Veterinario Kasmeneo",
+      "wheelchair": "yes"
+    },
+    "lat": 36.9501166,
+    "lon": 14.6087561,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -644,3 +644,18 @@
 
 **Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 6 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~80.
 
+## Giro del 2026-09-14T11:22:25Z (run_20260914_112225_ca1f)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Valsamoggia | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Rapallo | - | - | - | - | geocodifica fallita |
+| Comiso | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Poggibonsi | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Bra | 8 | 8 | 7 | 1 (0 integrati) | ok |
+| Cervia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 5 citta' ok, 11 elementi OSM, 11 schede candidate, 10 nuove, 0 integrate, 1 citta' fallite (verranno ritentate), coda rimanente ~74.
+
+**Citta' fallite (ritentate al prossimo giro):**
+- Rapallo: geocodifica fallita
+

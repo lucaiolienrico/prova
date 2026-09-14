@@ -1,0 +1,32 @@
+[
+  {
+    "n": "CanLustro",
+    "cat": "Toelettature",
+    "sub": null,
+    "city": "Poggibonsi",
+    "prov": "SI",
+    "reg": "Toscana",
+    "addr": "53034",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7058782558",
+    "osm_id": 7058782558,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Colle di Val d'Elsa",
+      "addr:postcode": "53034",
+      "name": "CanLustro",
+      "shop": "pet_grooming"
+    },
+    "lat": 43.4227871,
+    "lon": 11.1282472,
+    "other": "OSM: shop=pet_grooming",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
