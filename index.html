@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H24 Prospecting Engine — Lead generation automatica su GitHub Actions</title>
+<meta name="description" content="Sistema di lead generation automatica. Zero server, zero costi. 1.155 prospect trovati, 55 run, €0 di infrastruttura.">
+<meta property="og:title" content="H24 Prospecting Engine">
+<meta property="og:description" content="1.155 prospect trovati. 55 run completati. €0 di costo server. Gira su GitHub Actions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D1117;--card:#161B22;--card2:#1C2128;
+  --br:#30363D;--brs:#484F58;
+  --tx:#E6EDF3;--txm:#8B949E;--txf:#484F58;
+  --gr:#3FB950;--gr-d:#238636;--gr-bg:rgba(46,160,67,.14);
+  --bl:#58A6FF;--bl-bg:rgba(88,166,255,.1);
+  --r:6px;--rl:12px;
+}
+body{background:var(--bg);color:var(--tx);font-family:'Space Grotesk',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--bl);text-decoration:none}
+a:hover{text-decoration:underline}
+.w{max-width:860px;margin:0 auto;padding:0 24px}
+nav{border-bottom:1px solid var(--br);padding:14px 0;position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(10px);z-index:100}
+.ni{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:600;font-size:15px;color:var(--tx)}
+.logo em{color:var(--gr);font-style:normal}
+.ncta{background:var(--gr-d);color:#fff;padding:7px 18px;border-radius:var(--r);font-size:13px;font-weight:500;border:1px solid var(--gr);transition:background .15s}
+.ncta:hover{background:#2ea043;text-decoration:none}
+.hero{padding:60px 0 48px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-family:'JetBrains Mono',monospace;background:var(--gr-bg);color:var(--gr);padding:4px 14px;border-radius:999px;border:1px solid rgba(63,185,80,.25);margin-bottom:24px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:p 2s infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-size:40px;font-weight:600;line-height:1.15;letter-spacing:-.7px;margin-bottom:16px;max-width:620px}
+.sub{font-size:17px;color:var(--txm);max-width:500px;line-height:1.65;margin-bottom:36px}
+.ctas{display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.bp{background:var(--gr-d);color:#fff;padding:10px 22px;border-radius:var(--r);font-size:14px;font-weight:500;border:1px solid var(--gr);transition:background .15s}
+.bp:hover{background:#2ea043;text-decoration:none}
+.bs{color:var(--tx);padding:10px 22px;border-radius:var(--r);font-size:14px;border:1px solid var(--brs);transition:background .15s}
+.bs:hover{background:var(--card);text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--br);border-radius:var(--rl);overflow:hidden;margin-bottom:48px}
+.stat{padding:20px;border-right:1px solid var(--br)}
+.stat:last-child{border-right:none}
+.sn{font-size:28px;font-weight:600;line-height:1}
+.sl{font-size:11px;color:var(--txm);margin-top:6px;font-family:'JetBrains Mono',monospace}
+.term{background:var(--card);border:1px solid var(--br);border-radius:var(--rl);overflow:hidden;margin-bottom:64px}
+.thd{height:36px;background:var(--card2);border-bottom:1px solid var(--br);display:flex;align-items:center;gap:8px;padding:0 16px}
+.dd{width:12px;height:12px;border-radius:50%}
+.dr{background:#FF5F57}.dy{background:#FEBC2E}.dg{background:#28C840}
+.tlbl{font-size:12px;color:var(--txf);font-family:'JetBrains Mono',monospace;margin-left:6px}
+.tbd{padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:2;min-height:240px}
+.tr{opacity:0;transition:opacity .07s ease;white-space:pre}
+.tr.v{opacity:1}
+.tg{color:var(--gr)}.tb{color:var(--bl)}.tm{color:var(--txm)}
+section{margin-bottom:64px}
+.slbl{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--txm);margin-bottom:8px;letter-spacing:.06em}
+.sh{font-size:28px;font-weight:600;letter-spacing:-.4px;margin-bottom:8px}
+.ss{font-size:15px;color:var(--txm);margin-bottom:32px}
+.how{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--br);border-radius:var(--rl);overflow:hidden}
+.hw{padding:24px 20px;border-right:1px solid var(--br)}
+.hw:last-child{border-right:none}
+.hi{font-size:20px;color:var(--bl);margin-bottom:12px}
+.hs{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--txf);margin-bottom:6px}
+.ht{font-size:14px;font-weight:500;margin-bottom:6px}
+.hd{font-size:12px;color:var(--txm);line-height:1.6}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{background:var(--card);border:1px solid var(--br);border-radius:var(--rl);padding:24px}
+.plan.hot{border:2px solid var(--bl)}
+.pbg{display:inline-block;font-size:11px;background:var(--bl-bg);color:var(--bl);padding:3px 10px;border-radius:999px;border:1px solid rgba(88,166,255,.3);margin-bottom:14px}
+.pn{font-size:14px;color:var(--txm);margin-bottom:6px}
+.pp{font-size:36px;font-weight:600;line-height:1;margin-bottom:20px}
+.pp sup{font-size:18px;font-weight:500;vertical-align:super}
+.pp sub{font-size:13px;font-weight:400;color:var(--txm)}
+.pf{font-size:13px;color:var(--txm);padding:8px 0;border-bottom:1px solid var(--br);display:flex;align-items:center;gap:10px}
+.pf:last-of-type{border-bottom:none}
+.ok{color:var(--gr);font-size:15px}
+.pcta{display:block;width:100%;margin-top:20px;padding:10px;text-align:center;border-radius:var(--r);font-size:14px;font-weight:500;cursor:pointer;border:1px solid var(--brs);background:transparent;color:var(--tx);font-family:'Space Grotesk',sans-serif;transition:background .15s,border-color .15s}
+.pcta:hover{background:var(--card2);border-color:var(--bl)}
+.plan.hot .pcta{background:var(--bl);color:#fff;border-color:var(--bl)}
+.plan.hot .pcta:hover{background:#4c9de0}
+footer{border-top:1px solid var(--br);padding:32px 0}
+.fi{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.fl{font-weight:600;margin-bottom:8px}
+.fl em{color:var(--gr);font-style:normal}
+.fn{font-size:12px;color:var(--txm);line-height:1.9;font-family:'JetBrains Mono',monospace}
+.flinks{display:flex;flex-direction:column;gap:8px;text-align:right}
+.flinks a{font-size:13px;color:var(--txm)}
+.flinks a:hover{color:var(--tx)}
+@media(max-width:640px){
+  h1{font-size:26px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--br)}
+  .how{grid-template-columns:1fr 1fr}
+  .hw:nth-child(2){border-right:none}
+  .hw:nth-child(3),.hw:nth-child(4){border-top:1px solid var(--br)}
+  .plans{grid-template-columns:1fr}
+  .fi{flex-direction:column}
+  .flinks{text-align:left}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="w"><div class="ni">
+    <span class="logo">H24 <em>Prospecting</em> Engine</span>
+    <a href="#pricing" class="ncta">Acquista ora</a>
+  </div></div>
+</nav>
+<main>
+<div class="w">
+<section class="hero">
+  <div class="pill"><span class="dot"></span>sistema attivo &mdash; ultimo run 17:36 UTC</div>
+  <h1>Lead generation automatica.<br>Zero server. Zero costo.</h1>
+  <p class="sub">Il sistema scansiona i comuni italiani su OpenStreetMap ogni 6 ore, costruisce un database di prospect qualificati e lo commita su GitHub. Gira da solo, anche di notte.</p>
+  <div class="ctas">
+    <a href="#pricing" class="bp">Acquista il sistema</a>
+    <a href="#come-funziona" class="bs">Come funziona &rarr;</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="sn">1.155</div><div class="sl">prospect trovati</div></div>
+    <div class="stat"><div class="sn">55</div><div class="sl">run completati</div></div>
+    <div class="stat"><div class="sn">&euro;0</div><div class="sl">costo infrastruttura</div></div>
+    <div class="stat"><div class="sn">280+</div><div class="sl">comuni scansionati</div></div>
+  </div>
+  <div class="term">
+    <div class="thd">
+      <span class="dd dr"></span><span class="dd dy"></span><span class="dd dg"></span>
+      <span class="tlbl">petnote-h24-bot &mdash; GitHub Actions &mdash; run #56</span>
+    </div>
+    <div class="tbd" id="tout"></div>
+  </div>
+</section>
+<section id="come-funziona">
+  <div class="slbl">architettura</div>
+  <h2 class="sh">GitHub Actions fa tutto.</h2>
+  <p class="ss">Nessun server, nessuna VPS, nessun cron locale. Solo un workflow YAML e una repo GitHub.</p>
+  <div class="how">
+    <div class="hw"><div class="hi"><i class="ti ti-clock"></i></div><div class="hs">cron</div><div class="ht">Ogni 6 ore</div><div class="hd">Avvio automatico 00:00 / 06:00 / 12:00 / 18:00 UTC, oppure manuale dalla scheda Actions.</div></div>
+    <div class="hw"><div class="hi"><i class="ti ti-map-search"></i></div><div class="hs">query</div><div class="ht">Overpass API</div><div class="hd">Interroga OpenStreetMap per categoria (vet, pet shop, toelettatura) sui confini del comune.</div></div>
+    <div class="hw"><div class="hi"><i class="ti ti-filter"></i></div><div class="hs">dedup</div><div class="ht">5 controlli</div><div class="hd">Anti-duplicato su ID OSM, email, telefono, sito web, nome e citta con fuzzy match.</div></div>
+    <div class="hw"><div class="hi"><i class="ti ti-git-commit"></i></div><div class="hs">output</div><div class="ht">Auto-commit</div><div class="hd">JSON + CSV + shortlist scorata pushati su main. Nessun intervento manuale richiesto.</div></div>
+  </div>
+</section>
+<section id="pricing">
+  <div class="slbl">prezzi</div>
+  <h2 class="sh">Scegli il pacchetto.</h2>
+  <p class="ss">Codice sorgente completo, adattabile a qualsiasi verticale in 30 minuti.</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="pn">Base</div>
+      <div class="pp"><sup>&euro;</sup>497<sub> una tantum</sub></div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Repo privata completa</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Config 1 verticale</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Guida setup PDF</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>388 comuni italiani</div>
+      <button class="pcta">Acquista Base</button>
+    </div>
+    <div class="plan hot">
+      <div class="pbg">Piu scelto</div>
+      <div class="pn">Pro</div>
+      <div class="pp"><sup>&euro;</sup>897<sub> una tantum</sub></div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Tutto di Base</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Call onboarding 1h</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Config 3 verticali</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Supporto 30 giorni</div>
+      <button class="pcta">Acquista Pro</button>
+    </div>
+    <div class="plan">
+      <div class="pn">Agency</div>
+      <div class="pp"><sup>&euro;</sup>1.997<sub> una tantum</sub></div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Tutto di Pro</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Licenza multi-cliente</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Config illimitati</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Supporto 90 giorni</div>
+      <button class="pcta">Acquista Agency</button>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<footer>
+  <div class="w"><div class="fi">
+    <div>
+      <div class="fl">H24 <em>Prospecting</em> Engine</div>
+      <div class="fn">
+        Dati: OpenStreetMap, licenza ODbL &mdash; solo contatti B2B pubblici.<br>
+        Nessun invio automatico incluso &mdash; il contatto rimane manuale.<br>
+        Pagamento via Lemon Squeezy &mdash; IVA europea gestita automaticamente.
+      </div>
+    </div>
+    <div class="flinks">
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#pricing">Prezzi</a>
+      <a href="mailto:lucaiolienrico@gmail.com">Contatto</a>
+    </div>
+  </div></div>
+</footer>
+<script>
+var rows=[
+  {d:0,c:'g',t:'\u25b6  PetNote H24 \u2014 avvio run #56'},
+  {d:400,c:'m',t:'   coda: 108 comuni rimanenti / 388 totali'},
+  {d:750,c:'e',t:''},
+  {d:1150,c:'b',t:'\u2192  Ferrara'},
+  {d:1500,c:'m',t:'   query: amenity=veterinary | shop=pet | shop=pet_grooming ...'},
+  {d:2100,c:'g',t:'   \u2713  12 nuovi  \u00b7  3 arricchiti  \u00b7  0 duplicati'},
+  {d:2450,c:'e',t:''},
+  {d:2850,c:'b',t:'\u2192  Parma'},
+  {d:3200,c:'m',t:'   query: amenity=veterinary | shop=pet ...'},
+  {d:3800,c:'g',t:'   \u2713  8 nuovi  \u00b7  0 arricchiti  \u00b7  1 duplicato saltato'},
+  {d:4200,c:'e',t:''},
+  {d:4600,c:'b',t:'\u2192  Piacenza'},
+  {d:4950,c:'m',t:'   query: amenity=veterinary | shop=pet | amenity=animal_shelter ...'},
+  {d:5550,c:'g',t:'   \u2713  6 nuovi  \u00b7  1 arricchito  \u00b7  0 duplicati'},
+  {d:5950,c:'e',t:''},
+  {d:6350,c:'m',t:'   \u2192 scoring e shortlist ricalcolati'},
+  {d:6700,c:'m',t:'   \u2192 petnote_prospects.json  |  shortlist_AB.csv aggiornati'},
+  {d:7050,c:'g',t:'   \u2192 git commit [main b9e3f2a] \u2014 2026-09-14T18:00:00Z'},
+  {d:7450,c:'e',t:''},
+  {d:7850,c:'g',t:'\u2713  DONE \u2014 tot. 1.181 prospect  \u00b7  prossimo run: 00:00 UTC'}
+];
+var cls={g:'tg',b:'tb',m:'tm',e:''};
+var out=document.getElementById('tout');
+var timers=[];
+function render(){
+  timers.forEach(function(id){clearTimeout(id);});
+  timers=[];
+  out.innerHTML='';
+  rows.forEach(function(row){
+    var id=setTimeout(function(){
+      var el=document.createElement('div');
+      var c=cls[row.c]||'';
+      el.className='tr'+(c?' '+c:'');
+      el.textContent=row.t||'\u00a0';
+      out.appendChild(el);
+      requestAnimationFrame(function(){el.classList.add('v');});
+    },row.d);
+    timers.push(id);
+  });
+}
+render();
+setInterval(render,10800);
+</script>
+</body>
+</html>
