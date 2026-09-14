@@ -3096,8 +3096,8 @@
     "province": "Genova",
     "region": "Liguria",
     "population": 29226,
-    "lat": null,
-    "lon": null
+    "lat": 44.3659045,
+    "lon": 9.2178078
   },
   {
     "name": "Comiso",
@@ -3146,8 +3146,8 @@
     "province": "Sud Sardegna",
     "region": "Sardegna",
     "population": 28882,
-    "lat": null,
-    "lon": null
+    "lat": 39.2069694,
+    "lon": 8.5214919
   },
   {
     "name": "Aci Catena",
@@ -3156,8 +3156,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 28749,
-    "lat": null,
-    "lon": null
+    "lat": 37.5916141,
+    "lon": 15.1451825
   },
   {
     "name": "Selargius",
@@ -3166,8 +3166,8 @@
     "province": "Cagliari",
     "region": "Sardegna",
     "population": 28684,
-    "lat": null,
-    "lon": null
+    "lat": 39.2840125,
+    "lon": 9.1400852
   },
   {
     "name": "Vittorio Veneto",
@@ -3176,8 +3176,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 28656,
-    "lat": null,
-    "lon": null
+    "lat": 45.9978828,
+    "lon": 12.3029709
   },
   {
     "name": "Alatri",
@@ -3186,8 +3186,8 @@
     "province": "Frosinone",
     "region": "Lazio",
     "population": 28609,
-    "lat": null,
-    "lon": null
+    "lat": 41.7386189,
+    "lon": 13.3841007
   },
   {
     "name": "Carmagnola",

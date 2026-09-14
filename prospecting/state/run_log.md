@@ -659,3 +659,15 @@
 **Citta' fallite (ritentate al prossimo giro):**
 - Rapallo: geocodifica fallita
 
+## Giro del 2026-09-14T17:20:24Z (run_20260914_172024_a00e)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Rapallo | 5 | 5 | 4 | 1 (0 integrati) | ok |
+| Carbonia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Aci Catena | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Selargius | 2 | 2 | 1 | 1 (0 integrati) | ok |
+| Vittorio Veneto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Alatri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 5 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~69.
+
