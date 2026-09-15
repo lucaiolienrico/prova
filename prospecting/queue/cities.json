@@ -3256,8 +3256,8 @@
     "province": "Caltanissetta",
     "region": "Sicilia",
     "population": 27975,
-    "lat": null,
-    "lon": null
+    "lat": 37.1442137,
+    "lon": 14.409695
   },
   {
     "name": "Enna",
@@ -3266,8 +3266,8 @@
     "province": "Enna",
     "region": "Sicilia",
     "population": 27894,
-    "lat": null,
-    "lon": null
+    "lat": 37.5516047,
+    "lon": 14.2930798
   },
   {
     "name": "Gioia del Colle",
@@ -3276,8 +3276,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 27889,
-    "lat": null,
-    "lon": null
+    "lat": 40.7778464,
+    "lon": 16.9115008
   },
   {
     "name": "Mesagne",
@@ -3286,8 +3286,8 @@
     "province": "Brindisi",
     "region": "Puglia",
     "population": 27753,
-    "lat": null,
-    "lon": null
+    "lat": 40.5344748,
+    "lon": 17.8034209
   },
   {
     "name": "Novi Ligure",
@@ -3296,8 +3296,8 @@
     "province": "Alessandria",
     "region": "Piemonte",
     "population": 27682,
-    "lat": null,
-    "lon": null
+    "lat": 44.7622454,
+    "lon": 8.7868868
   },
   {
     "name": "Iglesias",
@@ -3306,8 +3306,8 @@
     "province": "Sud Sardegna",
     "region": "Sardegna",
     "population": 27674,
-    "lat": null,
-    "lon": null
+    "lat": 39.2971485,
+    "lon": 8.5416976
   },
   {
     "name": "Mogliano Veneto",

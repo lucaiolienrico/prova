@@ -683,3 +683,15 @@
 
 **Bilancio**: 6 citta' ok, 18 elementi OSM, 18 schede candidate, 17 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~63.
 
+## Giro del 2026-09-15T02:45:52Z (run_20260915_024552_61f5)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Niscemi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Enna | 2 | 2 | 0 | 2 (0 integrati) | ok |
+| Gioia del Colle | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Mesagne | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Novi Ligure | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Iglesias | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~57.
+

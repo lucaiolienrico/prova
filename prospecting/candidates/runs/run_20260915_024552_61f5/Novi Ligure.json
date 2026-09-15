@@ -1,0 +1,58 @@
+[
+  {
+    "n": "Ambulatorio Centro Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Novi Ligure",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/2804698778",
+    "osm_id": 2804698778,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Centro Veterinario"
+    },
+    "lat": 44.7622522,
+    "lon": 8.7830768,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Ambulatorio Veterinario Dottoressa A. Morante",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Novi Ligure",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3019680915",
+    "osm_id": 3019680915,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Dottoressa A. Morante"
+    },
+    "lat": 44.7625925,
+    "lon": 8.7912051,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
