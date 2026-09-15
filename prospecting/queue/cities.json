@@ -3436,8 +3436,8 @@
     "province": "Gorizia",
     "region": "Friuli-Venezia Giulia",
     "population": 27041,
-    "lat": null,
-    "lon": null
+    "lat": 45.7972711,
+    "lon": 13.5448575
   },
   {
     "name": "Triggiano",
@@ -3446,8 +3446,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 27007,
-    "lat": null,
-    "lon": null
+    "lat": 41.0691722,
+    "lon": 16.9402482
   },
   {
     "name": "San Giovanni in Persiceto",
@@ -3456,8 +3456,8 @@
     "province": "Bologna",
     "region": "Emilia-Romagna",
     "population": 26992,
-    "lat": null,
-    "lon": null
+    "lat": 44.6634783,
+    "lon": 11.1968512
   },
   {
     "name": "Terlizzi",
@@ -3466,8 +3466,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 26986,
-    "lat": null,
-    "lon": null
+    "lat": 41.103339,
+    "lon": 16.5591223
   },
   {
     "name": "Spinea",
@@ -3476,8 +3476,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 26862,
-    "lat": null,
-    "lon": null
+    "lat": 45.4929373,
+    "lon": 12.1534511
   },
   {
     "name": "Desenzano del Garda",
@@ -3486,8 +3486,8 @@
     "province": "Brescia",
     "region": "Lombardia",
     "population": 26793,
-    "lat": null,
-    "lon": null
+    "lat": 45.4524613,
+    "lon": 10.5646346
   },
   {
     "name": "Santeramo in Colle",

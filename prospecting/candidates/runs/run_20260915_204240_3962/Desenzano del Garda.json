@@ -1,0 +1,59 @@
+[
+  {
+    "n": "Piccoli Amici",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Desenzano del Garda",
+    "prov": "BS",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11019678732",
+    "osm_id": 11019678732,
+    "osm_type": "node",
+    "osm_tags": {
+      "check_date": "2023-07-02",
+      "name": "Piccoli Amici",
+      "shop": "pet"
+    },
+    "lat": 45.4682946,
+    "lon": 10.6017304,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Ambulatorio Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Desenzano del Garda",
+    "prov": "BS",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12655787025",
+    "osm_id": 12655787025,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario"
+    },
+    "lat": 45.4625045,
+    "lon": 10.61689,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

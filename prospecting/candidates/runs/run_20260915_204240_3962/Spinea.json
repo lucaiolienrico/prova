@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Dott.Ssa Agostino Adele",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Spinea",
+    "prov": "VE",
+    "reg": "Veneto",
+    "addr": "Via Roma 53/d, 30038",
+    "site": null,
+    "email": null,
+    "tel": "+39041997676",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7174446308",
+    "osm_id": 7174446308,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Spinea",
+      "addr:housenumber": "53/d",
+      "addr:postcode": "30038",
+      "addr:street": "Via Roma",
+      "amenity": "veterinary",
+      "level": "0",
+      "name": "Ambulatorio Veterinario Dott.Ssa Agostino Adele",
+      "opening_hours": "Mo-Fr 10:00-12:00, 16:00-19:15; Sa 11:00-14:00",
+      "phone": "+39041997676"
+    },
+    "lat": 45.4871856,
+    "lon": 12.1785132,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-12:00, 16:00-19:15; Sa 11:00-14:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

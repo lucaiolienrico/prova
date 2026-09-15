@@ -719,3 +719,15 @@
 
 **Bilancio**: 6 citta' ok, 1 elementi OSM, 1 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~45.
 
+## Giro del 2026-09-15T20:42:40Z (run_20260915_204240_3962)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Monfalcone | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Triggiano | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| San Giovanni in Persiceto | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Terlizzi | 4 | 4 | 4 | 0 (0 integrati) | ok |
+| Spinea | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Desenzano del Garda | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 11 elementi OSM, 11 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~39.
+
