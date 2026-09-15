@@ -3376,8 +3376,8 @@
     "province": "Genova",
     "region": "Liguria",
     "population": 27338,
-    "lat": null,
-    "lon": null
+    "lat": 44.3277042,
+    "lon": 9.3167384
   },
   {
     "name": "San Giovanni Rotondo",
@@ -3386,8 +3386,8 @@
     "province": "Foggia",
     "region": "Puglia",
     "population": 27329,
-    "lat": null,
-    "lon": null
+    "lat": 41.6399714,
+    "lon": 15.756227
   },
   {
     "name": "Sant'Anastasia",
@@ -3396,8 +3396,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 27296,
-    "lat": null,
-    "lon": null
+    "lat": 40.867459,
+    "lon": 14.3970386
   },
   {
     "name": "Galatina",
@@ -3406,8 +3406,8 @@
     "province": "Lecce",
     "region": "Puglia",
     "population": 27214,
-    "lat": null,
-    "lon": null
+    "lat": 40.1938686,
+    "lon": 18.1419968
   },
   {
     "name": "Putignano",
@@ -3416,8 +3416,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 27083,
-    "lat": null,
-    "lon": null
+    "lat": 40.846879,
+    "lon": 17.0876296
   },
   {
     "name": "Mondragone",
@@ -3426,8 +3426,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 27070,
-    "lat": null,
-    "lon": null
+    "lat": 41.1049783,
+    "lon": 13.9200215
   },
   {
     "name": "Monfalcone",

@@ -1,0 +1,32 @@
+[
+  {
+    "n": "Ambulatorio Veterinario San Francesco",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Putignano",
+    "prov": "BA",
+    "reg": "Puglia",
+    "addr": "Via Valentino Dalessandro",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": "https://www.facebook.com/ambulatorioveterinariosanfrancescocarucci/",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13061317822",
+    "osm_id": 13061317822,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:street": "Via Valentino Dalessandro",
+      "amenity": "veterinary",
+      "contact:facebook": "https://www.facebook.com/ambulatorioveterinariosanfrancescocarucci/",
+      "name": "Ambulatorio Veterinario San Francesco"
+    },
+    "lat": 40.8557447,
+    "lon": 17.1140124,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
