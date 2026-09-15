@@ -695,3 +695,15 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~57.
 
+## Giro del 2026-09-15T10:46:46Z (run_20260915_104646_9cb9)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Mogliano Veneto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Miniato | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Misilmeri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Giuseppe Vesuviano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Boscoreale | 3 | 3 | 1 | 2 (0 integrati) | ok |
+| Assisi | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 6 elementi OSM, 6 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~51.
+

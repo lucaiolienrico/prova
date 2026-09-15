@@ -1,0 +1,36 @@
+[
+  {
+    "n": "L'Isola dei Tesori",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "San Miniato",
+    "prov": "PI",
+    "reg": "Toscana",
+    "addr": "Via Francesco Guerrazzi 104, 56028",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12208935570",
+    "osm_id": 12208935570,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "San Miniato",
+      "addr:housenumber": "104",
+      "addr:postcode": "56028",
+      "addr:street": "Via Francesco Guerrazzi",
+      "brand": "L'Isola dei Tesori",
+      "brand:wikidata": "Q108578003",
+      "name": "L'Isola dei Tesori",
+      "shop": "pet"
+    },
+    "lat": 43.6912405,
+    "lon": 10.8302048,
+    "other": "OSM: brand=L'Isola dei Tesori, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

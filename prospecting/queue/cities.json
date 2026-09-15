@@ -3316,8 +3316,8 @@
     "province": "Treviso",
     "region": "Veneto",
     "population": 27608,
-    "lat": null,
-    "lon": null
+    "lat": 45.5676542,
+    "lon": 12.2628463
   },
   {
     "name": "San Miniato",
@@ -3326,8 +3326,8 @@
     "province": "Pisa",
     "region": "Toscana",
     "population": 27585,
-    "lat": null,
-    "lon": null
+    "lat": 43.6667583,
+    "lon": 10.8484826
   },
   {
     "name": "Misilmeri",
@@ -3336,8 +3336,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 27570,
-    "lat": null,
-    "lon": null
+    "lat": 38.0200765,
+    "lon": 13.4321402
   },
   {
     "name": "San Giuseppe Vesuviano",
@@ -3346,8 +3346,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 27467,
-    "lat": null,
-    "lon": null
+    "lat": 40.8249011,
+    "lon": 14.4889967
   },
   {
     "name": "Boscoreale",
@@ -3356,8 +3356,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 27457,
-    "lat": null,
-    "lon": null
+    "lat": 40.7776188,
+    "lon": 14.5069695
   },
   {
     "name": "Assisi",
@@ -3366,8 +3366,8 @@
     "province": "Perugia",
     "region": "Umbria",
     "population": 27377,
-    "lat": null,
-    "lon": null
+    "lat": 43.0847389,
+    "lon": 12.6189174
   },
   {
     "name": "Chiavari",
