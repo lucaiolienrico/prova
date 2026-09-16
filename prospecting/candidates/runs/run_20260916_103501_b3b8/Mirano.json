@@ -1,0 +1,62 @@
+[
+  {
+    "n": "Ambulatorio veterinario Miranese",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Mirano",
+    "prov": "VE",
+    "reg": "Veneto",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/5570475821",
+    "osm_id": 5570475821,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio veterinario Miranese"
+    },
+    "lat": 45.494068,
+    "lon": 12.100951,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Ambulatorio Veterinario Zianigo Dott. De Col Roberto",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Mirano",
+    "prov": "VE",
+    "reg": "Veneto",
+    "addr": "Via Varotara 23, 30035",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9862899577",
+    "osm_id": 9862899577,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Zianigo",
+      "addr:housenumber": "23",
+      "addr:postcode": "30035",
+      "addr:street": "Via Varotara",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Zianigo Dott. De Col Roberto"
+    },
+    "lat": 45.5038277,
+    "lon": 12.0761374,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

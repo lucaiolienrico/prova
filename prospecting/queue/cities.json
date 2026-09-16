@@ -3556,8 +3556,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 26543,
-    "lat": null,
-    "lon": null
+    "lat": 37.5535235,
+    "lon": 15.0616601
   },
   {
     "name": "Buccinasco",
@@ -3566,8 +3566,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 26503,
-    "lat": null,
-    "lon": null
+    "lat": 45.4071142,
+    "lon": 9.1098896
   },
   {
     "name": "Mirano",
@@ -3576,8 +3576,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 26456,
-    "lat": null,
-    "lon": null
+    "lat": 45.4880148,
+    "lon": 12.0867829
   },
   {
     "name": "Belpasso",
@@ -3586,8 +3586,8 @@
     "province": "Catania",
     "region": "Sicilia",
     "population": 26378,
-    "lat": null,
-    "lon": null
+    "lat": 37.5781401,
+    "lon": 14.9302039
   },
   {
     "name": "Garbagnate Milanese",
@@ -3596,8 +3596,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 26262,
-    "lat": null,
-    "lon": null
+    "lat": 45.5737152,
+    "lon": 9.0757857
   },
   {
     "name": "Sora",
@@ -3606,8 +3606,8 @@
     "province": "Frosinone",
     "region": "Lazio",
     "population": 26247,
-    "lat": null,
-    "lon": null
+    "lat": 41.7329812,
+    "lon": 13.5787155
   },
   {
     "name": "Termini Imerese",
