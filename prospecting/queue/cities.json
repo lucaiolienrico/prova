@@ -3496,8 +3496,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 26770,
-    "lat": null,
-    "lon": null
+    "lat": 40.7802787,
+    "lon": 16.752877
   },
   {
     "name": "Falconara Marittima",
@@ -3506,8 +3506,8 @@
     "province": "Ancona",
     "region": "Marche",
     "population": 26710,
-    "lat": null,
-    "lon": null
+    "lat": 43.6207622,
+    "lon": 13.3754812
   },
   {
     "name": "Bacoli",
@@ -3516,8 +3516,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 26648,
-    "lat": null,
-    "lon": null
+    "lat": 40.8118834,
+    "lon": 14.0669847
   },
   {
     "name": "Assemini",
@@ -3526,8 +3526,8 @@
     "province": "Cagliari",
     "region": "Sardegna",
     "population": 26620,
-    "lat": null,
-    "lon": null
+    "lat": 39.2168463,
+    "lon": 8.9477491
   },
   {
     "name": "Parabiago",
@@ -3536,8 +3536,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 26617,
-    "lat": null,
-    "lon": null
+    "lat": 45.5517035,
+    "lon": 8.9432965
   },
   {
     "name": "Valdagno",
@@ -3546,8 +3546,8 @@
     "province": "Vicenza",
     "region": "Veneto",
     "population": 26575,
-    "lat": null,
-    "lon": null
+    "lat": 45.6446284,
+    "lon": 11.2789319
   },
   {
     "name": "Gravina di Catania",

@@ -731,3 +731,15 @@
 
 **Bilancio**: 6 citta' ok, 11 elementi OSM, 11 schede candidate, 11 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~39.
 
+## Giro del 2026-09-16T02:40:57Z (run_20260916_024057_8eba)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Santeramo in Colle | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Falconara Marittima | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Bacoli | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Assemini | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Parabiago | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Valdagno | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 5 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~33.
+

@@ -1,0 +1,36 @@
+[
+  {
+    "n": "CVP Clinica Veterinaria Parabiago",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Parabiago",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": "Via Don Giovanni Battista Santini 32, 20015",
+    "site": null,
+    "email": null,
+    "tel": "+39 0331 556605",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/6161665112",
+    "osm_id": 6161665112,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Parabiago",
+      "addr:housenumber": "32",
+      "addr:postcode": "20015",
+      "addr:street": "Via Don Giovanni Battista Santini",
+      "amenity": "veterinary",
+      "name": "CVP Clinica Veterinaria Parabiago",
+      "opening_hours": "Mo-Fr 10:00-19:00; Sa 10:00-13:00",
+      "phone": "+39 0331 556605"
+    },
+    "lat": 45.5601248,
+    "lon": 8.9467681,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-19:00; Sa 10:00-13:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

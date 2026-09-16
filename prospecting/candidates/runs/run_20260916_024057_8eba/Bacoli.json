@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Bacoli VET",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Bacoli",
+    "prov": "NA",
+    "reg": "Campania",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/7818067665",
+    "osm_id": 7818067665,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Bacoli VET"
+    },
+    "lat": 40.811498,
+    "lon": 14.0514914,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

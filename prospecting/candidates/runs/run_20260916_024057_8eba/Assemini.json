@@ -1,0 +1,35 @@
+[
+  {
+    "n": "Ambulatorio Veterinario Dr. Marco Marras",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Assemini",
+    "prov": "CA",
+    "reg": "Sardegna",
+    "addr": "Via Carmine 4, 09032",
+    "site": null,
+    "email": null,
+    "tel": "+39 3929957738",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8746502819",
+    "osm_id": 8746502819,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Assemini",
+      "addr:housenumber": "4",
+      "addr:postcode": "09032",
+      "addr:street": "Via Carmine",
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario Dr. Marco Marras",
+      "phone": "+39 3929957738"
+    },
+    "lat": 39.2866409,
+    "lon": 9.0057424,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
