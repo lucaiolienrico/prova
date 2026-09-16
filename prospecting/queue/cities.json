@@ -3676,8 +3676,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 25683,
-    "lat": null,
-    "lon": null
+    "lat": 40.9504975,
+    "lon": 17.1001055
   },
   {
     "name": "Ruvo di Puglia",
@@ -3686,8 +3686,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 25662,
-    "lat": null,
-    "lon": null
+    "lat": 41.0569862,
+    "lon": 16.3888409
   },
   {
     "name": "Arzignano",
@@ -3696,8 +3696,8 @@
     "province": "Vicenza",
     "region": "Veneto",
     "population": 25589,
-    "lat": null,
-    "lon": null
+    "lat": 45.528293,
+    "lon": 11.3333012
   },
   {
     "name": "Mola di Bari",
@@ -3706,8 +3706,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 25567,
-    "lat": null,
-    "lon": null
+    "lat": 41.0402123,
+    "lon": 17.0841726
   },
   {
     "name": "Fidenza",
@@ -3716,8 +3716,8 @@
     "province": "Parma",
     "region": "Emilia-Romagna",
     "population": 25521,
-    "lat": null,
-    "lon": null
+    "lat": 44.8553134,
+    "lon": 10.0465545
   },
   {
     "name": "Pompei",
@@ -3726,8 +3726,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 25440,
-    "lat": null,
-    "lon": null
+    "lat": 40.7461771,
+    "lon": 14.4968928
   },
   {
     "name": "Cesenatico",

@@ -1,0 +1,30 @@
+[
+  {
+    "n": "Ambulatorio Veterinario",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Ruvo di Puglia",
+    "prov": "BA",
+    "reg": "Puglia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/10965051688",
+    "osm_id": 10965051688,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Ambulatorio Veterinario"
+    },
+    "lat": 41.1236043,
+    "lon": 16.480091,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "n": "Petstore Conad",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Fidenza",
+    "prov": "PR",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13128274334",
+    "osm_id": 13128274334,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Petstore Conad",
+      "shop": "pet"
+    },
+    "lat": 44.8656652,
+    "lon": 10.0557931,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Arcaplanet",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Fidenza",
+    "prov": "PR",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12079098475",
+    "osm_id": 12079098475,
+    "osm_type": "node",
+    "osm_tags": {
+      "brand": "Arcaplanet",
+      "brand:wikidata": "Q105530937",
+      "name": "Arcaplanet",
+      "shop": "pet"
+    },
+    "lat": 44.8830934,
+    "lon": 10.0898388,
+    "other": "OSM: brand=Arcaplanet, shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

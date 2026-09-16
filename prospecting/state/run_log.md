@@ -767,3 +767,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~21.
 
+## Giro del 2026-09-16T20:43:21Z (run_20260916_204321_4864)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Conversano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Ruvo di Puglia | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Arzignano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Mola di Bari | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fidenza | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Pompei | 6 | 6 | 2 | 4 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 5 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~15.
+
