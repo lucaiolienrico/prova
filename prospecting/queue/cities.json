@@ -3616,8 +3616,8 @@
     "province": "Palermo",
     "region": "Sicilia",
     "population": 26201,
-    "lat": null,
-    "lon": null
+    "lat": 37.9544806,
+    "lon": 13.7323929
   },
   {
     "name": "Tortona",
@@ -3626,8 +3626,8 @@
     "province": "Alessandria",
     "region": "Piemonte",
     "population": 25986,
-    "lat": null,
-    "lon": null
+    "lat": 44.8841753,
+    "lon": 8.8420189
   },
   {
     "name": "Scicli",
@@ -3636,8 +3636,8 @@
     "province": "Ragusa",
     "region": "Sicilia",
     "population": 25922,
-    "lat": null,
-    "lon": null
+    "lat": 36.7748341,
+    "lon": 14.6841423
   },
   {
     "name": "Chivasso",
@@ -3646,8 +3646,8 @@
     "province": "Torino",
     "region": "Piemonte",
     "population": 25914,
-    "lat": null,
-    "lon": null
+    "lat": 45.2119117,
+    "lon": 7.8948603
   },
   {
     "name": "Bresso",
@@ -3656,8 +3656,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 25712,
-    "lat": null,
-    "lon": null
+    "lat": 45.5365119,
+    "lon": 9.1947214
   },
   {
     "name": "Noicattaro",
@@ -3666,8 +3666,8 @@
     "province": "Bari",
     "region": "Puglia",
     "population": 25710,
-    "lat": null,
-    "lon": null
+    "lat": 41.0388682,
+    "lon": 16.9896775
   },
   {
     "name": "Conversano",

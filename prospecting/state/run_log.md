@@ -755,3 +755,15 @@
 
 **Bilancio**: 6 citta' ok, 29 elementi OSM, 29 schede candidate, 14 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~27.
 
+## Giro del 2026-09-16T15:52:14Z (run_20260916_155214_cabe)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Termini Imerese | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Tortona | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Scicli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Chivasso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Bresso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Noicattaro | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~21.
+
