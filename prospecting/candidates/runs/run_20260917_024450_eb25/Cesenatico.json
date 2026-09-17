@@ -1,0 +1,33 @@
+[
+  {
+    "n": "Ad Novas",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cesenatico",
+    "prov": "FC",
+    "reg": "Emilia-Romagna",
+    "addr": "Viale dei Mille 31a",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4764244211",
+    "osm_id": 4764244211,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Cesenatico",
+      "addr:housenumber": "31a",
+      "addr:street": "Viale dei Mille",
+      "amenity": "veterinary",
+      "name": "Ad Novas"
+    },
+    "lat": 44.2016406,
+    "lon": 12.403875,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

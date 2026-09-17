@@ -779,3 +779,15 @@
 
 **Bilancio**: 6 citta' ok, 9 elementi OSM, 9 schede candidate, 5 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~15.
 
+## Giro del 2026-09-17T02:44:50Z (run_20260917_024450_eb25)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Cesenatico | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Bagno a Ripoli | 3 | 3 | 1 | 2 (0 integrati) | ok |
+| Quarrata | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Porto Sant'Elpidio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Vimercate | 9 | 9 | 7 | 2 (1 integrati) | ok |
+| Portogruaro | 2 | 2 | 2 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 12 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~9.
+

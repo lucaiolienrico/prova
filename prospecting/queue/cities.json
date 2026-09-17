@@ -3736,8 +3736,8 @@
     "province": "Forlì-Cesena",
     "region": "Emilia-Romagna",
     "population": 25412,
-    "lat": null,
-    "lon": null
+    "lat": 44.1780614,
+    "lon": 12.385052
   },
   {
     "name": "Bagno a Ripoli",
@@ -3746,8 +3746,8 @@
     "province": "Firenze",
     "region": "Toscana",
     "population": 25403,
-    "lat": null,
-    "lon": null
+    "lat": 43.7312766,
+    "lon": 11.3363412
   },
   {
     "name": "Quarrata",
@@ -3756,8 +3756,8 @@
     "province": "Pistoia",
     "region": "Toscana",
     "population": 25378,
-    "lat": null,
-    "lon": null
+    "lat": 43.8521562,
+    "lon": 10.9732168
   },
   {
     "name": "Porto Sant'Elpidio",
@@ -3766,8 +3766,8 @@
     "province": "Fermo",
     "region": "Marche",
     "population": 25324,
-    "lat": null,
-    "lon": null
+    "lat": 43.2618468,
+    "lon": 13.7455593
   },
   {
     "name": "Vimercate",
@@ -3776,8 +3776,8 @@
     "province": "Monza e della Brianza",
     "region": "Lombardia",
     "population": 25309,
-    "lat": null,
-    "lon": null
+    "lat": 45.6127044,
+    "lon": 9.3657973
   },
   {
     "name": "Portogruaro",
@@ -3786,8 +3786,8 @@
     "province": "Venezia",
     "region": "Veneto",
     "population": 25140,
-    "lat": null,
-    "lon": null
+    "lat": 45.7577401,
+    "lon": 12.8542528
   },
   {
     "name": "Pontecagnano Faiano",

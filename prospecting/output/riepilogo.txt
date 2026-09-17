@@ -1,24 +1,24 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-16 20:53
+Generato: 2026-09-17 02:57
 ============================================================
-Prospect totali: .............. 1219 (manuali 189, H24 1030)
-Con contatto diretto ......... 458 (37%)
-Con sito web ................. 235
-Shortlist A+/A/B ............. 115
-Comuni/localita' distinti .... 294
+Prospect totali: .............. 1231 (manuali 189, H24 1042)
+Con contatto diretto ......... 462 (37%)
+Con sito web ................. 237
+Shortlist A+/A/B ............. 116
+Comuni/localita' distinti .... 299
 
-PRIORITA': A+=5, A=37, B=73, C=170, D=934
+PRIORITA': A+=5, A=37, B=74, C=171, D=944
 
 PER REGIONE:
-  Lombardia              241
-  Emilia-Romagna         119
+  Lombardia              248
+  Emilia-Romagna         120
   Sicilia                117
-  Toscana                111
+  Toscana                113
   Campania               102
   Lazio                  96
   Piemonte               88
   Puglia                 78
-  Veneto                 62
+  Veneto                 64
   Liguria                44
   Marche                 32
   Sardegna               28
@@ -34,14 +34,14 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     651
-  Pet shop                                       275
-  Toelettature                                   82
+  Veterinari                                     658
+  Pet shop                                       278
+  Toelettature                                   83
   Rifugi per animali                             58
   Ambulatori veterinari                          32
   Pensioni per animali                           27
   Negozi per animali                             18
-  Allevatori                                     13
+  Allevatori                                     14
   Associazioni animaliste                        10
   Educatori cinofili                             9
   Canili                                         8
