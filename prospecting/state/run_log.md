@@ -803,3 +803,12 @@
 
 **Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~3.
 
+## Giro del 2026-09-17T15:58:24Z (run_20260917_155824_bb23)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Scandiano | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Qualiano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fossano | 1 | 1 | 1 | 0 (0 integrati) | ok |
+
+**Bilancio**: 3 citta' ok, 4 elementi OSM, 4 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~0.
+

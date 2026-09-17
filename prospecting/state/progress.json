@@ -149,6 +149,7 @@
     "Forlì",
     "Formia",
     "Formigine",
+    "Fossano",
     "Francavilla Fontana",
     "Frattamaggiore",
     "Frosinone",
@@ -282,6 +283,7 @@
     "Pozzuoli",
     "Prato",
     "Putignano",
+    "Qualiano",
     "Quarrata",
     "Quarto",
     "Quartu Sant'Elena",
@@ -327,6 +329,7 @@
     "Sassuolo",
     "Savona",
     "Scafati",
+    "Scandiano",
     "Scandicci",
     "Schio",
     "Sciacca",
@@ -386,8 +389,8 @@
     "Vittorio Veneto",
     "Voghera"
   ],
-  "last_run": "2026-09-17T10:52:05Z",
-  "runs": 66,
-  "new_total": 1054,
+  "last_run": "2026-09-17T16:02:12Z",
+  "runs": 67,
+  "new_total": 1058,
   "enrich_total": 25
 }

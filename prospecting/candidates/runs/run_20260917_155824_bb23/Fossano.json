@@ -1,0 +1,31 @@
+[
+  {
+    "n": "13 nidi galleggianti per le Sterne marine",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Fossano",
+    "prov": "CN",
+    "reg": "Piemonte",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/6278208705",
+    "osm_id": 6278208705,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "animal_shelter": "terns",
+      "name": "13 nidi galleggianti per le Sterne marine"
+    },
+    "lat": 44.4956687,
+    "lon": 7.699862,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

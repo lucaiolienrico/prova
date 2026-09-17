@@ -3856,8 +3856,8 @@
     "province": "Reggio nell'Emilia",
     "region": "Emilia-Romagna",
     "population": 24792,
-    "lat": null,
-    "lon": null
+    "lat": 44.5926746,
+    "lon": 10.6961644
   },
   {
     "name": "Qualiano",
@@ -3866,8 +3866,8 @@
     "province": "Napoli",
     "region": "Campania",
     "population": 24744,
-    "lat": null,
-    "lon": null
+    "lat": 40.9241626,
+    "lon": 14.135809
   },
   {
     "name": "Fossano",
@@ -3876,7 +3876,7 @@
     "province": "Cuneo",
     "region": "Piemonte",
     "population": 24710,
-    "lat": null,
-    "lon": null
+    "lat": 44.5368118,
+    "lon": 7.6907606
   }
 ]
