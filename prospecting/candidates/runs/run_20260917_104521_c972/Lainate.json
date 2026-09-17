@@ -1,0 +1,61 @@
+[
+  {
+    "n": "Clinica Veterinaria Lainate - BluVet",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Lainate",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": "https://www.clinicaveterinarialainate.com/",
+    "email": null,
+    "tel": "+390293572689",
+    "ig": null,
+    "fb": "https://www.facebook.com/405775146219073",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/12466003781",
+    "osm_id": 12466003781,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "contact:facebook": "https://www.facebook.com/405775146219073",
+      "name": "Clinica Veterinaria Lainate - BluVet",
+      "phone": "+390293572689",
+      "website": "https://www.clinicaveterinarialainate.com/"
+    },
+    "lat": 45.5695959,
+    "lon": 9.0182799,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Neumann",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Lainate",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9534789881",
+    "osm_id": 9534789881,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "name": "Neumann"
+    },
+    "lat": 45.5767854,
+    "lon": 9.0267624,
+    "other": "OSM: amenity=veterinary",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

@@ -791,3 +791,15 @@
 
 **Bilancio**: 6 citta' ok, 16 elementi OSM, 16 schede candidate, 12 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~9.
 
+## Giro del 2026-09-17T10:45:21Z (run_20260917_104521_c972)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Pontecagnano Faiano | 3 | 3 | 0 | 3 (0 integrati) | ok |
+| Lainate | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Legnago | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Roseto degli Abruzzi | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Correggio | 3 | 3 | 3 | 0 (0 integrati) | ok |
+| Orta di Atella | 2 | 2 | 0 | 2 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 12 elementi OSM, 12 schede candidate, 7 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~3.
+

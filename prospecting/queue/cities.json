@@ -3796,8 +3796,8 @@
     "province": "Salerno",
     "region": "Campania",
     "population": 25096,
-    "lat": null,
-    "lon": null
+    "lat": 40.629063,
+    "lon": 14.8837825
   },
   {
     "name": "Lainate",
@@ -3806,8 +3806,8 @@
     "province": "Milano",
     "region": "Lombardia",
     "population": 25054,
-    "lat": null,
-    "lon": null
+    "lat": 45.5647625,
+    "lon": 9.0256702
   },
   {
     "name": "Legnago",
@@ -3816,8 +3816,8 @@
     "province": "Verona",
     "region": "Veneto",
     "population": 24992,
-    "lat": null,
-    "lon": null
+    "lat": -91.0,
+    "lon": -207.3741824
   },
   {
     "name": "Roseto degli Abruzzi",
@@ -3826,8 +3826,8 @@
     "province": "Teramo",
     "region": "Abruzzo",
     "population": 24940,
-    "lat": null,
-    "lon": null
+    "lat": 42.685704,
+    "lon": 13.9792149
   },
   {
     "name": "Correggio",
@@ -3836,8 +3836,8 @@
     "province": "Reggio nell'Emilia",
     "region": "Emilia-Romagna",
     "population": 24825,
-    "lat": null,
-    "lon": null
+    "lat": 44.7557218,
+    "lon": 10.7723163
   },
   {
     "name": "Orta di Atella",
@@ -3846,8 +3846,8 @@
     "province": "Caserta",
     "region": "Campania",
     "population": 24796,
-    "lat": null,
-    "lon": null
+    "lat": 40.9849332,
+    "lon": 14.2793835
   },
   {
     "name": "Scandiano",

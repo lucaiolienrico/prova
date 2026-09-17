@@ -1,0 +1,61 @@
+[
+  {
+    "n": "Ayoka",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Orta di Atella",
+    "prov": "CE",
+    "reg": "Campania",
+    "addr": null,
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8440631938",
+    "osm_id": 8440631938,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "Ayoka",
+      "shop": "pet"
+    },
+    "lat": 40.9466863,
+    "lon": 14.2746952,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  },
+  {
+    "n": "Canile Bella",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Orta di Atella",
+    "prov": "CE",
+    "reg": "Campania",
+    "addr": "Strada Consortile verso Marcianise",
+    "site": null,
+    "email": null,
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/996092144",
+    "osm_id": 996092144,
+    "osm_type": "way",
+    "osm_tags": {
+      "addr:city": "Gricignano di Aversa",
+      "addr:street": "Strada Consortile verso Marcianise",
+      "amenity": "animal_shelter",
+      "animal_shelter": "dog",
+      "name": "Canile Bella"
+    },
+    "lat": 41.0025137,
+    "lon": 14.2579044,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
