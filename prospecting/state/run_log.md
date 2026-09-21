@@ -820,3 +820,11 @@ Studi veterinari e cliniche veterinarie in Piemonte: 182 elementi OSM, 116 sched
 ## Ricerca mirata vet (Piemonte) — 2026-09-21T20:55:17Z (vet_20260921_205517)
 Studi veterinari e cliniche veterinarie in Piemonte: 182 elementi OSM, 116 schede candidate, 0 nuove in archivio, 0 integrate da OSM, 4 siti visitati, 4 email trovate sui siti ufficiali, 111 schede vet in regione (7 con email).
 
+
+## Scraping PagineGialle seed (Torino p1, 26 schede) — 2026-09-21T21:00:30Z (pg_seed_20260921_torino_p1)
+Seed manuale assistito da pagina PG 'veterinari Torino' (ToS accettati dall'operatore): 22 nuove in archivio, 2 integrate, 4 gia' note.
+
+
+## Ricerca mirata vet (Piemonte) — 2026-09-21T21:01:17Z (vet_20260921_210117)
+Studi veterinari e cliniche veterinarie in Piemonte: 0 elementi OSM, 0 schede candidate, 0 nuove in archivio, 0 integrate da OSM, 3 siti visitati, 3 email trovate sui siti ufficiali, 132 schede vet in regione (10 con email).
+

@@ -463,6 +463,9 @@ def main():
                     help="file JSON Overpass gia' scaricati (nessuna rete per OSM)")
     ap.add_argument("--no-enrich-web", action="store_true",
                     help="salta l'arricchimento dai siti ufficiali")
+    ap.add_argument("--enrich-only", action="store_true",
+                    help="solo arricchimento web delle schede vet in archivio "
+                         "(salta ricerca OSM e merge)")
     ap.add_argument("--enrich-data", default=None,
                     help="file JSON con testi gia' scaricati [{site, source_url, text}]")
     ap.add_argument("--max-sites", type=int, default=200,
@@ -485,7 +488,13 @@ def main():
     # --- 1) OSM ---
     elements = []
     failed = []
-    if args.overpass_data:
+    if args.enrich_only:
+        print("  modalita' --enrich-only: salto ricerca OSM e merge")
+    if args.enrich_only:
+        records = []
+        stats = {"elements": 0, "records": 0, "failed": [], "new": 0,
+                 "enrich": 0, "dups": 0}
+    elif args.overpass_data:
         for path in args.overpass_data:
             data = fc.load_json(path, {})
             elements.extend(data.get("elements", []))

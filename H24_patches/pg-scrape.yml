@@ -1,0 +1,69 @@
+name: PG Scrape (PagineGialle mirato)
+
+# Scraping mirato PagineGialle per comune (solo avvio manuale, pochi comuni
+# alla volta). ATTENZIONE ToS: PagineGialle vieta lo scraping (termini +
+# robots Disallow: /ricerca/) — l'avvio di questo workflow e' una scelta
+# esplicita dell'operatore, che se ne assume la responsabilita'. Tenere
+# volumi bassi (max pochi comuni al giorno) e delay alto.
+#
+# ATTIVAZIONE (una sola volta): copiare questo file in
+# .github/workflows/pg-scrape.yml via web (Add file → Create new file),
+# poi Actions → "PG Scrape" → Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      cities:
+        description: "Comuni separati da virgola (es. Torino, Novara)"
+        required: false
+        default: Torino
+        type: string
+      delay:
+        description: "Secondi tra richieste (educato: >=4)"
+        required: false
+        default: "5"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pg-scrape
+  cancel-in-progress: false
+
+jobs:
+  pg-scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Scraping PagineGialle (pochi comuni, delay educato)
+        continue-on-error: true
+        run: |
+          python3 prospecting/scrape_paginegialle.py --accept-tos-risk \
+            --cities "${{ github.event.inputs.cities || 'Torino' }}" \
+            --delay "${{ github.event.inputs.delay || '5' }}"
+
+      - name: Rigenera database, scoring e riepilogo
+        if: always()
+        run: python3 prospecting/process.py
+
+      - name: Commit e push dei risultati
+        if: always()
+        run: |
+          git config user.name "petnote-h24-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nessun risultato nuovo: nessun commit necessario."
+            exit 0
+          fi
+          git commit -m "PGScrape: ${{ github.event.inputs.cities || 'Torino' }} [$(date -u +%FT%TZ)]"
+          git push

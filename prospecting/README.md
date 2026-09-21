@@ -100,6 +100,35 @@ Su GitHub Actions (con rete) si lancia da **Actions → Vet Email Search → Run
 workflow** dopo aver copiato `H24_patches/vet-email-search.yml` in
 `.github/workflows/` (stessa procedura del workflow H24).
 
+## Scraping directory (PagineGialle, su richiesta esplicita)
+
+OpenStreetMap copre solo una frazione degli studi reali (a Torino: ~40 su 145
+di PagineGialle). Lo script `scrape_paginegialle.py` raccoglie le schede
+"veterinari" per comune (nome, indirizzo, telefoni, sito, URL scheda) e le
+fonde in `candidates/archive.json` con i 5 controlli anti-duplicato (staging
+in `candidates/pg_search/<run_id>/`). PagineGialle non espone email (usa form
+"Scrivici"): dopo lo scraping, le email si estraggono dai siti ufficiali con
+`vet_email_search.py --enrich-only`.
+
+> **Avviso ToS**: PagineGialle vieta lo scraping (termini + robots
+> `Disallow: /ricerca/`). Lo script parte solo con `--accept-tos-risk`,
+> usa delay educati (default 4s + jitter) e si ferma a 403/429. Volumi
+> consigliati: pochi comuni al giorno. L'operatore si assume la
+> responsabilità della scelta.
+
+```bash
+python3 prospecting/scrape_paginegialle.py --self-test   # nessun rete
+python3 prospecting/scrape_paginegialle.py --accept-tos-risk --cities "Torino"
+python3 prospecting/scrape_paginegialle.py --accept-tos-risk --region Piemonte --max-cities 3
+python3 prospecting/vet_email_search.py --region Piemonte --enrich-only  # email dai siti
+python3 prospecting/process.py                                          # rigenera
+```
+
+Su GitHub Actions: copiare `H24_patches/pg-scrape.yml` in `.github/workflows/`
+e lanciare **Actions → PG Scrape → Run workflow** (pochi comuni alla volta).
+Se il runner viene bloccato (403), lanciare lo script da una connessione
+domestica con gli stessi comandi.
+
 ## Metodo di raccolta (manuale)
 
 1. Ricerche web separate per **combinazione `categoria × città`** (es. `veterinari Altamura`,
