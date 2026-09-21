@@ -1,0 +1,68 @@
+name: Vet Email Search (ricerca mirata per regione)
+
+# Ricerca mirata email per studi veterinari e cliniche veterinarie su una
+# regione. Solo avvio manuale: nessun cron. La coda H24 non viene toccata.
+#
+# ATTIVAZIONE (una sola volta, come per il workflow H24): copiare questo file in
+# .github/workflows/vet-email-search.yml via web (Add file → Create new file),
+# poi Actions → "Vet Email Search" → Run workflow → scegli la regione.
+
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: "Regione da cercare (es. Piemonte, Lombardia)"
+        required: false
+        default: Piemonte
+        type: string
+      enrich_web:
+        description: "Arricchisci email dai siti ufficiali"
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vet-email-search
+  cancel-in-progress: false
+
+jobs:
+  vet-email-search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ricerca vet + email (OpenStreetMap, ODbL)
+        continue-on-error: true
+        run: |
+          ARGS=(--region "${{ github.event.inputs.region || 'Piemonte' }}")
+          if [ "${{ github.event.inputs.enrich_web }}" = "false" ]; then
+            ARGS+=(--no-enrich-web)
+          fi
+          python3 prospecting/vet_email_search.py "${ARGS[@]}"
+
+      - name: Rigenera database, scoring e riepilogo
+        if: always()
+        run: python3 prospecting/process.py
+
+      - name: Commit e push dei risultati
+        if: always()
+        run: |
+          git config user.name "petnote-h24-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nessun risultato nuovo: nessun commit necessario."
+            exit 0
+          fi
+          git commit -m "VetSearch: ricerca mirata ${{ github.event.inputs.region || 'Piemonte' }} [$(date -u +%FT%TZ)]"
+          git push

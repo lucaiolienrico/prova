@@ -1,22 +1,22 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-09-21 17:34
+Generato: 2026-09-21 20:55
 ============================================================
-Prospect totali: .............. 1242 (manuali 189, H24 1053)
-Con contatto diretto ......... 467 (37%)
-Con sito web ................. 239
-Shortlist A+/A/B ............. 117
-Comuni/localita' distinti .... 304
+Prospect totali: .............. 1306 (manuali 189, H24 1117)
+Con contatto diretto ......... 489 (37%)
+Con sito web ................. 245
+Shortlist A+/A/B ............. 122
+Comuni/localita' distinti .... 327
 
-PRIORITA': A+=5, A=37, B=75, C=173, D=952
+PRIORITA': A+=5, A=37, B=80, C=173, D=1011
 
 PER REGIONE:
   Lombardia              250
+  Piemonte               153
   Emilia-Romagna         126
   Sicilia                117
   Toscana                113
   Campania               102
   Lazio                  96
-  Piemonte               89
   Puglia                 78
   Veneto                 64
   Liguria                44
@@ -34,23 +34,23 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     666
+  Veterinari                                     690
   Pet shop                                       279
   Toelettature                                   83
+  Ambulatori veterinari                          66
   Rifugi per animali                             59
-  Ambulatori veterinari                          32
   Pensioni per animali                           27
   Negozi per animali                             18
   Allevatori                                     15
+  Cliniche veterinarie                           11
   Associazioni animaliste                        10
   Educatori cinofili                             9
   Canili                                         8
   Centri cinofili                                8
-  Cliniche veterinarie                           6
   Allevamenti professionali                      5
+  Ospedali veterinari                            4
   Servizi di pet care                            4
   Addestratori                                   3
-  Ospedali veterinari                            3
   Agenzie e servizi dedicati agli animali domestici 2
   Pet hotel                                      2
   Cat sitter                                     1

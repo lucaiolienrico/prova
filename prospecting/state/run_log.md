@@ -812,3 +812,11 @@
 
 **Bilancio**: 3 citta' ok, 4 elementi OSM, 4 schede candidate, 4 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~0.
 
+
+## Ricerca mirata vet (Piemonte) — 2026-09-21T20:54:27Z (vet_20260921_205427)
+Studi veterinari e cliniche veterinarie in Piemonte: 182 elementi OSM, 116 schede candidate, 64 nuove in archivio, 0 integrate da OSM, 0 siti visitati, 0 email trovate sui siti ufficiali, 111 schede vet in regione (3 con email).
+
+
+## Ricerca mirata vet (Piemonte) — 2026-09-21T20:55:17Z (vet_20260921_205517)
+Studi veterinari e cliniche veterinarie in Piemonte: 182 elementi OSM, 116 schede candidate, 0 nuove in archivio, 0 integrate da OSM, 4 siti visitati, 4 email trovate sui siti ufficiali, 111 schede vet in regione (7 con email).
+

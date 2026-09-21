@@ -68,6 +68,38 @@ mai modificati dal sistema automatico.
   python3 prospecting/process.py                        # rigenera gli output
   ```
 
+## Ricerche mirate per regione (studi veterinari e cliniche veterinarie)
+
+Lo script `vet_email_search.py` cerca su **tutta una regione** (non solo i 25–30
+comuni in coda H24) gli studi veterinari e le cliniche veterinarie con
+**OpenStreetMap/Overpass** (licenza ODbL), ne estrae le email dai tag OSM e poi
+visita i **siti ufficiali** degli studi senza email (homepage + pagina contatti)
+per trovare gli indirizzi pubblicati. Ogni email arricchita riporta l'URL della
+pagina in cui è stata trovata (`_email_source` in archivio, colonna
+`email_source` nel CSV).
+
+- Categorie: `Veterinari`, `Cliniche veterinarie`, `Ambulatori veterinari`
+  ("studi"), `Ospedali veterinari` — assegnate per parole chiave del nome.
+- Merge in `candidates/archive.json` con gli stessi 5 controlli anti-duplicato
+  dell'H24; **mai** sovrascritture e **mai** modifiche alla coda
+  (`state/progress.json` non viene toccata).
+- Output dedicati in `output/`: `<regione>_vet_emails.csv` (una riga per email)
+  e `<regione>_vet_all.json` (tutte le schede vet della regione); dati grezzi in
+  `candidates/vet_search/<run_id>/`; diario in `state/run_log.md`.
+- Funziona anche offline: `--overpass-data FILE...` (risposte Overpass già
+  scaricate) e `--enrich-data FILE` (testi di pagine già scaricate).
+
+```bash
+python3 prospecting/vet_email_search.py                        # Piemonte
+python3 prospecting/vet_email_search.py --region Lombardia     # altra regione
+python3 prospecting/vet_email_search.py --region Piemonte --no-enrich-web
+python3 prospecting/process.py                                 # rigenera il database
+```
+
+Su GitHub Actions (con rete) si lancia da **Actions → Vet Email Search → Run
+workflow** dopo aver copiato `H24_patches/vet-email-search.yml` in
+`.github/workflows/` (stessa procedura del workflow H24).
+
 ## Metodo di raccolta (manuale)
 
 1. Ricerche web separate per **combinazione `categoria × città`** (es. `veterinari Altamura`,
