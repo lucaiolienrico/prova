@@ -1259,3 +1259,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~172.
 
+## Giro del 2026-10-10T20:57:40Z (run_20261010_205740_2ed9)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Monreale | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rovereto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Caivano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Modugno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Merano | 2 | 2 | 0 | 2 (0 integrati) | ok |
+| Ladispoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~166.
+
