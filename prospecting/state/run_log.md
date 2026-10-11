@@ -1307,3 +1307,15 @@
 
 **Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~148.
 
+## Giro del 2026-10-11T21:18:52Z (run_20261011_211852_ddd8)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Gorizia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cerveteri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Casalecchio di Reno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pioltello | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Arzano | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Canicattì | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~142.
+
