@@ -1295,3 +1295,15 @@
 
 **Bilancio**: 6 citta' ok, 3 elementi OSM, 3 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~154.
 
+## Giro del 2026-10-11T17:08:15Z (run_20261011_170815_791b)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Lanciano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Carini | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Belluno | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Bollate | 6 | 6 | 0 | 6 (0 integrati) | ok |
+| Cisterna di Latina | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Adrano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~148.
+
