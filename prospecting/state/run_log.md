@@ -1271,3 +1271,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~166.
 
+## Giro del 2026-10-11T03:13:13Z (run_20261011_031313_a1c6)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Ciampino | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Grugliasco | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fondi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fermo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cesano Maderno | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Francavilla Fontana | 3 | 3 | 2 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 4 elementi OSM, 4 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~160.
+
