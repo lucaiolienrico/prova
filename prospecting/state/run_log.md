@@ -1283,3 +1283,15 @@
 
 **Bilancio**: 6 citta' ok, 4 elementi OSM, 4 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~160.
 
+## Giro del 2026-10-11T11:53:43Z (run_20261011_115343_62d8)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Melito di Napoli | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Nuoro | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Formia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Augusta | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| San Giuliano Milanese | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Chieri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 3 elementi OSM, 3 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~154.
+

@@ -38156,5 +38156,40 @@
     "_archive_id": 1100,
     "_found_at": "2026-10-11T03:18:58Z",
     "_wave": "run_20261011_031313_a1c6"
+  },
+  {
+    "n": "Canile Rifugio Oasi",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Augusta",
+    "prov": "SR",
+    "reg": "Sicilia",
+    "addr": null,
+    "site": "https://www.canilerifugioasi.it/",
+    "email": "canilerifugioasi@gmail.com",
+    "tel": "+39 0931 993700",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/1330213057",
+    "osm_id": 1330213057,
+    "osm_type": "way",
+    "osm_tags": {
+      "amenity": "animal_shelter",
+      "email": "canilerifugioasi@gmail.com",
+      "name": "Canile Rifugio Oasi",
+      "opening_hours": "Mo-Sa 11:00-13:00; Su 10:00-12:00",
+      "phone": "+39 0931 993700",
+      "website": "https://www.canilerifugioasi.it/"
+    },
+    "lat": 37.2389717,
+    "lon": 15.1348874,
+    "other": "OSM: amenity=animal_shelter, opening_hours=Mo-Sa 11:00-13:00; Su 10:00-12:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica",
+    "_archive_id": 1101,
+    "_found_at": "2026-10-11T11:56:36Z",
+    "_wave": "run_20261011_115343_62d8"
   }
 ]
