@@ -1331,3 +1331,15 @@
 
 **Bilancio**: 6 citta' ok, 5 elementi OSM, 5 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~136.
 
+## Giro del 2026-10-12T14:02:41Z (run_20261012_140241_da53)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Mugnano di Napoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Conegliano | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Piombino | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Lucera | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Sant'Antimo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Aosta | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~130.
+
