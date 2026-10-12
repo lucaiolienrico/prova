@@ -1319,3 +1319,15 @@
 
 **Bilancio**: 6 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~142.
 
+## Giro del 2026-10-12T03:36:09Z (run_20261012_033609_dd2e)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Pinerolo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Casale Monferrato | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Cento | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pagani | 3 | 3 | 0 | 3 (0 integrati) | ok |
+| Somma Vesuviana | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Riccione | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 5 elementi OSM, 5 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~136.
+
