@@ -1355,3 +1355,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~124.
 
+## Giro del 2026-10-13T06:20:44Z (run_20261013_062044_06a0)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Cassino | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rende | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Segrate | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Vibo Valentia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Brugherio | 6 | 6 | 0 | 6 (0 integrati) | ok |
+| Crema | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 6 elementi OSM, 6 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~118.
+
