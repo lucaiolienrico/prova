@@ -1343,3 +1343,15 @@
 
 **Bilancio**: 6 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~130.
 
+## Giro del 2026-10-12T23:59:51Z (run_20261012_235951_1f91)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Osimo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Nola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Limbiate | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Venaria Reale | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Corsico | 2 | 2 | 1 | 1 (0 integrati) | ok |
+| Formigine | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~124.
+

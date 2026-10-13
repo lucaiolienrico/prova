@@ -1,19 +1,19 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-10-12 14:17
+Generato: 2026-10-13 00:09
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (197 su 1287 schede note). ***
+*** contatti con indirizzo email (198 su 1288 schede note). ***
 
-Prospect totali: .............. 197 (manuali 44, H24 153)
-Con contatto diretto ......... 197 (100%)
-Con sito web ................. 143
-Shortlist A+/A/B ............. 133
-Comuni/localita' distinti .... 102
+Prospect totali: .............. 198 (manuali 44, H24 154)
+Con contatto diretto ......... 198 (100%)
+Con sito web ................. 144
+Shortlist A+/A/B ............. 134
+Comuni/localita' distinti .... 103
 
-PRIORITA': A+=5, A=38, B=90, C=57, D=7
+PRIORITA': A+=5, A=38, B=91, C=57, D=7
 
 PER REGIONE:
-  Lombardia              60
+  Lombardia              61
   Lazio                  20
   Puglia                 13
   Emilia-Romagna         13
@@ -35,7 +35,7 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     88
+  Veterinari                                     89
   Pet shop                                       33
   Rifugi per animali                             24
   Toelettature                                   15
