@@ -1367,3 +1367,15 @@
 
 **Bilancio**: 6 citta' ok, 6 elementi OSM, 6 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~118.
 
+## Giro del 2026-10-13T18:43:13Z (run_20261013_184313_12ea)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Favara | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Castelfranco Veneto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Termoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Villafranca di Verona | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Angri | 2 | 2 | 0 | 2 (0 integrati) | ok |
+| Santa Maria Capua Vetere | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~112.
+
