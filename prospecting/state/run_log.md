@@ -1403,3 +1403,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~100.
 
+## Giro del 2026-10-14T16:16:17Z (run_20261014_161617_a18d)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Avola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Oristano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Giuliano Terme | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Lazzaro di Savena | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Sarno | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fabriano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~94.
+
