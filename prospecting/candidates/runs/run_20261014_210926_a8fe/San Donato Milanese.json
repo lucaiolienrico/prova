@@ -1,0 +1,40 @@
+[
+  {
+    "n": "Mondo Gatto San Donato",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "San Donato Milanese",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": "Via Gela, 20097",
+    "site": "https://www.mondogattosandonato.com/",
+    "email": "mondogattosandonato@gmail.com",
+    "tel": null,
+    "ig": null,
+    "fb": "https://www.facebook.com/Mondo-Gatto-San-Donato-175745935803448/",
+    "contact": "Mondo Gatto",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/375699760",
+    "osm_id": 375699760,
+    "osm_type": "way",
+    "osm_tags": {
+      "addr:city": "San Donato Milanese",
+      "addr:postcode": "20097",
+      "addr:street": "Via Gela",
+      "amenity": "animal_shelter",
+      "animal_shelter": "cat",
+      "check_date": "2026-03-04",
+      "contact:facebook": "https://www.facebook.com/Mondo-Gatto-San-Donato-175745935803448/",
+      "email": "mondogattosandonato@gmail.com",
+      "name": "Mondo Gatto San Donato",
+      "opening_hours": "Mo-Su 10:00-12:30,16:30-18:30 \"on appointment\"",
+      "operator": "Mondo Gatto",
+      "website": "https://www.mondogattosandonato.com/"
+    },
+    "lat": 45.4179987,
+    "lon": 9.2894289,
+    "other": "OSM: amenity=animal_shelter, opening_hours=Mo-Su 10:00-12:30,16:30-18:30 \"on appointment\"",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

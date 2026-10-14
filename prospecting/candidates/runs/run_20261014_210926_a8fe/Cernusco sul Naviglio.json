@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Clinica Veterinaria del Naviglio",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Cernusco sul Naviglio",
+    "prov": "MI",
+    "reg": "Lombardia",
+    "addr": "Viale Martesana 59, 20090",
+    "site": null,
+    "email": "info@clinicaveterinarianaviglio.it",
+    "tel": null,
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/8524105368",
+    "osm_id": 8524105368,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Vimodrone",
+      "addr:housenumber": "59",
+      "addr:postcode": "20090",
+      "addr:street": "Viale Martesana",
+      "amenity": "veterinary",
+      "email": "info@clinicaveterinarianaviglio.it",
+      "facebook": "clinicaveterinarianavigliovimodrone",
+      "name": "Clinica Veterinaria del Naviglio",
+      "opening_hours": "Mo-Fr 10:00-20:00; PH off",
+      "veterinary:treats:rabbit": "yes"
+    },
+    "lat": 45.5193711,
+    "lon": 9.280426,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-20:00; PH off",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

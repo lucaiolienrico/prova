@@ -1415,3 +1415,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~94.
 
+## Giro del 2026-10-14T21:09:26Z (run_20261014_210926_a8fe)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Abbiategrasso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Donato Milanese | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Manduria | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Alba | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Montebelluna | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cernusco sul Naviglio | 1 | 1 | 0 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~88.
+
