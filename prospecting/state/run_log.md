@@ -1391,3 +1391,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~106.
 
+## Giro del 2026-10-14T10:56:51Z (run_20261014_105651_c74a)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Ostuni | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Castelvetrano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rosignano Marittimo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Nardò | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Castelfranco Emilia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Partinico | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~100.
+
