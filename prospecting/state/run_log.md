@@ -1379,3 +1379,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~112.
 
+## Giro del 2026-10-14T02:57:29Z (run_20261014_025729_d8b8)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Grottaglie | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Gubbio | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Massafra | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Milazzo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Camaiore | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Lugo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~106.
+
