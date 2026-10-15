@@ -1463,3 +1463,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~70.
 
+## Giro del 2026-10-15T20:47:46Z (run_20261015_204746_489b)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Alatri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Carmagnola | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Treviglio | 2 | 2 | 2 | 0 (0 integrati) | ok |
+| Giarre | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pontedera | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Erice | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 3 elementi OSM, 3 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~64.
+

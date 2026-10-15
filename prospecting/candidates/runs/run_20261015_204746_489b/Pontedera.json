@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Veterinario Soldani",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Pontedera",
+    "prov": "PI",
+    "reg": "Toscana",
+    "addr": "Via Vittorio Veneto 196, 56025",
+    "site": null,
+    "email": "info@veterinariosoldani.it",
+    "tel": "+39058755266",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/9983551353",
+    "osm_id": 9983551353,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "196",
+      "addr:postcode": "56025",
+      "addr:street": "Via Vittorio Veneto",
+      "amenity": "veterinary",
+      "email": "info@veterinariosoldani.it",
+      "name": "Veterinario Soldani",
+      "opening_hours": "Mo,We,Sa 10:00-12:30,15:00-20:00; Tu,Th,Fr 15:00-20:00",
+      "phone": "+39058755266",
+      "phone:mobile": "+39337707974;+393683363172;+393493965979",
+      "wheelchair": "no"
+    },
+    "lat": 43.6699238,
+    "lon": 10.6432386,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo,We,Sa 10:00-12:30,15:00-20:00; Tu,Th,Fr 15:00-20:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
