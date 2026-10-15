@@ -1427,3 +1427,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~88.
 
+## Giro del 2026-10-15T02:36:50Z (run_20261015_023650_bf38)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Fonte Nuova | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Canosa di Puglia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Verbania | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Marigliano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Frattamaggiore | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Villaricca | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~82.
+
