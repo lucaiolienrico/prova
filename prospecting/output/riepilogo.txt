@@ -1,5 +1,5 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-10-15 10:46
+Generato: 2026-10-15 16:15
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
 *** contatti con indirizzo email (198 su 1288 schede note). ***

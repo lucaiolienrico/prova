@@ -1451,3 +1451,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~76.
 
+## Giro del 2026-10-15T16:03:26Z (run_20261015_160326_85e5)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Bra | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cervia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Carbonia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Aci Catena | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Selargius | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Vittorio Veneto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~70.
+
