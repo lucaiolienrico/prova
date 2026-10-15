@@ -1439,3 +1439,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~82.
 
+## Giro del 2026-10-15T10:38:26Z (run_20261015_103826_eb5d)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Mascalucia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Gragnano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Valsamoggia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Rapallo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Comiso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Poggibonsi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~76.
+
