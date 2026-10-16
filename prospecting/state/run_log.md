@@ -1475,3 +1475,15 @@
 
 **Bilancio**: 6 citta' ok, 3 elementi OSM, 3 schede candidate, 2 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~64.
 
+## Giro del 2026-10-16T02:32:11Z (run_20261016_023211_c4ee)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Cecina | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Niscemi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Enna | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Gioia del Colle | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Mesagne | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Novi Ligure | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~58.
+
