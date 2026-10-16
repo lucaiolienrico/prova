@@ -1487,3 +1487,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~58.
 
+## Giro del 2026-10-16T10:25:09Z (run_20261016_102509_adf8)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Iglesias | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Mogliano Veneto | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Miniato | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Misilmeri | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Giuseppe Vesuviano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Boscoreale | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~52.
+
