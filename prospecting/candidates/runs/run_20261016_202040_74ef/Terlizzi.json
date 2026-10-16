@@ -1,0 +1,43 @@
+[
+  {
+    "n": "Aquarium Line",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Terlizzi",
+    "prov": "BA",
+    "reg": "Puglia",
+    "addr": null,
+    "site": "https://www.aquariumline.com/",
+    "email": "staff@aquariumline.com",
+    "tel": "+39 080 351 01 28",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/13042771274",
+    "osm_id": 13042771274,
+    "osm_type": "node",
+    "osm_tags": {
+      "contact:city": "Terlizzi",
+      "contact:housenumber": "49",
+      "contact:postcode": "70038",
+      "contact:street": "Strada Provinciale Terlizzi - Mariotto",
+      "email": "staff@aquariumline.com",
+      "name": "Aquarium Line",
+      "payment": "cash",
+      "payment:cash": "yes",
+      "pet": "fish",
+      "phone": "+39 080 351 01 28",
+      "shop": "pet",
+      "toilets": "yes",
+      "toilets:wheelchair": "limited",
+      "website": "https://www.aquariumline.com/",
+      "wheelchair": "yes"
+    },
+    "lat": 41.1108071,
+    "lon": 16.5578681,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

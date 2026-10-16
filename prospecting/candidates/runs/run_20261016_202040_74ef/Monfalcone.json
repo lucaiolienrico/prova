@@ -1,0 +1,39 @@
+[
+  {
+    "n": "Clinica Veterinaria Timavo",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Monfalcone",
+    "prov": "GO",
+    "reg": "Friuli-Venezia Giulia",
+    "addr": "Via Timavo 74, 34074",
+    "site": "https://www.clinicatimavo.com/",
+    "email": "info@clinicatimavo.com",
+    "tel": "+39 0481 412390; +33 3 88 88 99 09",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/3652804483",
+    "osm_id": 3652804483,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Monfalcone",
+      "addr:housenumber": "74",
+      "addr:postcode": "34074",
+      "addr:street": "Via Timavo",
+      "amenity": "veterinary",
+      "email": "info@clinicatimavo.com",
+      "emergencies": "24h",
+      "name": "Clinica Veterinaria Timavo",
+      "opening_hours": "Mo-Fr 08:30-22:30; Sa 08:30-14:30",
+      "phone": "+39 0481 412390; +33 3 88 88 99 09",
+      "website": "https://www.clinicatimavo.com/"
+    },
+    "lat": 45.7937287,
+    "lon": 13.5564211,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 08:30-22:30; Sa 08:30-14:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
