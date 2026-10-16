@@ -1499,3 +1499,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~52.
 
+## Giro del 2026-10-16T15:51:43Z (run_20261016_155143_6dd9)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Assisi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Chiavari | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| San Giovanni Rotondo | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Sant'Anastasia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Galatina | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Putignano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~46.
+
