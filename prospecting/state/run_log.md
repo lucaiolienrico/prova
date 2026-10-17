@@ -1535,3 +1535,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~34.
 
+## Giro del 2026-10-17T09:56:57Z (run_20261017_095657_525d)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Valdagno | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Gravina di Catania | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Buccinasco | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Mirano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Belpasso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Garbagnate Milanese | 7 | 7 | 1 | 6 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 10 elementi OSM, 10 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~28.
+
