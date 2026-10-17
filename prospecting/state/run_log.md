@@ -1523,3 +1523,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~40.
 
+## Giro del 2026-10-17T02:25:03Z (run_20261017_022503_0f0f)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Desenzano del Garda | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Santeramo in Colle | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Falconara Marittima | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Bacoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Assemini | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Parabiago | 2 | 2 | 1 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~34.
+
