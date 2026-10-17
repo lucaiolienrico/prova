@@ -1559,3 +1559,15 @@
 
 **Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~22.
 
+## Giro del 2026-10-17T19:55:13Z (run_20261017_195513_5a67)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Noicattaro | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Conversano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Ruvo di Puglia | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Arzignano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Mola di Bari | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fidenza | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~16.
+
