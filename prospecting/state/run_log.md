@@ -1547,3 +1547,15 @@
 
 **Bilancio**: 6 citta' ok, 10 elementi OSM, 10 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~28.
 
+## Giro del 2026-10-17T14:44:46Z (run_20261017_144446_daad)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Sora | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Termini Imerese | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Tortona | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Scicli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Chivasso | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Bresso | 7 | 7 | 0 | 7 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 7 elementi OSM, 7 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~22.
+
