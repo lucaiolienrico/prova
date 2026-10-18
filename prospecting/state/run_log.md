@@ -1571,3 +1571,15 @@
 
 **Bilancio**: 6 citta' ok, 0 elementi OSM, 0 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~16.
 
+## Giro del 2026-10-18T02:25:07Z (run_20261018_022507_96fb)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Pompei | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Cesenatico | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Bagno a Ripoli | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Quarrata | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Porto Sant'Elpidio | 1 | 1 | 1 | 0 (0 integrati) | ok |
+| Vimercate | 1 | 1 | 0 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~10.
+

@@ -1,0 +1,38 @@
+[
+  {
+    "n": "Nella vecchia fattoria",
+    "cat": "Allevatori",
+    "sub": null,
+    "city": "Vimercate",
+    "prov": "MB",
+    "reg": "Lombardia",
+    "addr": "Via della Fornace 1, 20862",
+    "site": null,
+    "email": "lucab93235@gmail.com",
+    "tel": null,
+    "ig": null,
+    "fb": "https://www.facebook.com/nellavecchiafattoriaa",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/way/193440163",
+    "osm_id": 193440163,
+    "osm_type": "way",
+    "osm_tags": {
+      "addr:city": "Arcore",
+      "addr:housenumber": "1",
+      "addr:postcode": "20862",
+      "addr:street": "Via della Fornace",
+      "amenity": "animal_breeding",
+      "building": "yes",
+      "contact:facebook": "https://www.facebook.com/nellavecchiafattoriaa",
+      "email": "lucab93235@gmail.com",
+      "mobile": "+393382573127",
+      "name": "Nella vecchia fattoria"
+    },
+    "lat": 45.6372925,
+    "lon": 9.3149122,
+    "other": "OSM: amenity=animal_breeding",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
