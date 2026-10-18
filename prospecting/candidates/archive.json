@@ -29615,7 +29615,7 @@
     "city": "Bollate",
     "prov": "MI",
     "reg": "Lombardia",
-    "addr": null,
+    "addr": "Via Giannetto Mattei 140, 20044",
     "site": "https://www.vitadacani.org/",
     "email": "vitadacani@vitadacani.org;",
     "tel": "+393490581076",
@@ -29648,7 +29648,8 @@
     "_system": "automatica",
     "_archive_id": 856,
     "_found_at": "2026-09-11T10:21:09Z",
-    "_wave": "run_20260911_102045_8629"
+    "_wave": "run_20260911_102045_8629",
+    "_updated_at": "2026-10-18T10:13:39Z"
   },
   {
     "n": "Dimensione Acquario",

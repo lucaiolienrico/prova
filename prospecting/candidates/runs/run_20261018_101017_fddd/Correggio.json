@@ -1,0 +1,37 @@
+[
+  {
+    "n": "Dr Revelli Fausto",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": "Correggio",
+    "prov": "RE",
+    "reg": "Emilia-Romagna",
+    "addr": null,
+    "site": "https://www.ambulatorioveterinariorevelli.it/",
+    "email": "studio.veterinario.bagnolo@gmail.com",
+    "tel": "+39 0522 693196",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/11663790317",
+    "osm_id": 11663790317,
+    "osm_type": "node",
+    "osm_tags": {
+      "amenity": "veterinary",
+      "contact:city": "Correggio",
+      "contact:housenumber": "23",
+      "contact:street": "Viale della Repubblica",
+      "email": "studio.veterinario.bagnolo@gmail.com",
+      "name": "Dr Revelli Fausto",
+      "opening_hours": "Mo-Fr 10:00-12:30,17:00-19:30; Sa 10:00-12:30",
+      "phone": "+39 0522 693196",
+      "website": "https://www.ambulatorioveterinariorevelli.it/"
+    },
+    "lat": 44.7721466,
+    "lon": 10.7711795,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 10:00-12:30,17:00-19:30; Sa 10:00-12:30",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]

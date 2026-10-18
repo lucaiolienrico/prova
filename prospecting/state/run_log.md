@@ -1583,3 +1583,15 @@
 
 **Bilancio**: 6 citta' ok, 2 elementi OSM, 2 schede candidate, 1 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~10.
 
+## Giro del 2026-10-18T10:10:17Z (run_20261018_101017_fddd)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Portogruaro | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Pontecagnano Faiano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Lainate | 7 | 7 | 0 | 7 (1 integrati) | ok |
+| Legnago | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Roseto degli Abruzzi | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Correggio | 1 | 1 | 0 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 citta' ok, 8 elementi OSM, 8 schede candidate, 0 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~4.
+
