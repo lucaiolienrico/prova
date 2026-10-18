@@ -1595,3 +1595,13 @@
 
 **Bilancio**: 6 citta' ok, 8 elementi OSM, 8 schede candidate, 0 nuove, 1 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~4.
 
+## Giro del 2026-10-18T15:10:14Z (run_20261018_151014_4310)
+| Citta' | Elementi | Trovati | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Orta di Atella | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Scandiano | 1 | 1 | 0 | 1 (0 integrati) | ok |
+| Qualiano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Fossano | 0 | 0 | 0 | 0 (0 integrati) | ok |
+
+**Bilancio**: 4 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~0.
+
