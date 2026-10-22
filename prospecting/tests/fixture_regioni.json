@@ -1,0 +1,34 @@
+{
+  "_commento": "Fixture per test offline della scansione regionale (nessuna rete). Esercita: attribuzione comune/provincia da addr:city (anche con accenti/apostrofi diversi), comune assente, comune fuori indice, scheda senza email (scartata), elemento duplicato tra le clausole email/contact:email, regione con confine non trovato (assente dal fixture).",
+  "regions": {
+    "Molise": {
+      "elements": [
+        {"type": "area", "id": 3600041256},
+        {"type": "node", "id": 990001, "lat": 41.56, "lon": 14.66,
+         "tags": {"amenity": "veterinary", "name": "Ambulatorio Veterinario Test Campobasso",
+                  "email": "info@vettest.example", "addr:city": "campobasso", "phone": "+39 0874 000000"}},
+        {"type": "node", "id": 990001, "lat": 41.56, "lon": 14.66,
+         "tags": {"amenity": "veterinary", "name": "Ambulatorio Veterinario Test Campobasso",
+                  "email": "info@vettest.example", "addr:city": "campobasso", "phone": "+39 0874 000000"}},
+        {"type": "way", "id": 990002, "center": {"lat": 42.0, "lon": 15.0},
+         "tags": {"shop": "pet", "name": "Pet Shop Test Termoli", "contact:email": "shop@pettest.example",
+                  "addr:city": "Termoli"}},
+        {"type": "node", "id": 990003, "lat": 41.6, "lon": 14.2,
+         "tags": {"shop": "pet_grooming", "name": "Toelettatura Senza Comune", "email": "toel@test.example"}},
+        {"type": "node", "id": 990004, "lat": 41.6, "lon": 14.2,
+         "tags": {"amenity": "animal_boarding", "name": "Pensione Fuori Indice", "email": "pens@test.example",
+                  "addr:city": "Localita' Inventata"}},
+        {"type": "node", "id": 990005, "lat": 41.6, "lon": 14.2,
+         "tags": {"amenity": "veterinary", "name": "Vet Senza Email", "addr:city": "Isernia"}}
+      ]
+    },
+    "Valle d'Aosta/Vallée d'Aoste": {
+      "elements": [
+        {"type": "area", "id": 3600045155},
+        {"type": "node", "id": 990010, "lat": 45.7, "lon": 7.3,
+         "tags": {"amenity": "veterinary", "name": "Clinica Test Saint Vincent", "email": "sv@test.example",
+                  "addr:city": "Saint Vincent"}}
+      ]
+    }
+  }
+}

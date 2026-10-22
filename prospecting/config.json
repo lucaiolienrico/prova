@@ -54,6 +54,16 @@
   "cities_per_run": 6,
   "queue_file": "queue/cities.json",
 
+  "scan_mode": "regioni",
+  "_scan_mode_commento": "CICLO 3 dal 2026-10-22 (richiesta utente: ripartire su tutte le regioni). 'regioni' = una query Overpass per confine regionale (queue/regions.json, 20 regioni) che copre TUTTI i ~7.900 comuni, non solo i 388 piu' popolosi. 'citta' = vecchia coda queue/cities.json (cicli 1-2, completata).",
+  "regioni": {
+    "regions_per_run": 4,
+    "timeout_s": 180,
+    "max_elements_per_region": 10000,
+    "auto_restart_days": 7,
+    "_commento": "auto_restart_days: a scansione completa, ogni N giorni riparte da sola un nuovo passaggio su tutte le regioni (0 = mai). Nota: il workflow passa --batch 6, che vale anche come regioni per giro."
+  },
+
   "overpass": {
     "_commento": "Solo OpenStreetMap (licenza ODbL): nessuno scraping di directory con termini d'uso restrittivi. Endpoint di fallback e cortesie di rate-limit.",
     "endpoints": [

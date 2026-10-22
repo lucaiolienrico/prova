@@ -5,6 +5,34 @@
 > (erano solo nel sandbox della sessione chiusa e non sono mai arrivati su GitHub).
 > Il sistema H24 è stato **ricostruito da zero e testato** — vedi §1.
 
+## 00. CICLO 3 — SCANSIONE REGIONALE SU TUTTA ITALIA (dal 2026-10-22)
+
+Il ciclo 2 (388 città, filtro email) si è chiuso il 2026-10-18: da allora i giri
+H24 non trovavano più nulla (coda esaurita). Per richiesta dell'utente la ricerca
+**riparte su tutte le 20 regioni** (`config.json` → `"scan_mode": "regioni"`):
+
+- una query Overpass per **confine regionale** (`queue/regions.json`, tag OSM
+  `ISO3166-2`, fallback sul nome) → copre **tutti i ~7.900 comuni**, non solo i
+  388 più popolosi (che coprivano ~metà della popolazione);
+- restrizione email invariata; stessi 5 controlli anti-duplicato (le schede già
+  note vengono solo integrate);
+- comune e provincia ricavati da `addr:city` (OSM) tramite `queue/comuni_index.json`
+  (ISTAT); se `addr:city` manca la città resta vuota (nessuna inferenza);
+- il workflow passa `--batch 6` → 6 regioni per giro → Italia completa in ~4 giri
+  (~1 giorno); poi **nuovo passaggio automatico ogni 7 giorni**
+  (`regioni.auto_restart_days`, 0 = mai);
+- avanzamento in `state/progress.json` → `regioni`; stato finale ciclo 2 in
+  `state/progress_ciclo2_completato.json`.
+
+```bash
+python3 prospecting/find_candidates.py --list-done             # stato regioni
+python3 prospecting/find_candidates.py --regions "Molise,Lazio" # giro su regioni specifiche
+python3 prospecting/find_candidates.py --reset-progress         # nuovo passaggio regionale
+python3 prospecting/find_candidates.py --mode citta --list-done # vecchia coda per città
+python3 prospecting/find_candidates.py --offline-fixture prospecting/tests/fixture_regioni.json \
+    --regions "Molise,Valle d'Aosta"                             # TEST offline (nessuna rete)
+```
+
 ## 0. RESTRIZIONE ATTIVA: SOLO CONTATTI CON EMAIL (dal 2026-09-30)
 
 Per richiesta dell'utente, il sistema cerca e tiene **solo contatti con indirizzo

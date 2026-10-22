@@ -29,6 +29,12 @@ Uso:
   python3 prospecting/find_candidates.py --dry-run           # mostra le query, non interroga
   python3 prospecting/find_candidates.py --offline-fixture FILE  # test senza rete
 
+SCANSIONE REGIONALE (config.json -> "scan_mode": "regioni", ciclo 3 dal 22/10/2026):
+  una query per confine regionale (queue/regions.json, 20 regioni) al posto
+  della coda per citta': copre tutti i comuni italiani.
+  python3 prospecting/find_candidates.py --regions "Molise,Lazio"
+  python3 prospecting/find_candidates.py --mode citta ...   # vecchia coda per citta'
+
 RESTRIZIONE EMAIL (config.json -> "require_email": true, attiva dal 30/09/2026):
   le query Overpass chiedono solo elementi con tag email o contact:email non
   vuoto; le schede senza email valida non entrano mai nell'archivio.
@@ -44,6 +50,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -51,6 +58,8 @@ import urllib.request
 BASE = os.path.dirname(os.path.abspath(__file__))
 CFG_PATH = os.path.join(BASE, "config.json")
 QUEUE_PATH = os.path.join(BASE, "queue", "cities.json")
+REGION_QUEUE_PATH = os.path.join(BASE, "queue", "regions.json")
+COMUNI_INDEX_PATH = os.path.join(BASE, "queue", "comuni_index.json")
 ARCHIVE_PATH = os.path.join(BASE, "candidates", "archive.json")
 RUNS_DIR = os.path.join(BASE, "candidates", "runs")
 STATE_DIR = os.path.join(BASE, "state")
@@ -99,6 +108,19 @@ CITIES_PER_RUN = int(CFG.get("cities_per_run", 6))
 REQUIRE_EMAIL = bool(CFG.get("require_email", False))
 EMAIL_TAG_SELECTORS = ('["email"~"."]', '["contact:email"~"."]')
 OVERRIDE_CITIES = None  # impostato da --cities
+# SCANSIONE REGIONALE (ciclo 3, dal 2026-10-22): la coda per citta' copre solo
+# i 388 comuni piu' popolosi ed e' esaurita; "regioni" interroga Overpass sul
+# confine di ciascuna delle 20 regioni, coprendo tutti i ~7.900 comuni.
+SCAN_MODE = str(CFG.get("scan_mode", "citta")).lower()
+REGION_CFG = CFG.get("regioni", {})
+REGIONS_PER_RUN = int(REGION_CFG.get("regions_per_run", 4))
+# un confine regionale e' molto piu' grande di uno comunale: serve piu' margine
+REGION_TIMEOUT = int(REGION_CFG.get("timeout_s", 180))
+REGION_MAX_ELEM = int(REGION_CFG.get("max_elements_per_region", 10000))
+# OSM cambia lentamente: ripassare ogni N giorni intercetta le email aggiunte
+# dai mappatori senza martellare Overpass. 0 = nessun riavvio automatico.
+REGION_RESTART_DAYS = float(REGION_CFG.get("auto_restart_days", 7))
+OVERRIDE_REGIONS = None  # impostato da --regions
 
 
 # --------------------------------------------------------------------------
@@ -316,7 +338,7 @@ def build_around_query(radius, lat, lon):
     return f'[out:json][timeout:{TIMEOUT}];(' + body + f');out body center qt {MAX_ELEM};'
 
 
-def overpass_post(query, endpoint, dry_run=False):
+def overpass_post(query, endpoint, dry_run=False, timeout=None):
     if dry_run:
         print(f"    [dry-run] POST {endpoint}\n    {query}")
         return {"elements": []}
@@ -326,11 +348,13 @@ def overpass_post(query, endpoint, dry_run=False):
         headers={"Content-Type": "application/x-www-form-urlencoded",
                  "User-Agent": "PetNote-Prospecting-H24/1.0 (contact: repo owner)"},
         method="POST")
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+    # margine oltre il [timeout] della query: Overpass risponde con un errore
+    # esplicito invece di troncare la connessione lato client
+    with urllib.request.urlopen(req, timeout=(timeout or TIMEOUT) + 15) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def overpass_with_retry(query, dry_run=False, log=print):
+def overpass_with_retry(query, dry_run=False, log=print, timeout=None):
     """Retry con backoff limitato su una lista di endpoint (rotate).
 
     Non solleva mai errori di rete "a meta'": se tutti i tentativi falliscono
@@ -341,7 +365,7 @@ def overpass_with_retry(query, dry_run=False, log=print):
     for attempt in range(MAX_RETRIES + 1):
         endpoint = ENDPOINTS[attempt % len(ENDPOINTS)]
         try:
-            return overpass_post(query, endpoint, dry_run)
+            return overpass_post(query, endpoint, dry_run, timeout)
         except (urllib.error.URLError, urllib.error.HTTPError,
                 json.JSONDecodeError, OSError) as exc:
             last = exc
@@ -524,11 +548,144 @@ def search_city(city, dry_run=False, log=print):
 
 
 # --------------------------------------------------------------------------
+# Ricerca per regione (scansione regionale, ciclo 3+)
+# --------------------------------------------------------------------------
+
+_COMUNI_INDEX = None
+
+
+def comune_key(name):
+    """Stessa chiave di tools/generate_regions.py: addr:city in OSM e' testo libero."""
+    s = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode()
+    s = s.lower().replace("'", " ").replace("-", " ").replace("`", " ")
+    return " ".join(s.split())
+
+
+def resolve_comune(tags, region_name):
+    """(nome comune ISTAT, sigla) da addr:city; (addr:city, None) se non in indice.
+
+    Nessuna inferenza geografica: senza addr:city la citta' resta vuota, cosi'
+    non si attribuisce mai un comune non dichiarato dalla fonte.
+    """
+    global _COMUNI_INDEX
+    if _COMUNI_INDEX is None:
+        _COMUNI_INDEX = load_json(COMUNI_INDEX_PATH, {})
+    raw = tags.get("addr:city") or tags.get("addr:town") or tags.get("addr:village")
+    if not raw or not str(raw).strip():
+        return None, None
+    raw = str(raw).strip()
+    hit = _COMUNI_INDEX.get(region_name, {}).get(comune_key(raw))
+    if hit:
+        return hit[0], hit[1]
+    return raw, None
+
+
+def region_area_selectors(region):
+    """Selettori del confine regionale, dal piu' affidabile (ISO 3166-2) al nome."""
+    sels = [f'area["ISO3166-2"="{region["iso"]}"]']
+    names = [region["name"]]
+    short = region["name"].split("/")[0].strip()
+    if short != region["name"]:
+        names.append(short)
+    for n in names:
+        n = n.replace('"', "")
+        sels.append(f'area["boundary"="administrative"]["admin_level"="4"]["name"="{n}"]')
+        sels.append(f'area["boundary"="administrative"]["admin_level"="4"]["name:it"="{n}"]')
+    return sels
+
+
+def build_region_query(area_selector):
+    # ".r out ids" emette l'area stessa: distingue "confine non trovato"
+    # (nessun elemento area) da "regione senza risultati" (area senza POI)
+    body = "".join("".join(_clauses_for(rule, "area.r")) for rule in RECIPE)
+    return (f'[out:json][timeout:{REGION_TIMEOUT}];{area_selector}->.r;.r out ids;('
+            + body + f');out body center qt {REGION_MAX_ELEM};')
+
+
+def search_region(region, dry_run=False, log=print):
+    """Ritorna (records, metodo) oppure ([], None) se il confine non e' risolto."""
+    for sel in region_area_selectors(region):
+        q = build_region_query(sel)
+        if dry_run:
+            print(f"    [dry-run] ricerca {region['name']}:\n      {q}")
+            return [], "dry-run"
+        resp = overpass_with_retry(q, dry_run, log, timeout=REGION_TIMEOUT)
+        remark = str(resp.get("remark") or "")
+        if "error" in remark.lower():
+            # timeout/memoria lato Overpass: la risposta e' troncata, non va
+            # registrata come "regione completata" (verra' ritentata)
+            raise RuntimeError(f"Overpass: {remark[:200]}")
+        elems = resp.get("elements", [])
+        if not any(e.get("type") == "area" for e in elems):
+            log(f"    confine non trovato con {sel}: provo il selettore successivo")
+            continue
+        pois = [e for e in elems if e.get("type") in ("node", "way")]
+        log(f"    confine {sel}: {len(pois)} elementi OSM trovati")
+        if len(pois) >= REGION_MAX_ELEM:
+            log(f"    ATTENZIONE: raggiunto il limite di {REGION_MAX_ELEM} elementi, "
+                "risultati possibilmente troncati (aumentare max_elements_per_region)")
+        return region_elements_to_records(pois, region), sel
+    return [], None
+
+
+def region_elements_to_records(elems, region):
+    records = []
+    for el in elems:
+        if el.get("type") not in ("node", "way"):
+            continue
+        city_name, sigla = resolve_comune(el.get("tags") or {}, region["name"])
+        rec = element_to_record(el, {"name": city_name, "sigla": sigla,
+                                     "region": region["name"]})
+        if rec:
+            if not city_name:
+                rec["notes"] += " Comune non indicato in OSM (addr:city assente)."
+            records.append(rec)
+    return records
+
+
+# --------------------------------------------------------------------------
 # Giro
 # --------------------------------------------------------------------------
 
 def utc_now():
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def filter_records(records):
+    """RESTRIZIONE EMAIL: tiene solo schede con email valida (Overpass ha gia'
+    filtrato a monte; rete di sicurezza) e deduplica gli elementi restituiti
+    due volte dalle clausole email/contact:email."""
+    if not REQUIRE_EMAIL:
+        return records
+    seen, uniq = set(), []
+    for r in records:
+        if not norm_email(r.get("email")):
+            continue
+        k = (r.get("osm_type"), r.get("osm_id"))
+        if k in seen:
+            continue
+        seen.add(k)
+        uniq.append(r)
+    return uniq
+
+
+def merge_records(archive, records, run_id):
+    """Anti-duplicato sui 5 controlli: nuove schede in archivio, note integrate."""
+    new_c, rich_c, dup_c = 0, 0, 0
+    for rec in records:
+        idx, _control = archive.find(rec)
+        if idx is None:
+            rec["_archive_id"] = len(archive.rows) + 1
+            rec["_found_at"] = utc_now()
+            rec["_wave"] = run_id
+            archive.add(rec)
+            new_c += 1
+        else:
+            dup_c += 1
+            if archive.enrich(idx, rec):
+                archive.rows[idx]["_updated_at"] = utc_now()
+                rich_c += 1
+    return new_c, rich_c, dup_c
 
 
 def next_cities(queue, progress, batch):
@@ -580,19 +737,7 @@ def run(log=print, dry_run=False):
             stats["failed"].append({"name": city["name"], "error": "geocodifica fallita"})
             log_lines.append(f"| {city['name']} | - | - | - | - | geocodifica fallita |")
             continue
-        # RESTRIZIONE EMAIL: tiene solo schede con email valida (Overpass ha
-        # gia' filtrato a monte; rete di sicurezza) e deduplica gli elementi
-        # eventualmente restituiti due volte dalle clausole email/contact:email.
-        if REQUIRE_EMAIL:
-            records = [r for r in records if norm_email(r.get("email"))]
-            _seen, _uniq = set(), []
-            for r in records:
-                k = (r.get("osm_type"), r.get("osm_id"))
-                if k in _seen:
-                    continue
-                _seen.add(k)
-                _uniq.append(r)
-            records = _uniq
+        records = filter_records(records)
         stats["cities"] += 1
         stats["done_cities"].append(city["name"])
         stats["elements"] += len(records)
@@ -602,21 +747,7 @@ def run(log=print, dry_run=False):
         with open(os.path.join(run_dir, city["name"] + ".json"), "w", encoding="utf-8") as fh:
             json.dump(records, fh, ensure_ascii=False, indent=2)
 
-        new_c, rich_c, dup_c = 0, 0, 0
-        for rec in records:
-            idx, control = archive.find(rec)
-            if idx is None:
-                rec["_archive_id"] = len(archive.rows) + 1
-                rec["_found_at"] = utc_now()
-                rec["_wave"] = run_id
-                archive.add(rec)
-                new_c += 1
-            else:
-                dup_c += 1
-                changed = archive.enrich(idx, rec)
-                if changed:
-                    archive.rows[idx]["_updated_at"] = utc_now()
-                    rich_c += 1
+        new_c, rich_c, dup_c = merge_records(archive, records, run_id)
         stats["new"] += new_c
         stats["enrich"] += rich_c
         stats["dups"] += dup_c
@@ -673,6 +804,133 @@ def run(log=print, dry_run=False):
     return 0
 
 
+def _parse_utc(ts):
+    try:
+        return datetime.datetime.strptime(ts, "%Y-%m-%dT%H:%M:%SZ").replace(
+            tzinfo=datetime.timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def run_regions(log=print, dry_run=False):
+    """Giro della scansione regionale: stessa pipeline del giro per citta'."""
+    regions = load_json(REGION_QUEUE_PATH, [])
+    if not regions:
+        log("ERRORE: coda regioni non trovata. Rigenerala con prospecting/tools/generate_regions.py")
+        return 2
+    progress = load_json(PROGRESS_PATH, {"done": [], "last_run": None,
+                                         "runs": 0, "new_total": 0, "enrich_total": 0})
+    rp = progress.setdefault("regioni", {"done": [], "ciclo": 1, "started_at": utc_now(),
+                                         "completed_at": None})
+    archive = Archive(load_json(ARCHIVE_PATH, []))
+
+    if OVERRIDE_REGIONS:
+        sel, remaining = OVERRIDE_REGIONS, 0
+    else:
+        done = set(rp.get("done", []))
+        todo = [r for r in regions if r["name"] not in done]
+        if not todo:
+            completed = _parse_utc(rp.get("completed_at"))
+            now = datetime.datetime.now(datetime.timezone.utc)
+            if completed is None:
+                rp["completed_at"] = utc_now()
+                completed = now
+                if not dry_run:
+                    save_json(PROGRESS_PATH, progress)
+            age_days = (now - completed).total_seconds() / 86400
+            if REGION_RESTART_DAYS <= 0 or age_days < REGION_RESTART_DAYS:
+                log(f"Scansione regionale completa (passaggio {rp.get('ciclo', 1)}, "
+                    f"chiuso il {rp['completed_at']}). Prossimo passaggio automatico tra "
+                    f"{max(0.0, REGION_RESTART_DAYS - age_days):.1f} giorni "
+                    "(regioni.auto_restart_days in config.json).")
+                return 0
+            rp.update({"done": [], "ciclo": int(rp.get("ciclo", 1)) + 1,
+                       "started_at": utc_now(), "completed_at": None})
+            log(f"Nuovo passaggio regionale automatico: n. {rp['ciclo']}")
+            todo = regions
+        sel, remaining = todo[:REGIONS_PER_RUN], len(todo)
+    log(f"Giro H24 regionale -> {len(sel)} regioni (rimaste: {remaining}, "
+        f"archivio: {len(archive.rows)} schede)")
+
+    run_id = "run_" + datetime.datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + os.urandom(2).hex()
+    run_dir = os.path.join(RUNS_DIR, run_id)
+    if not dry_run:
+        os.makedirs(run_dir, exist_ok=True)
+    log_lines = [f"## Giro regionale del {utc_now()} ({run_id}, passaggio {rp.get('ciclo', 1)})",
+                 "| Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |",
+                 "|---|---|---|---|---|---|"]
+    stats = {"ok": [], "elements": 0, "new": 0, "enrich": 0, "dups": 0, "failed": []}
+
+    t0 = time.time()
+    for i, region in enumerate(sel):
+        log(f"\n[{i + 1}/{len(sel)}] {region['name']} ({region['iso']})")
+        try:
+            records, method = search_region(region, dry_run, log)
+        except Exception as exc:  # una regione non deve fermare il giro
+            log(f"    ERRORE: {exc}")
+            stats["failed"].append({"name": region["name"], "error": str(exc)})
+            log_lines.append(f"| {region['name']} | - | - | - | - | ERRORE: {str(exc)[:80]} |")
+            continue
+        if method is None:
+            stats["failed"].append({"name": region["name"], "error": "confine non trovato"})
+            log_lines.append(f"| {region['name']} | - | - | - | - | confine non trovato |")
+            continue
+        if dry_run:
+            continue
+        records = filter_records(records)
+        no_city = sum(1 for r in records if not r.get("city"))
+        with open(os.path.join(run_dir, region["name"].split("/")[0] + ".json"), "w",
+                  encoding="utf-8") as fh:
+            json.dump(records, fh, ensure_ascii=False, indent=2)
+        new_c, rich_c, dup_c = merge_records(archive, records, run_id)
+        stats["ok"].append(region["name"])
+        stats["elements"] += len(records)
+        stats["new"] += new_c
+        stats["enrich"] += rich_c
+        stats["dups"] += dup_c
+        log_lines.append(f"| {region['name']} | {len(records)} | {no_city} | {new_c} | "
+                         f"{dup_c} ({rich_c} integrati) | ok |")
+        log(f"    trovati {len(records)} | NUOVI {new_c} | gia' noti {dup_c} "
+            f"(integrati {rich_c}) | senza comune {no_city}")
+        time.sleep(MIN_DELAY)
+
+    if dry_run:
+        return 0
+    # solo le regioni riuscite sono completate: le fallite si ritentano al prossimo giro
+    done_now = set(rp.get("done", [])) | set(stats["ok"])
+    rp["done"] = [r["name"] for r in regions if r["name"] in done_now]
+    if len(rp["done"]) == len(regions) and not rp.get("completed_at"):
+        rp["completed_at"] = utc_now()
+    progress["runs"] = int(progress.get("runs", 0)) + 1
+    progress["last_run"] = utc_now()
+    progress["new_total"] = int(progress.get("new_total", 0)) + stats["new"]
+    progress["enrich_total"] = int(progress.get("enrich_total", 0)) + stats["enrich"]
+    save_json(ARCHIVE_PATH, archive.rows)
+    save_json(PROGRESS_PATH, progress)
+    lines = log_lines + [
+        "",
+        f"**Bilancio**: {len(stats['ok'])} regioni ok, {stats['elements']} schede con email, "
+        f"{stats['new']} nuove, {stats['enrich']} integrate, {len(stats['failed'])} regioni "
+        f"fallite (ritentate al prossimo giro), regioni completate "
+        f"{len(rp.get('done', []))}/{len(regions)}.",
+        "",
+    ]
+    if stats["failed"]:
+        lines.append("**Regioni fallite (ritentate al prossimo giro):**")
+        lines += [f"- {f['name']}: {f['error']}" for f in stats["failed"]]
+        lines.append("")
+    with open(RUN_LOG_PATH, "a", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+
+    log("\n=== BILANCIO GIRO REGIONALE ===")
+    log(f"regioni ok: {len(stats['ok'])} (fallite: {len(stats['failed'])}) | schede: "
+        f"{stats['elements']} | NUOVE: {stats['new']} | integrate: {stats['enrich']}")
+    log(f"archivio totale: {len(archive.rows)} | regioni completate: "
+        f"{len(rp.get('done', []))}/{len(regions)} | durata: {int(time.time() - t0)}s")
+    # sempre 0: come per il giro per citta', il job deve poter committare i parziali
+    return 0
+
+
 # --------------------------------------------------------------------------
 # Modalita' offline (fixture) per test riproducibili senza rete
 # --------------------------------------------------------------------------
@@ -695,16 +953,28 @@ def run_offline(fixture_path):
                 records.append(rec)
         return records, {"lat": city["lat"], "lon": city["lon"], "method": "fixture"}
 
+    region_responses = fixture.get("regions", {})
+
+    def fake_search_region(region, dry_run=False, log=print):
+        # stessa conversione e stesso controllo del confine della ricerca reale
+        resp = region_responses.get(region["name"])
+        if resp is None or not any(e.get("type") == "area" for e in resp.get("elements", [])):
+            return [], None
+        return region_elements_to_records(resp["elements"], region), "fixture"
+
     prev_search = globals()["search_city"]
+    prev_region = globals()["search_region"]
     globals()["search_city"] = fake_search
+    globals()["search_region"] = fake_search_region
     try:
-        return run()
+        return run_regions() if SCAN_MODE == "regioni" else run()
     finally:
         globals()["search_city"] = prev_search
+        globals()["search_region"] = prev_region
 
 
 def main():
-    global CITIES_PER_RUN, OVERRIDE_CITIES
+    global CITIES_PER_RUN, OVERRIDE_CITIES, REGIONS_PER_RUN, OVERRIDE_REGIONS, SCAN_MODE
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--batch", type=int, default=None,
@@ -715,10 +985,52 @@ def main():
     ap.add_argument("--reset-progress", action="store_true",
                     help="azzera il progresso (nuovo ciclo di 388 citta')")
     ap.add_argument("--dry-run", action="store_true", help="mostra query senza interrogare Overpass")
+    ap.add_argument("--mode", choices=("citta", "regioni"), default=None,
+                    help=f"override di scan_mode in config.json (attuale: {SCAN_MODE})")
+    ap.add_argument("--regions", help="override: nomi di regioni separati da virgola "
+                                      "(implica --mode regioni)")
     args = ap.parse_args()
 
+    if args.mode:
+        SCAN_MODE = args.mode
+    if args.regions or args.cities:
+        SCAN_MODE = "regioni" if args.regions else "citta"
     if args.batch:
         CITIES_PER_RUN = args.batch
+        REGIONS_PER_RUN = args.batch
+
+    if SCAN_MODE == "regioni":
+        regions = load_json(REGION_QUEUE_PATH, [])
+        if args.list_done:
+            rp = load_json(PROGRESS_PATH, {}).get("regioni", {})
+            done = set(rp.get("done", []))
+            print(f"scansione regionale, passaggio {rp.get('ciclo', 1)} | regioni: {len(regions)} | "
+                  f"completate: {len(done)} | rimanenti: {len(regions) - len(done)}")
+            for r in regions:
+                print(("  [x] " if r["name"] in done else "  [ ] ") + r["name"])
+            return 0
+        if args.reset_progress:
+            progress = load_json(PROGRESS_PATH, {})
+            prev = progress.get("regioni", {})
+            progress["regioni"] = {"done": [], "ciclo": int(prev.get("ciclo", 0)) + 1,
+                                   "started_at": utc_now(), "completed_at": None}
+            save_json(PROGRESS_PATH, progress)
+            print("Scansione regionale azzerata: il prossimo giro riparte dalla prima regione.")
+            return 0
+        if args.regions:
+            by_key = {comune_key(r["name"].split("/")[0]): r for r in regions}
+            names = [x.strip() for x in args.regions.split(",") if x.strip()]
+            sel = [by_key[comune_key(n.split("/")[0])] for n in names
+                   if comune_key(n.split("/")[0]) in by_key]
+            if len(sel) < len(names):
+                print("ATTENZIONE: regioni non riconosciute ignorate")
+            if not sel:
+                print("Nessuna regione valida selezionata")
+                return 2
+            OVERRIDE_REGIONS = sel
+        if args.offline_fixture:
+            return run_offline(args.offline_fixture)
+        return run_regions(dry_run=args.dry_run)
 
     if args.list_done:
         q = load_json(QUEUE_PATH, [])
