@@ -1605,3 +1605,15 @@
 
 **Bilancio**: 4 citta' ok, 1 elementi OSM, 1 schede candidate, 0 nuove, 0 integrate, 0 citta' fallite (verranno ritentate), coda rimanente ~0.
 
+## Giro regionale del 2026-10-22T21:04:33Z (run_20261022_210433_58aa, passaggio 1)
+| Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Lombardia | 105 | 33 | 36 | 69 (1 integrati) | ok |
+| Campania | 8 | 0 | 0 | 8 (0 integrati) | ok |
+| Lazio | 31 | 10 | 17 | 14 (0 integrati) | ok |
+| Sicilia | 14 | 8 | 1 | 13 (0 integrati) | ok |
+| Veneto | 21 | 8 | 16 | 5 (0 integrati) | ok |
+| Piemonte | 23 | 13 | 14 | 9 (1 integrati) | ok |
+
+**Bilancio**: 6 regioni ok, 202 schede con email, 84 nuove, 2 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 6/20.
+

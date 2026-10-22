@@ -1,27 +1,27 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-10-22 21:02
+Generato: 2026-10-22 21:13
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (204 su 1294 schede note). ***
+*** contatti con indirizzo email (288 su 1378 schede note). ***
 
-Prospect totali: .............. 204 (manuali 44, H24 160)
-Con contatto diretto ......... 204 (100%)
-Con sito web ................. 150
-Shortlist A+/A/B ............. 140
-Comuni/localita' distinti .... 108
+Prospect totali: .............. 288 (manuali 44, H24 244)
+Con contatto diretto ......... 288 (100%)
+Con sito web ................. 210
+Shortlist A+/A/B ............. 195
+Comuni/localita' distinti .... 138
 
-PRIORITA': A+=5, A=38, B=97, C=57, D=7
+PRIORITA': A+=7, A=41, B=147, C=80, D=13
 
 PER REGIONE:
-  Lombardia              65
-  Lazio                  20
+  Lombardia              101
+  Lazio                  37
+  Piemonte               26
+  Veneto                 24
   Puglia                 14
   Emilia-Romagna         13
-  Piemonte               12
+  Sicilia                12
   Trentino-Alto Adige/Südtirol 12
   Toscana                11
-  Sicilia                11
-  Veneto                 8
   Marche                 7
   Campania               7
   Friuli-Venezia Giulia  5
@@ -35,14 +35,14 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     90
-  Pet shop                                       35
-  Rifugi per animali                             25
-  Toelettature                                   15
-  Pensioni per animali                           11
+  Veterinari                                     116
+  Pet shop                                       61
+  Rifugi per animali                             42
+  Toelettature                                   21
+  Pensioni per animali                           13
+  Allevatori                                     11
   Ambulatori veterinari                          6
   Associazioni animaliste                        6
-  Allevatori                                     4
   Centri cinofili                                3
   Negozi per animali                             3
   Canili                                         2
@@ -57,6 +57,8 @@ TOP 15 PROSPECT PER SCORE:
    97 A+  Ambulatorio Veterinario Gattamelata                  Roma                 Veterinari
    97 A+  Clinica Veterinaria Tibaldi                          Milano               Veterinari
    91 A+  Centro veterinario Ostia                             Roma                 Veterinari
+   90 A+  Ambulatorio Veterinario Guidotti                     Bologna              Veterinari
+   90 A+  Emergency Vet ospedale veterinario                   Bracciano            Veterinari
    89 A   Le betulle                                           Saronno              Allevatori
    87 A   Azienda Agricola La Quercia                          Limbiate             Pensioni per animali
    86 A   La Barf                                              Sesto San Giovanni   Pet shop
@@ -65,5 +67,3 @@ TOP 15 PROSPECT PER SCORE:
    85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari
    85 A   Ambulatorio Veterinario Festa (Dott. Ezio Festa)     Bassano del Grappa   Ambulatori veterinari
    84 A   Centro Cinofilo Bauhaus Bassano                      Bassano del Grappa   Centri cinofili
-   84 A   Aquarium                                             Scafati              Pet shop
-   84 A   Palla di Pelo                                        Tivoli               Pet shop
