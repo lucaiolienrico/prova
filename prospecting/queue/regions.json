@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Lombardia",
+    "code": "03",
+    "iso": "IT-25",
+    "comuni": 1506,
+    "population": 9704151
+  },
+  {
+    "name": "Campania",
+    "code": "15",
+    "iso": "IT-72",
+    "comuni": 550,
+    "population": 5766810
+  },
+  {
+    "name": "Lazio",
+    "code": "12",
+    "iso": "IT-62",
+    "comuni": 378,
+    "population": 5502886
+  },
+  {
+    "name": "Sicilia",
+    "code": "19",
+    "iso": "IT-82",
+    "comuni": 390,
+    "population": 5002904
+  },
+  {
+    "name": "Veneto",
+    "code": "05",
+    "iso": "IT-34",
+    "comuni": 563,
+    "population": 4855904
+  },
+  {
+    "name": "Piemonte",
+    "code": "01",
+    "iso": "IT-21",
+    "comuni": 1181,
+    "population": 4363916
+  },
+  {
+    "name": "Emilia-Romagna",
+    "code": "08",
+    "iso": "IT-45",
+    "comuni": 328,
+    "population": 4342135
+  },
+  {
+    "name": "Puglia",
+    "code": "16",
+    "iso": "IT-75",
+    "comuni": 257,
+    "population": 4052566
+  },
+  {
+    "name": "Toscana",
+    "code": "09",
+    "iso": "IT-52",
+    "comuni": 273,
+    "population": 3672202
+  },
+  {
+    "name": "Calabria",
+    "code": "18",
+    "iso": "IT-78",
+    "comuni": 404,
+    "population": 1959050
+  },
+  {
+    "name": "Sardegna",
+    "code": "20",
+    "iso": "IT-88",
+    "comuni": 377,
+    "population": 1639362
+  },
+  {
+    "name": "Liguria",
+    "code": "07",
+    "iso": "IT-42",
+    "comuni": 234,
+    "population": 1570694
+  },
+  {
+    "name": "Marche",
+    "code": "11",
+    "iso": "IT-57",
+    "comuni": 228,
+    "population": 1541319
+  },
+  {
+    "name": "Abruzzo",
+    "code": "13",
+    "iso": "IT-65",
+    "comuni": 305,
+    "population": 1307309
+  },
+  {
+    "name": "Friuli-Venezia Giulia",
+    "code": "06",
+    "iso": "IT-36",
+    "comuni": 215,
+    "population": 1220291
+  },
+  {
+    "name": "Trentino-Alto Adige/Südtirol",
+    "code": "04",
+    "iso": "IT-32",
+    "comuni": 282,
+    "population": 1029475
+  },
+  {
+    "name": "Umbria",
+    "code": "10",
+    "iso": "IT-55",
+    "comuni": 92,
+    "population": 884268
+  },
+  {
+    "name": "Basilicata",
+    "code": "17",
+    "iso": "IT-77",
+    "comuni": 131,
+    "population": 578036
+  },
+  {
+    "name": "Molise",
+    "code": "14",
+    "iso": "IT-67",
+    "comuni": 136,
+    "population": 313660
+  },
+  {
+    "name": "Valle d'Aosta/Vallée d'Aoste",
+    "code": "02",
+    "iso": "IT-23",
+    "comuni": 74,
+    "population": 126806
+  }
+]

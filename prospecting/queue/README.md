@@ -34,3 +34,19 @@ automatica H24 (`.github/workflows/petnote-prospecting-h24.yml`) processa il pae
 - Il numero di comuni in coda è parametrizzato nello script
   (`--size`, default 388) e la velocità di avanzamento in
   `prospecting/config.json` (`cities_per_run`, default 6).
+
+## Coda regionale (ciclo 3+) — `regions.json` + `comuni_index.json`
+
+Dal 2026-10-22 la ricerca usa `scan_mode: "regioni"` (`config.json`): una query
+Overpass per ciascuna delle **20 regioni**, sul confine OSM identificato dal
+codice ISO 3166-2 (es. `IT-25` Lombardia). Copre tutti i comuni italiani.
+
+- `regions.json`: nome ISTAT, codice ISTAT, codice ISO, n. comuni, popolazione
+  (ordine: popolazione decrescente);
+- `comuni_index.json`: per regione, chiave normalizzata del comune → `[nome ISTAT, sigla]`,
+  usata per attribuire città/provincia alle schede a partire da `addr:city`.
+
+```bash
+git clone --depth 1 https://github.com/matteocontrini/comuni-json.git /tmp/comuni-json
+python3 prospecting/tools/generate_regions.py --source /tmp/comuni-json/comuni.json
+```

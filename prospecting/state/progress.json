@@ -393,6 +393,12 @@
   "runs": 65,
   "new_total": 52,
   "enrich_total": 2,
-  "ciclo": 2,
-  "_nota": "Ciclo 2 avviato il 2026-09-30: nuovo passaggio su tutte le 388 citta' con RESTRIZIONE EMAIL attiva (config.json require_email=true): Overpass restituisce solo elementi con tag email/contact:email e gli output contengono solo contatti con email. Stato finale del ciclo 1 (388/388 citta', 1058 schede) archiviato in state/progress_ciclo1_completato.json."
+  "ciclo": 3,
+  "_nota": "Ciclo 3 avviato il 2026-10-22: SCANSIONE REGIONALE (config.json scan_mode=regioni) su tutte le 20 regioni, copre tutti i comuni italiani; restrizione email sempre attiva. 'done' = coda citta' (cicli 1-2, completata: stato finale ciclo 2 in state/progress_ciclo2_completato.json); avanzamento regionale in 'regioni'.",
+  "regioni": {
+    "done": [],
+    "ciclo": 1,
+    "started_at": "2026-10-22T21:00:00Z",
+    "completed_at": null
+  }
 }

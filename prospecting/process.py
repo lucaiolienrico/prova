@@ -77,11 +77,15 @@ def smart_title(s):
             return lw
         if "'" in w:
             parts = w.split("'")
-            firstpart = parts[0][0].upper() + parts[0][1:].lower()
+            # parti vuote: apostrofo iniziale/finale nel testo libero OSM (es. "Localita'")
+            firstpart = parts[0][:1].upper() + parts[0][1:].lower()
             if not first and (lw.startswith("d'") or lw.startswith("l'") or lw.startswith("dell'")):
                 firstpart = parts[0].lower()
-            rest = [p[0].upper() + p[1:].lower() for p in parts[1:]]
+            rest = [p[:1].upper() + p[1:].lower() for p in parts[1:]]
             return "'".join([firstpart] + rest)
+        if "-" in w:
+            # comuni con trattino (Saint-Vincent, Corigliano-Rossano) dalla scansione regionale
+            return "-".join(p[:1].upper() + p[1:].lower() for p in w.split("-"))
         return w[0].upper() + w[1:].lower()
     tokens = ws.split()
     return " ".join(cap_word(t, i == 0) for i, t in enumerate(tokens))
@@ -363,7 +367,9 @@ n = len(results)
 by_prio = Counter(r["priority"] for r in results)
 by_cat = Counter(r["category"] for r in results)
 by_reg = Counter(r["region"] for r in results)
-cities = sorted({(r["region"], r["province"], r["city"]) for r in results if r["city"]})
+# provincia/regione possono mancare (addr:city fuori indice ISTAT): None non e' ordinabile
+cities = sorted({(r["region"], r["province"], r["city"]) for r in results if r["city"]},
+                key=lambda t: tuple(x or "" for x in t))
 with_contact = sum(1 for r in results if r["email"] or r["phone"])
 with_site = sum(1 for r in results if r["website"])
 n_auto = sum(1 for r in results if r.get("provenienza") == "automatica")
