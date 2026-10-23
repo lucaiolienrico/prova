@@ -1,46 +1,47 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-10-23 02:52
+Generato: 2026-10-23 10:56
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (318 su 1407 schede note). ***
+*** contatti con indirizzo email (358 su 1446 schede note). ***
 
-Prospect totali: .............. 318 (manuali 45, H24 273)
-Con contatto diretto ......... 318 (100%)
-Con sito web ................. 226
-Shortlist A+/A/B ............. 208
-Comuni/localita' distinti .... 148
+Prospect totali: .............. 358 (manuali 45, H24 313)
+Con contatto diretto ......... 358 (100%)
+Con sito web ................. 257
+Shortlist A+/A/B ............. 233
+Comuni/localita' distinti .... 164
 
-PRIORITA': A+=7, A=44, B=157, C=94, D=16
+PRIORITA': A+=7, A=49, B=177, C=108, D=17
 
 PER REGIONE:
   Lombardia              101
   Lazio                  37
+  Trentino-Alto Adige/Südtirol 30
   Piemonte               26
   Veneto                 24
   Puglia                 21
   Emilia-Romagna         21
   Toscana                15
+  Abruzzo                13
+  Friuli-Venezia Giulia  12
   Sicilia                12
-  Trentino-Alto Adige/Südtirol 12
   Liguria                11
-  Marche                 7
+  Marche                 10
   Campania               7
-  Friuli-Venezia Giulia  5
-  Abruzzo                5
   Sardegna               4
+  Umbria                 4
   Molise                 3
   Calabria               3
   (senza regione)        2
-  Umbria                 1
+  Basilicata             1
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     121
-  Pet shop                                       74
-  Rifugi per animali                             47
-  Toelettature                                   21
-  Allevatori                                     16
-  Pensioni per animali                           15
+  Veterinari                                     138
+  Pet shop                                       80
+  Rifugi per animali                             55
+  Toelettature                                   23
+  Allevatori                                     19
+  Pensioni per animali                           19
   Ambulatori veterinari                          6
   Associazioni animaliste                        6
   Centri cinofili                                3
