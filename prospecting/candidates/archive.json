@@ -44658,5 +44658,43 @@
     "_archive_id": 1264,
     "_found_at": "2026-10-23T16:14:15Z",
     "_wave": "run_20261023_161233_7b2e"
+  },
+  {
+    "n": "Clinica Veterinaria Pineta Ca’ Zampa",
+    "cat": "Veterinari",
+    "sub": null,
+    "city": null,
+    "prov": null,
+    "reg": "Lombardia",
+    "addr": "Via Cristoforo Colombo 20, 22070",
+    "site": "https://old.cazampa.it/clinica/appiano-gentile-como-clinica-veterinaria-pineta/",
+    "email": "clinicapineta@cazampa.it",
+    "tel": "+39 031933762",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/14318157401",
+    "osm_id": 14318157401,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:housenumber": "20",
+      "addr:postcode": "22070",
+      "addr:street": "Via Cristoforo Colombo",
+      "amenity": "veterinary",
+      "email": "clinicapineta@cazampa.it",
+      "name": "Clinica Veterinaria Pineta Ca’ Zampa",
+      "opening_hours": "Mo-Fr 08:30-20:00; Sa-Su 08:30-18:00",
+      "phone": "+39 031933762",
+      "website": "https://old.cazampa.it/clinica/appiano-gentile-como-clinica-veterinaria-pineta/"
+    },
+    "lat": 45.7366825,
+    "lon": 8.9873218,
+    "other": "OSM: amenity=veterinary, opening_hours=Mo-Fr 08:30-20:00; Sa-Su 08:30-18:00",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto. Comune non indicato in OSM (addr:city assente).",
+    "_system": "automatica",
+    "_archive_id": 1265,
+    "_found_at": "2026-10-30T17:39:56Z",
+    "_wave": "run_20261030_173853_0778"
   }
 ]
