@@ -389,8 +389,8 @@
     "Vittorio Veneto",
     "Voghera"
   ],
-  "last_run": "2026-10-31T03:37:02Z",
-  "runs": 72,
+  "last_run": "2026-10-31T11:36:24Z",
+  "runs": 73,
   "new_total": 207,
   "enrich_total": 9,
   "ciclo": 3,
@@ -414,10 +414,12 @@
       "Friuli-Venezia Giulia",
       "Trentino-Alto Adige/Südtirol",
       "Umbria",
-      "Basilicata"
+      "Basilicata",
+      "Molise",
+      "Valle d'Aosta/Vallée d'Aoste"
     ],
     "ciclo": 2,
     "started_at": "2026-10-30T17:38:53Z",
-    "completed_at": null
+    "completed_at": "2026-10-31T11:36:24Z"
   }
 }
