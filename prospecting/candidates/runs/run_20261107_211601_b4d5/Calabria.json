@@ -1,0 +1,39 @@
+[
+  {
+    "n": "Animal City",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": "Taurianova",
+    "prov": "RC",
+    "reg": "Calabria",
+    "addr": "Via Sila 10, 89029",
+    "site": "https://www.animalcitystore.it/",
+    "email": "info@animalcitystore.it",
+    "tel": "+39 3457624328",
+    "ig": "animalcity_taurianova",
+    "fb": "https://www.facebook.com/p/Animal-City-Taurianova-100054521587800/",
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/10297010633",
+    "osm_id": 10297010633,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Taurianova",
+      "addr:housenumber": "10",
+      "addr:postcode": "89029",
+      "addr:street": "Via Sila",
+      "email": "info@animalcitystore.it",
+      "facebook": "https://www.facebook.com/p/Animal-City-Taurianova-100054521587800/",
+      "instagram": "https://instagram.com/animalcity_taurianova",
+      "name": "Animal City",
+      "phone": "+39 3457624328",
+      "shop": "pet",
+      "website": "https://www.animalcitystore.it/"
+    },
+    "lat": 38.3520523,
+    "lon": 16.015158,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
