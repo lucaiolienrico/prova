@@ -1,0 +1,35 @@
+[
+  {
+    "n": "Oasi WWF Bosco Pantano di Policoro",
+    "cat": "Rifugi per animali",
+    "sub": null,
+    "city": "Policoro",
+    "prov": "MT",
+    "reg": "Basilicata",
+    "addr": null,
+    "site": "http://www.oasiwwfpolicoro.net",
+    "email": "wwf.poli@gmail.com",
+    "tel": "+39 0835 182 5157",
+    "ig": null,
+    "fb": null,
+    "contact": "WWF",
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/4340096489",
+    "osm_id": 4340096489,
+    "osm_type": "node",
+    "osm_tags": {
+      "addr:city": "Policoro",
+      "amenity": "animal_shelter",
+      "contact:email": "wwf.poli@gmail.com",
+      "contact:website": "http://www.oasiwwfpolicoro.net",
+      "name": "Oasi WWF Bosco Pantano di Policoro",
+      "operator": "WWF",
+      "phone": "+39 0835 182 5157"
+    },
+    "lat": 40.172432,
+    "lon": 16.703199,
+    "other": "OSM: amenity=animal_shelter",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto.",
+    "_system": "automatica"
+  }
+]
