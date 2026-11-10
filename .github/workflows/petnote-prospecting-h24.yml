@@ -22,7 +22,7 @@ concurrency:
 jobs:
   prospecting-h24:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +38,13 @@ jobs:
         # vengono comunque rigenerati e committati dagli step successivi.
         continue-on-error: true
         run: python3 prospecting/find_candidates.py --batch "${{ github.event.inputs.batch || '6' }}"
+
+      - name: Arricchimento email dai siti ufficiali
+        # Fonte 2: per le schede con sito web e senza email legge l'email pubblicata
+        # sul sito dell'attivita' (robots.txt rispettato). Budget a tempo: 20 minuti.
+        if: always()
+        continue-on-error: true
+        run: python3 prospecting/enrich_sites.py
 
       - name: Rigenera database, scoring e riepilogo
         if: always()

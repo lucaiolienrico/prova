@@ -396,30 +396,9 @@
   "ciclo": 3,
   "_nota": "Ciclo 3 avviato il 2026-10-22: SCANSIONE REGIONALE (config.json scan_mode=regioni) su tutte le 20 regioni, copre tutti i comuni italiani; restrizione email sempre attiva. 'done' = coda citta' (cicli 1-2, completata: stato finale ciclo 2 in state/progress_ciclo2_completato.json); avanzamento regionale in 'regioni'.",
   "regioni": {
-    "done": [
-      "Lombardia",
-      "Campania",
-      "Lazio",
-      "Sicilia",
-      "Veneto",
-      "Piemonte",
-      "Emilia-Romagna",
-      "Puglia",
-      "Toscana",
-      "Calabria",
-      "Sardegna",
-      "Liguria",
-      "Marche",
-      "Abruzzo",
-      "Friuli-Venezia Giulia",
-      "Trentino-Alto Adige/Südtirol",
-      "Umbria",
-      "Basilicata",
-      "Molise",
-      "Valle d'Aosta/Vallée d'Aoste"
-    ],
-    "ciclo": 3,
-    "started_at": "2026-11-07T12:12:30Z",
-    "completed_at": "2026-11-08T12:33:54Z"
+    "done": [],
+    "ciclo": 4,
+    "started_at": "2026-11-10T19:10:15Z",
+    "completed_at": null
   }
 }

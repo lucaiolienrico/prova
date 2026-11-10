@@ -37,7 +37,9 @@ SCANSIONE REGIONALE (config.json -> "scan_mode": "regioni", ciclo 3 dal 22/10/20
 
 RESTRIZIONE EMAIL (config.json -> "require_email": true, attiva dal 30/09/2026):
   le query Overpass chiedono solo elementi con tag email o contact:email non
-  vuoto; le schede senza email valida non entrano mai nell'archivio.
+  vuoto (+ elementi con sito web se website_enrichment.enabled: l'email viene
+  poi letta dal sito ufficiale da enrich_sites.py). Gli output restano solo
+  con email.
 
 Dipendenze: solo libreria standard Python 3.8+.
 """
@@ -107,6 +109,12 @@ CITIES_PER_RUN = int(CFG.get("cities_per_run", 6))
 # vengono scartate prima dell'archivio.
 REQUIRE_EMAIL = bool(CFG.get("require_email", False))
 EMAIL_TAG_SELECTORS = ('["email"~"."]', '["contact:email"~"."]')
+# ARRICCHIMENTO DA SITO (config.json -> "website_enrichment"): oltre agli elementi
+# con email chiediamo a Overpass anche quelli con sito web ma senza email; entrano
+# in archivio senza email e prospecting/enrich_sites.py legge l'email dal sito
+# ufficiale. process.py continua a emettere solo schede con email.
+WEBSITE_ENRICH = bool(CFG.get("website_enrichment", {}).get("enabled", False))
+WEBSITE_TAG_SELECTORS = ('["website"~"."]', '["contact:website"~"."]')
 OVERRIDE_CITIES = None  # impostato da --cities
 # SCANSIONE REGIONALE (ciclo 3, dal 2026-10-22): la coda per citta' copre solo
 # i 388 comuni piu' popolosi ed e' esaurita; "regioni" interroga Overpass sul
@@ -317,8 +325,9 @@ def _clauses_for(rule, sel):
             tag_sel = "".join(
                 f'["{k}"]' if v == "*" else f'["{k}"="{v}"]' for k, v in query.items())
             if REQUIRE_EMAIL:
-                for email_sel in EMAIL_TAG_SELECTORS:
-                    clauses.append(f"{t}{tag_sel}{email_sel}({sel});")
+                contact_sels = EMAIL_TAG_SELECTORS + (WEBSITE_TAG_SELECTORS if WEBSITE_ENRICH else ())
+                for contact_sel in contact_sels:
+                    clauses.append(f"{t}{tag_sel}{contact_sel}({sel});")
             else:
                 clauses.append(f"{t}{tag_sel}({sel});")
     return clauses
@@ -659,8 +668,8 @@ def filter_records(records):
         return records
     seen, uniq = set(), []
     for r in records:
-        if not norm_email(r.get("email")):
-            continue
+        if not norm_email(r.get("email")) and not (WEBSITE_ENRICH and norm_site(r.get("site"))):
+            continue  # ne' email ne' sito da cui ricavarla
         k = (r.get("osm_type"), r.get("osm_id"))
         if k in seen:
             continue

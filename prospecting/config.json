@@ -64,6 +64,20 @@
     "_commento": "auto_restart_days: a scansione completa, ogni N giorni riparte da sola un nuovo passaggio su tutte le regioni (0 = mai). Nota: il workflow passa --batch 6, che vale anche come regioni per giro."
   },
 
+  "website_enrichment": {
+    "_commento": "Fonte 2 (dal 2026-11-10): per le schede OSM con sito web ma senza email, prospecting/enrich_sites.py legge l'email pubblicata sul sito ufficiale dell'attivita' (home + pagina contatti). Rispetta robots.txt, max 3 pagine per sito, nessuno scraping di directory o social.",
+    "enabled": true,
+    "max_sites_per_run": 400,
+    "max_seconds_per_run": 1200,
+    "workers": 8,
+    "page_delay_s": 1.0,
+    "fetch_timeout_s": 12,
+    "max_page_bytes": 600000,
+    "recheck_days": 30,
+    "retry_error_days": 3,
+    "user_agent": "PetNoteProspectingBot/1.0 (ricerca contatti professionali pubblici)"
+  },
+
   "overpass": {
     "_commento": "Solo OpenStreetMap (licenza ODbL): nessuno scraping di directory con termini d'uso restrittivi. Endpoint di fallback e cortesie di rate-limit.",
     "endpoints": [
@@ -86,9 +100,10 @@
     "_recipe": "Ogni categoria ha 'queries': dentro una query i tag sono in AND (es. amenity=animal_shelter E shelter_type=dog), tra query in OR, tra categorie in UNION. In una query \"chiave\": \"*\" significa tag presente (qualsiasi valore). Prima categoria che combacia vince. Le categorie senza regola (dog sitter, educatori, ecc.) non hanno un tag OSM standard e NON vengono ricercate automaticamente: nessuno scraping di directory.",
     "recipe": [
       { "category": "Veterinari", "queries": [ { "amenity": "veterinary" }, { "healthcare": "veterinary" } ] },
-      { "category": "Pet shop", "queries": [ { "shop": "pet" } ] },
+      { "category": "Pet shop", "queries": [ { "shop": "pet" }, { "shop": "pet_supplies" } ] },
       { "category": "Toelettature", "queries": [ { "shop": "pet_grooming" }, { "shop": "grooming" } ] },
       { "category": "Pensioni per animali", "queries": [ { "amenity": "animal_boarding" } ] },
+      { "category": "Educatori cinofili", "queries": [ { "amenity": "animal_training", "animal_training": "dog" } ] },
       { "category": "Canili", "queries": [ { "amenity": "animal_shelter", "shelter_type": "dog" }, { "amenity": "animal_shelter", "animal": "dog" } ] },
       { "category": "Rifugi per animali", "queries": [ { "amenity": "animal_shelter" } ] },
       { "category": "Allevamenti professionali", "queries": [ { "amenity": "animal_breeding", "breed": "*" }, { "landuse": "animal_breeding", "breed": "*" } ] },
