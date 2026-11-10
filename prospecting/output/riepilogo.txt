@@ -1,35 +1,35 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-11-10 14:02
+Generato: 2026-11-10 19:22
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (361 su 1449 schede note). ***
+*** contatti con indirizzo email (499 su 1595 schede note). ***
 
-Prospect totali: .............. 361 (manuali 45, H24 316)
-Con contatto diretto ......... 361 (100%)
-Con sito web ................. 259
-Shortlist A+/A/B ............. 234
-Comuni/localita' distinti .... 164
+Prospect totali: .............. 499 (manuali 48, H24 451)
+Con contatto diretto ......... 499 (100%)
+Con sito web ................. 396
+Shortlist A+/A/B ............. 305
+Comuni/localita' distinti .... 210
 
-PRIORITA': A+=7, A=49, B=178, C=109, D=18
+PRIORITA': A+=7, A=57, B=241, C=169, D=25
 
 PER REGIONE:
-  Lombardia              102
-  Lazio                  37
-  Trentino-Alto Adige/Südtirol 30
-  Piemonte               26
-  Veneto                 24
-  Puglia                 21
-  Emilia-Romagna         21
-  Toscana                15
+  Lombardia              150
+  Lazio                  54
+  Piemonte               45
+  Veneto                 40
+  Trentino-Alto Adige/Südtirol 31
+  Emilia-Romagna         28
+  Toscana                28
+  Puglia                 22
+  Sicilia                17
   Abruzzo                13
+  Marche                 13
+  Liguria                13
   Friuli-Venezia Giulia  12
-  Sicilia                12
-  Liguria                11
-  Marche                 10
-  Campania               7
+  Campania               11
+  Umbria                 5
+  Molise                 4
   Sardegna               4
-  Umbria                 4
-  Molise                 3
   Calabria               3
   Valle d'Aosta/Vallée d'Aoste 2
   (senza regione)        2
@@ -37,17 +37,19 @@ PER REGIONE:
   Trentino-Alto Adige    1
 
 PER CATEGORIA:
-  Veterinari                                     139
-  Pet shop                                       80
-  Rifugi per animali                             56
-  Toelettature                                   23
-  Allevatori                                     20
-  Pensioni per animali                           19
+  Veterinari                                     200
+  Pet shop                                       109
+  Rifugi per animali                             71
+  Allevatori                                     31
+  Pensioni per animali                           27
+  Toelettature                                   26
+  Educatori cinofili                             9
   Ambulatori veterinari                          6
   Associazioni animaliste                        6
   Centri cinofili                                3
   Negozi per animali                             3
   Canili                                         2
+  Ospedali veterinari                            2
   Agenzie e servizi dedicati agli animali domestici 1
   Allevamenti professionali                      1
   Pet hotel                                      1
@@ -62,10 +64,10 @@ TOP 15 PROSPECT PER SCORE:
    90 A+  Ambulatorio Veterinario Guidotti                     Bologna              Veterinari
    90 A+  Emergency Vet ospedale veterinario                   Bracciano            Veterinari
    89 A   Le betulle                                           Saronno              Allevatori
+   87 A   Freedom Dogs Life                                    Brescia              Educatori cinofili
    87 A   Azienda Agricola La Quercia                          Limbiate             Pensioni per animali
    86 A   Animal City                                          Taurianova           Pet shop
+   86 A   urbanpets                                            Brescia              Pet shop
    86 A   La Barf                                              Sesto San Giovanni   Pet shop
    86 A   Zoo Mania                                            Taviano              Pet shop
    86 A   Lala' - Pet a Porter                                 Bassano del Grappa   Toelettature
-   85 A   Ambulatorio Veterinario Zama                         Faenza               Ambulatori veterinari
-   85 A   Ambulatorio Veterinario Dr. Martino Cocca (Ambulator Campobasso           Ambulatori veterinari

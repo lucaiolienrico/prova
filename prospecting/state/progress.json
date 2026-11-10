@@ -389,14 +389,21 @@
     "Vittorio Veneto",
     "Voghera"
   ],
-  "last_run": "2026-11-08T12:33:54Z",
-  "runs": 77,
-  "new_total": 207,
-  "enrich_total": 9,
+  "last_run": "2026-11-10T19:20:26Z",
+  "runs": 78,
+  "new_total": 355,
+  "enrich_total": 16,
   "ciclo": 3,
   "_nota": "Ciclo 3 avviato il 2026-10-22: SCANSIONE REGIONALE (config.json scan_mode=regioni) su tutte le 20 regioni, copre tutti i comuni italiani; restrizione email sempre attiva. 'done' = coda citta' (cicli 1-2, completata: stato finale ciclo 2 in state/progress_ciclo2_completato.json); avanzamento regionale in 'regioni'.",
   "regioni": {
-    "done": [],
+    "done": [
+      "Lombardia",
+      "Campania",
+      "Lazio",
+      "Sicilia",
+      "Veneto",
+      "Piemonte"
+    ],
     "ciclo": 4,
     "started_at": "2026-11-10T19:10:15Z",
     "completed_at": null
