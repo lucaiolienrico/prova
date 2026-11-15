@@ -114,7 +114,7 @@ EMAIL_TAG_SELECTORS = ('["email"~"."]', '["contact:email"~"."]')
 # in archivio senza email e prospecting/enrich_sites.py legge l'email dal sito
 # ufficiale. process.py continua a emettere solo schede con email.
 WEBSITE_ENRICH = bool(CFG.get("website_enrichment", {}).get("enabled", False))
-WEBSITE_TAG_SELECTORS = ('["website"~"."]', '["contact:website"~"."]')
+WEBSITE_TAG_SELECTORS = ('["website"~"."]', '["contact:website"~"."]', '["url"~"."]')
 OVERRIDE_CITIES = None  # impostato da --cities
 # SCANSIONE REGIONALE (ciclo 3, dal 2026-10-22): la coda per citta' copre solo
 # i 388 comuni piu' popolosi ed e' esaurita; "regioni" interroga Overpass sul
@@ -135,11 +135,18 @@ OVERRIDE_REGIONS = None  # impostato da --regions
 # Helper di normalizzazione (allineati a process.py)
 # --------------------------------------------------------------------------
 
+_EMAIL_RE = re.compile(r"^[^@\s;,]+@[^@\s;,]+\.[a-z]{2,}$")
+
+
 def norm_email(e):
+    """Primo indirizzo valido di un campo OSM (che puo' contenerne piu' d'uno
+    separati da ';' o ','); le PEC passano solo se manca un'alternativa."""
     if not e:
         return None
-    e = str(e).strip().lower()
-    return e if ("@" in e and " " not in e) else None
+    cands = [c for c in re.split(r"[;,\s]+", str(e).strip().lower()) if _EMAIL_RE.match(c)]
+    if not cands:
+        return None
+    return next((c for c in cands if "pec" not in c.split("@")[1]), cands[0])
 
 
 def norm_site(site):
@@ -476,7 +483,7 @@ def element_to_record(el, city):
     street = " ".join(x for x in [tags.get("addr:street"),
                                   tags.get("addr:housenumber")] if x)
     addr = ", ".join(x for x in [street, tags.get("addr:postcode")] if x)
-    site = tags.get("website") or tags.get("contact:website")
+    site = tags.get("website") or tags.get("contact:website") or tags.get("url")
     email = tags.get("contact:email") or tags.get("email")
     tel = tags.get("phone") or tags.get("contact:phone") or tags.get("contact:mobile")
     ig_raw = tags.get("contact:instagram") or tags.get("instagram")

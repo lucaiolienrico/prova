@@ -66,7 +66,7 @@
 
   "website_enrichment": {
     "_commento": "Fonte 2 (dal 2026-11-10): per le schede OSM con sito web ma senza email, prospecting/enrich_sites.py legge l'email pubblicata sul sito ufficiale dell'attivita' (home + pagina contatti). Rispetta robots.txt, max 3 pagine per sito, nessuno scraping di directory o social.",
-    "enabled": false,
+    "enabled": true,
     "max_sites_per_run": 400,
     "max_seconds_per_run": 1200,
     "workers": 8,
