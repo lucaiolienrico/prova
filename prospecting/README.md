@@ -1,5 +1,7 @@
 # PetNote — Database Nazionale Prospect (settore pet)
 
+> **STOP RICERCA CONTATTI (2026-11-15):** su richiesta dell'utente la repo non cerca più contatti. Cron H24 rimosso dal workflow (resta solo l'avvio manuale `workflow_dispatch`), enrichment email dai siti disattivato (`website_enrichment.enabled: false`). Dati e codice conservati; per riattivare: ripristinare `schedule` nel workflow e `enabled: true`.
+
 Database progressivo di potenziali partner commerciali PetNote, organizzato per
 **categoria → regione → provincia → città → attività → contatti → qualità → score → priorità**.
 
