@@ -68,6 +68,8 @@ CITY_FIX = {
     "Nuoro (zona, da confermare)": ("Nuoro", None),
 }
 
+REGION_ALIAS = {"Trentino-Alto Adige": "Trentino-Alto Adige/Südtirol"}
+
 def smart_title(s):
     if not s: return None
     ws = s.strip()
@@ -127,9 +129,14 @@ def site_key(site):
     s = re.sub(r"^www\.", "", s)
     return s.rstrip("/").split("/")[0]
 
+_EMAIL_RE = re.compile(r"^[^@\s;,]+@[^@\s;,]+\.[a-z]{2,}$")
+
 def norm_email(e):
-    if not e: return None
-    return e.strip().lower() if "@" in e and "PEC:" not in e else None
+    # Campi OSM con piu' indirizzi ("a@x.it;b@x.it"): tiene il primo valido, PEC solo se unica.
+    if not e or "PEC:" in e: return None
+    cands = [c for c in re.split(r"[;,\s]+", e.strip().lower()) if _EMAIL_RE.match(c)]
+    if not cands: return None
+    return next((c for c in cands if "pec" not in c.split("@")[1]), cands[0])
 
 def name_tokens(n):
     n = re.sub(r"[^a-zàèéìòù'0-9 ]", " ", n.lower())
@@ -269,7 +276,7 @@ def build(r):
         "subcategory": r.get("sub"),
         "city": city,
         "province": prov_clean,
-        "region": r.get("reg"),
+        "region": REGION_ALIAS.get(r.get("reg"), r.get("reg")),
         "address": (r.get("addr") or None),
         "website": site,
         "email": email,

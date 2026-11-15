@@ -68,6 +68,28 @@ mai modificati dal sistema automatico.
   python3 prospecting/process.py                        # rigenera gli output
   ```
 
+## Fonte 2: email dai siti ufficiali (dal 2026-11-10)
+
+- **Cosa**: Overpass ora restituisce anche gli elementi OSM con `website` ma senza
+  email (`website_enrichment.enabled` in `config.json`). Entrano in archivio senza
+  email; `enrich_sites.py` legge il sito ufficiale (home + pagina contatti, max 3
+  pagine) ed estrae l'email pubblicata dall'attivita'.
+- **Estrazione**: JSON-LD schema.org, `mailto:`, protezione Cloudflare, offuscamenti
+  `[at]`/`[dot]`, testo in chiaro. Scartati indirizzi tecnici (noreply, sentry, ecc.);
+  preferita l'email sul dominio del sito.
+- **Compliance**: `robots.txt` rispettato, User-Agent dichiarato, ritardo tra pagine,
+  nessun accesso a reti private. Ogni email porta `email_src` (URL pagina) e un
+  promemoria di verifica in `notes`. **Esclusi per scelta**: directory a pagamento o
+  con ToS restrittivi (PagineGialle, ecc.) e social (Facebook/Instagram).
+- **Categorie OSM aggiunte**: `shop=pet_supplies`, `amenity=animal_training` + `animal_training=dog`.
+- **Comandi**:
+  ```bash
+  python3 prospecting/enrich_sites.py --dry-run          # siti da visitare
+  python3 prospecting/enrich_sites.py --site https://esempio.it   # prova un sito
+  python3 -m unittest discover -s prospecting/tests -p 'test_*.py'
+  ```
+- Un sito senza email viene ricontrollato dopo `recheck_days` (30), un errore dopo 3 giorni.
+
 ## Metodo di raccolta (manuale)
 
 1. Ricerche web separate per **combinazione `categoria × città`** (es. `veterinari Altamura`,

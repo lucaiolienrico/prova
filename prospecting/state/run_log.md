@@ -1749,3 +1749,15 @@
 
 **Bilancio**: 6 regioni ok, 180 schede con email, 0 nuove, 0 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 6/20.
 
+## Giro regionale del 2026-11-15T17:54:19Z (run_20261115_175419_7d05, passaggio 4)
+| Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Emilia-Romagna | 80 | 44 | 35 | 45 (1 integrati) | ok |
+| Puglia | 40 | 18 | 12 | 28 (0 integrati) | ok |
+| Toscana | 59 | 20 | 17 | 42 (1 integrati) | ok |
+| Calabria | 1 | 0 | 0 | 1 (0 integrati) | ok |
+| Sardegna | 5 | 4 | 1 | 4 (0 integrati) | ok |
+| Liguria | 45 | 29 | 12 | 33 (2 integrati) | ok |
+
+**Bilancio**: 6 regioni ok, 230 schede con email, 77 nuove, 4 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 12/20.
+
