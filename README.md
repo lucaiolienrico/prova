@@ -10,13 +10,13 @@
 
 ## Cosa fa
 
-Scansiona i comuni italiani su OpenStreetMap ogni 6 ore, costruisce un database di prospect qualificati e lo commita automaticamente su GitHub. Nessun server. Nessuna VPS. Nessun cron job da gestire.
+Scansiona le regioni italiane (tutti i comuni) su OpenStreetMap ogni 6 ore e legge le email pubblicate sui siti ufficiali delle attività, costruisce un database di prospect qualificati e lo commita automaticamente su GitHub. Nessun server. Nessuna VPS. Nessun cron job da gestire.
 
 ## Numeri live
 
-| Prospect totali | Run completati | Costo infrastruttura | Comuni scansionati |
+| Prospect con email | Run completati | Costo infrastruttura | Regioni scansionate |
 |:---:|:---:|:---:|:---:|
-| **1.155** | **55** | **€0** | **280+ / 388** |
+| **533** | **79** | **€0** | **20 / 20 regioni** |
 
 ## Architettura
 
@@ -43,9 +43,9 @@ GitHub Actions (cron 00/06/12/18 UTC)
 
 ```
 prospecting/output/
-├── petnote_prospects.json   # database completo (1.155 prospect, 930KB)
-├── petnote_prospects.csv    # stesso dataset in CSV (396KB)
-├── shortlist_AB.csv         # top 112 prospect A+/A/B per score
+├── petnote_prospects.json   # database completo (533 prospect con email, 490KB)
+├── petnote_prospects.csv    # stesso dataset in CSV (244KB)
+├── shortlist_AB.csv         # top 319 prospect A+/A/B per score
 └── riepilogo.txt            # stats: regione, categoria, score
 ```
 
@@ -70,7 +70,7 @@ prospecting/output/
 | Repo privata completa | ✅ | ✅ | ✅ |
 | Config 1 verticale | ✅ | ✅ | ✅ |
 | Guida setup PDF | ✅ | ✅ | ✅ |
-| 388 comuni italiani | ✅ | ✅ | ✅ |
+| Tutti i comuni italiani (~7.900) | ✅ | ✅ | ✅ |
 | Call onboarding 1h | ❌ | ✅ | ✅ |
 | Config 3 verticali | ❌ | ✅ | ✅ |
 | Supporto 30 giorni | ❌ | ✅ | ✅ |
@@ -106,4 +106,4 @@ git add . && git commit -m "setup verticale" && git push
 
 ---
 
-*Sistema validato su 55 run in produzione. Dati reali, non simulati.*
+*Sistema validato su 79 run in produzione. Dati reali, non simulati.*

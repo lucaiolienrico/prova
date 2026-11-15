@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>H24 Prospecting Engine — Lead generation automatica su GitHub Actions</title>
-<meta name="description" content="Sistema di lead generation automatica. Zero server, zero costi. 1.155 prospect trovati, 55 run, €0 di infrastruttura.">
+<meta name="description" content="Sistema di lead generation automatica. Zero server, zero costi. 533 prospect con email, 79 run, €0 di infrastruttura.">
 <meta property="og:title" content="H24 Prospecting Engine">
-<meta property="og:description" content="1.155 prospect trovati. 55 run completati. €0 di costo server. Gira su GitHub Actions.">
+<meta property="og:description" content="533 prospect con email. 79 run completati. €0 di costo server. Gira su GitHub Actions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -122,10 +122,10 @@ footer{border-top:1px solid var(--br);padding:32px 0}
     <a href="#come-funziona" class="bs">Come funziona &rarr;</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="sn">1.155</div><div class="sl">prospect trovati</div></div>
-    <div class="stat"><div class="sn">55</div><div class="sl">run completati</div></div>
+    <div class="stat"><div class="sn">533</div><div class="sl">prospect con email</div></div>
+    <div class="stat"><div class="sn">79</div><div class="sl">run completati</div></div>
     <div class="stat"><div class="sn">&euro;0</div><div class="sl">costo infrastruttura</div></div>
-    <div class="stat"><div class="sn">280+</div><div class="sl">comuni scansionati</div></div>
+    <div class="stat"><div class="sn">20/20</div><div class="sl">regioni scansionate</div></div>
   </div>
   <div class="term">
     <div class="thd">
@@ -157,7 +157,7 @@ footer{border-top:1px solid var(--br);padding:32px 0}
       <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Repo privata completa</div>
       <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Config 1 verticale</div>
       <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Guida setup PDF</div>
-      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>388 comuni italiani</div>
+      <div class="pf"><span class="ok"><i class="ti ti-check"></i></span>Tutti i comuni italiani (~7.900)</div>
       <button class="pcta">Acquista Base</button>
     </div>
     <div class="plan hot">
@@ -202,20 +202,20 @@ footer{border-top:1px solid var(--br);padding:32px 0}
 </footer>
 <script>
 var rows=[
-  {d:0,c:'g',t:'\u25b6  PetNote H24 \u2014 avvio run #56'},
-  {d:400,c:'m',t:'   coda: 108 comuni rimanenti / 388 totali'},
+  {d:0,c:'g',t:'\u25b6  PetNote H24 \u2014 avvio run #80'},
+  {d:400,c:'m',t:'   regioni da scansionare: 6 / 20 per questo giro'},
   {d:750,c:'e',t:''},
-  {d:1150,c:'b',t:'\u2192  Ferrara'},
+  {d:1150,c:'b',t:'\u2192  Emilia-Romagna'},
   {d:1500,c:'m',t:'   query: amenity=veterinary | shop=pet | shop=pet_grooming ...'},
-  {d:2100,c:'g',t:'   \u2713  12 nuovi  \u00b7  3 arricchiti  \u00b7  0 duplicati'},
+  {d:2100,c:'g',t:'   \u2713  35 nuovi  \u00b7  3 arricchiti  \u00b7  0 duplicati'},
   {d:2450,c:'e',t:''},
-  {d:2850,c:'b',t:'\u2192  Parma'},
+  {d:2850,c:'b',t:'\u2192  Toscana'},
   {d:3200,c:'m',t:'   query: amenity=veterinary | shop=pet ...'},
-  {d:3800,c:'g',t:'   \u2713  8 nuovi  \u00b7  0 arricchiti  \u00b7  1 duplicato saltato'},
+  {d:3800,c:'g',t:'   \u2713  17 nuovi  \u00b7  0 arricchiti  \u00b7  1 duplicato saltato'},
   {d:4200,c:'e',t:''},
-  {d:4600,c:'b',t:'\u2192  Piacenza'},
+  {d:4600,c:'b',t:'\u2192  Liguria'},
   {d:4950,c:'m',t:'   query: amenity=veterinary | shop=pet | amenity=animal_shelter ...'},
-  {d:5550,c:'g',t:'   \u2713  6 nuovi  \u00b7  1 arricchito  \u00b7  0 duplicati'},
+  {d:5550,c:'g',t:'   \u2713  12 nuovi  \u00b7  1 arricchito  \u00b7  0 duplicati'},
   {d:5950,c:'e',t:''},
   {d:6350,c:'m',t:'   \u2192 scoring e shortlist ricalcolati'},
   {d:6700,c:'m',t:'   \u2192 petnote_prospects.json  |  shortlist_AB.csv aggiornati'},
