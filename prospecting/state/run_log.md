@@ -1737,15 +1737,15 @@
 
 **Bilancio**: 2 regioni ok, 2 schede con email, 0 nuove, 0 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 20/20.
 
-## Giro regionale del 2026-11-10T19:11:23Z (run_20261110_191123_47e4, passaggio 4)
+## Giro regionale del 2026-11-15T13:14:33Z (run_20261115_131433_eac7, passaggio 4)
 | Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |
 |---|---|---|---|---|---|
-| Lombardia | 238 | 78 | 53 | 185 (3 integrati) | ok |
-| Campania | 23 | 7 | 7 | 16 (1 integrati) | ok |
-| Lazio | 74 | 31 | 23 | 51 (0 integrati) | ok |
-| Sicilia | 61 | 50 | 4 | 57 (0 integrati) | ok |
-| Veneto | 66 | 23 | 26 | 40 (1 integrati) | ok |
-| Piemonte | 113 | 69 | 35 | 78 (2 integrati) | ok |
+| Lombardia | 106 | 34 | 0 | 106 (0 integrati) | ok |
+| Campania | 8 | 0 | 0 | 8 (0 integrati) | ok |
+| Lazio | 31 | 10 | 0 | 31 (0 integrati) | ok |
+| Sicilia | 14 | 8 | 0 | 14 (0 integrati) | ok |
+| Veneto | 21 | 8 | 0 | 21 (0 integrati) | ok |
+| Piemonte | 0 | 0 | 0 | 0 (0 integrati) | ok |
 
-**Bilancio**: 6 regioni ok, 575 schede con email, 148 nuove, 7 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 6/20.
+**Bilancio**: 6 regioni ok, 180 schede con email, 0 nuove, 0 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 6/20.
 
