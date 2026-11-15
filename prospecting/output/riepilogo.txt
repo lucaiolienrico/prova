@@ -1,16 +1,16 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-11-15 18:04
+Generato: 2026-11-15 22:38
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (533 su 1671 schede note). ***
+*** contatti con indirizzo email (546 su 1701 schede note). ***
 
-Prospect totali: .............. 533 (manuali 48, H24 485)
-Con contatto diretto ......... 533 (100%)
-Con sito web ................. 430
-Shortlist A+/A/B ............. 319
-Comuni/localita' distinti .... 222
+Prospect totali: .............. 546 (manuali 48, H24 498)
+Con contatto diretto ......... 546 (100%)
+Con sito web ................. 444
+Shortlist A+/A/B ............. 329
+Comuni/localita' distinti .... 226
 
-PRIORITA': A+=7, A=57, B=255, C=185, D=29
+PRIORITA': A+=7, A=58, B=264, C=188, D=29
 
 PER REGIONE:
   Lombardia              151
@@ -18,14 +18,14 @@ PER REGIONE:
   Emilia-Romagna         45
   Piemonte               45
   Veneto                 40
+  Trentino-Alto Adige/Südtirol 35
   Toscana                33
-  Trentino-Alto Adige/Südtirol 32
   Puglia                 26
   Liguria                19
+  Marche                 17
   Sicilia                17
-  Abruzzo                13
-  Marche                 13
-  Friuli-Venezia Giulia  12
+  Friuli-Venezia Giulia  16
+  Abruzzo                15
   Campania               11
   Umbria                 5
   Molise                 4
@@ -36,13 +36,13 @@ PER REGIONE:
   Basilicata             1
 
 PER CATEGORIA:
-  Veterinari                                     210
-  Pet shop                                       116
-  Rifugi per animali                             76
+  Veterinari                                     215
+  Pet shop                                       120
+  Rifugi per animali                             78
   Allevatori                                     36
   Pensioni per animali                           30
-  Toelettature                                   28
-  Educatori cinofili                             11
+  Toelettature                                   29
+  Educatori cinofili                             12
   Ambulatori veterinari                          6
   Associazioni animaliste                        6
   Centri cinofili                                3

@@ -1761,3 +1761,15 @@
 
 **Bilancio**: 6 regioni ok, 230 schede con email, 77 nuove, 4 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 12/20.
 
+## Giro regionale del 2026-11-15T22:20:18Z (run_20261115_222018_b135, passaggio 4)
+| Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Marche | 26 | 10 | 4 | 22 (2 integrati) | ok |
+| Abruzzo | 27 | 9 | 6 | 21 (0 integrati) | ok |
+| Friuli-Venezia Giulia | 29 | 14 | 7 | 22 (0 integrati) | ok |
+| Trentino-Alto Adige/Südtirol | 51 | 23 | 12 | 39 (1 integrati) | ok |
+| Umbria | 6 | 2 | 1 | 5 (0 integrati) | ok |
+| Basilicata | 1 | 0 | 0 | 1 (0 integrati) | ok |
+
+**Bilancio**: 6 regioni ok, 140 schede con email, 30 nuove, 3 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 18/20.
+
