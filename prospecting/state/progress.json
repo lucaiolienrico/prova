@@ -389,9 +389,9 @@
     "Vittorio Veneto",
     "Voghera"
   ],
-  "last_run": "2026-11-15T22:38:35Z",
-  "runs": 80,
-  "new_total": 314,
+  "last_run": "2026-11-16T04:08:03Z",
+  "runs": 81,
+  "new_total": 315,
   "enrich_total": 16,
   "ciclo": 3,
   "_nota": "Ciclo 3 avviato il 2026-10-22: SCANSIONE REGIONALE (config.json scan_mode=regioni) su tutte le 20 regioni, copre tutti i comuni italiani; restrizione email sempre attiva. 'done' = coda citta' (cicli 1-2, completata: stato finale ciclo 2 in state/progress_ciclo2_completato.json); avanzamento regionale in 'regioni'.",
@@ -414,10 +414,12 @@
       "Friuli-Venezia Giulia",
       "Trentino-Alto Adige/Südtirol",
       "Umbria",
-      "Basilicata"
+      "Basilicata",
+      "Molise",
+      "Valle d'Aosta/Vallée d'Aoste"
     ],
     "ciclo": 4,
     "started_at": "2026-11-15T13:14:33Z",
-    "completed_at": null
+    "completed_at": "2026-11-16T04:08:03Z"
   }
 }

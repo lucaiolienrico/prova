@@ -55296,5 +55296,40 @@
     "_wave": "run_20261115_222018_b135",
     "_site_checked_at": "2026-11-15T22:38:48Z",
     "_site_result": "errore: <urlopen error [Errno 104] Connection reset by peer>"
+  },
+  {
+    "n": "I cani di Orione - Addestratore di cani",
+    "cat": "Pet shop",
+    "sub": null,
+    "city": null,
+    "prov": null,
+    "reg": "Valle d'Aosta/Vallée d'Aoste",
+    "addr": null,
+    "site": "https://www.icanidiorione.com/",
+    "email": null,
+    "tel": "377 311 4978",
+    "ig": null,
+    "fb": null,
+    "contact": null,
+    "src": "OpenStreetMap (Overpass API, ODbL)",
+    "srcurl": "https://www.openstreetmap.org/node/14004202601",
+    "osm_id": 14004202601,
+    "osm_type": "node",
+    "osm_tags": {
+      "name": "I cani di Orione - Addestratore di cani",
+      "phone": "377 311 4978",
+      "shop": "pet",
+      "website": "https://www.icanidiorione.com/"
+    },
+    "lat": 45.7175734,
+    "lon": 7.2383359,
+    "other": "OSM: shop=pet",
+    "notes": "Fonte OpenStreetMap (ODbL). Dati di contatto come mappati in OSM: verificare prima di un eventuale contatto. Comune non indicato in OSM (addr:city assente).",
+    "_system": "automatica",
+    "_archive_id": 1521,
+    "_found_at": "2026-11-16T04:08:01Z",
+    "_wave": "run_20261116_040537_9734",
+    "_site_checked_at": "2026-11-16T04:08:06Z",
+    "_site_result": "nessuna email"
   }
 ]

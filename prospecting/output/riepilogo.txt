@@ -1,8 +1,8 @@
 PETNOTE PROSPECTING - RIEPILOGO AUTOMATICO
-Generato: 2026-11-15 22:38
+Generato: 2026-11-16 04:08
 ============================================================
 *** RESTRIZIONE EMAIL ATTIVA: questo database contiene SOLO ***
-*** contatti con indirizzo email (546 su 1701 schede note). ***
+*** contatti con indirizzo email (546 su 1702 schede note). ***
 
 Prospect totali: .............. 546 (manuali 48, H24 498)
 Con contatto diretto ......... 546 (100%)
