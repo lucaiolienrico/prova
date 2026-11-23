@@ -389,8 +389,8 @@
     "Vittorio Veneto",
     "Voghera"
   ],
-  "last_run": "2026-11-23T05:09:12Z",
-  "runs": 82,
+  "last_run": "2026-11-23T17:12:35Z",
+  "runs": 83,
   "new_total": 320,
   "enrich_total": 20,
   "ciclo": 3,
@@ -402,7 +402,13 @@
       "Lazio",
       "Sicilia",
       "Veneto",
-      "Piemonte"
+      "Piemonte",
+      "Emilia-Romagna",
+      "Puglia",
+      "Toscana",
+      "Calabria",
+      "Sardegna",
+      "Liguria"
     ],
     "ciclo": 5,
     "started_at": "2026-11-23T05:00:06Z",
