@@ -1817,3 +1817,11 @@
 
 **Bilancio**: 6 regioni ok, 141 schede con email, 0 nuove, 0 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 18/20.
 
+## Giro regionale del 2026-11-24T16:47:21Z (run_20261124_164721_9fe2, passaggio 5)
+| Regione | Elementi | Senza comune | Nuovi | Gia' noti / integrati | Esito |
+|---|---|---|---|---|---|
+| Molise | 0 | 0 | 0 | 0 (0 integrati) | ok |
+| Valle d'Aosta/Vallée d'Aoste | 4 | 4 | 0 | 4 (0 integrati) | ok |
+
+**Bilancio**: 2 regioni ok, 4 schede con email, 0 nuove, 0 integrate, 0 regioni fallite (ritentate al prossimo giro), regioni completate 20/20.
+
