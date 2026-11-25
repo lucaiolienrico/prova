@@ -2933,7 +2933,7 @@
     "_archive_id": 83,
     "_found_at": "2026-09-01T12:46:01Z",
     "_wave": "run_20260901_124409_27db",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -5730,7 +5730,7 @@
     "_archive_id": 164,
     "_found_at": "2026-09-01T12:50:49Z",
     "_wave": "run_20260901_124409_27db",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -5866,7 +5866,7 @@
     "_archive_id": 168,
     "_found_at": "2026-09-01T12:50:49Z",
     "_wave": "run_20260901_124409_27db",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -7734,7 +7734,7 @@
     "_archive_id": 222,
     "_found_at": "2026-09-01T15:51:52Z",
     "_wave": "run_20260901_155117_9dce",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -11705,7 +11705,7 @@
     "_archive_id": 336,
     "_found_at": "2026-09-02T15:44:16Z",
     "_wave": "run_20260902_154413_2097",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -12227,7 +12227,7 @@
     "_archive_id": 352,
     "_found_at": "2026-09-02T15:47:48Z",
     "_wave": "run_20260902_154413_2097",
-    "_site_checked_at": "2026-11-22T04:24:30Z",
+    "_site_checked_at": "2026-11-25T16:35:03Z",
     "_site_result": "bloccato: dns: [Errno -3] Temporary failure in name resolution"
   },
   {
@@ -13113,7 +13113,7 @@
     "_archive_id": 376,
     "_found_at": "2026-09-02T15:52:00Z",
     "_wave": "run_20260902_154413_2097",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -13757,7 +13757,7 @@
     "_archive_id": 394,
     "_found_at": "2026-09-03T02:22:02Z",
     "_wave": "run_20260903_022200_f1f5",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -15171,7 +15171,7 @@
     "_archive_id": 435,
     "_found_at": "2026-09-03T15:37:15Z",
     "_wave": "run_20260903_153347_8abb",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -22427,7 +22427,7 @@
     "_archive_id": 641,
     "_found_at": "2026-09-06T19:52:37Z",
     "_wave": "run_20260906_194943_9c6d",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -23568,7 +23568,7 @@
     "_found_at": "2026-09-07T17:09:39Z",
     "_wave": "run_20260907_165744_1db5",
     "_updated_at": "2026-11-10T19:20:25Z",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -24763,7 +24763,7 @@
     "_archive_id": 708,
     "_found_at": "2026-09-08T15:48:32Z",
     "_wave": "run_20260908_154537_cb1d",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -25362,7 +25362,7 @@
     "_archive_id": 726,
     "_found_at": "2026-09-08T20:36:57Z",
     "_wave": "run_20260908_203239_6f3d",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -28884,7 +28884,7 @@
     "_archive_id": 826,
     "_found_at": "2026-09-11T02:20:27Z",
     "_wave": "run_20260911_022001_9db2",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -29897,7 +29897,7 @@
     "_found_at": "2026-09-11T10:21:09Z",
     "_wave": "run_20260911_102045_8629",
     "_updated_at": "2026-09-11T10:21:09Z",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -31866,7 +31866,7 @@
     "_archive_id": 911,
     "_found_at": "2026-09-12T14:45:49Z",
     "_wave": "run_20260912_144426_1044",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -35980,7 +35980,7 @@
     "_archive_id": 1034,
     "_found_at": "2026-09-16T20:53:11Z",
     "_wave": "run_20260916_204321_4864",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -36341,7 +36341,7 @@
     "_archive_id": 1044,
     "_found_at": "2026-09-17T02:54:45Z",
     "_wave": "run_20260917_024450_eb25",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -45069,7 +45069,7 @@
     "_archive_id": 1266,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -45111,7 +45111,7 @@
     "_archive_id": 1267,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
   },
   {
@@ -45194,7 +45194,7 @@
     "_archive_id": 1269,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:24Z",
+    "_site_checked_at": "2026-11-25T16:34:57Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -45519,7 +45519,7 @@
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
     "_updated_at": "2026-11-10T19:13:07Z",
-    "_site_checked_at": "2026-11-22T04:24:33Z",
+    "_site_checked_at": "2026-11-25T16:35:05Z",
     "_site_result": "errore: <urlopen error timed out>"
   },
   {
@@ -45563,7 +45563,7 @@
     "_archive_id": 1278,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
   },
   {
@@ -45725,7 +45725,7 @@
     "_archive_id": 1282,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -45888,7 +45888,7 @@
     "_archive_id": 1286,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -5] No address associated with hostname"
   },
   {
@@ -46093,7 +46093,7 @@
     "_archive_id": 1291,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -46170,7 +46170,7 @@
     "_archive_id": 1293,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -46984,7 +46984,7 @@
     "_archive_id": 1313,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -47189,7 +47189,7 @@
     "_archive_id": 1318,
     "_found_at": "2026-11-10T19:13:07Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -47267,7 +47267,7 @@
     "_archive_id": 1320,
     "_found_at": "2026-11-10T19:14:23Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unabl"
   },
   {
@@ -47307,7 +47307,7 @@
     "_archive_id": 1321,
     "_found_at": "2026-11-10T19:14:23Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:21Z",
+    "_site_checked_at": "2026-11-25T16:34:54Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -47377,7 +47377,7 @@
     "_archive_id": 1323,
     "_found_at": "2026-11-10T19:14:23Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:33Z",
+    "_site_checked_at": "2026-11-25T16:35:05Z",
     "_site_result": "errore: The read operation timed out"
   },
   {
@@ -47756,7 +47756,7 @@
     "_archive_id": 1332,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:23Z",
+    "_site_checked_at": "2026-11-25T16:34:55Z",
     "_site_result": "errore: HTTP 503"
   },
   {
@@ -47841,7 +47841,7 @@
     "_archive_id": 1334,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -47962,7 +47962,7 @@
     "_archive_id": 1337,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48291,7 +48291,7 @@
     "_archive_id": 1345,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48372,7 +48372,7 @@
     "_archive_id": 1347,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48410,7 +48410,7 @@
     "_archive_id": 1348,
     "_found_at": "2026-11-10T19:15:40Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48568,7 +48568,7 @@
     "_archive_id": 1352,
     "_found_at": "2026-11-10T19:17:13Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48607,7 +48607,7 @@
     "_archive_id": 1353,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48851,7 +48851,7 @@
     "_archive_id": 1359,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -48892,7 +48892,7 @@
     "_archive_id": 1360,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -49333,7 +49333,7 @@
     "_archive_id": 1371,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -49455,7 +49455,7 @@
     "_archive_id": 1374,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -49536,7 +49536,7 @@
     "_archive_id": 1376,
     "_found_at": "2026-11-10T19:18:41Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -49945,7 +49945,7 @@
     "_archive_id": 1386,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -49999,7 +49999,7 @@
     "_archive_id": 1387,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake fail"
   },
   {
@@ -50039,7 +50039,7 @@
     "_archive_id": 1388,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -50079,7 +50079,7 @@
     "_archive_id": 1389,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:34Z",
+    "_site_checked_at": "2026-11-25T16:35:07Z",
     "_site_result": "errore: <urlopen error timed out>"
   },
   {
@@ -50239,7 +50239,7 @@
     "_archive_id": 1393,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -50359,7 +50359,7 @@
     "_archive_id": 1396,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 403"
   },
   {
@@ -50398,7 +50398,7 @@
     "_archive_id": 1397,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -50596,7 +50596,7 @@
     "_archive_id": 1402,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:18Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 530"
   },
   {
@@ -50988,7 +50988,7 @@
     "_archive_id": 1412,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -51028,7 +51028,7 @@
     "_archive_id": 1413,
     "_found_at": "2026-11-10T19:20:25Z",
     "_wave": "run_20261110_191123_47e4",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -51257,7 +51257,7 @@
     "_archive_id": 1419,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:33Z",
+    "_site_checked_at": "2026-11-25T16:35:06Z",
     "_site_result": "errore: <urlopen error timed out>"
   },
   {
@@ -51335,7 +51335,7 @@
     "_archive_id": 1421,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unabl"
   },
   {
@@ -51805,7 +51805,7 @@
     "_archive_id": 1433,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -51882,7 +51882,7 @@
     "_archive_id": 1435,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:55Z",
     "_site_result": "errore: <urlopen error [Errno 111] Connection refused>"
   },
   {
@@ -52164,7 +52164,7 @@
     "_archive_id": 1442,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:22Z",
+    "_site_checked_at": "2026-11-25T16:34:56Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -52205,7 +52205,7 @@
     "_archive_id": 1443,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: <urlopen error [SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:10"
   },
   {
@@ -52369,7 +52369,7 @@
     "_archive_id": 1447,
     "_found_at": "2026-11-15T17:56:03Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: <urlopen error [Errno 104] Connection reset by peer>"
   },
   {
@@ -52446,7 +52446,7 @@
     "_archive_id": 1449,
     "_found_at": "2026-11-15T17:57:34Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: HTTP 429"
   },
   {
@@ -52486,7 +52486,7 @@
     "_archive_id": 1450,
     "_found_at": "2026-11-15T17:57:34Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -52809,7 +52809,7 @@
     "_archive_id": 1458,
     "_found_at": "2026-11-15T17:57:34Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -52929,7 +52929,7 @@
     "_archive_id": 1461,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53004,7 +53004,7 @@
     "_archive_id": 1463,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53078,7 +53078,7 @@
     "_archive_id": 1465,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:15Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53197,7 +53197,7 @@
     "_archive_id": 1468,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53288,7 +53288,7 @@
     "_archive_id": 1470,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53410,7 +53410,7 @@
     "_archive_id": 1473,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:50Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53452,7 +53452,7 @@
     "_archive_id": 1474,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
   },
   {
@@ -53503,7 +53503,7 @@
     "_archive_id": 1475,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:53Z",
     "_site_result": "errore: HTTP 503"
   },
   {
@@ -53574,7 +53574,7 @@
     "_archive_id": 1477,
     "_found_at": "2026-11-15T17:59:05Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:16Z",
+    "_site_checked_at": "2026-11-25T16:34:51Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -53649,7 +53649,7 @@
     "_archive_id": 1479,
     "_found_at": "2026-11-15T18:03:47Z",
     "_wave": "run_20261115_175419_7d05",
-    "_site_checked_at": "2026-11-22T04:24:17Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "errore: HTTP 429"
   },
   {
@@ -54397,7 +54397,7 @@
     "_archive_id": 1497,
     "_found_at": "2026-11-15T22:22:49Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54438,7 +54438,7 @@
     "_archive_id": 1498,
     "_found_at": "2026-11-15T22:22:49Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54479,7 +54479,7 @@
     "_archive_id": 1499,
     "_found_at": "2026-11-15T22:22:49Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54515,7 +54515,7 @@
     "_archive_id": 1500,
     "_found_at": "2026-11-15T22:22:49Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:19Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54625,7 +54625,7 @@
     "_archive_id": 1503,
     "_found_at": "2026-11-15T22:26:06Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:53Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -54781,7 +54781,7 @@
     "_archive_id": 1507,
     "_found_at": "2026-11-15T22:26:06Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54819,7 +54819,7 @@
     "_archive_id": 1508,
     "_found_at": "2026-11-15T22:27:20Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -54937,7 +54937,7 @@
     "_archive_id": 1511,
     "_found_at": "2026-11-15T22:27:20Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:53Z",
     "_site_result": "errore: HTTP 404"
   },
   {
@@ -55103,7 +55103,7 @@
     "_archive_id": 1515,
     "_found_at": "2026-11-15T22:27:20Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:20Z",
+    "_site_checked_at": "2026-11-25T16:34:52Z",
     "_site_result": "bloccato: dns: [Errno -2] Name or service not known"
   },
   {
@@ -55140,7 +55140,7 @@
     "_archive_id": 1516,
     "_found_at": "2026-11-15T22:27:20Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:21Z",
+    "_site_checked_at": "2026-11-25T16:34:53Z",
     "_site_result": "errore: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-"
   },
   {
@@ -55301,7 +55301,7 @@
     "_archive_id": 1520,
     "_found_at": "2026-11-15T22:28:44Z",
     "_wave": "run_20261115_222018_b135",
-    "_site_checked_at": "2026-11-22T04:24:21Z",
+    "_site_checked_at": "2026-11-25T16:34:53Z",
     "_site_result": "errore: <urlopen error [Errno 104] Connection reset by peer>"
   },
   {
